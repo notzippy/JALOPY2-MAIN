@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title xmlns="http://www.w3.org/1999/xhtml">4.3. Printer</title><link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="site.css"/><meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="manual-docbkx.html" title="Jalopy User Manual"/><link rel="up" href="settings.html" title="Chapter 4. Settings"/><link rel="previous" href="project.html" title="4.2. Projects"/><link rel="next" href="whitespace.html" title="4.3.2. White Space"/>
+      <meta name="description" content="Jalopy Java Source Code Formatter Beautifier Pretty Printer"> 
+      <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://jalopy.sf.net" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://jalopy.sf.net" r (n 0 s 0 v 0 l 0))'> 
+    </head><body id="toppage"><table width="700" border="0" cellpadding="0" cellspacing="0" align="left"><tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #336699"><tbody><tr><td height="16"/></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr style="border:none"><td style="border:none"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="logo">JALOPY</td><td class="sublogo" valign="bottom">Java Source Code Formatter Beautifier Pretty Printer</td></tr></tbody></table></td></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr><td height="10"/></tr><tr><td bgcolor="#ff8000" height="4"/></tr><tr><td height="1" bgcolor="#ffffff"/></tr></tbody></table></td></tr><tr valign="top"><td valign="top" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./../../" class="navlink2">Home</a> |
+                  </td><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./manual-docbkx.html" class="navlink2">Manual</a> |
+                  </td></tr><tr><td height="20" bgcolor="#ffffff"/></tr><tr><td bgcolor="#eeeecc" height="17" align="right" style="font-size:10px;padding-right:3px">
+                    This page generated: <strong>20120315-0623</strong></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="5"><tr><td><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.3. Printer</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="project.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Settings</th><td width="20%" align="right"> <a accesskey="n" href="whitespace.html">Next</a></td></tr></table><hr/></div><div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="4.3. Printer"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="printer"/>4.3. Printer</h2></div></div></div>
+
+<a id="d5e645" class="indexterm"/>
+
+<p>
+Lets you control all printer related settings.
+</p>
+
+
+
+
+
+<div class="sect2" title="4.3.1. Braces"><div class="titlepage"><div><div><h3 class="title"><a id="braces"/>4.3.1. Braces</h3></div></div></div>
+
+
+<a id="d5e650" class="indexterm"/>
+
+<p>
+Controls the handling of curly braces (the Java block delimeters).
+</p>
+
+<div class="sect3" title="4.3.1.1. General"><div class="titlepage"><div><div><h4 class="title"><a id="braces-style"/>4.3.1.1. General</h4></div></div></div>
+
+
+<a id="d5e655" class="indexterm"/>
+
+<p>
+Controls how the enclosing block delimeters - left and right curly
+brace - are printed. You can either choose from a predefined set of common
+styles or build one on your own.
+</p>
+
+<div class="sect4" title="4.3.1.1.1. Styles"><div class="titlepage"><div><div><h5 class="title"><a id="braces-style-styles"/>4.3.1.1.1. Styles</h5></div></div></div>
+
+<p>
+Controls which brace style will be used to lay out blocks.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="braces-style-c"/>
+C style
+</p>
+
+<a id="d5e665" class="indexterm"/>
+
+<p>
+Selects the C brace style. This style is sometimes called "Allman style" or "BSD style".
+</p>
+<div class="example"><a id="ex-brace-style-c"/><p class="title"><strong>Example 4.1. C style</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if (!isDone)
+<span class="bold"><strong>{</strong></span>
+    doSomething();
+<span class="bold"><strong>}</strong></span>
+else
+<span class="bold"><strong>{</strong></span>
+    System.err.println("Finished");
+<span class="bold"><strong>}</strong></span>
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="braces-style-sun"/>
+Sun style
+</p>
+
+<a id="d5e680" class="indexterm"/>
+
+<p>
+Selects the Sun brace style. Sometimes called "K&amp;R style".
+</p>
+
+<div class="example"><a id="ex-brace-style-sun"/><p class="title"><strong>Example 4.2. Sun style</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if (!isDone) <span class="bold"><strong>{</strong></span>
+    doSomething();
+<span class="bold"><strong>}</strong></span> else <span class="bold"><strong>{</strong></span>
+    System.err.println("Finished");
+<span class="bold"><strong>}</strong></span>
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="braces-style-gnu"/>
+GNU style
+</p>
+
+<a id="d5e695" class="indexterm"/>
+
+<p>
+Selects the GNU brace style.
+</p>
+<div class="example"><a id="ex-brace-style-gnu"/><p class="title"><strong>Example 4.3. GNU style</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if (!isDone)
+  <span class="bold"><strong>{</strong></span>
+    doSomething();
+  <span class="bold"><strong>}</strong></span>
+else
+  <span class="bold"><strong>{</strong></span>
+    System.err.println("Finished");
+  <span class="bold"><strong>}</strong></span>
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="braces-style-custom"/>
+Custom style
+</p>
+
+<a id="d5e710" class="indexterm"/>
+
+<p>
+Selecting this option will enable you to freely choose between the different brace
+style options discussed below.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect4" title="4.3.1.1.2. Wrapping"><div class="titlepage"><div><div><h5 class="title"><a id="braces-wrapping"/>4.3.1.1.2. Wrapping</h5></div></div></div>
+
+<a id="d5e717" class="indexterm"/>
+<p>
+Controls the brace wrapping options.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+Newline before left brace
+</p>
+<p>
+If enabled, always prints a newline before the left curly brace.
+</p>
+</li><li class="listitem">
+<p>
+Newline after right brace
+</p>
+<p>
+If enabled, prints a newline after the left curly brace (when possible).
+</p>
+</li><li class="listitem">
+<p>
+Treat class/method blocks different
+</p>
+<p>
+It is common in the Java developer community to have the opening brace
+at the end of the line of the keyword for all types of blocks (Sun brace style).
+One may find the C++ convention of treating class/interface and method/constructor
+blocks different from other blocks useful. With this switch you can achieve
+exactly that: if enabled, class/interface and method/constructor blocks are
+then always printed in C brace style (newline before left brace).
+</p>
+</li><li class="listitem">
+<p><a id="braces-different-wrapped"/>
+Treat class/method blocks different if wrapped
+</p>
+<p>
+With this switch enabled, the opening brace for class/interface or
+method/constructor blocks will always be printed on a new line (C style), if
+either the parameter list spawns several lines and a <code class="literal">throws</code>
+clause follows, or one of the possible clauses (<code class="literal">extends</code>,
+<code class="literal">implements</code>, <code class="literal">throws</code>) was wrapped.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect4" title="4.3.1.1.3. Whitespace"><div class="titlepage"><div><div><h5 class="title"><a id="braces-whitespace"/>4.3.1.1.3. Whitespace</h5></div></div></div>
+
+
+<a id="d5e740" class="indexterm"/>
+
+<p>
+Controls the indentation whitespace for the left and right curly brace.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+Before left brace
+</p>
+<p>
+Number of spaces to print before the left curly brace.
+</p>
+</li><li class="listitem">
+<p>
+After left brace
+</p>
+<p>
+Number of spaces to print after the left curly brace.
+</p>
+</li><li class="listitem">
+<p>
+After right brace
+</p>
+<p>
+Number of spaces to print after the right curly brace.
+</p>
+</li></ul></div>
+</div>
+</div>
+
+<div class="sect3" title="4.3.1.2. Misc"><div class="titlepage"><div><div><h4 class="title"><a id="braces-misc"/>4.3.1.2. Misc</h4></div></div></div>
+
+<p>
+Controls miscellaneous brace options.
+</p>
+
+<div class="sect4" title="4.3.1.2.1. Insert braces"><div class="titlepage"><div><div><h5 class="title"><a id="braces-insert"/>4.3.1.2.1. Insert braces</h5></div></div></div>
+
+
+<a id="d5e759" class="indexterm"/>
+
+<p>
+Per definition braces are superfluous on single statements, but it is
+a common recommendation that braces should be always used in such cases.
+With this option, you can specify whether missing braces for single
+statements should be inserted for the control statements <code class="function">if</code>,
+<code class="function">for</code>, <code class="function">while</code> and <code class="function">do-while</code>.
+</p>
+<p>
+Enabling this option for <code class="function">while</code> statements would render
+</p>
+
+<div class="example"><a id="ex-brace-insertion"/><p class="title"><strong>Example 4.4. Brace insertion</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+while (!isDone)
+    doSomething();
+</pre>
+<p>
+into
+</p>
+<pre class="programlisting">
+while (!isDone)
+{
+    doSomething();
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</div>
+
+<div class="sect4" title="4.3.1.2.2. Remove braces"><div class="titlepage"><div><div><h5 class="title"><a id="braces-remove"/>4.3.1.2.2. Remove braces</h5></div></div></div>
+
+<a id="d5e777" class="indexterm"/>
+
+<p>
+It is permittable to remove braces in case they are superfluous. This not only
+applies to the control statements <code class="function">if</code>, <code class="function">for</code>,
+<code class="function">while</code> and <code class="function">do-while</code>, but also to every
+block in general (remember a block is just a sequence of statements,
+local class declarations and local variable declaration statements within
+braces).
+</p>
+
+<div class="example"><a id="ex-brace-removal"/><p class="title"><strong>Example 4.5. Brace removal</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+for (int i = 0; i &lt; 100; i++)
+{
+    sum += value[i];
+}
+</pre>
+<p>
+would become
+</p>
+<pre class="programlisting">
+for (int i = 0; i &lt; 100; i++)
+    sum += value[i];
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</div>
+
+<div class="sect4" title="4.3.1.2.3. Empty braces"><div class="titlepage"><div><div><h5 class="title"><a id="braces-empty"/>4.3.1.2.3. Empty braces</h5></div></div></div>
+
+
+<a id="d5e793" class="indexterm"/>
+<a id="d5e795" class="indexterm"/>
+
+<p>
+Controls how empty braces should be handled. If no option is selected,
+they are left untouched.
+</p>
+
+<div class="example"><a id="ex-brace-empty"/><p class="title"><strong>Example 4.6. Empty braces</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if (in != null)
+{
+    try
+    {
+        in.close();
+    }
+    catch (IOException ignored)
+    {
+    }
+}
+</pre>
+</div></div><br class="example-break"/>
+
+<p>
+All options don't apply to class/interface and method/constructor bodies but
+are only used for control statements and blocks.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="braces-empty-statement"/>
+Insert empty statement
+<a id="d5e806" class="indexterm"/>
+<a id="d5e809" class="indexterm"/>
+
+</p>
+<p>
+Inserts an empty statement to make it obvious for the reader that the empty braces
+are intentional.
+</p>
+<div class="example"><a id="ex-braces-empty-statement"/><p class="title"><strong>Example 4.7. Empty braces with empty statement</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if (in != null)
+{
+    try
+    {
+        in.close();
+    }
+    catch (IOException ignored)
+    {
+        <span class="bold"><strong>;</strong></span>
+    }
+}
+</pre>
+</div></div><br class="example-break"/>
+</li></ul></div>
+
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+Cuddle braces
+</p>
+<p><a id="braces-empty-cuddle"/>
+Cuddles the braces. They will be printed right after the control statement.
+<a id="d5e820" class="indexterm"/>
+<a id="d5e823" class="indexterm"/>
+</p>
+<div class="example"><a id="ex-braces-empty-cuddle"/><p class="title"><strong>Example 4.8. Cuddled empty braces</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if (in != null)
+{
+    try
+    {
+        in.close();
+    }
+    catch (IOException ignored) <span class="bold"><strong>{}</strong></span>
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li></ul></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="project.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="settings.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="whitespace.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.2. Projects </td><td width="20%" align="center"><a accesskey="h" href="manual-docbkx.html">Home</a></td><td width="40%" align="right" valign="top"> 4.3.2. White Space</td></tr></table></div></td></tr></table></td></tr><tr><td bgcolor="#eeeecc" height="17" style="font-size:9px;padding-left:5px"><a href="#toppage">to top</a></td></tr><tr><td height="30"><br/></td></tr><tr><td height="3"/></tr><tr><td bgcolor="#336699" height="1"/></tr><tr><td height="1"/></tr><tr><td bgcolor="#336699" height="16"/></tr><tr><td bgcolor="#ff9966" height="4"/></tr><tr><td class="footer" align="center" height="15" valign="middle">
+            Copyright © 2001-2004, <a class="footer" href="./contact.html">Marco Hunsicker</a>. All rights reserved. Hosted by <a href="http://sourceforge.net">SourceForge.net</a></td></tr></tbody></table><img src="http://sourceforge.net/sflogo.php?group_id=45216&amp;type=1" width="1" height="1" border="0" hspace="0" vspace="0" alt=""/></body></html>

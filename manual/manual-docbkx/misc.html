@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title xmlns="http://www.w3.org/1999/xhtml">4.3.13. Misc</title><link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="site.css"/><meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="manual-docbkx.html" title="Jalopy User Manual"/><link rel="up" href="printer.html" title="4.3. Printer"/><link rel="previous" href="sorting.html" title="4.3.12. Sorting"/><link rel="next" href="inspector.html" title="4.4. Code Inspector"/>
+      <meta name="description" content="Jalopy Java Source Code Formatter Beautifier Pretty Printer"> 
+      <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://jalopy.sf.net" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://jalopy.sf.net" r (n 0 s 0 v 0 l 0))'> 
+    </head><body id="toppage"><table width="700" border="0" cellpadding="0" cellspacing="0" align="left"><tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #336699"><tbody><tr><td height="16"/></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr style="border:none"><td style="border:none"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="logo">JALOPY</td><td class="sublogo" valign="bottom">Java Source Code Formatter Beautifier Pretty Printer</td></tr></tbody></table></td></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr><td height="10"/></tr><tr><td bgcolor="#ff8000" height="4"/></tr><tr><td height="1" bgcolor="#ffffff"/></tr></tbody></table></td></tr><tr valign="top"><td valign="top" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./../../" class="navlink2">Home</a> |
+                  </td><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./manual-docbkx.html" class="navlink2">Manual</a> |
+                  </td></tr><tr><td height="20" bgcolor="#ffffff"/></tr><tr><td bgcolor="#eeeecc" height="17" align="right" style="font-size:10px;padding-right:3px">
+                    This page generated: <strong>20120315-0623</strong></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="5"><tr><td><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.3.13. Misc</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="sorting.html">Prev</a> </td><th width="60%" align="center">4.3. Printer</th><td width="20%" align="right"> <a accesskey="n" href="inspector.html">Next</a></td></tr></table><hr/></div><div xmlns="http://www.w3.org/1999/xhtml" class="sect2" title="4.3.13. Misc"><div class="titlepage"><div><div><h3 class="title"><a id="misc"/>4.3.13. Misc</h3></div></div></div>
+
+
+<p>
+Lets you control miscellaneous settings that doesn't fit elsewhere.
+</p>
+
+<div class="sect3" title="4.3.13.1. Misc"><div class="titlepage"><div><div><h4 class="title"><a id="misc-misc"/>4.3.13.1. Misc</h4></div></div></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="paren-add"/>
+Insert expression parentheses
+</p>
+
+<a id="d5e2742" class="indexterm"/>
+<a id="d5e2745" class="indexterm"/>
+
+<p>
+It is always good advise to use more parentheses than you think you need. They
+may not be needed, but they add clarity and don't cost anything.
+</p>
+
+<div class="example"><a id="ex-misc-expr"/><p class="title"><strong>Example 4.150. How is this expression evaluated?</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+int result = 12 + 4 % 3 * 7 / 8;
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-misc-expr-continued"/><p class="title"><strong>Example 4.151. How is this expression evaluated? (continued)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+int result = 12 + ((4 % 3 * 7) / 8);
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="misc-insert-uid"/>
+Insert serial version UID
+</p>
+<a id="d5e2758" class="indexterm"/>
+
+<p>
+Common sense dictates to declare an explicit serial version UID in every
+serializable class to eliminate the serial version UID as a potential source
+of incompatibility (with the additional benefit of a small performance gain).
+If this switch is enabled and the class directly dereives from either
+<code class="filename">java.io.Serializable</code> or <code class="filename">java.io.Externalizable</code>,
+Jalopy computes and inserts a serial version UID for the class.
+</p>
+<p>
+For this feature to work, the class that has its serial version UID computed
+needs to be available on the classpath.
+</p>
+</li><li class="listitem">
+<p><a id="misc-logging-conditional"/>
+Insert logging conditional
+</p>
+
+<p>
+Typically, logging systems have a method that submits a logging message like
+
+</p><pre class="screen">
+logger.debug("some message: " + someVar);
+</pre><p>
+</p>
+
+<p>
+This is fine, but if the debug level is set such that this message will
+<span class="emphasis"><em>NOT</em></span> display, then time is wasted doing the string marshalling.
+</p>
+
+<p>
+Thus, the preferred way to do this is
+
+</p><pre class="screen">
+if (logger.isDebugEnabled()) {
+    logger.debug("some message: " + someVar);
+}
+</pre><p>
+
+which will only use CPU time if the log message is needed. Enabling this switch
+will ensure that every logging call with the debug level set will be enclosed with
+the conditional expression.
+</p>
+
+<p>
+Use this feature with care! The current implementation only supports the Jakarta
+Log4J toolkit and is somewhat weak in that every method call called
+<em class="firstterm">debug</em> is treated as a logging call which could be incorrect
+in your application. However, it works fine for the <em class="firstterm">l7dlog</em> calls.
+</p>
+</li><li class="listitem">
+<p><a id="misc-trailing-newline"/>
+Insert trailing newline
+</p>
+<p>
+If enabled, Jalopy inserts an empty line at the end of every file. This may
+help to avoid problems with certain text formatters and processors.
+</p>
+<p>
+Note that Jalopy always inserts at least one empty line after footers, so there
+is no real need (but it doesn't hurt) to check the mark in case footer insertion
+will be performed (see <a class="xref" href="footer.html" title="4.3.11. Footer">Section 4.3.11, “Footer”</a>)
+</p>
+</li><li class="listitem">
+<p><a id="misc-array-brackets"/>
+Array brackets after identifiers
+</p>
+<p>
+Lets you choose where the brackets of array types should be placed.
+</p>
+
+<p>
+By default, Jalopy prints the square brackets right after the array type.
+</p>
+
+<div class="example"><a id="ex-misc-array-brackets"/><p class="title"><strong>Example 4.152. Array brackets after type</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+int[] a;
+</pre>
+</div></div><br class="example-break"/>
+
+<p>
+But C/C++ programmers may expect them to appear after the identifier.
+</p>
+
+<div class="example"><a id="ex-misc-array-brackets-identifier"/><p class="title"><strong>Example 4.153. Array brackets after identifier</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+int a[];
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+</li><li class="listitem">
+<p>
+Force formatting
+</p>
+<p>
+Jalopy can keep track of which files have been formatted previously.
+See <a class="xref" href="misc.html#misc-history" title="4.3.13.2. History">Section 4.3.13.2, “History”</a> below. If History is enabled, Jalopy will
+exclude files that have a modification date coincident with the last formatting.
+However, you can override this history check to force a format. For example,
+you might need to update the copyright notice for the whole code base. Enabling
+this switch ensures that all source files are always be formatted. Note that
+this switch is only meaningful if the history feature is enabled.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect3" title="4.3.13.2. History"><div class="titlepage"><div><div><h4 class="title"><a id="misc-history"/>4.3.13.2. History</h4></div></div></div>
+
+
+<a id="d5e2798" class="indexterm"/>
+
+<p>
+The history feature offers a way to optimize the speed at which Jalopy processes
+of a group of files repeatedly. Using history, Jalopy is able to track file
+modifications between successive invocations, and only format those source
+files which have actually changed, or which weren't processed previously.
+This can save a huge amount of execution time for a project that is formatted
+repeatedly over time. There are two methods for keeping history.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="history-file"/>
+Use history file
+</p>
+
+<a id="d5e2804" class="indexterm"/>
+<a id="d5e2807" class="indexterm"/>
+<p>
+If you can't get along with a history header comment at the top of each source
+file, but would like historical optimization, the file-based approach may work
+for you. The history information of previous formatting will be saved in a file
+<code class="filename">history.dat</code> under the Jalopy settings directory.
+</p>
+
+<p>
+Note that this file will grow over time, especially if one manages several big
+projects. So the history file could become quite huge. As all history entries
+are read into memory at startup, it could eat up quite a bit of memory space.
+Therefore a little history viewer is provided which enables you to selectively
+remove obsolete entries.
+</p>
+
+<p>
+In order to effectively use formatting of a project with several developers it is
+nice to be able to only format files which have changed. There are three methods of
+working out if a file has changed provided in a drop down. Timestamp will use the
+modification time of the file, this does not work very well with source control
+and multiple developers. There are two standard checksums available. These
+work by taking a checksum of the file and comparing it to the one in the history file.
+If this checksum is different, the file is parsed and formatted in memory and a new
+checksum calculated. If the new checksum is different than the checksum for the
+unformatted file, it is written to disk. This stops files that have just been updated
+from source control from having being formatted (and timestamps updated).
+</p>
+
+<p>
+Use the <span class="guibutton">View...</span> button to display the history viewer. You
+can selectively remove entries via the popup menu.
+</p>
+</li><li class="listitem">
+<p><a id="history-comment"/>
+Use history comments
+</p>
+
+<a id="d5e2817" class="indexterm"/>
+<a id="d5e2820" class="indexterm"/>
+<a id="d5e2823" class="indexterm"/>
+
+<p>
+Jalopy will insert a small comment in the first line of every source file.
+The comment encodes the time a file was last formatted along with the package
+name of the file. This method is precise and relatively foolproof but does not work well
+with SCM tools.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect3" title="4.3.13.3. Backup"><div class="titlepage"><div><div><h4 class="title"><a id="misc-backup"/>4.3.13.3. Backup</h4></div></div></div>
+
+<p>
+For security reasons Jalopy creates a backup copy of the currently
+processed file so it can be restored in case a severe error occured during the
+formatting process. The original file is stored in the backup directory and normally
+deleted after the newly formatted file has been successfully written.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+Level
+</p>
+<p>
+The backup level defines how many numbered backups should be retained (up to 30).
+The default is to never hold any backups.
+</p>
+</li><li class="listitem">
+<p>
+Directory
+</p>
+<p>
+Specifies where file backups are stored. You should leave this setting untouched
+in order to make your code convention portable across different systems and platforms.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect3" title="4.3.13.4. Threads"><div class="titlepage"><div><div><h4 class="title"><a id="misc-threads"/>4.3.13.4. Threads</h4></div></div></div>
+
+<p>
+Jalopy, more precisely the provided Plug-ins, are multi-threaded. On
+multi-processor systems the work can be divided onto several processors to
+speed up processing.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+Number
+</p>
+<p>
+Specifies the number of processing threads to be used. This setting should be
+equal to the number of processors your system has.
+</p>
+</li></ul></div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="sorting.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="printer.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="inspector.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.3.12. Sorting </td><td width="20%" align="center"><a accesskey="h" href="manual-docbkx.html">Home</a></td><td width="40%" align="right" valign="top"> 4.4. Code Inspector</td></tr></table></div></td></tr></table></td></tr><tr><td bgcolor="#eeeecc" height="17" style="font-size:9px;padding-left:5px"><a href="#toppage">to top</a></td></tr><tr><td height="30"><br/></td></tr><tr><td height="3"/></tr><tr><td bgcolor="#336699" height="1"/></tr><tr><td height="1"/></tr><tr><td bgcolor="#336699" height="16"/></tr><tr><td bgcolor="#ff9966" height="4"/></tr><tr><td class="footer" align="center" height="15" valign="middle">
+            Copyright © 2001-2004, <a class="footer" href="./contact.html">Marco Hunsicker</a>. All rights reserved. Hosted by <a href="http://sourceforge.net">SourceForge.net</a></td></tr></tbody></table><img src="http://sourceforge.net/sflogo.php?group_id=45216&amp;type=1" width="1" height="1" border="0" hspace="0" vspace="0" alt=""/></body></html>

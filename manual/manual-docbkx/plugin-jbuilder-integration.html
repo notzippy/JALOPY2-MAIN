@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title xmlns="http://www.w3.org/1999/xhtml">8.2. Integration</title><link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="site.css"/><meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="manual-docbkx.html" title="Jalopy User Manual"/><link rel="up" href="plugin-jbuilder.html" title="Chapter 8. JBuilder OpenTool"/><link rel="previous" href="plugin-jbuilder.html" title="Chapter 8. JBuilder OpenTool"/><link rel="next" href="plugin-jbuilder-license.html" title="8.3. License"/>
+      <meta name="description" content="Jalopy Java Source Code Formatter Beautifier Pretty Printer"> 
+      <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://jalopy.sf.net" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://jalopy.sf.net" r (n 0 s 0 v 0 l 0))'> 
+    </head><body id="toppage"><table width="700" border="0" cellpadding="0" cellspacing="0" align="left"><tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #336699"><tbody><tr><td height="16"/></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr style="border:none"><td style="border:none"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="logo">JALOPY</td><td class="sublogo" valign="bottom">Java Source Code Formatter Beautifier Pretty Printer</td></tr></tbody></table></td></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr><td height="10"/></tr><tr><td bgcolor="#ff8000" height="4"/></tr><tr><td height="1" bgcolor="#ffffff"/></tr></tbody></table></td></tr><tr valign="top"><td valign="top" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./../../" class="navlink2">Home</a> |
+                  </td><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./manual-docbkx.html" class="navlink2">Manual</a> |
+                  </td></tr><tr><td height="20" bgcolor="#ffffff"/></tr><tr><td bgcolor="#eeeecc" height="17" align="right" style="font-size:10px;padding-right:3px">
+                    This page generated: <strong>20120315-0623</strong></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="5"><tr><td><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">8.2. Integration</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="plugin-jbuilder.html">Prev</a> </td><th width="60%" align="center">Chapter 8. JBuilder OpenTool</th><td width="20%" align="right"> <a accesskey="n" href="plugin-jbuilder-license.html">Next</a></td></tr></table><hr/></div><div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="8.2. Integration"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="plugin-jbuilder-integration"/>8.2. Integration</h2></div></div></div>
+
+
+<p>
+Shows how the Plug-in is integrated into the JBuilder IDE.
+</p>
+
+<div class="sect3" title="8.2.1. AppBrowser main menu"><div class="titlepage"><div><div><h4 class="title"><a id="d5e3461"/>8.2.1. AppBrowser main menu</h4></div></div></div>
+
+<p>
+The software adds two new menu items into the main menu of the AppBrowser to
+seamlessly integrate with JBuilder:
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+<span class="guimenu"><span class="accel">P</span>roject</span> → <span class="guimenuitem">Forma<span class="accel">t</span> &lt;file&gt;</span> (<span class="shortcut"><strong>
+    <span class="keysym">Ctrl</span>+<span class="keysym">Shift</span>+<span class="keysym">F10</span>
+  </strong></span>)
+</p>
+<p>
+Formats the current editor view. Use this item if you need to format the
+current opened file.
+</p>
+<p>
+Only available if there is an open view that contains a Java source file.
+</p>
+</li><li class="listitem">
+<p>
+<span class="guimenu"><span class="accel">T</span>ools</span> → <span class="guimenuitem"><span class="accel">J</span>alopy Options...</span>.
+</p>
+<p>
+Displays the Jalopy settings dialog.
+</p>
+<p>
+Use this item if you want to configure your settings to control the
+layout of any formatted code.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect3" title="8.2.2. Project pane popup-menu"><div class="titlepage"><div><div><h4 class="title"><a id="d5e3488"/>8.2.2. Project pane popup-menu </h4></div></div></div>
+
+<p>
+There will also be a new menu item available at the end of the popup-menu of
+the Project pane: <span class="guimenuitem">Format</span>. Use this item if you want
+to format several files at once. All currently selected files are formatted.
+</p>
+<p>
+If it happens that a file has an open editor view, this view will be updated,
+not the actual file. You have to save the view first to see the physical file
+updated.
+</p>
+</div>
+
+<div class="sect3" title="8.2.3. Editor view popup menu"><div class="titlepage"><div><div><h4 class="title"><a id="d5e3493"/>8.2.3. Editor view popup menu
+</h4></div></div></div>
+
+<p>
+Both the <span class="guimenuitem">Format &lt;file&gt;</span> and <span class="guimenuitem">Jalopy Options...</span> items can be also reached via the popup menu of the active editor view.
+</p>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="plugin-jbuilder.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="plugin-jbuilder.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="plugin-jbuilder-license.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 8. JBuilder OpenTool </td><td width="20%" align="center"><a accesskey="h" href="manual-docbkx.html">Home</a></td><td width="40%" align="right" valign="top"> 8.3. License</td></tr></table></div></td></tr></table></td></tr><tr><td bgcolor="#eeeecc" height="17" style="font-size:9px;padding-left:5px"><a href="#toppage">to top</a></td></tr><tr><td height="30"><br/></td></tr><tr><td height="3"/></tr><tr><td bgcolor="#336699" height="1"/></tr><tr><td height="1"/></tr><tr><td bgcolor="#336699" height="16"/></tr><tr><td bgcolor="#ff9966" height="4"/></tr><tr><td class="footer" align="center" height="15" valign="middle">
+            Copyright © 2001-2004, <a class="footer" href="./contact.html">Marco Hunsicker</a>. All rights reserved. Hosted by <a href="http://sourceforge.net">SourceForge.net</a></td></tr></tbody></table><img src="http://sourceforge.net/sflogo.php?group_id=45216&amp;type=1" width="1" height="1" border="0" hspace="0" vspace="0" alt=""/></body></html>

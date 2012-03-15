@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title xmlns="http://www.w3.org/1999/xhtml">5.3. Usage</title><link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="site.css"/><meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="manual-docbkx.html" title="Jalopy User Manual"/><link rel="up" href="plugin-ant.html" title="Chapter 5. Ant Plug-in task"/><link rel="previous" href="plugin-ant-config.html" title="5.2. Configuration"/><link rel="next" href="plugin-ant-license.html" title="5.4. License"/>
+      <meta name="description" content="Jalopy Java Source Code Formatter Beautifier Pretty Printer"> 
+      <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://jalopy.sf.net" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://jalopy.sf.net" r (n 0 s 0 v 0 l 0))'> 
+    </head><body id="toppage"><table width="700" border="0" cellpadding="0" cellspacing="0" align="left"><tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #336699"><tbody><tr><td height="16"/></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr style="border:none"><td style="border:none"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="logo">JALOPY</td><td class="sublogo" valign="bottom">Java Source Code Formatter Beautifier Pretty Printer</td></tr></tbody></table></td></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr><td height="10"/></tr><tr><td bgcolor="#ff8000" height="4"/></tr><tr><td height="1" bgcolor="#ffffff"/></tr></tbody></table></td></tr><tr valign="top"><td valign="top" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./../../" class="navlink2">Home</a> |
+                  </td><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./manual-docbkx.html" class="navlink2">Manual</a> |
+                  </td></tr><tr><td height="20" bgcolor="#ffffff"/></tr><tr><td bgcolor="#eeeecc" height="17" align="right" style="font-size:10px;padding-right:3px">
+                    This page generated: <strong>20120315-0623</strong></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="5"><tr><td><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5.3. Usage</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="plugin-ant-config.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Ant Plug-in task</th><td width="20%" align="right"> <a accesskey="n" href="plugin-ant-license.html">Next</a></td></tr></table><hr/></div><div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="5.3. Usage"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="plugin-ant-usage"/>5.3. Usage</h2></div></div></div>
+
+
+<p>
+The Jalopy task can take a few parameters to control the runtime behavior of
+Jalopy. If omitted, your current preferences settings will be used.
+</p>
+
+<p>
+Nested <a class="ulink" href="http://jakarta.apache.org/ant/manual/CoreTypes/fileset.html" target="_top">FileSets</a>
+can and should be used to specify the source files and/or directories.
+</p>
+
+
+
+
+
+
+<div class="table"><a id="tab-ant-params"/><p class="title"><strong>Table 5.1. Jalopy Ant task parameters</strong></p><div class="table-contents">
+
+<table summary="Jalopy Ant task parameters" style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col/><col/><col/></colgroup><thead><tr><th style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Attribute</th><th style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Description</th><th style="border-bottom: 0.5pt solid ; ">Required</th></tr></thead><tbody><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">backup</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Indicates whether backup copies for all file sources should be kept.</td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">classpathrev</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">The classpath to setup the class repository with, given as a <a class="ulink" href="http://jakarta.apache.org/ant/manual/using.html#references" target="_top">reference</a> to a path defined elsewhere. If you want the <a class="link" href="imports.html#import-optimization" title="4.3.7.3. Optimize">import optimization feature</a> to work, you have to specify the classpath reference you use to compile your sources here.</td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">convention</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Sets the location to the convention file to use - given either relative to the project's basedir or as an absolute local path or internet address. If omitted, the current settings are used, if available. Otherwise the Jalopy build-in defaults will be used.</td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">destdir</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Sets the destination directory to create/copy all formatting output into. If the given directory does not exist, it will be created. If this attribute is ommitted, all input files will simply be overriden.</td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">encoding</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Sets the encoding that controls how Jalopy interprets text files containing characters beyond the ASCII character set. Defaults to the platform default encoding.</td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">failonerror</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Indicates whether a run should be held if errors occured. Defaults to "true".</td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">file</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Specifies a single source file to format.</td><td style="border-bottom: 0.5pt solid ; ">Yes, if no fileset is specified.</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">fileformat</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Sets the file format of the output files. The file format controls what end of line character is used. Either one of "UNIX", "DOS", MAC", "DEFAULT" or "AUTO" can be used. Defaults to "AUTO" (case insensitive).</td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">force</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Indicates whether the formatting of files should be forced, even if the file is up-to-date.</td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">history</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Specifies the history policy to use. Either one of
+  "COMMENT", "FILE" or
+  "NONE" can be used.
+  </td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">javadoc</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Indicates whether Javadoc related messages should be printed.</td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">loglevel</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Specifies the logging level for message output. Either one of
+  "ERROR", "WARN", "INFO" or "DEBUG" can be used.</td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">style</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">DEPRECATED. See <span class="emphasis"><em>convention</em></span></td><td style="border-bottom: 0.5pt solid ; ">No</td></tr><tr><td style="border-right: 0.5pt solid ; ">threads</td><td style="border-right: 0.5pt solid ; ">Specifies the number of processing threads to use. Integer between <code class="literal">1</code> - <code class="literal">8</code>.
+  </td><td style="">No</td></tr></tbody></table>
+</div></div><br class="table-break"/>
+<p/>
+
+<div class="sect3" title="5.3.1. Example"><div class="titlepage"><div><div><h4 class="title"><a id="plugin-ant-usage-example"/>5.3.1. Example</h4></div></div></div>
+
+<p>
+The following example demonstrates how you can make use of the Jalopy Ant task.
+</p>
+<p>
+Note that the "format" target depends on the "compile" target.
+This way we can be sure that the given classpathref does cover all types used
+in your sources (and this is an absolute necessity for the import optimization feature
+to work reliable).
+</p>
+
+<div class="example"><a id="ex-ant-build-file"/><p class="title"><strong>Example 5.1. Example Ant build file</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+&lt;?xml version="1.0" ?&gt;
+&lt;project name="myProject" default="format" basedir="." &gt;
+
+  &lt;property name="dir.jalopy" value="/mystuff/jalopy/bin" /&gt;
+  &lt;property name="dir.lib" value="${basedir}/ext/lib" /&gt;
+  &lt;property name="dir.compile" value="${basedir}/tmp~/build/classes" /&gt;
+  &lt;property name="dir.src.java" value="${basedir}/src/java" /&gt;
+
+  &lt;!-- ==================================================================== --&gt;
+  &lt;!-- Defines the Jalopy task                                              --&gt;
+  &lt;!-- ==================================================================== --&gt;
+  &lt;taskdef name="jalopy"
+           classname="de.hunsicker.jalopy.plugin.ant.AntPlugin"&gt;
+    &lt;!--
+
+      we did not copy the needed .jars into the /lib directory of Ant in order
+      to avoid possible classpath issues, so we have to specify a lookup
+      classpath here
+
+      --&gt;
+    &lt;classpath&gt;
+      &lt;fileset dir="${dir.jalopy}"&gt;
+        &lt;include name="*.jar" /&gt;
+      &lt;/fileset&gt;
+    &lt;/classpath&gt;
+  &lt;/taskdef&gt;
+
+
+  &lt;!-- ==================================================================== --&gt;
+  &lt;!-- Defines the project classpath                                        --&gt;
+  &lt;!-- ==================================================================== --&gt;
+  &lt;path id="project.classpath" &gt;
+
+    &lt;!-- our compilation directory --&gt;
+    &lt;pathelement location="${dir.compile}" /&gt;
+
+    &lt;!-- needed 3rd party libraries --&gt;
+    &lt;fileset dir="${dir.lib}" &gt;
+      &lt;include name="**/*.jar" /&gt;
+    &lt;/fileset&gt;
+  &lt;/path&gt;
+
+
+  &lt;!-- ==================================================================== --&gt;
+  &lt;!-- Compiles the project sources                                         --&gt;
+  &lt;!-- ==================================================================== --&gt;
+  &lt;target name="compile"
+          depends="init"&gt;
+    &lt;javac destdir="${dir.compile}"
+           fork="true"&gt;
+      &lt;classpath refid="project.classpath" /&gt;
+      &lt;src path="${dir.src.java}" /&gt;
+    &lt;/javac&gt;
+  &lt;/target&gt;
+
+
+  &lt;!-- ==================================================================== --&gt;
+  &lt;!-- Formats all source files                                             --&gt;
+  &lt;!-- ==================================================================== --&gt;
+  &lt;target name="format" depends="compile"&gt;
+
+    &lt;!--
+
+      Invokes Jalopy as follows:
+
+      - All formatted files will have unix fileformat (\n)
+      - Load your code convention from the given url
+      - Override the convention to use the file history feature
+      - Override the convention to use alder32 checksums of files for history testing
+      - Override the convention to use loglevel "info"
+      - Override the convention to use 2 threads
+      - The import optimization feature will work (if enabled in the active
+        convention), because a classpath reference is specified
+
+        Don't forget to setup an include pattern as Jalopy truly expects
+        valid Java source files as input!
+
+      --&gt;
+    &lt;jalopy fileformat="unix"
+            convention="http://www.foo.com/myConvention.xml"
+            history="file"
+            historymethod="adler32"
+            loglevel="info"
+            threads="2"
+            classpathref="project.classpath"&gt;
+      &lt;fileset dir="${dir.src.java}"&gt;
+        &lt;include name="**/*.java" /&gt;
+      &lt;/fileset&gt;
+    &lt;/jalopy&gt;
+  &lt;/target&gt;
+&lt;/project&gt;
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="plugin-ant-config.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="plugin-ant.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="plugin-ant-license.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">5.2. Configuration </td><td width="20%" align="center"><a accesskey="h" href="manual-docbkx.html">Home</a></td><td width="40%" align="right" valign="top"> 5.4. License</td></tr></table></div></td></tr></table></td></tr><tr><td bgcolor="#eeeecc" height="17" style="font-size:9px;padding-left:5px"><a href="#toppage">to top</a></td></tr><tr><td height="30"><br/></td></tr><tr><td height="3"/></tr><tr><td bgcolor="#336699" height="1"/></tr><tr><td height="1"/></tr><tr><td bgcolor="#336699" height="16"/></tr><tr><td bgcolor="#ff9966" height="4"/></tr><tr><td class="footer" align="center" height="15" valign="middle">
+            Copyright © 2001-2004, <a class="footer" href="./contact.html">Marco Hunsicker</a>. All rights reserved. Hosted by <a href="http://sourceforge.net">SourceForge.net</a></td></tr></tbody></table><img src="http://sourceforge.net/sflogo.php?group_id=45216&amp;type=1" width="1" height="1" border="0" hspace="0" vspace="0" alt=""/></body></html>

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title xmlns="http://www.w3.org/1999/xhtml">4.3.2. White Space</title><link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="site.css"/><meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="manual-docbkx.html" title="Jalopy User Manual"/><link rel="up" href="printer.html" title="4.3. Printer"/><link rel="previous" href="printer.html" title="4.3. Printer"/><link rel="next" href="indentation.html" title="4.3.3. Indentation"/>
+      <meta name="description" content="Jalopy Java Source Code Formatter Beautifier Pretty Printer"> 
+      <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://jalopy.sf.net" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://jalopy.sf.net" r (n 0 s 0 v 0 l 0))'> 
+    </head><body id="toppage"><table width="700" border="0" cellpadding="0" cellspacing="0" align="left"><tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #336699"><tbody><tr><td height="16"/></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr style="border:none"><td style="border:none"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="logo">JALOPY</td><td class="sublogo" valign="bottom">Java Source Code Formatter Beautifier Pretty Printer</td></tr></tbody></table></td></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr><td height="10"/></tr><tr><td bgcolor="#ff8000" height="4"/></tr><tr><td height="1" bgcolor="#ffffff"/></tr></tbody></table></td></tr><tr valign="top"><td valign="top" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./../../" class="navlink2">Home</a> |
+                  </td><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./manual-docbkx.html" class="navlink2">Manual</a> |
+                  </td></tr><tr><td height="20" bgcolor="#ffffff"/></tr><tr><td bgcolor="#eeeecc" height="17" align="right" style="font-size:10px;padding-right:3px">
+                    This page generated: <strong>20120315-0623</strong></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="5"><tr><td><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.3.2. White Space</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="printer.html">Prev</a> </td><th width="60%" align="center">4.3. Printer</th><td width="20%" align="right"> <a accesskey="n" href="indentation.html">Next</a></td></tr></table><hr/></div><div xmlns="http://www.w3.org/1999/xhtml" class="sect2" title="4.3.2. White Space"><div class="titlepage"><div><div><h3 class="title"><a id="whitespace"/>4.3.2. White Space</h3></div></div></div>
+
+
+<a id="d5e832" class="indexterm"/>
+
+<p>
+Controls the white space handling for the individual components of Java statements.
+</p>
+<div class="sect3" title="4.3.2.1. Space before"><div class="titlepage"><div><div><h4 class="title"><a id="whitespace-before"/>4.3.2.1. Space before</h4></div></div></div>
+
+
+<a id="d5e837" class="indexterm"/>
+
+<p>
+Lets you choose the components that should get one leading space inserted before them.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+Method declaration parentheses
+</p>
+<div class="example"><a id="ex-space-before-method-paren"/><p class="title"><strong>Example 4.9. Method declaration parentheses</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+public void someMethod<span class="bold"><strong>(</strong></span>)) {
+  ...
+}
+
+public void someMethod <span class="bold"><strong>(</strong></span>)) {
+  ...
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="whitespace-before-parentheses"/>
+Method call parentheses
+</p>
+<a id="d5e852" class="indexterm"/>
+<a id="d5e856" class="indexterm"/>
+
+<div class="example"><a id="ex-space-before-method-call-paren"/><p class="title"><strong>Example 4.10. Method call parentheses</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+for (Iterator i = pointList.iterator<span class="bold"><strong>(</strong></span>); i.hasNext<span class="bold"><strong>(</strong></span>);) {
+    ...
+}
+
+for (Iterator i = pointList.iterator <span class="bold"><strong>(</strong></span>); i.hasNext <span class="bold"><strong>(</strong></span>);) {
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p>
+Statement parentheses
+</p>
+<div class="example"><a id="ex-space-before-statement-paren"/><p class="title"><strong>Example 4.11. Statement parentheses</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+while<span class="bold"><strong>(</strong></span>!isDone)
+    doSomething();
+
+while <span class="bold"><strong>(</strong></span>!isDone)
+    doSomething();
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="whitespace-before-braces"/>
+Braces
+</p>
+<a id="d5e876" class="indexterm"/>
+
+<div class="example"><a id="ex-space-before-braces"/><p class="title"><strong>Example 4.12. Braces</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+    String[] values = new String[]<span class="bold"><strong>{</strong></span>
+        "One", "Two", "Three", "Four", "Five", "Six", "Seven"
+    };
+
+    String[] values = new String[] <span class="bold"><strong>{</strong></span>
+        "One", "Two", "Three", "Four", "Five", "Six", "Seven"
+    };
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="whitespace-before-brackets"/>
+Brackets
+</p>
+<a id="d5e888" class="indexterm"/>
+
+<div class="example"><a id="ex-space-before-brackets"/><p class="title"><strong>Example 4.13. Brackets</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+for (i = 0; i &lt; 100; i++)
+    sum += value<span class="bold"><strong>[</strong></span>i];
+
+for (i = 0; i &lt; 100; i++)
+    sum += value <span class="bold"><strong>[</strong></span>i];
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p>
+Brackets in types
+</p>
+<div class="example"><a id="ex-space-before-brackets-types"/><p class="title"><strong>Example 4.14. Brackets in types</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+String<span class="bold"><strong>[</strong></span>] names = (String<span class="bold"><strong>[</strong></span>])data.toArray(new String<span class="bold"><strong>[</strong></span>]);
+
+String <span class="bold"><strong>[</strong></span>] names = (String <span class="bold"><strong>[</strong></span>])data.toArray(new String <span class="bold"><strong>[</strong></span>]);
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="whitespace-before-colon"/>
+Case colon
+</p>
+<a id="d5e912" class="indexterm"/>
+
+<div class="example"><a id="ex-space-before-case-colon"/><p class="title"><strong>Example 4.15. Case colon</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+switch (character) {
+    case 'A'<span class="bold"><strong>:</strong></span>
+        break;
+}
+
+switch (character) {
+    case 'A' <span class="bold"><strong>:</strong></span>
+        break;
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li></ul></div>
+</div>
+
+<div class="sect3" title="4.3.2.2. Space after"><div class="titlepage"><div><div><h4 class="title"><a id="space-after"/>4.3.2.2. Space after</h4></div></div></div>
+
+
+<a id="d5e924" class="indexterm"/>
+
+<p>
+Lets you choose what components should have one trailing space inserted after the component.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="whitespace-after-comma"/>
+Comma
+</p>
+
+<a id="d5e931" class="indexterm"/>
+<a id="d5e935" class="indexterm"/>
+
+<div class="example"><a id="ex-space-after-comma"/><p class="title"><strong>Example 4.16. Comma</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+doSomething (a<span class="bold"><strong>,</strong></span>b<span class="bold"><strong>,</strong></span>c<span class="bold"><strong>,</strong></span>d);
+
+doSomething (a<span class="bold"><strong>,</strong></span> b<span class="bold"><strong>,</strong></span> c<span class="bold"><strong>,</strong></span> d);
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="whitespace-after-semi"/>
+Semicolon
+</p>
+
+<a id="d5e949" class="indexterm"/>
+<a id="d5e953" class="indexterm"/>
+
+<div class="example"><a id="ex-space-after-semi"/><p class="title"><strong>Example 4.17. Semicolon</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+for (i=0<span class="bold"><strong>;</strong></span>i&lt;<span class="bold"><strong/></span>10<span class="bold"><strong>;</strong></span>i++) ...
+
+for (i=0<span class="bold"><strong>;</strong></span> i&lt;<span class="bold"><strong/></span>10<span class="bold"><strong>;</strong></span> i++) ...
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="whitespace-after-cast"/>
+Type Cast
+</p>
+
+<a id="d5e967" class="indexterm"/>
+<a id="d5e971" class="indexterm"/>
+
+<div class="example"><a id="ex-space-after-cast"/><p class="title"><strong>Example 4.18. Type Cast</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+int line = ((JavaAST<span class="bold"><strong>)</strong></span>node).getStartLine();
+
+int line = ((JavaAST<span class="bold"><strong>)</strong></span> node).getStartLine();
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p>
+Negation
+</p>
+<p>
+Prints a space after the unary operators Logical NOT (!) and Bitwise NOT (~).
+</p>
+<div class="example"><a id="ex-space-after-negation"/><p class="title"><strong>Example 4.19. Logical NOT</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+while(!isDone) {
+    doSomething();
+}
+
+while(! isDone) {
+    doSomething();
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li></ul></div>
+</div>
+
+<div class="sect3" title="4.3.2.3. Spaces around"><div class="titlepage"><div><div><h4 class="title"><a id="padding"/>4.3.2.3. Spaces around</h4></div></div></div>
+
+<p>
+Controls what components should have both a leading and trailing space inserted. This is sometimes called "padding".
+<a id="d5e989" class="indexterm"/>
+<a id="d5e992" class="indexterm"/>
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="padding-assign"/>
+Assignment Operators
+<a id="d5e997" class="indexterm"/>
+<a id="d5e999" class="indexterm"/>
+<a id="d5e1002" class="indexterm"/>
+
+</p>
+<div class="example"><a id="ex-padding-op-assign"/><p class="title"><strong>Example 4.20. Assignment Operators (=, +=, -=, *=, \=, %=, &amp;=, |=, ^=, &lt;&lt;=, &gt;&gt;=, &gt;&gt;&gt;=)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+a<span class="bold"><strong>=</strong></span>(b+c)*d;
+a <span class="bold"><strong>=</strong></span> (b+c)*d;
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="padding-logical"/>
+Logical Operators
+<a id="d5e1014" class="indexterm"/>
+<a id="d5e1016" class="indexterm"/>
+<a id="d5e1019" class="indexterm"/>
+</p>
+<div class="example"><a id="ex-padding-op-logical"/><p class="title"><strong>Example 4.21. Logical Operators (&amp;&amp;, ||)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if((LA(1)=='/')<span class="bold"><strong>&amp;&amp;</strong></span>(LA(2)!='*'<span class="bold"><strong>||</strong></span>(LA(2)=='*'<span class="bold"><strong>&amp;&amp;</strong></span>LA(3)!='*'))) ...
+
+if((LA(1)=='/') <span class="bold"><strong>&amp;&amp;</strong></span> (LA(2)!='*' <span class="bold"><strong>||</strong></span> (LA(2)=='*' <span class="bold"><strong>&amp;&amp;</strong></span> LA(3)!='*'))) ...
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="padding-relational"/>
+Relational Operators
+<a id="d5e1035" class="indexterm"/>
+<a id="d5e1038" class="indexterm"/>
+<a id="d5e1040" class="indexterm"/>
+
+</p>
+<div class="example"><a id="ex-padding-op-relational"/><p class="title"><strong>Example 4.22. Relational Operators (==, !=, &lt;, &gt;, &lt;=, &gt;=)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if((LA(1)<span class="bold"><strong>==</strong></span>'\n'||LA(1)<span class="bold"><strong>==</strong></span>'\r')) ...
+
+if((LA(1) <span class="bold"><strong>==</strong></span> '\n'||LA(1) <span class="bold"><strong>==</strong></span> '\r')) ...
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="padding-bitwise"/>
+Bitwise Operators
+<a id="d5e1054" class="indexterm"/>
+<a id="d5e1056" class="indexterm"/>
+<a id="d5e1059" class="indexterm"/>
+</p>
+<div class="example"><a id="ex-padding-op-bitwise"/><p class="title"><strong>Example 4.23. Bitwise Operators (&amp;, |, ^)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+public static final boolean isUnix()
+{
+    return (getOperatingSystem()<span class="bold"><strong>&amp;</strong></span>PLAT_UNIX) != 0;
+}
+
+public static final boolean isUnix()
+{
+    return (getOperatingSystem()<span class="bold"><strong> &amp; </strong></span>PLAT_UNIX) != 0;
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="padding-mathematical"/>
+Mathematical Operators
+<a id="d5e1071" class="indexterm"/>
+<a id="d5e1073" class="indexterm"/>
+<a id="d5e1076" class="indexterm"/>
+
+</p>
+<div class="example"><a id="ex-padding-op-math"/><p class="title"><strong>Example 4.24. Mathematical Operators (+, -, /, *, %)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+a=(b<span class="bold"><strong>+</strong></span>c)<span class="bold"><strong>*</strong></span>d;
+
+a=(b <span class="bold"><strong>+</strong></span> c) <span class="bold"><strong>*</strong></span> d;
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="padding-shift"/>
+Shift Operators
+<a id="d5e1090" class="indexterm"/>
+<a id="d5e1092" class="indexterm"/>
+<a id="d5e1095" class="indexterm"/>
+</p>
+
+<div class="example"><a id="ex-padding-op-shift"/><p class="title"><strong>Example 4.25. Shift Operators (&lt;&lt;, &gt;&gt;, &gt;&gt;&gt;)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if(((1L<span class="bold"><strong>&lt;&lt;</strong></span>i)&amp;l)!=0)
+    System.out.print("1");
+
+if(((1L <span class="bold"><strong>&lt;&lt;</strong></span> i)&amp;l)!=0)
+    System.out.print("1");
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="padding-braces"/>
+Braces
+<a id="d5e1107" class="indexterm"/>
+<a id="d5e1109" class="indexterm"/>
+<a id="d5e1112" class="indexterm"/>
+
+</p>
+<div class="example"><a id="ex-padding-braces"/><p class="title"><strong>Example 4.26. Braces</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+Object[] items = <span class="bold"><strong>{</strong></span>"2", "3", "4"<span class="bold"><strong>}</strong></span>;
+
+Object[] items = <span class="bold"><strong>{</strong></span> "2", "3", "4" <span class="bold"><strong>}</strong></span>;
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="padding-brackets"/>
+Brackets
+<a id="d5e1126" class="indexterm"/>
+<a id="d5e1128" class="indexterm"/>
+<a id="d5e1131" class="indexterm"/>
+</p>
+<div class="example"><a id="ex-padding-brackets"/><p class="title"><strong>Example 4.27. Brackets</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+for (i = 0; i &lt; 100; i++)
+    sum += value<span class="bold"><strong>[</strong></span>i<span class="bold"><strong>]</strong></span>;
+
+for(i = 0; i &lt; 100; i++)
+    sum += value<span class="bold"><strong>[</strong></span> i <span class="bold"><strong>]</strong></span>;
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="padding-parentheses"/>
+Parentheses
+<a id="d5e1145" class="indexterm"/>
+<a id="d5e1147" class="indexterm"/>
+<a id="d5e1150" class="indexterm"/>
+</p>
+<div class="example"><a id="ex-padding-paren"/><p class="title"><strong>Example 4.28. Parentheses</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+GridBagLayout layout = new GridBagLayout();
+setLayout<span class="bold"><strong>(</strong></span>layout<span class="bold"><strong>)</strong></span>;
+
+GridBagLayout layout = new GridBagLayout();
+setLayout<span class="bold"><strong>(</strong></span> layout <span class="bold"><strong>)</strong></span>;
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p>
+Type Cast Parentheses
+</p>
+<div class="example"><a id="ex-padding-cast"/><p class="title"><strong>Example 4.29. Type Cast Parentheses</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+int line = (<span class="bold"><strong>(</strong></span>JavaAST<span class="bold"><strong>)</strong></span>node).getStartLine();
+
+int line = (<span class="bold"><strong>(</strong></span> JavaAST <span class="bold"><strong>)</strong></span>node).getStartLine();
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li></ul></div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="printer.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="printer.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="indentation.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.3. Printer </td><td width="20%" align="center"><a accesskey="h" href="manual-docbkx.html">Home</a></td><td width="40%" align="right" valign="top"> 4.3.3. Indentation</td></tr></table></div></td></tr></table></td></tr><tr><td bgcolor="#eeeecc" height="17" style="font-size:9px;padding-left:5px"><a href="#toppage">to top</a></td></tr><tr><td height="30"><br/></td></tr><tr><td height="3"/></tr><tr><td bgcolor="#336699" height="1"/></tr><tr><td height="1"/></tr><tr><td bgcolor="#336699" height="16"/></tr><tr><td bgcolor="#ff9966" height="4"/></tr><tr><td class="footer" align="center" height="15" valign="middle">
+            Copyright © 2001-2004, <a class="footer" href="./contact.html">Marco Hunsicker</a>. All rights reserved. Hosted by <a href="http://sourceforge.net">SourceForge.net</a></td></tr></tbody></table><img src="http://sourceforge.net/sflogo.php?group_id=45216&amp;type=1" width="1" height="1" border="0" hspace="0" vspace="0" alt=""/></body></html>

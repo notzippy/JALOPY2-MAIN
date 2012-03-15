@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title xmlns="http://www.w3.org/1999/xhtml">4.3.3. Indentation</title><link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="site.css"/><meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="manual-docbkx.html" title="Jalopy User Manual"/><link rel="up" href="printer.html" title="4.3. Printer"/><link rel="previous" href="whitespace.html" title="4.3.2. White Space"/><link rel="next" href="wrapping.html" title="4.3.4. Wrapping"/>
+      <meta name="description" content="Jalopy Java Source Code Formatter Beautifier Pretty Printer"> 
+      <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://jalopy.sf.net" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://jalopy.sf.net" r (n 0 s 0 v 0 l 0))'> 
+    </head><body id="toppage"><table width="700" border="0" cellpadding="0" cellspacing="0" align="left"><tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #336699"><tbody><tr><td height="16"/></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr style="border:none"><td style="border:none"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="logo">JALOPY</td><td class="sublogo" valign="bottom">Java Source Code Formatter Beautifier Pretty Printer</td></tr></tbody></table></td></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr><td height="10"/></tr><tr><td bgcolor="#ff8000" height="4"/></tr><tr><td height="1" bgcolor="#ffffff"/></tr></tbody></table></td></tr><tr valign="top"><td valign="top" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./../../" class="navlink2">Home</a> |
+                  </td><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./manual-docbkx.html" class="navlink2">Manual</a> |
+                  </td></tr><tr><td height="20" bgcolor="#ffffff"/></tr><tr><td bgcolor="#eeeecc" height="17" align="right" style="font-size:10px;padding-right:3px">
+                    This page generated: <strong>20120315-0623</strong></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="5"><tr><td><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.3.3. Indentation</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="whitespace.html">Prev</a> </td><th width="60%" align="center">4.3. Printer</th><td width="20%" align="right"> <a accesskey="n" href="wrapping.html">Next</a></td></tr></table><hr/></div><div xmlns="http://www.w3.org/1999/xhtml" class="sect2" title="4.3.3. Indentation"><div class="titlepage"><div><div><h3 class="title"><a id="indentation"/>4.3.3. Indentation</h3></div></div></div>
+
+<p>
+Controls the indentation settings.
+<a id="d5e1175" class="indexterm"/>
+</p>
+
+<div class="sect3" title="4.3.3.1. General"><div class="titlepage"><div><div><h4 class="title"><a id="indentation-general"/>4.3.3.1. General</h4></div></div></div>
+
+<p>Lets you change the general indentation settings.</p>
+
+<div class="sect4" title="4.3.3.1.1. Policy"><div class="titlepage"><div><div><h5 class="title"><a id="indentation-policy"/>4.3.3.1.1. Policy</h5></div></div></div>
+
+<p>
+Lets you choose the way lines should be indented.
+</p>
+
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="indentation-policy-standard"/>
+Standard indent
+</p>
+<p>
+With standard indentation, lines will be indented according to the
+current indentation level (Note that the indentation level changes as the block
+or parentheses level changes).
+</p>
+
+<div class="example"><a id="indentation-method-decl-standard"/><p class="title"><strong>Example 4.30. Method declaration (standard indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+public void severalParameters(String one, int two, String three,
+    StringObject four, AnotherObject five) {
+...
+}
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="indentation-method-call-standard"/><p class="title"><strong>Example 4.31. Method Call (standard indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+vector.add(new AppServerReference(
+        "RemoteApplicationManager",
+        poa.create_reference_with_id("RemoteApplicationManager".getBytes(),
+            RemoteApplicationManagerHelper.id())));
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="indentation-assign-standard"/><p class="title"><strong>Example 4.32. Assignment (standard indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+doublette[InteressentenPflegeController.GEBURTSDATUM] = versichertenResultSetRow[i].field[0]
+    .substring(0, 2) + "."
+    + versichertenResultSetRow[i].field[0].substring(2, 4) + "."
+    + versichertenResultSetRow[i].field[0].substring(4, 6);
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-policy-deep"/>
+Deep indent
+</p>
+
+<p>
+Deep indentation means that lines will be indented relative to the current
+parentheses or assignment offset. This way consecutive code sections are somewhat easier
+to recognize at the downside of consuming more horizontal space.
+</p>
+
+<div class="example"><a id="indentation-method-decl-deep"/><p class="title"><strong>Example 4.33. Method declaration (deep indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+public void severalParameters(String one, int two, String three,
+                              StringObject four, AnotherObject five) {
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="indentation-method-call-deep"/><p class="title"><strong>Example 4.34. Method Call (deep indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+this.add(lbPunktzahl,
+         new GridBagLayout(0, 1, 2, 1, 0.0, 0.0,
+                           GribBagConstraints.WEST,
+                           GribBagConstraints.NONE,
+                           new Insets(0, GribBagConstraints.WEST,
+                                      GribBagConstraints.WEST,
+                                      GribBagConstraints.WEST), 0, 0));
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="indentation-assign-deep"/><p class="title"><strong>Example 4.35. Assignment (deep indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+doublette[Controller.GEBURTSDATUM] = versichertenResultSetRow[i].field[0]
+                                     .substring(0, 2) + "."
+                                     + versichertenResultSetRow[i].field[0]
+                                       .substring(2, 4)
+                                     + "."
+                                     + versichertenResultSetRow[i].field[0]
+                                       .substring(4, 6);
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li></ul></div>
+</div>
+
+
+<div class="sect4" title="4.3.3.1.2. Sizes"><div class="titlepage"><div><div><h5 class="title"><a id="indentation-sizes"/>4.3.3.1.2. Sizes</h5></div></div></div>
+
+<a id="d5e1216" class="indexterm"/>
+
+<p>
+Lets you set different indentation sizes.
+</p>
+
+<div class="itemizedlist"><p/><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="indentation-sizes-general"/>
+General indent
+<a id="d5e1223" class="indexterm"/>
+</p>
+<p>
+Specifies the number of spaces to use for general indentation (Studies have
+found that 2 to 4 spaces for indentation is optimal)
+</p>
+
+<div class="example"><a id="ex-indentation-two-space"/><p class="title"><strong>Example 4.36. 2 space general indent</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+public class Preferences
+{
+-&gt;private Preferences()
+-&gt;{
+-&gt;}
+
+-&gt;public static void main(String[] argv)
+-&gt;{
+-&gt;-&gt;de.hunsicker.jalopy.swing.PreferencesDialog.main(argv);
+-&gt;}
+}
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-indentation-four-space"/><p class="title"><strong>Example 4.37. 4 space general indent</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+public class Preferences
+{
+---&gt;private Preferences()
+---&gt;{
+---&gt;}
+
+---&gt;public static void main(String[] argv)
+---&gt;{
+---&gt;---&gt;de.hunsicker.jalopy.swing.PreferencesDialog.main(argv);
+---&gt;}
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-sizes-leading"/>
+Leading indent
+<a id="d5e1238" class="indexterm"/>
+</p>
+<p>
+Specifies the number of spaces to prepend before every line printed.
+</p>
+<div class="example"><a id="ex-indentation-six-leading"/><p class="title"><strong>Example 4.38. 6 space leading indent</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+-----&gt;public class Preferences
+-----&gt;{
+-----&gt;    private Preferences()
+-----&gt;    {
+-----&gt;    }
+
+-----&gt;    public static void main(String[] argv)
+-----&gt;    {
+-----&gt;        de.hunsicker.jalopy.swing.PreferencesDialog.main(argv);
+-----&gt;    }
+-----&gt;}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-sizes-continuation"/>
+Continuation indent
+<a id="d5e1249" class="indexterm"/>
+</p>
+<p>
+Specifies the number of spaces that should be inserted in front of
+continuation lines, i.e. the consecutive lines in case of a line wrap.
+</p>
+<div class="example"><a id="ex-indentation-two-continuation"/><p class="title"><strong>Example 4.39. 2 space continuation indent</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if ((condition1 &amp;&amp; condition2)
+    -&gt;|| (condition3 &amp;&amp; condition4)
+    -&gt;|| !(condition5 &amp;&amp; condition6)) {
+    doSomethingAboutIt();
+}
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-indentation-four-continuation"/><p class="title"><strong>Example 4.40. 4 space continuation indent</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if ((condition1 &amp;&amp; condition2)
+    ---&gt;|| (condition3 &amp;&amp; condition4)
+    ---&gt;|| !(condition5 &amp;&amp; condition6)) {
+    doSomethingAboutIt();
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-sizes-trailing"/>
+Trailing comment indent
+<a id="d5e1264" class="indexterm"/>
+<a id="d5e1268" class="indexterm"/>
+<a id="d5e1271" class="indexterm"/>
+</p>
+<p>
+Specifies the number of spaces to insert between trailing comments and the
+preceding statement.
+</p>
+<div class="example"><a id="ex-indentation-three-trailing"/><p class="title"><strong>Example 4.41. 3 space trailing comment indent</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+new String[] {
+    "Sunday",--&gt;// Sunday
+    "Monday",--&gt;// Monday
+    "Tuesday",--&gt;// Tuesday
+    "Wednesday",--&gt;// Wednesday
+    "Thursday",--&gt;// Thursday
+    "Friday",--&gt;// Friday
+    "Saturday"--&gt;// Saturday
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-sizes-tab"/>
+Original Tab indent
+</p>
+<p>
+Specifies the original tabular size of the source code. Some indentations
+or alignments may fail, if you miss the correct size here.
+<a id="d5e1281" class="indexterm"/>
+<a id="d5e1284" class="indexterm"/>
+</p>
+</li><li class="listitem">
+<p><a id="indentation-sizes-extends"/>
+Extends indent
+</p>
+<p>
+If enabled, specifies the whitespace to print before the <code class="classname">extends</code>
+keyword in case it was printed on a new line.
+</p>
+<a id="d5e1292" class="indexterm"/>
+
+<div class="example"><a id="d5e1296"/><p class="title"><strong>Example 4.42. extends indentation with 6 spaces</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+public interface Channel
+------&gt;extends Puttable, Takable
+{
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-sizes-implements"/>
+Implements indent
+</p>
+<p>
+Specifies the whitespace to print before the <code class="classname">implements</code>
+keyword in case it was printed on a new line.
+</p>
+<a id="d5e1304" class="indexterm"/>
+
+<div class="example"><a id="d5e1308"/><p class="title"><strong>Example 4.43. implements indentation with 8 spaces</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+public class SynchronizedBoolean
+-------&gt;implements Comparable, Cloneable
+{
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-sizes-throws"/>
+Throws indent
+</p>
+<p>
+Specifies the whitespace to print before the <code class="classname">throws</code>
+keyword in case it was printed on a new line.
+<a id="d5e1316" class="indexterm"/>
+</p>
+
+<div class="example"><a id="d5e1320"/><p class="title"><strong>Example 4.44. throws indentation with 3 spaces</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+private static final File getDestinationFile(File dest, String packageName,
+                                             String filename)
+--&gt;throws IOException, FooException
+{
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li></ul></div>
+</div>
+</div>
+
+<div class="sect3" title="4.3.3.2. Misc"><div class="titlepage"><div><div><h4 class="title"><a id="indentation-misc"/>4.3.3.2. Misc</h4></div></div></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="indentation-misc-tab"/>
+Use tabs to indent
+<a id="d5e1330" class="indexterm"/>
+</p>
+<p>
+Normally, Jalopy uses spaces to indent lines. If you prefer tabs, check this box.
+</p>
+</li><li class="listitem">
+<p>
+Indent "case" from "switch"
+</p>
+<p>
+The Sun Java code convention recommends a switch style where case statements
+are not indented relative to the switch statement as a whole. However, this
+option allows you to indent the case statements to make the entire switch
+statement stand out.
+</p>
+
+<div class="example"><a id="ex-indentation-misch-switch-un"/><p class="title"><strong>Example 4.45. Switch statement (unindented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+switch (prio)
+{
+case Priority.ERROR_INT :
+case Priority.FATAL_INT :
+    color = Color.red;
+    break;
+
+case Priority.WARN_INT :
+    color = Color.blue;
+    break;
+
+default:
+    color = Color.black;
+    break;
+}
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-indentation-misc-switch"/><p class="title"><strong>Example 4.46. Switch statement (indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+switch (prio)
+{
+---&gt;case Priority.ERROR_INT :
+---&gt;case Priority.FATAL_INT :
+---&gt;    color = Color.red;
+---&gt;    break;
+
+---&gt;case Priority.WARN_INT :
+---&gt;    color = Color.blue;
+---&gt;    break;
+
+---&gt;default:
+---&gt;    color = Color.black;
+---&gt;    break;
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-misc-label"/>
+Indent labels
+<a id="d5e1347" class="indexterm"/>
+</p>
+<p>
+Specifies whether lables should be indented with the current indentation level.
+</p>
+
+<div class="example"><a id="ex-indentation-misc-label-unindent"/><p class="title"><strong>Example 4.47. Unindented label</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+// advance to the first CLASS_DEF or INTERFACE_DEF
+<span class="bold"><strong>LOOP</strong></span>:
+        for (AST child = tree.getFirstChild();
+             child != null;
+             child = child.getNextSibling())
+        {
+            switch (child.getType())
+            {
+                case JavaTokenTypes.CLASS_DEF :
+                case JavaTokenTypes.INTERFACE_DEF :
+                    next = child;
+                    break LOOP;
+                default :
+                    break;
+            }
+        }
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-indentation-misc-label"/><p class="title"><strong>Example 4.48. Indented label</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+        // advance to the first CLASS_DEF or INTERFACE_DEF
+        <span class="bold"><strong>LOOP</strong></span>:
+        for (AST child = tree.getFirstChild();
+             child != null;
+             child = child.getNextSibling())
+        {
+            switch (child.getType()) {
+                case JavaTokenTypes.CLASS_DEF :
+                case JavaTokenTypes.INTERFACE_DEF :
+                    next = child;
+                    break LOOP;
+
+                default :
+                    break;
+            }
+        }
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-misc-first-column"/>
+Indent first column comments
+</p>
+<p>
+Normally, all comments will be indented relative to their position in the code
+to avoid that comments break the logical structure of the program. Some
+developers may like to disable the indentation for first column comments
+during the developing phase.
+</p>
+
+<div class="example"><a id="ex-indentation-misc-first-column"/><p class="title"><strong>Example 4.49. First column comment (indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+    public static Printer create(AST node)
+    {
+
+        <span class="bold"><strong>/*
+        if (node == null)
+        {
+            return new NullPrinter();
+        }
+        */</strong></span>
+        return create(node.getType());
+    }
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-indentation-misc-first-column-unindented"/><p class="title"><strong>Example 4.50. First column comment (unindented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+    public static Printer create(AST node)
+    {
+
+<span class="bold"><strong>/*
+        if (node == null)
+        {
+            return new NullPrinter();
+        }
+*/</strong></span>
+        return create(node.getType());
+    }
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li></ul></div>
+</div>
+
+<div class="sect3" title="4.3.3.3. Align"><div class="titlepage"><div><div><h4 class="title"><a id="indentation-align"/>4.3.3.3. Align</h4></div></div></div>
+
+<a id="d5e1376" class="indexterm"/>
+<a id="d5e1379" class="indexterm"/>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="indentation-align-ident"/>
+Variable identifiers
+</p>
+<p>
+If enabled, aligns the identifiers of variable declarations.
+</p>
+
+<a id="d5e1385" class="indexterm"/>
+
+<div class="example"><a id="ex-indentation-misc-align-ident"/><p class="title"><strong>Example 4.51. Variable identifiers</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+String text = "text";
+int a = -1;
+History.Entry entry = new History.Entry(text);
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-indentation-align-ident-aligned"/><p class="title"><strong>Example 4.52. Variable identifiers (aligned)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+String        text = "text";
+int           a = -1;
+History.Entry entry = new History.Entry(text);
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-align-assign"/>
+Variable assignments
+</p>
+<p>
+If enabled, aligns the assignment parts of variable declarations or, surprise, assignments.
+</p>
+<a id="d5e1400" class="indexterm"/>
+<a id="d5e1404" class="indexterm"/>
+
+<div class="example"><a id="ex-indentation-align-assign-aligned"/><p class="title"><strong>Example 4.53. Variable assignments (aligned)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+String text         = "text";
+int a               = -1;
+History.Entry entry = new History.Entry(text);
+</pre>
+</div></div><br class="example-break"/>
+
+<p>
+If both variable alignment options are enabled, you can achieve a style like
+the following:
+</p>
+
+<div class="example"><a id="ex-indentation-align-both"/><p class="title"><strong>Example 4.54. Variable identifiers/assignments (both aligned)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+String        text  = "text";
+int           a     = -1;
+History.Entry entry = new History.Entry(text);
+</pre>
+</div></div><br class="example-break"/>
+<p>
+
+</p>
+</li><li class="listitem">
+<p><a id="indentation-align-params"/>
+Method Def parameters
+</p>
+<p>
+If enabled, aligns the parameters of method declarations. This only applies if
+all parameters will be wrapped; either because wrapping is forced or the
+max. line length is reached. To force aligning, you have to enable the
+wrapping for method parameters (See <a class="link" href="wrapping.html#wrap-method-params">Method Def parameters</a>).
+</p>
+
+<a id="d5e1419" class="indexterm"/>
+<a id="d5e1421" class="indexterm"/>
+
+<div class="example"><a id="ex-indentation-align-params"/><p class="title"><strong>Example 4.55. Method declaration parameters</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+public static File create(final File file,
+                          File directory,
+                          int backupLevel)
+{
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-indentation-align-params-aligned"/><p class="title"><strong>Example 4.56. Method declaration parameters (aligned)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+public static File create(final File file,
+                          File       directory,
+                          int        backupLevel)
+{
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-align-method-chains"/>
+Method Call chains
+</p>
+
+<p>
+If disabled, indentation happens according to the current indentation level.
+</p>
+
+<div class="example"><a id="ex-indentation-align-call"/><p class="title"><strong>Example 4.57. Method Call chain (standard indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+Fachschluesselerzeugung.createService()
+.getNeuerFachschluesselServiceService(
+    FachschluesselerzeugungService.FACHSCHLUESSEL_KZ_INTERESSENT);
+</pre>
+</div></div><br class="example-break"/>
+
+<p>
+Otherwise indentation is performed relative to the column offset of the first chain link.
+</p>
+
+<div class="example"><a id="ex-indentation-align-call-aligned"/><p class="title"><strong>Example 4.58. Method Call chain  (aligned)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+Fachschluesselerzeugung.createService()
+                       .getNeuerFachschluesselServiceService(
+                            FachschluesselerzeugungService.FACHSCHLUESSEL_KZ_INTERESSENT);
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="indentation-align-ternary"/>
+Ternary expressions
+</p>
+
+<p>
+If disabled, ternary expressions are printed according to the current
+<a class="link" href="indentation.html#indentation-policy" title="4.3.3.1.1. Policy">indentation policy</a>.
+</p>
+
+<div class="example"><a id="ex-indentation-ternary-standard"/><p class="title"><strong>Example 4.59. Ternary operators (standard indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+        alpha = (aLongBooleanExpression) ? beta    |
+        : gamma;                                   |
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-indentation-ternary-deep"/><p class="title"><strong>Example 4.60. Ternary operators (deep indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+        alpha = (aLongBooleanExpression) ? beta    |
+                : gamma;                           |
+</pre>
+</div></div><br class="example-break"/>
+
+<p>
+If enabled, the second operator will always be aligned relative to the first one.
+</p>
+
+<div class="example"><a id="ex-indentation-ternary-align"/><p class="title"><strong>Example 4.61. Ternary expresssions (aligned)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+        alpha = (aLongBooleanExpression) ? beta    |
+                                         : gamma;  |
+</pre>
+</div></div><br class="example-break"/>
+<p>
+Note that this switch only takes affect, if indeed a line break was inserted
+before the second expression. You can force such line breaks with the
+<a class="link" href="wrapping.html#wrap-ternary-colon">Wrap always before ternary expression colon</a> setting.
+</p>
+</li></ul></div>
+<p/>
+</div>
+
+<div class="sect3" title="4.3.3.4. Continuation"><div class="titlepage"><div><div><h4 class="title"><a id="indentation-continuation"/>4.3.3.4. Continuation</h4></div></div></div>
+
+<a id="d5e1463" class="indexterm"/>
+<a id="d5e1466" class="indexterm"/>
+
+<p>
+Lets you specify extra indentation for consectutive lines of certain expressions.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="indentation-misc-continuation-if"/>
+Blocks
+</p>
+<p>
+The Sun brace style could make seeing the statement body difficult. To
+workaround this problem, you may want to use continuation indentation in case you like this
+brace style. This setting applies for <code class="literal">if</code>, <code class="literal">for</code>, <code class="literal">while</code>
+and <code class="literal">do-while</code> blocks.
+</p>
+
+<div class="example"><a id="ex-indentation-misc-non-continuation"/><p class="title"><strong>Example 4.62. Non-continuation indentation</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if ((condition1 &amp;&amp; condition2)
+    || (condition3 &amp;&amp; condition4)
+    || !(condition5 &amp;&amp; condition6)) { // BAD WRAPS
+    doSomethingAboutIt();             // MAKE THIS LINE EASY TO MISS
+}
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-indentation-misc-contiunation"/><p class="title"><strong>Example 4.63. Continuation indentation</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+if ((condition1 &amp;&amp; condition2)
+        || (condition3 &amp;&amp; condition4)
+        || !(condition5 &amp;&amp; condition6)) {
+    doSomethingAboutIt();
+}
+</pre>
+</div></div><br class="example-break"/>
+<p>
+Refer to <a class="xref" href="printer.html#braces-style-styles" title="4.3.1.1.1. Styles">Section 4.3.1.1.1, “Styles”</a> for the available brace style options.
+</p>
+</li><li class="listitem">
+<p><a id="indentation-misc-ternary-if-else"/>
+Operators
+</p>
+<p>
+If enabled, indentation will be increased before an operand will be printed.
+</p>
+
+<div class="example"><a id="ex-indentation-misc-ternary-if-else"/><p class="title"><strong>Example 4.64. Ternary expression (deep indented)</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+String comma = spaceAfterComma
+               ---&gt;? COMMA_SPACE
+               ---&gt;: COMMA;
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li></ul></div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="whitespace.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="printer.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="wrapping.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.3.2. White Space </td><td width="20%" align="center"><a accesskey="h" href="manual-docbkx.html">Home</a></td><td width="40%" align="right" valign="top"> 4.3.4. Wrapping</td></tr></table></div></td></tr></table></td></tr><tr><td bgcolor="#eeeecc" height="17" style="font-size:9px;padding-left:5px"><a href="#toppage">to top</a></td></tr><tr><td height="30"><br/></td></tr><tr><td height="3"/></tr><tr><td bgcolor="#336699" height="1"/></tr><tr><td height="1"/></tr><tr><td bgcolor="#336699" height="16"/></tr><tr><td bgcolor="#ff9966" height="4"/></tr><tr><td class="footer" align="center" height="15" valign="middle">
+            Copyright © 2001-2004, <a class="footer" href="./contact.html">Marco Hunsicker</a>. All rights reserved. Hosted by <a href="http://sourceforge.net">SourceForge.net</a></td></tr></tbody></table><img src="http://sourceforge.net/sflogo.php?group_id=45216&amp;type=1" width="1" height="1" border="0" hspace="0" vspace="0" alt=""/></body></html>

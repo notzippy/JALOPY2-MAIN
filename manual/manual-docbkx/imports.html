@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title xmlns="http://www.w3.org/1999/xhtml">4.3.7. Imports</title><link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="site.css"/><meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="manual-docbkx.html" title="Jalopy User Manual"/><link rel="up" href="printer.html" title="4.3. Printer"/><link rel="previous" href="comments.html" title="4.3.6. Comments"/><link rel="next" href="environment.html" title="4.3.8. Environment"/>
+      <meta name="description" content="Jalopy Java Source Code Formatter Beautifier Pretty Printer"> 
+      <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://jalopy.sf.net" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://jalopy.sf.net" r (n 0 s 0 v 0 l 0))'> 
+    </head><body id="toppage"><table width="700" border="0" cellpadding="0" cellspacing="0" align="left"><tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #336699"><tbody><tr><td height="16"/></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr style="border:none"><td style="border:none"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="logo">JALOPY</td><td class="sublogo" valign="bottom">Java Source Code Formatter Beautifier Pretty Printer</td></tr></tbody></table></td></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr><td height="10"/></tr><tr><td bgcolor="#ff8000" height="4"/></tr><tr><td height="1" bgcolor="#ffffff"/></tr></tbody></table></td></tr><tr valign="top"><td valign="top" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./../../" class="navlink2">Home</a> |
+                  </td><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./manual-docbkx.html" class="navlink2">Manual</a> |
+                  </td></tr><tr><td height="20" bgcolor="#ffffff"/></tr><tr><td bgcolor="#eeeecc" height="17" align="right" style="font-size:10px;padding-right:3px">
+                    This page generated: <strong>20120315-0623</strong></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="5"><tr><td><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.3.7. Imports</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="comments.html">Prev</a> </td><th width="60%" align="center">4.3. Printer</th><td width="20%" align="right"> <a accesskey="n" href="environment.html">Next</a></td></tr></table><hr/></div><div xmlns="http://www.w3.org/1999/xhtml" class="sect2" title="4.3.7. Imports"><div class="titlepage"><div><div><h3 class="title"><a id="imports"/>4.3.7. Imports</h3></div></div></div>
+
+<a id="d5e2275" class="indexterm"/>
+
+<p>
+Controls the handling of import declarations.
+</p>
+
+<div class="sect3" title="4.3.7.1. General"><div class="titlepage"><div><div><h4 class="title"><a id="imports-sorting"/>4.3.7.1. General</h4></div></div></div>
+
+<a id="d5e2280" class="indexterm"/>
+
+<p>
+Enables the sorting of import statements. Sorting the import statements makes
+it simple to browse a long list of imports.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+Sort import statements
+</p>
+
+<p>
+Enables or disables the sorting of import statements. Enabling this option
+will sort all imports lexicographically.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect3" title="4.3.7.2. Grouping"><div class="titlepage"><div><div><h4 class="title"><a id="import-grouping"/>4.3.7.2. Grouping</h4></div></div></div>
+<a id="d5e2289" class="indexterm"/>
+
+
+<p>
+In addition to sorting, associated packages can be grouped together to reduce
+complexity by packing related information into a common unit.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="imports-grouping-depth"/>
+Default grouping depth
+</p>
+
+<a id="d5e2297" class="indexterm"/>
+<a id="d5e2301" class="indexterm"/>
+
+<p>
+Lets you define the default grouping depth. Only takes effect if sorting is enabled.
+</p>
+
+<p>
+The grouping depth specifies the number of package name parts that are to
+be taken into account in order to determine whether two import statements are to
+be grouped together. For certain packages you may want to specify a grouping
+depth that differs from the default.
+</p>
+
+<p>
+Statements are to be grouped together, if all relevant parts are equal. So via
+the grouping depth you can effectively specify how many parts are relevant.
+</p>
+
+<p>
+To disable grouping at all, set the grouping depth to "<code class="literal">0</code>".
+</p>
+
+<div class="example"><a id="ex-imports-grouping-depth-one"/><p class="title"><strong>Example 4.137. Grouping depth java='1'</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+import <span class="bold"><strong>java</strong></span>.awt.Color;
+import <span class="bold"><strong>java</strong></span>.awt.Component;
+import <span class="bold"><strong>java</strong></span>.awt.GridBagConstraints;
+import <span class="bold"><strong>java</strong></span>.awt.GridBagLayout;
+import <span class="bold"><strong>java</strong></span>.awt.event.ActionEvent;
+import <span class="bold"><strong>java</strong></span>.awt.event.ActionListener;
+import <span class="bold"><strong>java</strong></span>.util.ArrayList;
+import <span class="bold"><strong>java</strong></span>.util.List;
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-imports-grouping-depth-two"/><p class="title"><strong>Example 4.138. Grouping depth java='2'</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+import <span class="bold"><strong>java.awt</strong></span>.Color;
+import <span class="bold"><strong>java.awt</strong></span>.Component;
+import <span class="bold"><strong>java.awt</strong></span>.GridBagConstraints;
+import <span class="bold"><strong>java.awt</strong></span>.GridBagLayout;
+import <span class="bold"><strong>java.awt</strong></span>.event.ActionEvent;
+import <span class="bold"><strong>java.awt</strong></span>.event.ActionListener;
+
+import <span class="bold"><strong>java.util</strong></span>.ArrayList;
+import <span class="bold"><strong>java.util</strong></span>.List;
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-imports-grouping-depth-three"/><p class="title"><strong>Example 4.139. Grouping depth java= '3'</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+import <span class="bold"><strong>java.awt</strong></span>.Color;
+import <span class="bold"><strong>java.awt</strong></span>.Component;
+import <span class="bold"><strong>java.awt</strong></span>.GridBagConstraints;
+import <span class="bold"><strong>java.awt</strong></span>.GridBagLayout;
+
+import <span class="bold"><strong>java.awt.event</strong></span>.ActionEvent;
+import <span class="bold"><strong>java.awt.event</strong></span>.ActionListener;
+
+import <span class="bold"><strong>java.util</strong></span>.ArrayList;
+import <span class="bold"><strong>java.util</strong></span>.List;
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li></ul></div>
+<p>
+You can add/remove package fragments (e.g. javax, javax.swing or com.foo.sarah)
+via the <span class="guibutton">Add...</span> and <span class="guibutton">Remove</span>
+buttons to fine-tune the appearance for certain packages.
+</p>
+
+<p>
+To specify the order in which related statements should appear, you
+may want to use the <span class="guibutton">Up</span> and <span class="guibutton">Down</span> buttons.
+</p>
+
+<p>
+Note that the <code class="literal">asterix</code> represents all undefined packages.
+</p>
+</div>
+
+<div class="sect3" title="4.3.7.3. Optimize"><div class="titlepage"><div><div><h4 class="title"><a id="import-optimization"/>4.3.7.3. Optimize</h4></div></div></div>
+
+<p>
+Optimizes the import statements by either expanding or collapsing them. This
+is a nice feature that is currently only available with the Ant and
+JBuilder Plug-in.
+</p>
+<a id="d5e2355" class="indexterm"/>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="import-optimization-expand"/>
+Expand on-demand imports
+<a id="d5e2361" class="indexterm"/>
+</p>
+<p>
+If enabled, tries to expand all on-demand import statements.
+</p>
+<p><a id="imports-on-demand"/>
+Expanding means to resolve all on-demand import statements (sometimes called
+wildcard imports) and replace them with single-type import statements (sometimes
+called explicit imports) of the types that are actually used in the source file.
+</p>
+<a id="d5e2366" class="indexterm"/>
+
+<p>
+So the following on-demand import statement may be expanded into two
+single-type import statements that reference the needed types for this package.
+</p>
+
+<div class="example"><a id="ex-imports-on-demand"/><p class="title"><strong>Example 4.140. On-demand import statement</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+import java.util.*;
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-import-single-type"/><p class="title"><strong>Example 4.141. Single-type import statements</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+import java.util.ArrayList;
+import java.util.List;
+</pre>
+</div></div><br class="example-break"/>
+<p>
+Using single-type imports is quite useful and an absolute requirement in the
+open source community as this code is usually really reviewed. Using
+single-type imports makes it easy for the code reader to quickly find
+out the package a particular type is in: You just search for the type name
+from the start of the source file.
+</p>
+</li></ul></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="import-optimization-collapse"/>
+Collapse single-type imports
+<a id="d5e2381" class="indexterm"/>
+<a id="d5e2384" class="indexterm"/>
+</p>
+
+<p>
+If enabled, tries to collapse all single-type statements.
+</p>
+
+<p>
+Collapsing means to remove all single-type imports of a given package and
+replace them with one on-demand import statement.
+</p>
+</li></ul></div>
+</div>
+
+
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="comments.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="printer.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="environment.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.3.6. Comments </td><td width="20%" align="center"><a accesskey="h" href="manual-docbkx.html">Home</a></td><td width="40%" align="right" valign="top"> 4.3.8. Environment</td></tr></table></div></td></tr></table></td></tr><tr><td bgcolor="#eeeecc" height="17" style="font-size:9px;padding-left:5px"><a href="#toppage">to top</a></td></tr><tr><td height="30"><br/></td></tr><tr><td height="3"/></tr><tr><td bgcolor="#336699" height="1"/></tr><tr><td height="1"/></tr><tr><td bgcolor="#336699" height="16"/></tr><tr><td bgcolor="#ff9966" height="4"/></tr><tr><td class="footer" align="center" height="15" valign="middle">
+            Copyright © 2001-2004, <a class="footer" href="./contact.html">Marco Hunsicker</a>. All rights reserved. Hosted by <a href="http://sourceforge.net">SourceForge.net</a></td></tr></tbody></table><img src="http://sourceforge.net/sflogo.php?group_id=45216&amp;type=1" width="1" height="1" border="0" hspace="0" vspace="0" alt=""/></body></html>

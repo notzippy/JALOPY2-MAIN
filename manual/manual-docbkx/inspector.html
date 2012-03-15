@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title xmlns="http://www.w3.org/1999/xhtml">4.4. Code Inspector</title><link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="site.css"/><meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="manual-docbkx.html" title="Jalopy User Manual"/><link rel="up" href="settings.html" title="Chapter 4. Settings"/><link rel="previous" href="misc.html" title="4.3.13. Misc"/><link rel="next" href="inspector-naming.html" title="4.4.2. Naming"/>
+      <meta name="description" content="Jalopy Java Source Code Formatter Beautifier Pretty Printer"> 
+      <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://jalopy.sf.net" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://jalopy.sf.net" r (n 0 s 0 v 0 l 0))'> 
+    </head><body id="toppage"><table width="700" border="0" cellpadding="0" cellspacing="0" align="left"><tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #336699"><tbody><tr><td height="16"/></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr style="border:none"><td style="border:none"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="logo">JALOPY</td><td class="sublogo" valign="bottom">Java Source Code Formatter Beautifier Pretty Printer</td></tr></tbody></table></td></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr><td height="10"/></tr><tr><td bgcolor="#ff8000" height="4"/></tr><tr><td height="1" bgcolor="#ffffff"/></tr></tbody></table></td></tr><tr valign="top"><td valign="top" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./../../" class="navlink2">Home</a> |
+                  </td><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./manual-docbkx.html" class="navlink2">Manual</a> |
+                  </td></tr><tr><td height="20" bgcolor="#ffffff"/></tr><tr><td bgcolor="#eeeecc" height="17" align="right" style="font-size:10px;padding-right:3px">
+                    This page generated: <strong>20120315-0623</strong></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="5"><tr><td><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.4. Code Inspector</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="misc.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Settings</th><td width="20%" align="right"> <a accesskey="n" href="inspector-naming.html">Next</a></td></tr></table><hr/></div><div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="4.4. Code Inspector"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="inspector"/>4.4. Code Inspector</h2></div></div></div>
+
+<a id="d5e2845" class="indexterm"/>
+
+<p>
+Provides the configuration facility for the Jalopy Code Inspector. The Code Inspector is
+able to inspect Java source files for naming convention violations and possible code
+weaknesses.
+</p>
+
+<div class="sect2" title="4.4.1. General"><div class="titlepage"><div><div><h3 class="title"><a id="d5e2848"/>4.4.1. General</h3></div></div></div>
+
+
+<p>
+Lets you control the general Code Inspector settings.
+</p>
+
+<div class="sect3" title="4.4.1.1. General"><div class="titlepage"><div><div><h4 class="title"><a id="d5e2851"/>4.4.1.1. General</h4></div></div></div>
+
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+Enable
+</p>
+<p>
+Lets you enable or disable the Code Inspector as a whole.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect3" title="4.4.1.2. Tips"><div class="titlepage"><div><div><h4 class="title"><a id="d5e2857"/>4.4.1.2. Tips</h4></div></div></div>
+
+
+<p>
+Lets you selectively choose what actions should be performed during inspection. Moving the
+mouse pointer onto a checkbox displays a minimalistic tooltip after a short delay.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+Tip 1 - Don't substitute another type for <code class="classname">Object</code> in the equals declaration
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 35.
+</p>
+</li><li class="listitem">
+<p>
+Tip 2 - Object the general contract when overriding <code class="literal">equals</code>
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 25.
+</p>
+</li><li class="listitem">
+<p>
+Tip 3 - Always override <code class="literal">hashCode</code> when you override <code class="literal">equals</code>
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 36.
+</p>
+</li><li class="listitem">
+<p>
+Tip 4 - Always override <code class="literal">equals</code> when you override <code class="literal">hashCode</code>
+</p>
+</li><li class="listitem">
+<p>
+Tip 5 - Always override <code class="literal">toString</code>
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 42.
+</p>
+</li><li class="listitem">
+<p>
+Tip 6 - Use interfaces only to define types
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 89.
+</p>
+</li><li class="listitem">
+<p>
+Tip 7 - Replace structures with classes
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 97.
+</p>
+</li><li class="listitem">
+<p>
+Tip 8 - Return zero-length arrays, not <code class="literal">nulls</code>
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 134.
+</p>
+</li><li class="listitem">
+<p>
+Tip 9 - Adhere to generally accepted naming conventions
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 165.
+</p>
+</li><li class="listitem">
+<p>
+Tip 10 - Refer to objects by their interfaces
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 156.
+</p>
+</li><li class="listitem">
+<p>
+Tip 11 - Never declare that a method "throws Exception"
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 181.
+</p>
+</li><li class="listitem">
+<p>
+Tip 12 - Never declare that a method "throws Throwable"
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 181.
+</p>
+</li><li class="listitem">
+<p>
+Tip 13 - Don't ignore exceptions
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 187.
+</p>
+</li><li class="listitem">
+<p>
+Tip 14 - Never invoke <code class="literal">wait</code> outside a loop
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 201.
+</p>
+</li><li class="listitem">
+<p>
+Tip 15 - Avoid thread groups
+</p>
+<p>
+For a detailed discussion see <span class="emphasis"><em>Effective Java</em></span> [<a class="xref" href="bi01.html#bloch01">Bloch01</a>], pp. 211.
+</p>
+</li><li class="listitem">
+<p>
+Tip 16 - Document collection types
+</p>
+<p>
+As long as there are no strong-typed collections (a.k.a. Java Generics support) available,
+it is best to document the object type of the items hold by a collection.
+</p>
+
+<div class="example"><a id="inspector-tip16"/><p class="title"><strong>Example 4.154. Collection comment</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+private static final List _favorableTypes = new ArrayList(20); // List of &lt;String&gt;
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p>
+Tip 17 - Adhere to naming convention for collection types
+</p>
+<p>
+If you use comments to document the object type of collection items, you should conform to
+a generally accepted naming convention.
+</p>
+</li><li class="listitem">
+<p>
+Tip 18 - Avoid empty <code class="literal">finally</code> blocks
+</p>
+<p>
+Empty <code class="literal">finally</code> blocks are of no use and may indicate programmer errors.
+</p>
+<div class="example"><a id="inspector-tip18"/><p class="title"><strong>Example 4.155. Empty <code class="literal">finally</code> block</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+Writer writer = null;
+
+try
+{
+    writer = new BufferedWriter(new FileWriter(file));
+    write.write(data);
+}
+catch (IOException ex)
+{
+    System.err.println("file could not be written -- " + file);
+}
+finally
+{
+}
+</pre>
+</div></div><br class="example-break"/>
+<p>
+The programmer certainly wanted to close the <code class="classname">Writer</code> in the
+<code class="literal">finally</code> block to ensure that allocated system resources will be freed.
+</p>
+</li><li class="listitem">
+<p>
+Tip 19 - Avoid variable shadowing
+</p>
+<p>
+Variable shadowing should be avoided on general principle, as it tends to be confusing.
+</p>
+<p>
+For more information about shadowing, see the
+Java Developer Connection (JDC) Tech Tips, October 10, 2000
+(<a class="ulink" href="http://developer.java.sun.com/developer/TechTips/2000/tt1010.html#tip2" target="_top">
+http://developer.java.sun.com/developer/TechTips/2000/tt1010.html#tip2</a>, subscription needed) or
+section 6.3.2, "Obscured Declarations," section 7.5.2,
+"Type-Import-on-Demand Declaration," section 8.4.6, "Inheritance, Overriding, and Hiding,"
+section 8.4.8.5, "Example: Invocation of Hidden Class Methods," and section 14.4.3,
+"Shadowing of Names by Local variables" in "The Java Language Specification Second
+Edition" by Gosling, Joy, Steele, and Bracha
+(<a class="ulink" href="http://java.sun.com/docs/books/jls/" target="_top">http://java.sun.com/docs/books/jls/)</a>.
+</p>
+</li><li class="listitem">
+<p>
+Tip 20 - Add <span class="emphasis"><em>NOI18N</em></span> comment for String literals
+</p>
+<p>
+Enabling this tip will cause warnings for all String literals without associated
+<code class="literal">/* NOI18N */</code> comment.
+</p>
+<p>
+Internationalizing Java applications is often done with nifty tools that use marker
+comments to indicate that a given String literal should not be considered for localization.
+Most tools (at least the ones I know of) use trailing single-line comments which may not
+be very robust for processing with a formatting tool such as Jalopy. In contrast the author
+uses a multi-line comment of the form <code class="literal">/* NOI18N */</code> that gets directly
+placed after a String literal and will therefore always stuck with it.
+</p>
+
+<div class="example"><a id="inspector-tip20"/><p class="title"><strong>Example 4.156. $NON-NLS-1$ comment</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+FileDialog dialog = new FileDialog(this,
+    ResourceBundle.getBundle(BUNDLE_NAME)
+    .getString("BTN_SAVE_AS", FileDialog.SAVE); //$NON-NLS-1$
+</pre>
+</div></div><br class="example-break"/>
+
+<p>
+This trailing comment could be easily moved away from its String literal during formatting
+which would result in an unwanted notice on successive internationalization runs.
+</p>
+
+<div class="example"><a id="inspector-tip20a"/><p class="title"><strong>Example 4.157. $NON-NLS-1$ comment</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+FileDialog dialog =
+    new FileDialog(this,
+                   ResourceBundle.getBundle(BUNDLE_NAME).
+                                  getString("BTN_SAVE_AS",
+                   FileDialog.SAVE); //$NON-NLS-1$
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="inspector-tip20b"/><p class="title"><strong>Example 4.158. NOI18N comment</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+FileDialog dialog =
+    new FileDialog(this,
+                   ResourceBundle.getBundle(BUNDLE_NAME).
+                                  getString("BTN_SAVE_AS" /* NOI18N */),
+                   FileDialog.SAVE);
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li></ul></div>
+</div>
+</div>
+
+
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="misc.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="settings.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="inspector-naming.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.3.13. Misc </td><td width="20%" align="center"><a accesskey="h" href="manual-docbkx.html">Home</a></td><td width="40%" align="right" valign="top"> 4.4.2. Naming</td></tr></table></div></td></tr></table></td></tr><tr><td bgcolor="#eeeecc" height="17" style="font-size:9px;padding-left:5px"><a href="#toppage">to top</a></td></tr><tr><td height="30"><br/></td></tr><tr><td height="3"/></tr><tr><td bgcolor="#336699" height="1"/></tr><tr><td height="1"/></tr><tr><td bgcolor="#336699" height="16"/></tr><tr><td bgcolor="#ff9966" height="4"/></tr><tr><td class="footer" align="center" height="15" valign="middle">
+            Copyright © 2001-2004, <a class="footer" href="./contact.html">Marco Hunsicker</a>. All rights reserved. Hosted by <a href="http://sourceforge.net">SourceForge.net</a></td></tr></tbody></table><img src="http://sourceforge.net/sflogo.php?group_id=45216&amp;type=1" width="1" height="1" border="0" hspace="0" vspace="0" alt=""/></body></html>

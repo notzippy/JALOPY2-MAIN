@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title xmlns="http://www.w3.org/1999/xhtml">4.3.8. Environment</title><link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="site.css"/><meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="manual-docbkx.html" title="Jalopy User Manual"/><link rel="up" href="printer.html" title="4.3. Printer"/><link rel="previous" href="imports.html" title="4.3.7. Imports"/><link rel="next" href="javadoc.html" title="4.3.9. Javadoc"/>
+      <meta name="description" content="Jalopy Java Source Code Formatter Beautifier Pretty Printer"> 
+      <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://jalopy.sf.net" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://jalopy.sf.net" r (n 0 s 0 v 0 l 0))'> 
+    </head><body id="toppage"><table width="700" border="0" cellpadding="0" cellspacing="0" align="left"><tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #336699"><tbody><tr><td height="16"/></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr style="border:none"><td style="border:none"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="logo">JALOPY</td><td class="sublogo" valign="bottom">Java Source Code Formatter Beautifier Pretty Printer</td></tr></tbody></table></td></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr><td height="10"/></tr><tr><td bgcolor="#ff8000" height="4"/></tr><tr><td height="1" bgcolor="#ffffff"/></tr></tbody></table></td></tr><tr valign="top"><td valign="top" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./../../" class="navlink2">Home</a> |
+                  </td><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./manual-docbkx.html" class="navlink2">Manual</a> |
+                  </td></tr><tr><td height="20" bgcolor="#ffffff"/></tr><tr><td bgcolor="#eeeecc" height="17" align="right" style="font-size:10px;padding-right:3px">
+                    This page generated: <strong>20120315-0623</strong></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="5"><tr><td><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.3.8. Environment</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="imports.html">Prev</a> </td><th width="60%" align="center">4.3. Printer</th><td width="20%" align="right"> <a accesskey="n" href="javadoc.html">Next</a></td></tr></table><hr/></div><div xmlns="http://www.w3.org/1999/xhtml" class="sect2" title="4.3.8. Environment"><div class="titlepage"><div><div><h3 class="title"><a id="environment"/>4.3.8. Environment</h3></div></div></div>
+
+<a id="d5e2391" class="indexterm"/>
+<a id="d5e2394" class="indexterm"/>
+<a id="d5e2397" class="indexterm"/>
+<a id="d5e2399" class="indexterm"/>
+<a id="d5e2401" class="indexterm"/>
+
+<p>
+Lets you specify/view environment variables. Environment variables can be used
+in headers, footers and Javadoc templates to form variable expressions that will
+be resolved during printing. I call this process <span class="emphasis"><em>variable interpolation</em></span>.
+</p>
+
+<p>
+Environment variables are simple key/value pairs. Valid keys take the form
+<code class="literal">([a-zA-Z_][a-zA-Z0-9_.])+</code> and are case-sensitive. Values can be
+freely choosen.
+</p>
+
+<div class="example"><a id="environment-variable-ex"/><p class="title"><strong>Example 4.142. Sample environment variables</strong></p><div class="example-contents">
+
+
+<div class="variablelist"><dl><dt/><dd>
+author = &lt;a href="http://jalopy.sf.net/contact.html"&gt;Marco Hunsicker&lt;/a&gt;
+</dd><dt/><dd>
+project = Jalopy Java Source Code Formatter
+</dd></dl></div>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="sect3" title="4.3.8.1. User environment variables"><div class="titlepage"><div><div><h4 class="title"><a id="environment-user"/>4.3.8.1. User environment variables</h4></div></div></div>
+
+<p>
+Lets you specify you're user specific environment variables. Use the
+<span class="guibutton">Add...</span> and <span class="guibutton">Remove</span> buttons to
+add or remove items to and from the list.
+</p>
+</div>
+
+<div class="sect3" title="4.3.8.2. System environment variables"><div class="titlepage"><div><div><h4 class="title"><a id="environment-system"/>4.3.8.2. System environment variables</h4></div></div></div>
+
+<p>
+All system environment variables are automatically available as well but
+cannot be changed from within Jalopy.
+</p>
+</div>
+
+<div class="sect3" title="4.3.8.3. Local environment variables"><div class="titlepage"><div><div><h4 class="title"><a id="environment-local"/>4.3.8.3. Local environment variables</h4></div></div></div>
+
+<p>Additionaly, Jalopy provides some local variables that are automatically set
+depending on the execution context.</p>
+
+<p>
+The current list of valid local variables reads as follows:
+</p>
+
+
+<div class="table"><a id="tab-environment-local"/><p class="title"><strong>Table 4.1. Local environment variables</strong></p><div class="table-contents">
+
+<table summary="Local environment variables" style="border: none;"><colgroup><col/><col/></colgroup><tbody><tr><td style="">file</td><td style="">The absolute path of the currently processed Java file (e.g. <code class="filename">/usr/projects/test/MyFile.java</code>)</td></tr><tr><td style="">fileName</td><td style="">The name of the currently processed Java file (e.g. <code class="filename">MyFile.java</code>)</td></tr><tr><td style="">fileFormat</td><td style="">A string represention of the file format that will be used to write a file (e.g. UNIX or DOS)</td></tr><tr><td style="">package</td><td style="">The package name of the currently processed Java file (e.g. com.foo.mypackage)</td></tr><tr><td style="">convention</td><td style="">The name of the currently active code convention (as specified in the settings)</td></tr><tr><td style="">tabSize</td><td style="">The current indentation setting (as specified in the settings)</td></tr><tr><td style="">objectType</td><td style="">Only applies to Javadoc templates: Holds the type name of the class for a constructor.</td></tr><tr><td style="">paramType</td><td style="">Only applies to Javadoc templates: Holds the type name of a parameter.</td></tr><tr><td style="">exceptionType</td><td style="">Only applies to Javadoc templates: Holds the type name of a throws clause.</td></tr></tbody></table>
+</div></div><br class="table-break"/>
+</div>
+
+<div class="sect3" title="4.3.8.4. Usage"><div class="titlepage"><div><div><h4 class="title"><a id="environment-usage"/>4.3.8.4. Usage</h4></div></div></div>
+
+<p>
+Once defined, variables can then be enclosed with the dollar sign to form variable expressions.
+Variable expressions thus take the form <code class="literal">$([a-zA-Z_][a-zA-Z0-9_.]+)$</code>.
+</p>
+
+<p>
+During printing these expressions will be interpolated and
+the value of the variable inserted into the output file.
+</p>
+
+<div class="example"><a id="ex-environment-header-before"/><p class="title"><strong>Example 4.143. Header template with environment variable expressions</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+//==============================================================================
+// file :       $fileName$
+// project:     $project$
+//
+// last change: date:       $Date$
+//              by:         $Author$
+//              revision:   $Revision$
+//------------------------------------------------------------------------------
+// copyright:   BSJT Software License (see class documentation)
+//==============================================================================
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-environment-header-after"/><p class="title"><strong>Example 4.144. Header after interpolation</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+//==============================================================================
+// file :       Byte.java
+// project:     bsjt-rt
+//
+// last change: date:       $Date$
+//              by:         $Author$
+//              revision:   $Revision$
+//------------------------------------------------------------------------------
+// copyright:   BSJT Software License (see class documentation)
+//==============================================================================
+</pre>
+</div></div><br class="example-break"/>
+
+<p>
+As you see with the above example, if a variable is not defined, Jalopy won't
+touch the expression and simply preserve the original content. This way Jalopy
+works nicely with other source code tools and SCM products.
+</p>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="imports.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="printer.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="javadoc.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.3.7. Imports </td><td width="20%" align="center"><a accesskey="h" href="manual-docbkx.html">Home</a></td><td width="40%" align="right" valign="top"> 4.3.9. Javadoc</td></tr></table></div></td></tr></table></td></tr><tr><td bgcolor="#eeeecc" height="17" style="font-size:9px;padding-left:5px"><a href="#toppage">to top</a></td></tr><tr><td height="30"><br/></td></tr><tr><td height="3"/></tr><tr><td bgcolor="#336699" height="1"/></tr><tr><td height="1"/></tr><tr><td bgcolor="#336699" height="16"/></tr><tr><td bgcolor="#ff9966" height="4"/></tr><tr><td class="footer" align="center" height="15" valign="middle">
+            Copyright © 2001-2004, <a class="footer" href="./contact.html">Marco Hunsicker</a>. All rights reserved. Hosted by <a href="http://sourceforge.net">SourceForge.net</a></td></tr></tbody></table><img src="http://sourceforge.net/sflogo.php?group_id=45216&amp;type=1" width="1" height="1" border="0" hspace="0" vspace="0" alt=""/></body></html>

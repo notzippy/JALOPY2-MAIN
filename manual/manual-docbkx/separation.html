@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title xmlns="http://www.w3.org/1999/xhtml">4.3.5. Blank Lines</title><link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="site.css"/><meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><link rel="home" href="manual-docbkx.html" title="Jalopy User Manual"/><link rel="up" href="printer.html" title="4.3. Printer"/><link rel="previous" href="wrapping.html" title="4.3.4. Wrapping"/><link rel="next" href="comments.html" title="4.3.6. Comments"/>
+      <meta name="description" content="Jalopy Java Source Code Formatter Beautifier Pretty Printer"> 
+      <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://jalopy.sf.net" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://jalopy.sf.net" r (n 0 s 0 v 0 l 0))'> 
+    </head><body id="toppage"><table width="700" border="0" cellpadding="0" cellspacing="0" align="left"><tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #336699"><tbody><tr><td height="16"/></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr style="border:none"><td style="border:none"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="logo">JALOPY</td><td class="sublogo" valign="bottom">Java Source Code Formatter Beautifier Pretty Printer</td></tr></tbody></table></td></tr><tr><td bgcolor="#3399cc" height="1"/></tr><tr><td height="10"/></tr><tr><td bgcolor="#ff8000" height="4"/></tr><tr><td height="1" bgcolor="#ffffff"/></tr></tbody></table></td></tr><tr valign="top"><td valign="top" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./../../" class="navlink2">Home</a> |
+                  </td><td height="20" bgcolor="#faebd7" style="padding-left:15px"><a href="./manual-docbkx.html" class="navlink2">Manual</a> |
+                  </td></tr><tr><td height="20" bgcolor="#ffffff"/></tr><tr><td bgcolor="#eeeecc" height="17" align="right" style="font-size:10px;padding-right:3px">
+                    This page generated: <strong>20120315-0623</strong></td></tr></tbody></table><table border="0" width="100%" cellspacing="0" cellpadding="5"><tr><td><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.3.5. Blank Lines</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="wrapping.html">Prev</a> </td><th width="60%" align="center">4.3. Printer</th><td width="20%" align="right"> <a accesskey="n" href="comments.html">Next</a></td></tr></table><hr/></div><div xmlns="http://www.w3.org/1999/xhtml" class="sect2" title="4.3.5. Blank Lines"><div class="titlepage"><div><div><h3 class="title"><a id="separation"/>4.3.5. Blank Lines</h3></div></div></div>
+
+<p>
+Controls the Jalopy Blank Lines settings: the insertion of blank lines to
+separate statements or declarations with different functions or meanings.
+</p>
+<div class="sect3" title="4.3.5.1. General"><div class="titlepage"><div><div><h4 class="title"><a id="separation-blank-lines"/>4.3.5.1. General</h4></div></div></div>
+
+
+<p>
+Lets you specify the general blank lines sizes for different Java source file elements.
+</p>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="blank-lines-package"/>
+Package statement
+</p>
+
+<a id="d5e1905" class="indexterm"/>
+<a id="d5e1907" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed after the package statement.
+</p>
+
+<div class="example"><a id="ex-blank-lines-package"/><p class="title"><strong>Example 4.115. 3 Blank lines after package statement</strong></p><div class="example-contents">
+
+<pre class="programlisting">package de.hunsicker.jalopy.printer;
+&lt;--
+&lt;--
+&lt;--
+import antlr.collections.AST;
+
+import de.hunsicker.jalopy.parser.JavaAST;
+import de.hunsicker.jalopy.parser.JavaTokenTypes;
+
+...
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="blank-lines-import"/>
+Last import statement
+</p>
+
+<a id="d5e1917" class="indexterm"/>
+<a id="d5e1919" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed after the last import statement.
+</p>
+<div class="example"><a id="ex-blank-lines-import"/><p class="title"><strong>Example 4.116. 4 Blank lines after last import statement</strong></p><div class="example-contents">
+
+<pre class="programlisting">package de.hunsicker.jalopy.printer;
+
+import antlr.collections.AST;
+
+import de.hunsicker.jalopy.parser.JavaAST;
+import de.hunsicker.jalopy.parser.JavaTokenTypes;
+&lt;--
+&lt;--
+&lt;--
+&lt;--
+public class Printer
+{
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="blank-lines-classes"/>
+Classes
+</p>
+
+<a id="d5e1929" class="indexterm"/>
+<a id="d5e1931" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed between two
+class declarations.
+</p>
+<div class="example"><a id="blank-lines-class"/><p class="title"><strong>Example 4.117. 2 Blank lines between two class declarations</strong></p><div class="example-contents">
+
+<pre class="programlisting">class One
+{
+    ...
+}
+&lt;--
+&lt;--
+class Two
+{
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="blank-lines-interfaces"/>
+Interfaces
+</p>
+
+<a id="d5e1941" class="indexterm"/>
+<a id="d5e1943" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed between two
+interface declarations.
+</p>
+<div class="example"><a id="blank-lines-ifc"/><p class="title"><strong>Example 4.118. 3 Blank lines between two interface declarations</strong></p><div class="example-contents">
+
+<pre class="programlisting">interface One
+{
+    ...
+}
+&lt;--
+&lt;--
+&lt;--
+interface Two
+{
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="blank-lines-methods"/>
+Methods
+</p>
+
+<a id="d5e1953" class="indexterm"/>
+<a id="d5e1955" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed between two
+method/constructor declarations.
+</p>
+<div class="example"><a id="blank-lines-method"/><p class="title"><strong>Example 4.119. 3 Blank lines between two method declarations</strong></p><div class="example-contents">
+
+<pre class="programlisting">public static Printer getInstance()
+{
+    return INSTANCE;
+}
+&lt;--
+&lt;--
+&lt;--
+public void print(AST node, ASTWriter out)
+           throws IOException
+{
+    ...
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="blank-lines-blocks"/>
+Blocks
+</p>
+
+<a id="d5e1965" class="indexterm"/>
+<a id="d5e1967" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed before and after
+statement blocks (if-else , for, while, do-while, switch, try-catch-finally, synchronized).
+Note that the 'Blank lines after' setting also applies for anonymous inner classes.
+</p>
+
+<div class="example"><a id="ex-blank-lines-blocks"/><p class="title"><strong>Example 4.120. 2 Blank lines between before and after blocks</strong></p><div class="example-contents">
+
+<pre class="programlisting">AST type = null;
+&lt;--
+&lt;--
+switch (next.getType())
+{
+    case JavaTokenTypes.LPAREN :
+        type = PrinterUtils.advanceToFirstNonParen(next);
+        break;
+    default :
+        type = next;
+        break;
+}
+&lt;--
+&lt;--
+AST ident = type.getFirstChild();
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="blank-lines-declarations"/>
+Declarations
+</p>
+
+<a id="d5e1977" class="indexterm"/>
+<a id="d5e1979" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed before and after
+variable declarations.
+</p>
+</li><li class="listitem">
+<p><a id="blank-lines-case"/>
+Case blocks
+</p>
+
+<a id="d5e1985" class="indexterm"/>
+<a id="d5e1987" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed before each case
+block of a switch expression.
+</p>
+<div class="example"><a id="ex-blank-lines-case"/><p class="title"><strong>Example 4.121. 3 Blank lines before case blocks</strong></p><div class="example-contents">
+
+<pre class="programlisting">switch (next.getType())
+{
+&lt;--
+&lt;--
+&lt;--
+    case JavaTokenTypes.LPAREN :
+        type = PrinterUtils.advanceToFirstNonParen(next);
+        break;
+&lt;--
+&lt;--
+&lt;--
+    default :
+        type = next;
+        break;
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="blank-lines-control"/>
+Control statements
+</p>
+
+<a id="d5e1997" class="indexterm"/>
+<a id="d5e1999" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed before the statements
+<span class="command"><strong>return</strong></span>, <span class="command"><strong>break</strong></span> and <span class="command"><strong>continue</strong></span>.
+</p>
+<div class="example"><a id="ex-blank-lines-control"/><p class="title"><strong>Example 4.122. 2 Blank lines before case control statements</strong></p><div class="example-contents">
+
+<pre class="programlisting">switch (next.getType())
+{
+    case JavaTokenTypes.LPAREN :
+        type = PrinterUtils.advanceToFirstNonParen(next);
+&lt;--
+&lt;--
+        break;
+
+    default :
+        type = next;
+&lt;--
+&lt;--
+        break;
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="blank-lines-sl-comments"/>
+Single-line comments
+</p>
+
+<a id="d5e2012" class="indexterm"/>
+<a id="d5e2014" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed before single-line
+comments.
+</p>
+</li><li class="listitem">
+<p><a id="blank-lines-ml-comments"/>
+Multi-line comments
+</p>
+<a id="d5e2020" class="indexterm"/>
+<a id="d5e2022" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed before multi-line
+comments.
+</p>
+</li><li class="listitem">
+<p><a id="blank-lines-javadoc"/>
+Javadoc comments
+</p>
+<a id="d5e2028" class="indexterm"/>
+<a id="d5e2030" class="indexterm"/>
+
+<p>
+Lets you control how many blank lines should be printed before Javadoc
+comments.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect3" title="4.3.5.2. Misc"><div class="titlepage"><div><div><h4 class="title"><a id="separation-misc"/>4.3.5.2. Misc</h4></div></div></div>
+
+<p>Lets you control miscellaneous separation settings.</p>
+
+<div class="sect4" title="4.3.5.2.1. Misc"><div class="titlepage"><div><div><h5 class="title"><a id="d5e2037"/>4.3.5.2.1. Misc</h5></div></div></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="separation-misc-left-curly"/>
+Blank lines after left curly brace
+</p>
+<a id="d5e2042" class="indexterm"/>
+<a id="d5e2044" class="indexterm"/>
+
+<p>
+Forces the given number of blank lines after left curly braces no matter
+what your other blank lines settings say.
+</p>
+<div class="example"><a id="ex-separation-before-blocks"/><p class="title"><strong>Example 4.123. Blank lines before blocks=1</strong></p><div class="example-contents">
+
+<pre class="programlisting">public void foo()
+{
+&lt;--
+    if (condition())
+    {
+&lt;--
+        if (anotherCondition())
+        {
+            doSomething();
+        }
+    }
+}
+</pre>
+</div></div><br class="example-break"/>
+
+<p/>
+
+<div class="example"><a id="ex-separation-misc-left-curly-yes"/><p class="title"><strong>Example 4.124. Blank lines before blocks=1, Blank lines after left curly braces=0</strong></p><div class="example-contents">
+
+<pre class="programlisting">public void foo()
+{
+    if (condition())
+    {
+        if (anotherCondition())
+        {
+            doSomething();
+        }
+    }
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="separation-misc-right-curly"/>
+Blank lines before right curly brace
+</p>
+
+<a id="d5e2058" class="indexterm"/>
+<a id="d5e2060" class="indexterm"/>
+
+<p>
+Forces the given number of blank lines before closing curly braces no matter
+what your other blank lines settings say.
+</p>
+<div class="example"><a id="ex-separation-misc-left-curly-no"/><p class="title"><strong>Example 4.125. Blank lines before blocks=1</strong></p><div class="example-contents">
+
+<pre class="programlisting">public void foo()
+{
+    if (condititon())
+    {
+        if (anotherCondition())
+        {
+            doSomething();
+&lt;--
+        }
+&lt;--
+    }
+&lt;--
+}
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="separation-misc-keep"/>
+Keep Blank lines up to
+</p>
+<p>
+If enabled, retains up to the given number of blank lines found in the
+original source. This only works for method or constructor bodies. Note that Jalopy
+still takes your other blank lines settings into account.
+</p>
+
+<div class="example"><a id="ex-separation-misc-keep-no"/><p class="title"><strong>Example 4.126. Source code with blank lines to separate code sections</strong></p><div class="example-contents">
+
+<pre class="programlisting">aMVString = new MultiValueString("abc");
+&lt;--
+System.out.println("MV = "+aMVString);
+&lt;--
+System.out.println("MV0 = "+aMVString.extract(0));
+System.out.println("MV1 = "+aMVString.extract(1));
+System.out.println("MV2 = "+aMVString.extract(2));
+System.out.println("");
+</pre>
+</div></div><br class="example-break"/>
+<p>
+If this feature is left disabled, Jalopy will print the individual lines according
+to the current blank lines settings but won't try to retain any blank lines.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect4" title="4.3.5.2.2. Chunks"><div class="titlepage"><div><div><h5 class="title"><a id="chunks"/>4.3.5.2.2. Chunks</h5></div></div></div>
+
+<a id="d5e2077" class="indexterm"/>
+<p>
+Lets you define what makes a chunk: a section of associated statements.
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p><a id="chunks-comments"/>
+By comments
+</p>
+<a id="d5e2083" class="indexterm"/>
+<a id="d5e2085" class="indexterm"/>
+
+<p>
+If enabled, a statement with a comment before is recognized as the start of a new
+chunk.
+</p>
+
+<div class="example"><a id="ex-chunks-comments"/><p class="title"><strong>Example 4.127. Aligning variable declarations</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+String        text  = "text";
+int           a     = -1;
+
+// create a new entry
+History.Entry entry = new History.Entry(text);
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+<div class="example"><a id="ex-chunks-comments-enabled"/><p class="title"><strong>Example 4.128. Aligning variable declarations with chunking by comments</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+String text  = "text";
+int    a     = -1;
+
+// create a new entry
+History.Entry entry = new History.Entry(text);
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+</li><li class="listitem">
+<p><a id="chunks-blank-lines"/>
+By Blank lines
+</p>
+
+<a id="d5e2099" class="indexterm"/>
+<a id="d5e2101" class="indexterm"/>
+
+<p>
+If enabled, a statement which has one or more blank lines before is recognized
+as the start of a new chunk.
+</p>
+
+</li></ul></div>
+</div>
+
+</div>
+
+<div class="sect3" title="4.3.5.3. Comments"><div class="titlepage"><div><div><h4 class="title"><a id="separation-comment"/>4.3.5.3. Comments</h4></div></div></div>
+
+<p>
+Lets you control the behaviour of the separator comments. If the
+<a class="link" href="sorting.html" title="4.3.12. Sorting">sorting of class elements</a> is enabled, Separator comments
+can be inserted before every element section, to make it easier to identify the
+different parts of a source file.
+</p>
+
+<a id="d5e2109" class="indexterm"/>
+<div class="example"><a id="ex-separation-comment"/><p class="title"><strong>Example 4.129. Separator comment</strong></p><div class="example-contents">
+
+<pre class="programlisting">
+//~ Methods ------------------------------------------------------------------
+</pre>
+</div></div><br class="example-break"/>
+<p/>
+
+<div class="sect4" title="4.3.5.3.1. General"><div class="titlepage"><div><div><h5 class="title"><a id="d5e2115"/>4.3.5.3.1. General</h5></div></div></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>
+Add separator comments
+</p>
+<p>
+Enables the insertions of separator comments.
+</p>
+</li><li class="listitem">
+<p>
+Add separator comments for inner classes
+</p>
+<p>
+The insertion of separator comments for inner classes/interfaces may lead to
+confusion, therefore you can control it here separately.
+</p>
+</li></ul></div>
+</div>
+
+<div class="sect4" title="4.3.5.3.2. Descriptions"><div class="titlepage"><div><div><h5 class="title"><a id="d5e2124"/>4.3.5.3.2. Descriptions</h5></div></div></div>
+
+<p>Lets you define the description text for each of the different class elements.</p>
+</div>
+
+<div class="sect4" title="4.3.5.3.3. Fill character"><div class="titlepage"><div><div><h5 class="title"><a id="d5e2127"/>4.3.5.3.3. Fill character</h5></div></div></div>
+
+<p>Lets you define the fill character for the comments.</p>
+</div>
+</div>
+</div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="wrapping.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="printer.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="comments.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.3.4. Wrapping </td><td width="20%" align="center"><a accesskey="h" href="manual-docbkx.html">Home</a></td><td width="40%" align="right" valign="top"> 4.3.6. Comments</td></tr></table></div></td></tr></table></td></tr><tr><td bgcolor="#eeeecc" height="17" style="font-size:9px;padding-left:5px"><a href="#toppage">to top</a></td></tr><tr><td height="30"><br/></td></tr><tr><td height="3"/></tr><tr><td bgcolor="#336699" height="1"/></tr><tr><td height="1"/></tr><tr><td bgcolor="#336699" height="16"/></tr><tr><td bgcolor="#ff9966" height="4"/></tr><tr><td class="footer" align="center" height="15" valign="middle">
+            Copyright © 2001-2004, <a class="footer" href="./contact.html">Marco Hunsicker</a>. All rights reserved. Hosted by <a href="http://sourceforge.net">SourceForge.net</a></td></tr></tbody></table><img src="http://sourceforge.net/sflogo.php?group_id=45216&amp;type=1" width="1" height="1" border="0" hspace="0" vspace="0" alt=""/></body></html>
