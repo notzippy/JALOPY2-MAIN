@@ -1,0 +1,70 @@
+package de.hunsicker.jalopy.swing;
+
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.*;
+import java.util.*;
+
+/**
+* The <code>Source.java</code>
+* class a@b.com allows...
+*
+ * @param <K1> The k
+ * @param <K2> THe v
+ 
+* @author=<a href="mailto:me@noway.com">me</a>
+* @version $Revision: 1.4 $, $date$
+* <br>Copyright © 2005, SH
+ */
+
+public class AllTest<K1, K2, V>
+ implements java.lang.Iterable<V> {
+  public void TestJalopy()
+  {
+    String one;
+
+    LongString two;
+
+    VeryLongString three;
+
+  }
+ 
+     private Class<?> type;
+    /**
+     * This is a test
+     * 
+     */
+    public void test1(Class tmpObject,Class[] panelParams, URL u) {
+/** require (nLevel >= 1) && (nLevel <= 4);
+* TypeMapUtilities.isValidType(nType);
+* TypeMapUtilities.isValidGroup(nGroup);
+**/
+   /**
+ * This comment 
+ * Should not be changed
+ */
+        try {
+java.lang.reflect.Constructor tmpConst =
+(java.lang.reflect.Constructor) 
+tmpObject.getConstructor
+(panelParams);
+
+      java.net.JarURLConnection uc = (java.net.JarURLConnection)
+u
+         .openConnection();
+        } catch(Exception e) {}
+    }
+    /**
+     * has
+     *
+     * @param <K> The k
+     * @param <V> THe v
+     */
+public static <K, V> Map<K, V> newSynchronizedMap() {
+return Collections.synchronizedMap(util.<K,V>newMap());
+}    
+}
+/*
+ * End comment
+ */
+

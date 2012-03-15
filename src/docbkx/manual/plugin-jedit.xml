@@ -1,0 +1,140 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: plugin-jedit.xml,v 1.4 2002/11/11 20:13:40 marcohu Exp $ -->
+<!-- Contains the documentaion for the jEdit Plug-in -->
+
+<title>jEdit Plug-in</title>
+<indexterm><primary>jEdit</primary></indexterm>
+<indexterm><primary>Plug-in</primary><secondary>jEdit</secondary></indexterm>
+
+<para>
+Describes the installation and usage of the Jalopy jEdit Plug-in.
+</para>
+
+<sect1 id="plugin-jedit-installation">
+<title>Installation</title>
+
+<para>
+Explains the steps involved to install the jEdit Plug-in.
+</para>
+
+<sect3 id="plugin-jedit-installation-requirements">
+<title>System requirements</title>
+<para>
+The Jalopy jEdit Plug-in requires at least jEdit 4.1pre1 and MessageView 0.1.0.
+If you want to import/exprt XML settings, you need the XML Plug-in also.
+Refer to the Jalopy user manual for the basic requirements to run Jalopy (You
+may find the latest version on the Jalopy website,
+<ulink url="http://jalopy.sf.net/installation.html">http://jalopy.sf.net/installation.html</ulink>)
+</para>
+
+<para>
+To obtain more information about this wonderful Editor, visit the official
+jEdit homepage:
+<ulink url="http://www.jedit.org/">http://www.jedit.org/</ulink>
+</para>
+</sect3>
+
+<sect3 id="plugin-jedit-installation-installation">
+<title>Installation</title>
+<indexterm zone="plugin-jedit-installation-installation"><primary>Installation</primary><secondary>jEdit Plug-in</secondary></indexterm>
+<para>
+The Plug-in comes either as a single <filename>.zip</filename> or compressed
+<filename>.tar</filename> archive. Unzipping either one of these files into a directory
+of your choice (referred to as <replaceable>&lt;INST_DIR&gt;</replaceable>) will
+produce two subdirectories <filename>/docs</filename> and <filename>/lib</filename>.
+</para>
+
+<para>
+<screen>
+..
+  docs/      contains the documentation
+  lib/       contains all necessary libraries
+</screen>
+</para>
+
+<para>
+If there is already an older version of Jalopy installed, you have to remove it
+prior to install. Open the Plugin Manager via
+<menuchoice>
+<guimenu><accel>P</accel>lugins</guimenu>
+<guimenuitem>Plugin <accel>M</accel>anager</guimenuitem>
+</menuchoice>, select the Jalopy Java Source Code Formatter entry and
+press <guilabel>Remove Plugins</guilabel>.
+</para>
+
+<para>
+Further installation is simple: just copy all <filename>.jar</filename> files
+contained  in the <filename><replaceable>&lt;INST_DIR&gt;</replaceable>/lib</filename> folder
+into the <filename>/jars</filename> directory of your jEdit distribution.
+jEdit will then need to be restarted before Jalopy begins working.
+</para>
+</sect3>
+</sect1>
+
+<sect1 id="plugin-jedit-integration">
+<title>Integration</title>
+
+<para>
+Shows how the Plug-in is integrated into jEdit.
+</para>
+
+<para>
+The software adds a new menu item group into the <guimenu><accel>P</accel>lugins</guimenu>
+menu of the editor view. Available are two new menu items:
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+<menuchoice>
+<guimenu><accel>P</accel>lugins</guimenu>
+<guimenuitem><accel>J</accel>alopy</guimenuitem>
+<guimenuitem>Forma<accel>t</accel> current Buffer</guimenuitem>
+</menuchoice>.
+</para>
+<para>
+Formats the contents of the active text area.
+</para>
+<para>
+Note that this menu item reflects the state of the text area: it will only be enabled
+if the current edit mode is actually the <firstterm>java</firstterm> mode.
+</para>
+</listitem>
+
+<listitem>
+<para>
+<menuchoice>
+  <guimenu><accel>P</accel>lugins</guimenu>
+  <guimenuitem><accel>J</accel>alopy</guimenuitem>
+  <guimenuitem><accel>J</accel>alopy Options...</guimenuitem>
+</menuchoice>.
+</para>
+<para>
+Displays the Jalopy settings dialog.
+</para>
+<para>
+Use this item if you want to change your settings to control the
+layout of any formatted code.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+These options are available under jEdit's Global Options dialog, too.
+</para>
+</sect1>
+
+<sect1 id="plugin-jedit-license">
+<title>License</title>
+<para>
+The jEdit Plug-in is &quot;<emphasis role="bold"><ulink url="http://opensource.org/docs/certification_mark.php">OSI Certified Open Source Software</ulink></emphasis>&quot;,
+released under a BSD license.
+</para>
+
+<para>
+See <ulink url="http://jalopy.sf.net/license-bsd.html">Appendix B</ulink> of the manual
+for the license and refer to <ulink url="http://jalopy.sf.net/dependencies.html">Appendix A</ulink> for
+the license terms of the accompanying 3rd party libraries.
+</para>
+</sect1>

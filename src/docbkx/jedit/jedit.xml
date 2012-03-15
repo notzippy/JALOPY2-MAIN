@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!-- Jalopy jEdit Plug-in Users' Guide -->
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+  [
+  <!ENTITY plugin-jedit SYSTEM "../manual/plugin-jedit.xml">
+  ] >
+
+<article>
+<articleinfo><title>Jalopy jEdit Plug-in Users' Guide</title>
+<copyright><year>2002</year><holder>Marco Hunsicker</holder></copyright>
+</articleinfo>
+
+&plugin-jedit;
+</article>

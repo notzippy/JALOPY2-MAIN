@@ -1,0 +1,17 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-footer.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect2 id="footer">
+<title>Footer</title>
+<indexterm><primary>Footer</primary></indexterm>
+<para>
+Controls the printing of footers. Refer to <xref linkend="header" /> for an
+explanation of the different options.
+</para>
+
+<para>
+Note that Jalopy always prints one trailing empty line after the footer.
+</para>
+</sect2>

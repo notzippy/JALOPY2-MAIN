@@ -1,0 +1,561 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-separation.xml,v 1.2 2002/11/14 19:26:18 marcohu Exp $ -->
+
+<sect2 id="separation">
+<title>Blank Lines</title>
+<para>
+Controls the Jalopy Blank Lines settings: the insertion of blank lines to
+separate statements or declarations with different functions or meanings.
+</para>
+<sect3 id="separation-blank-lines">
+<title>General</title>
+
+<para>
+Lets you specify the general blank lines sizes for different Java source file elements.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="blank-lines-package">
+Package statement
+</para>
+
+<indexterm zone="blank-lines-package"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-package"><primary>Blank lines</primary><secondary>Package statement</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed after the package statement.
+</para>
+
+<example id="ex-blank-lines-package">
+<title>3 Blank lines after package statement</title>
+<programlisting format="linespecific" linenumbering="numbered">package de.hunsicker.jalopy.printer;
+&lt;--
+&lt;--
+&lt;--
+import antlr.collections.AST;
+
+import de.hunsicker.jalopy.parser.JavaAST;
+import de.hunsicker.jalopy.parser.JavaTokenTypes;
+
+...
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="blank-lines-import">
+Last import statement
+</para>
+
+<indexterm zone="blank-lines-import"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-import"><primary>Blank lines</primary><secondary>Last Import statement</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed after the last import statement.
+</para>
+<example id="ex-blank-lines-import">
+<title>4 Blank lines after last import statement</title>
+<programlisting format="linespecific" linenumbering="numbered">package de.hunsicker.jalopy.printer;
+
+import antlr.collections.AST;
+
+import de.hunsicker.jalopy.parser.JavaAST;
+import de.hunsicker.jalopy.parser.JavaTokenTypes;
+&lt;--
+&lt;--
+&lt;--
+&lt;--
+public class Printer
+{
+    ...
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="blank-lines-classes">
+Classes
+</para>
+
+<indexterm zone="blank-lines-classes"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-classes"><primary>Blank lines</primary><secondary>Classes</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed between two
+class declarations.
+</para>
+<example id="blank-lines-class">
+<title>2 Blank lines between two class declarations</title>
+<programlisting format="linespecific" linenumbering="numbered">class One
+{
+    ...
+}
+&lt;--
+&lt;--
+class Two
+{
+    ...
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="blank-lines-interfaces">
+Interfaces
+</para>
+
+<indexterm zone="blank-lines-interfaces"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-interfaces"><primary>Blank lines</primary><secondary>Interfaces</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed between two
+interface declarations.
+</para>
+<example id="blank-lines-ifc">
+<title>3 Blank lines between two interface declarations</title>
+<programlisting format="linespecific" linenumbering="numbered">interface One
+{
+    ...
+}
+&lt;--
+&lt;--
+&lt;--
+interface Two
+{
+    ...
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="blank-lines-methods">
+Methods
+</para>
+
+<indexterm zone="blank-lines-methods"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-methods"><primary>Blank lines</primary><secondary>Methods/Constructors</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed between two
+method/constructor declarations.
+</para>
+<example id="blank-lines-method">
+<title>3 Blank lines between two method declarations</title>
+<programlisting format="linespecific" linenumbering="numbered">public static Printer getInstance()
+{
+    return INSTANCE;
+}
+&lt;--
+&lt;--
+&lt;--
+public void print(AST node, ASTWriter out)
+           throws IOException
+{
+    ...
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="blank-lines-blocks">
+Blocks
+</para>
+
+<indexterm zone="blank-lines-blocks"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-blocks"><primary>Blank lines</primary><secondary>Statement blocks</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed before and after
+statement blocks (if-else , for, while, do-while, switch, try-catch-finally, synchronized).
+Note that the 'Blank lines after' setting also applies for anonymous inner classes.
+</para>
+
+<example id="ex-blank-lines-blocks">
+<title>2 Blank lines between before and after blocks</title>
+<programlisting format="linespecific" linenumbering="numbered">AST type = null;
+&lt;--
+&lt;--
+switch (next.getType())
+{
+    case JavaTokenTypes.LPAREN :
+        type = PrinterUtils.advanceToFirstNonParen(next);
+        break;
+    default :
+        type = next;
+        break;
+}
+&lt;--
+&lt;--
+AST ident = type.getFirstChild();
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="blank-lines-declarations">
+Declarations
+</para>
+
+<indexterm zone="blank-lines-declarations"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-declarations"><primary>Blank lines</primary><secondary>Variable declarations</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed before and after
+variable declarations.
+</para>
+</listitem>
+
+<listitem>
+<para id="blank-lines-case">
+Case blocks
+</para>
+
+<indexterm zone="blank-lines-case"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-case"><primary>Blank lines</primary><secondary>Case blocks</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed before each case
+block of a switch expression.
+</para>
+<example id="ex-blank-lines-case">
+<title>3 Blank lines before case blocks</title>
+<programlisting format="linespecific" linenumbering="numbered">switch (next.getType())
+{
+&lt;--
+&lt;--
+&lt;--
+    case JavaTokenTypes.LPAREN :
+        type = PrinterUtils.advanceToFirstNonParen(next);
+        break;
+&lt;--
+&lt;--
+&lt;--
+    default :
+        type = next;
+        break;
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="blank-lines-control">
+Control statements
+</para>
+
+<indexterm zone="blank-lines-control"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-control"><primary>Blank lines</primary><secondary>Control statements</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed before the statements
+<command>return</command>, <command>break</command> and <command>continue</command>.
+</para>
+<example id="ex-blank-lines-control">
+<title>2 Blank lines before case control statements</title>
+<programlisting format="linespecific" linenumbering="numbered">switch (next.getType())
+{
+    case JavaTokenTypes.LPAREN :
+        type = PrinterUtils.advanceToFirstNonParen(next);
+&lt;--
+&lt;--
+        break;
+
+    default :
+        type = next;
+&lt;--
+&lt;--
+        break;
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="blank-lines-sl-comments">
+Single-line comments
+</para>
+
+<indexterm zone="blank-lines-sl-comments"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-sl-comments"><primary>Blank lines</primary><secondary>Single-line comments</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed before single-line
+comments.
+</para>
+</listitem>
+
+<listitem>
+<para id="blank-lines-ml-comments">
+Multi-line comments
+</para>
+<indexterm zone="blank-lines-ml-comments"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-ml-comments"><primary>Blank lines</primary><secondary>Multi-line comments</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed before multi-line
+comments.
+</para>
+</listitem>
+
+<listitem>
+<para id="blank-lines-javadoc">
+Javadoc comments
+</para>
+<indexterm zone="blank-lines-javadoc"><primary>Blank lines</primary></indexterm>
+<indexterm zone="blank-lines-javadoc"><primary>Blank lines</primary><secondary>Javadoc</secondary></indexterm>
+
+<para>
+Lets you control how many blank lines should be printed before Javadoc
+comments.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3 id="separation-misc">
+<title>Misc</title>
+<para>Lets you control miscellaneous separation settings.</para>
+
+<sect4>
+<title>Misc</title>
+<itemizedlist>
+<listitem>
+<para id="separation-misc-left-curly">
+Blank lines after left curly brace
+</para>
+<indexterm zone="separation-misc-left-curly"><primary>Blank lines</primary></indexterm>
+<indexterm zone="separation-misc-left-curly"><primary>Blank lines</primary><secondary>After left curly brace</secondary></indexterm>
+
+<para>
+Forces the given number of blank lines after left curly braces no matter
+what your other blank lines settings say.
+</para>
+<example id="ex-separation-before-blocks">
+<title>Blank lines before blocks=1</title>
+<programlisting format="linespecific" linenumbering="numbered">public void foo()
+{
+&lt;--
+    if (condition())
+    {
+&lt;--
+        if (anotherCondition())
+        {
+            doSomething();
+        }
+    }
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-separation-misc-left-curly-yes">
+<title>Blank lines before blocks=1, Blank lines after left curly braces=0</title>
+<programlisting format="linespecific" linenumbering="numbered">public void foo()
+{
+    if (condition())
+    {
+        if (anotherCondition())
+        {
+            doSomething();
+        }
+    }
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="separation-misc-right-curly">
+Blank lines before right curly brace
+</para>
+
+<indexterm zone="separation-misc-right-curly"><primary>Blank lines</primary></indexterm>
+<indexterm zone="separation-misc-right-curly"><primary>Blank lines</primary><secondary>Before right curly brace</secondary></indexterm>
+
+<para>
+Forces the given number of blank lines before closing curly braces no matter
+what your other blank lines settings say.
+</para>
+<example id="ex-separation-misc-left-curly-no">
+<title>Blank lines before blocks=1</title>
+<programlisting format="linespecific" linenumbering="numbered">public void foo()
+{
+    if (condititon())
+    {
+        if (anotherCondition())
+        {
+            doSomething();
+&lt;--
+        }
+&lt;--
+    }
+&lt;--
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="separation-misc-keep">
+Keep Blank lines up to
+</para>
+<para>
+If enabled, retains up to the given number of blank lines found in the
+original source. This only works for method or constructor bodies. Note that Jalopy
+still takes your other blank lines settings into account.
+</para>
+
+<example id="ex-separation-misc-keep-no">
+<title>Source code with blank lines to separate code sections</title>
+<programlisting format="linespecific" linenumbering="numbered">aMVString = new MultiValueString("abc");
+&lt;--
+System.out.println("MV = "+aMVString);
+&lt;--
+System.out.println("MV0 = "+aMVString.extract(0));
+System.out.println("MV1 = "+aMVString.extract(1));
+System.out.println("MV2 = "+aMVString.extract(2));
+System.out.println("");
+</programlisting>
+</example>
+<para>
+If this feature is left disabled, Jalopy will print the individual lines according
+to the current blank lines settings but won't try to retain any blank lines.
+</para>
+</listitem>
+
+</itemizedlist>
+</sect4>
+
+<sect4 id="chunks">
+<title>Chunks</title>
+<indexterm><primary>Chunks</primary></indexterm>
+<para>
+Lets you define what makes a chunk: a section of associated statements.
+</para>
+<itemizedlist>
+<listitem>
+<para id="chunks-comments">
+By comments
+</para>
+<indexterm zone="chunks-comments"><primary>Chunks</primary></indexterm>
+<indexterm zone="chunks-comments"><primary>Chunks</primary><secondary>By comments</secondary></indexterm>
+
+<para>
+If enabled, a statement with a comment before is recognized as the start of a new
+chunk.
+</para>
+
+<example id="ex-chunks-comments">
+<title>Aligning variable declarations</title>
+<programlisting>
+String        text  = "text";
+int           a     = -1;
+
+// create a new entry
+History.Entry entry = new History.Entry(text);
+</programlisting>
+</example>
+<para/>
+<example id="ex-chunks-comments-enabled">
+<title>Aligning variable declarations with chunking by comments</title>
+<programlisting>
+String text  = "text";
+int    a     = -1;
+
+// create a new entry
+History.Entry entry = new History.Entry(text);
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+
+<listitem>
+<para id="chunks-blank-lines">
+By Blank lines
+</para>
+
+<indexterm zone="chunks-blank-lines"><primary>Chunks</primary></indexterm>
+<indexterm zone="chunks-blank-lines"><primary>Chunks</primary><secondary>By Blank lines</secondary></indexterm>
+
+<para>
+If enabled, a statement which has one or more blank lines before is recognized
+as the start of a new chunk.
+</para>
+
+</listitem>
+</itemizedlist>
+</sect4>
+
+</sect3>
+
+<sect3 id="separation-comment">
+<title>Comments</title>
+<para>
+Lets you control the behaviour of the separator comments. If the
+<link linkend="sorting">sorting of class elements</link> is enabled, Separator comments
+can be inserted before every element section, to make it easier to identify the
+different parts of a source file.
+</para>
+
+<indexterm zone="separation-comment"><primary>Separator comment</primary></indexterm>
+<example id="ex-separation-comment">
+<title>Separator comment</title>
+<programlisting>
+//~ Methods ------------------------------------------------------------------
+</programlisting>
+</example>
+<para />
+
+<sect4>
+<title>General</title>
+<itemizedlist>
+<listitem>
+<para>
+Add separator comments
+</para>
+<para>
+Enables the insertions of separator comments.
+</para>
+</listitem>
+<listitem>
+<para>
+Add separator comments for inner classes
+</para>
+<para>
+The insertion of separator comments for inner classes/interfaces may lead to
+confusion, therefore you can control it here separately.
+</para>
+</listitem>
+</itemizedlist>
+</sect4>
+
+<sect4>
+<title>Descriptions</title>
+<para>Lets you define the description text for each of the different class elements.</para>
+</sect4>
+
+<sect4>
+<title>Fill character</title>
+<para>Lets you define the fill character for the comments.</para>
+</sect4>
+</sect3>
+</sect2>

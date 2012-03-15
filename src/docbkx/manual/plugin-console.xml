@@ -1,0 +1,239 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: plugin-console.xml,v 1.3 2002/11/11 20:13:40 marcohu Exp $ -->
+<!-- Contains the documentaion for the Console Plug-in -->
+
+<title>Console Application</title>
+<indexterm><primary>Plug-in</primary><secondary>Console</secondary></indexterm>
+<indexterm><primary>Console</primary></indexterm>
+
+<para>
+The Console application provides a powerful command line interface for Jalopy.
+</para>
+
+<sect1 id="plugin-console-installation">
+<title>Installation</title>
+
+<para>
+Explains the steps involved to install the Console Plug-in.
+</para>
+
+<sect3 id="plugin-console-installation-requirements">
+<title>System requirements</title>
+<para>
+See <xref linkend="installation-requirements" /> for the basic requirements to
+run Jalopy.
+</para>
+</sect3>
+
+<sect3 id="plugin-console-installation-installation">
+<title>Installation</title>
+<indexterm zone="plugin-console-installation-installation"><primary>Installation</primary><secondary>Ant</secondary></indexterm>
+<para>
+The Plug-in comes either as a single <filename>.zip</filename> or compressed <filename>.tar</filename> file.
+Unzipping either one of these files into a directory of your choice (referred
+to as <replaceable>&lt;INST_DIR&gt;</replaceable>) will produce three
+subdirectories <filename>/bin</filename>, <filename>/docs</filename> and
+<filename>/lib</filename>.
+</para>
+
+<para>
+<screen>
+..
+  bin/       contains wrapper scripts for different platforms
+  docs/      contains the documentation
+  lib/       contains all necessary libraries
+</screen>
+</para>
+
+<para>
+Wrapper scripts are provided for the common platforms, so you may want to add
+the <filename>/bin</filename> folder to your path. If your platform
+is not covered you should make use of the <option>-jar</option> option of the
+Java application launcher (the <command>java -jar</command> command), since
+this requires no classpath manipulation. If you don't want to use the
+<option>-jar</option> option, you have to add the <filename>.jar</filename>
+files as usual to your classpath.
+</para>
+
+<para>
+For the Unix Bash shell, this means can be achieved using
+</para>
+
+<synopsis>
+export CLASSPATH=${CLASSPATH}:<replaceable>&lt;INST_DIR&gt;</replaceable>/lib/jalopy-console-<replaceable>&lt;version&gt;</replaceable>.jar
+</synopsis>
+
+<para>
+For Windows, use something like
+</para>
+
+<synopsis>
+set CLASSPATH=%CLASSPATH%;<replaceable>&lt;INST_DIR&gt;</replaceable>\lib\jalopy-console-<replaceable>&lt;version&gt;</replaceable>.jar
+</synopsis>
+
+<para>
+Refer to your system documentation on how to apply these changes more permanently.
+</para>
+
+</sect3>
+</sect1>
+
+<sect1 id="plugin-console-usage">
+<title>Usage</title>
+
+<para>
+Presents the available command line options along with some usage examples.
+</para>
+
+<sect3 id="synopsis">
+<title>Synopsis</title>
+<indexterm><primary>Synopsis</primary></indexterm>
+<indexterm><primary>Usage</primary></indexterm>
+<indexterm><primary>Command line</primary></indexterm>
+<para>
+To start Jalopy from the command line you may either use
+</para>
+
+<synopsis>
+jalopy [-options] <replaceable>args</replaceable>...
+</synopsis>
+
+<para>
+or
+</para>
+
+<synopsis>
+java Jalopy [-options] <replaceable>args</replaceable>...
+</synopsis>
+
+<para>
+or
+</para>
+
+<synopsis>
+java -jar jalopy-<replaceable>&lt;version&gt;</replaceable>.jar [-options] <replaceable>args</replaceable>...
+</synopsis>
+
+<para>
+depending on your installation option.
+</para>
+
+<para id="usage-options">
+You can specify as many <replaceable>args</replaceable> as you want,
+where <replaceable>args</replaceable> describes either files,
+directories or filter expressions. You can use any valid Perl5 (5.003)
+regular expression as a filter expression.
+</para>
+
+<indexterm zone="usage-options"><primary>Command line</primary><secondary>options</secondary></indexterm>
+<indexterm zone="usage-options"><primary>Command line</primary><secondary>arguments</secondary></indexterm>
+<indexterm zone="usage-options"><primary>Regular expressions</primary></indexterm>
+
+<simplesect id="options">
+<title>Options</title>
+<screen>
+-c, --convention=FILE   use FILE as code convention file
+    --disclaimer        print software disclaimer
+-d, --dest=DIR          use DIR as base output directory
+-e, --encoding=WORD     assume WORD as encoding of input files where WORD
+                        describes one of the JDK supported encodings
+                        (if omitted, the platform default is used)
+-f, --format=WORD       use WORD as output file format where WORD can be
+                        either UNIX, DOS, MAC, AUTO (the default) or DEFAULT
+                        (all case-insensitive)
+    --force             force formatting even if file up-to-date
+-h, --help              display this help
+    --nobackup          don't keep backup files
+-r, --recursive{=NUM}   recurse into directories, up to NUM levels
+                        if NUM is omitted, recurses indefinitely
+-t, --thread=NUM        use NUM processing threads
+-v, --version           print product version and exit
+</screen>
+
+<para>
+If no input file(s) are given, Jalopy starts listening on <emphasis>STDIN</emphasis>.
+</para>
+</simplesect>
+</sect3>
+
+
+<sect3 id="plugin-console-usage-example">
+<title>Examples</title>
+
+<para>
+<example id="ex-command-line-one">
+<title>Sample command line usage</title>
+
+<indexterm><primary>Usage</primary><secondary>examples</secondary></indexterm>
+
+<synopsis>
+jalopy -r <replaceable>myDirectory</replaceable>
+</synopsis>
+
+<para>
+Formats all Java source files found in directory <replaceable>myDirectory</replaceable>
+and all subdirectories. Creates backup copies of all files. The file format
+of the original source files will be kept.
+</para>
+</example>
+
+<example id="ex-command-line-two">
+<title>Sample command line usage</title>
+<synopsis>
+jalopy -d <replaceable>/directory</replaceable> -f DOS
+<replaceable>myFile1.java myFile2.java</replaceable>
+</synopsis>
+<para>
+Formats the two files <replaceable>myFile1.java</replaceable> and
+<replaceable>myFile2.java</replaceable> and writes the new files into
+directory <replaceable>/directory</replaceable>. Uses DOS as the file
+format of the new files.
+</para>
+</example>
+
+<example  id="ex-command-line-three">
+<title>Sample command line usage</title>
+<synopsis>
+jalopy -r 3 -d <replaceable>/directory</replaceable> ^A.*java
+</synopsis>
+
+<para>
+Formats all Java source files found in the current directory and three
+levels down that begin with a captial 'A' and writes the new files into
+directory <replaceable>/tmp</replaceable>. The file format of the
+original source files will be kept.
+</para>
+</example>
+
+<example  id="ex-command-line-four">
+<title>Sample command line usage</title>
+<synopsis>
+type f:\test\in.java | jalopy > out.java
+</synopsis>
+
+<para>
+Formats the file <filename>f:\test\in.java</filename> read from STDIN and
+outputs its formatted contents to the file <filename>out.java</filename> in the
+current directory.
+</para>
+</example>
+
+</para>
+</sect3>
+</sect1>
+
+<sect1 id="plugin-console-license">
+<title>License</title>
+<para>
+The Console Plug-in is &quot;<emphasis role="bold"><ulink url="http://opensource.org/docs/certification_mark.php">OSI Certified Open Source Software</ulink></emphasis>&quot;,
+released under the GNU General Public License. See <xref linkend="license-gnu" />
+for more information.
+</para>
+
+<para>
+See <xref linkend="license-bsd" /> for the Jalopy license
+and refer to <xref linkend="dependencies" /> for the license terms of the accompanying 3rd party libraries.
+</para>
+</sect1>

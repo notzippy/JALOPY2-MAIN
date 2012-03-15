@@ -1,0 +1,891 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-indentation.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect2 id="indentation">
+<title>Indentation</title>
+<para>
+Controls the indentation settings.
+<indexterm zone="indentation"><primary>Indentation</primary></indexterm>
+</para>
+
+<sect3 id="indentation-general">
+<title>General</title>
+<para>Lets you change the general indentation settings.</para>
+
+<sect4 id="indentation-policy">
+<title>Policy</title>
+<para>
+Lets you choose the way lines should be indented.
+</para>
+
+
+<itemizedlist>
+<listitem>
+<para id="indentation-policy-standard">
+Standard indent
+</para>
+<para>
+With standard indentation, lines will be indented according to the
+current indentation level (Note that the indentation level changes as the block
+or parentheses level changes).
+</para>
+
+<example id="indentation-method-decl-standard">
+<title>Method declaration (standard indented)</title>
+<programlisting>
+public void severalParameters(String one, int two, String three,
+    StringObject four, AnotherObject five) {
+...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="indentation-method-call-standard">
+<title>Method Call (standard indented)</title>
+<programlisting>
+vector.add(new AppServerReference(
+        "RemoteApplicationManager",
+        poa.create_reference_with_id("RemoteApplicationManager".getBytes(),
+            RemoteApplicationManagerHelper.id())));
+</programlisting>
+</example>
+
+<para/>
+
+<example id="indentation-assign-standard">
+<title>Assignment (standard indented)</title>
+<programlisting>
+doublette[InteressentenPflegeController.GEBURTSDATUM] = versichertenResultSetRow[i].field[0]
+    .substring(0, 2) + "."
+    + versichertenResultSetRow[i].field[0].substring(2, 4) + "."
+    + versichertenResultSetRow[i].field[0].substring(4, 6);
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="indentation-policy-deep">
+Deep indent
+</para>
+
+<para>
+Deep indentation means that lines will be indented relative to the current
+parentheses or assignment offset. This way consecutive code sections are somewhat easier
+to recognize at the downside of consuming more horizontal space.
+</para>
+
+<example id="indentation-method-decl-deep">
+<title>Method declaration (deep indented)</title>
+<programlisting>
+public void severalParameters(String one, int two, String three,
+                              StringObject four, AnotherObject five) {
+    ...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="indentation-method-call-deep">
+<title>Method Call (deep indented)</title>
+<programlisting>
+this.add(lbPunktzahl,
+         new GridBagLayout(0, 1, 2, 1, 0.0, 0.0,
+                           GribBagConstraints.WEST,
+                           GribBagConstraints.NONE,
+                           new Insets(0, GribBagConstraints.WEST,
+                                      GribBagConstraints.WEST,
+                                      GribBagConstraints.WEST), 0, 0));
+</programlisting>
+</example>
+
+<para/>
+
+<example id="indentation-assign-deep">
+<title>Assignment (deep indented)</title>
+<programlisting>
+doublette[Controller.GEBURTSDATUM] = versichertenResultSetRow[i].field[0]
+                                     .substring(0, 2) + "."
+                                     + versichertenResultSetRow[i].field[0]
+                                       .substring(2, 4)
+                                     + "."
+                                     + versichertenResultSetRow[i].field[0]
+                                       .substring(4, 6);
+</programlisting>
+</example>
+<para/>
+</listitem>
+</itemizedlist>
+</sect4>
+
+
+<sect4 id="indentation-sizes">
+<title>Sizes</title>
+<indexterm zone="indentation-sizes"><primary>Indentation</primary><secondary>sizes</secondary></indexterm>
+
+<para>
+Lets you set different indentation sizes.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="indentation-sizes-general">
+General indent
+<indexterm zone="indentation-sizes-general"><primary>Indentation</primary><secondary>sizes</secondary><tertiary>General</tertiary></indexterm>
+</para>
+<para>
+Specifies the number of spaces to use for general indentation (Studies have
+found that 2 to 4 spaces for indentation is optimal)
+</para>
+
+<example id="ex-indentation-two-space">
+<title>2 space general indent</title>
+<programlisting>
+public class Preferences
+{
+-&gt;private Preferences()
+-&gt;{
+-&gt;}
+
+-&gt;public static void main(String[] argv)
+-&gt;{
+-&gt;-&gt;de.hunsicker.jalopy.swing.PreferencesDialog.main(argv);
+-&gt;}
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-indentation-four-space">
+<title>4 space general indent</title>
+<programlisting>
+public class Preferences
+{
+---&gt;private Preferences()
+---&gt;{
+---&gt;}
+
+---&gt;public static void main(String[] argv)
+---&gt;{
+---&gt;---&gt;de.hunsicker.jalopy.swing.PreferencesDialog.main(argv);
+---&gt;}
+}
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="indentation-sizes-leading">
+Leading indent
+<indexterm zone="indentation-sizes-leading"><primary>Indentation</primary><secondary>sizes</secondary><tertiary>Leading</tertiary></indexterm>
+</para>
+<para>
+Specifies the number of spaces to prepend before every line printed.
+</para>
+<example id="ex-indentation-six-leading">
+<title>6 space leading indent</title>
+<programlisting>
+-----&gt;public class Preferences
+-----&gt;{
+-----&gt;    private Preferences()
+-----&gt;    {
+-----&gt;    }
+
+-----&gt;    public static void main(String[] argv)
+-----&gt;    {
+-----&gt;        de.hunsicker.jalopy.swing.PreferencesDialog.main(argv);
+-----&gt;    }
+-----&gt;}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="indentation-sizes-continuation">
+Continuation indent
+<indexterm zone="indentation-sizes-continuation"><primary>Indentation</primary><secondary>sizes</secondary><tertiary>Continuation</tertiary></indexterm>
+</para>
+<para>
+Specifies the number of spaces that should be inserted in front of
+continuation lines, i.e. the consecutive lines in case of a line wrap.
+</para>
+<example id="ex-indentation-two-continuation">
+<title>2 space continuation indent</title>
+<programlisting>
+if ((condition1 &amp;&amp; condition2)
+    -&gt;|| (condition3 &amp;&amp; condition4)
+    -&gt;|| !(condition5 &amp;&amp; condition6)) {
+    doSomethingAboutIt();
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-indentation-four-continuation">
+<title>4 space continuation indent</title>
+<programlisting>
+if ((condition1 &amp;&amp; condition2)
+    ---&gt;|| (condition3 &amp;&amp; condition4)
+    ---&gt;|| !(condition5 &amp;&amp; condition6)) {
+    doSomethingAboutIt();
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="indentation-sizes-trailing">
+Trailing comment indent
+<indexterm zone="indentation-sizes-trailing"><primary>Indentation</primary><secondary>sizes</secondary><tertiary>Trailing comment</tertiary></indexterm>
+<indexterm zone="indentation-sizes-trailing"><primary>Comment</primary><secondary>trailing</secondary></indexterm>
+<indexterm zone="indentation-sizes-trailing"><primary>Trailing Comment</primary></indexterm>
+</para>
+<para>
+Specifies the number of spaces to insert between trailing comments and the
+preceding statement.
+</para>
+<example id="ex-indentation-three-trailing">
+<title>3 space trailing comment indent</title>
+<programlisting>
+new String[] {
+    "Sunday",--&gt;// Sunday
+    "Monday",--&gt;// Monday
+    "Tuesday",--&gt;// Tuesday
+    "Wednesday",--&gt;// Wednesday
+    "Thursday",--&gt;// Thursday
+    "Friday",--&gt;// Friday
+    "Saturday"--&gt;// Saturday
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="indentation-sizes-tab">
+Original Tab indent
+</para>
+<para>
+Specifies the original tabular size of the source code. Some indentations
+or alignments may fail, if you miss the correct size here.
+<indexterm zone="indentation-sizes-tab"><primary>Tabs</primary><secondary>size</secondary></indexterm>
+<indexterm zone="indentation-sizes-tab"><primary>Indentation</primary><secondary>sizes</secondary><tertiary>Tabular</tertiary></indexterm>
+</para>
+</listitem>
+
+<listitem>
+<para id="indentation-sizes-extends">
+Extends indent
+</para>
+<para>
+If enabled, specifies the whitespace to print before the <classname>extends</classname>
+keyword in case it was printed on a new line.
+</para>
+<indexterm zone="indentation-sizes-extends"><primary>Indentation</primary><secondary>sizes</secondary><tertiary>extends</tertiary></indexterm>
+
+<example ex="ex-indentation-sizes-extends">
+<title>extends indentation with 6 spaces</title>
+<programlisting>
+public interface Channel
+------&gt;extends Puttable, Takable
+{
+    ...
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="indentation-sizes-implements">
+Implements indent
+</para>
+<para>
+Specifies the whitespace to print before the <classname>implements</classname>
+keyword in case it was printed on a new line.
+</para>
+<indexterm zone="indentation-sizes-implements"><primary>Indentation</primary><secondary>sizes</secondary><tertiary>implements</tertiary></indexterm>
+
+<example ex="ex-indentation-sizes-implements">
+<title>implements indentation with 8 spaces</title>
+<programlisting>
+public class SynchronizedBoolean
+-------&gt;implements Comparable, Cloneable
+{
+    ...
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="indentation-sizes-throws">
+Throws indent
+</para>
+<para>
+Specifies the whitespace to print before the <classname>throws</classname>
+keyword in case it was printed on a new line.
+<indexterm zone="indentation-sizes-throws"><primary>Indentation</primary><secondary>sizes</secondary><tertiary>throws</tertiary></indexterm>
+</para>
+
+<example ex="ex-indentation-sizes-throws">
+<title>throws indentation with 3 spaces</title>
+<programlisting>
+private static final File getDestinationFile(File dest, String packageName,
+                                             String filename)
+--&gt;throws IOException, FooException
+{
+    ...
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<!--
+<listitem>
+<para id="indentation-sizes-param">
+Parameters Indent
+</para>
+<para>
+Specifies the whitespace to print before each wrapped parameter of the parameter
+lists for method or constructor declarations.
+<indexterm zone="indentation-sizes-param"><primary>Indentation</primary><secondary>sizes</secondary><tertiary>parameters</tertiary></indexterm>
+</para>
+
+<example ex="ex-indentation-sizes-param-no">
+<title>No forced Parameter indentation</title>
+<programlisting>
+private static final File getDestinationFile(File dest,
+                                             String packageName,
+                                             String filename)
+{
+    ...
+}
+</programlisting>
+</example>
+
+<example ex="ex-indentation-sizes-param">
+<title>Forced Parameter indentation with 4 spaces</title>
+<programlisting>
+private static final File getDestinationFile(
+-&gt;File dest,
+-&gt;String packageName,
+-&gt;String filename)
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para>
+Note that this indentation setting only applies if a parameter
+will be printed on a new line. Either because
+<link linkend="wrapping-use">line wrapping</link> is activated and the
+<link linkend="wrapping-sizes-line">maximal line length</link> would be exceeded
+or the <link linkend="wrapping-sizes-deep">deep indent barrier</link> reached,
+or because you specifically enabled wrapping
+for <link linkend="wrap-method-params">method declaration parameters</link>,
+<link linkend="wrap-method-call-params">method call parameters</link> or
+<link linkend="wrap-left-parenthesis">parenthesis</link>.
+</para>
+</listitem>
+-->
+
+<para/>
+</itemizedlist>
+</sect4>
+</sect3>
+
+<sect3 id="indentation-misc">
+<title>Misc</title>
+<itemizedlist>
+<listitem>
+<para id="indentation-misc-tab">
+Use tabs to indent
+<indexterm zone="indentation-misc-tab"><primary>Tabs</primary><secondary>use</secondary></indexterm>
+</para>
+<para>
+Normally, Jalopy uses spaces to indent lines. If you prefer tabs, check this box.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Indent &quot;case&quot; from &quot;switch&quot;
+</para>
+<para>
+The Sun Java code convention recommends a switch style where case statements
+are not indented relative to the switch statement as a whole. However, this
+option allows you to indent the case statements to make the entire switch
+statement stand out.
+</para>
+
+<example id="ex-indentation-misch-switch-un">
+<title>Switch statement (unindented)</title>
+<programlisting>
+switch (prio)
+{
+case Priority.ERROR_INT :
+case Priority.FATAL_INT :
+    color = Color.red;
+    break;
+
+case Priority.WARN_INT :
+    color = Color.blue;
+    break;
+
+default:
+    color = Color.black;
+    break;
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-indentation-misc-switch">
+<title>Switch statement (indented)</title>
+<programlisting>
+switch (prio)
+{
+---&gt;case Priority.ERROR_INT :
+---&gt;case Priority.FATAL_INT :
+---&gt;    color = Color.red;
+---&gt;    break;
+
+---&gt;case Priority.WARN_INT :
+---&gt;    color = Color.blue;
+---&gt;    break;
+
+---&gt;default:
+---&gt;    color = Color.black;
+---&gt;    break;
+}
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="indentation-misc-label">
+Indent labels
+<indexterm zone="indentation-misc-label"><primary>Label</primary><secondary>indent</secondary></indexterm>
+</para>
+<para>
+Specifies whether lables should be indented with the current indentation level.
+</para>
+
+<example id="ex-indentation-misc-label-unindent">
+<title>Unindented label</title>
+<programlisting>
+// advance to the first CLASS_DEF or INTERFACE_DEF
+<emphasis role="bold">LOOP</emphasis>:
+        for (AST child = tree.getFirstChild();
+             child != null;
+             child = child.getNextSibling())
+        {
+            switch (child.getType())
+            {
+                case JavaTokenTypes.CLASS_DEF :
+                case JavaTokenTypes.INTERFACE_DEF :
+                    next = child;
+                    break LOOP;
+                default :
+                    break;
+            }
+        }
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-indentation-misc-label">
+<title>Indented label</title>
+<programlisting>
+        // advance to the first CLASS_DEF or INTERFACE_DEF
+        <emphasis role="bold">LOOP</emphasis>:
+        for (AST child = tree.getFirstChild();
+             child != null;
+             child = child.getNextSibling())
+        {
+            switch (child.getType()) {
+                case JavaTokenTypes.CLASS_DEF :
+                case JavaTokenTypes.INTERFACE_DEF :
+                    next = child;
+                    break LOOP;
+
+                default :
+                    break;
+            }
+        }
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="indentation-misc-first-column">
+Indent first column comments
+</para>
+<para>
+Normally, all comments will be indented relative to their position in the code
+to avoid that comments break the logical structure of the program. Some
+developers may like to disable the indentation for first column comments
+during the developing phase.
+</para>
+
+<example id="ex-indentation-misc-first-column">
+<title>First column comment (indented)</title>
+<programlisting>
+    public static Printer create(AST node)
+    {
+
+        <emphasis role="bold">/*
+        if (node == null)
+        {
+            return new NullPrinter();
+        }
+        */</emphasis>
+        return create(node.getType());
+    }
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-indentation-misc-first-column-unindented">
+<title>First column comment (unindented)</title>
+<programlisting>
+    public static Printer create(AST node)
+    {
+
+<emphasis role="bold">/*
+        if (node == null)
+        {
+            return new NullPrinter();
+        }
+*/</emphasis>
+        return create(node.getType());
+    }
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<!--
+<listitem>
+<para id="indentation-misc-force-param">
+Force indentation for parameters
+</para>
+
+<para>
+Enabling <link linkend="indentation-sizes-param" >Parameters Indent</link>
+only applies to parameters of method/constructor declarations per default.
+Checking this switch, will extend this behaviour to all parameters.
+</para>
+<example ex="ex-indentation-misc-force-no">
+<title>No forced Parameter indentation</title>
+<programlisting>
+_userDatabase.addUser("Name",
+                      encryptPassword("password",
+                                      _secretKey),
+                      "123 fake address");
+</programlisting>
+</example>
+<example ex="ex-indentation-misc-force">
+<title>Forced Parameter indentation with 4 spaces</title>
+<programlisting>
+_userDatabase.addUser("Name",
+- -&gt;encryptPassword("password",
+- -&gt;- -&gt;_secretKey),
+- -&gt;"123 fake address");
+</programlisting>
+</example>
+<para/>
+</listitem>
+-->
+
+</itemizedlist>
+</sect3>
+
+<sect3 id="indentation-align">
+<title>Align</title>
+<indexterm><primary>Indentation</primary><secondary>Aligment</secondary></indexterm>
+<indexterm><primary>Alignment</primary></indexterm>
+
+<itemizedlist>
+<listitem>
+<para id="indentation-align-ident">
+Variable identifiers
+</para>
+<para>
+If enabled, aligns the identifiers of variable declarations.
+</para>
+
+<indexterm zone="indentation-align-ident"><primary>Alignment</primary><secondary>Variables</secondary><tertiary>identifiers</tertiary></indexterm>
+
+<example id="ex-indentation-misc-align-ident">
+<title>Variable identifiers</title>
+<programlisting>
+String text = "text";
+int a = -1;
+History.Entry entry = new History.Entry(text);
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-indentation-align-ident-aligned">
+<title>Variable identifiers (aligned)</title>
+<programlisting>
+String        text = "text";
+int           a = -1;
+History.Entry entry = new History.Entry(text);
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="indentation-align-assign">
+Variable assignments
+</para>
+<para>
+If enabled, aligns the assignment parts of variable declarations or, surprise, assignments.
+</para>
+<indexterm zone="indentation-align-assign"><primary>Alignment</primary><secondary>Variables</secondary><tertiary>assignments</tertiary></indexterm>
+<indexterm zone="indentation-align-assign"><primary>Alignment</primary><secondary>Assignments</secondary></indexterm>
+
+<example id="ex-indentation-align-assign-aligned">
+<title>Variable assignments (aligned)</title>
+<programlisting>
+String text         = "text";
+int a               = -1;
+History.Entry entry = new History.Entry(text);
+</programlisting>
+</example>
+
+<para>
+If both variable alignment options are enabled, you can achieve a style like
+the following:
+</para>
+
+<example id="ex-indentation-align-both">
+<title>Variable identifiers/assignments (both aligned)</title>
+<programlisting>
+String        text  = "text";
+int           a     = -1;
+History.Entry entry = new History.Entry(text);
+</programlisting>
+</example>
+<para>
+<!-- XXX add link to chunk settings -->
+</para>
+</listitem>
+
+<listitem>
+<para id="indentation-align-params">
+Method Def parameters
+</para>
+<para>
+If enabled, aligns the parameters of method declarations. This only applies if
+all parameters will be wrapped; either because wrapping is forced or the
+max. line length is reached. To force aligning, you have to enable the
+wrapping for method parameters (See <link linkend="wrap-method-params">Method Def parameters</link>).
+</para>
+
+<indexterm zone="indentation-align-params"><primary>Method Def parameters</primary></indexterm>
+<indexterm zone="indentation-align-params"><primary>Alignment</primary><secondary>Method Def parameters</secondary></indexterm>
+
+<example id="ex-indentation-align-params">
+<title>Method declaration parameters</title>
+<programlisting>
+public static File create(final File file,
+                          File directory,
+                          int backupLevel)
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-indentation-align-params-aligned">
+<title>Method declaration parameters (aligned)</title>
+<programlisting>
+public static File create(final File file,
+                          File       directory,
+                          int        backupLevel)
+{
+    ...
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="indentation-align-method-chains">
+Method Call chains
+</para>
+
+<para>
+If disabled, indentation happens according to the current indentation level.
+</para>
+
+<example id="ex-indentation-align-call">
+<title>Method Call chain (standard indented)</title>
+<programlisting>
+Fachschluesselerzeugung.createService()
+.getNeuerFachschluesselServiceService(
+    FachschluesselerzeugungService.FACHSCHLUESSEL_KZ_INTERESSENT);
+</programlisting>
+</example>
+
+<para>
+Otherwise indentation is performed relative to the column offset of the first chain link.
+</para>
+
+<example id="ex-indentation-align-call-aligned">
+<title>Method Call chain  (aligned)</title>
+<programlisting>
+Fachschluesselerzeugung.createService()
+                       .getNeuerFachschluesselServiceService(
+                            FachschluesselerzeugungService.FACHSCHLUESSEL_KZ_INTERESSENT);
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="indentation-align-ternary">
+Ternary expressions
+</para>
+
+<para>
+If disabled, ternary expressions are printed according to the current
+<link linkend="indentation-policy">indentation policy</link>.
+</para>
+
+<example id="ex-indentation-ternary-standard">
+<title>Ternary operators (standard indented)</title>
+<programlisting>
+        alpha = (aLongBooleanExpression) ? beta    |
+        : gamma;                                   |
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-indentation-ternary-deep">
+<title>Ternary operators (deep indented)</title>
+<programlisting>
+        alpha = (aLongBooleanExpression) ? beta    |
+                : gamma;                           |
+</programlisting>
+</example>
+
+<para>
+If enabled, the second operator will always be aligned relative to the first one.
+</para>
+
+<example id="ex-indentation-ternary-align">
+<title>Ternary expresssions (aligned)</title>
+<programlisting>
+        alpha = (aLongBooleanExpression) ? beta    |
+                                         : gamma;  |
+</programlisting>
+</example>
+<para>
+Note that this switch only takes affect, if indeed a line break was inserted
+before the second expression. You can force such line breaks with the
+<link linkend="wrap-ternary-colon">Wrap always before ternary expression colon</link> setting.
+</para>
+</listitem>
+</itemizedlist>
+<para/>
+</sect3>
+
+<sect3 id="indentation-continuation">
+<title>Continuation</title>
+<indexterm><primary>Indentation</primary><secondary>Continutation</secondary></indexterm>
+<indexterm><primary>Continuation</primary></indexterm>
+
+<para>
+Lets you specify extra indentation for consectutive lines of certain expressions.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="indentation-misc-continuation-if">
+Blocks
+</para>
+<para>
+The Sun brace style could make seeing the statement body difficult. To
+workaround this problem, you may want to use continuation indentation in case you like this
+brace style. This setting applies for <literal>if</literal>, <literal>for</literal>, <literal>while</literal>
+and <literal>do-while</literal> blocks.
+</para>
+
+<example id="ex-indentation-misc-non-continuation">
+<title>Non-continuation indentation</title>
+<programlisting>
+if ((condition1 &amp;&amp; condition2)
+    || (condition3 &amp;&amp; condition4)
+    || !(condition5 &amp;&amp; condition6)) { // BAD WRAPS
+    doSomethingAboutIt();             // MAKE THIS LINE EASY TO MISS
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-indentation-misc-contiunation">
+<title>Continuation indentation</title>
+<programlisting>
+if ((condition1 &amp;&amp; condition2)
+        || (condition3 &amp;&amp; condition4)
+        || !(condition5 &amp;&amp; condition6)) {
+    doSomethingAboutIt();
+}
+</programlisting>
+</example>
+<para>
+Refer to <xref linkend="braces-style-styles" /> for the available brace style options.
+</para>
+</listitem>
+
+<listitem>
+<para id="indentation-misc-ternary-if-else" xreflabel="Continuation indent">
+Operators
+</para>
+<para>
+If enabled, indentation will be increased before an operand will be printed.
+</para>
+
+<example id="ex-indentation-misc-ternary-if-else">
+<title>Ternary expression (deep indented)</title>
+<programlisting>
+String comma = spaceAfterComma
+               ---&gt;? COMMA_SPACE
+               ---&gt;: COMMA;
+</programlisting>
+</example>
+<para/>
+</listitem>
+</itemizedlist>
+</sect3>
+</sect2>

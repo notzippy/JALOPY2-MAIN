@@ -1,0 +1,572 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: dedication.xml,v 1.2 2002/11/11 20:13:40 marcohu Exp $ -->
+<!-- Contains the dedication preface -->
+
+<preface id="dedication">
+<title>Dedication</title>
+<para>
+This work is inspired by and dedicated to the poet who writes:
+</para>
+
+<blockquote>
+<simplesect>
+<title>Tabacaria</title>
+
+<informaltable frame="none" colsep="0" rowsep="0" pgwide="0">
+<tgroup cols="1" colsep="0" rowsep="0">
+<tbody>
+<row>
+<entry>N&atilde;o sou nada.</entry>
+</row>
+<row>
+<entry>Nunca serei nada.</entry>
+</row>
+<row>
+<entry>N&atilde;o posso querer ser nada.</entry>
+</row>
+<row>
+<entry>&Agrave; parte isso, tenho em mim todos os sonhos do mundo.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Janelas do meu quarto,</entry>
+</row>
+<row>
+<entry>Do meu quarto de um dos milh&otilde;es do mundo que ningu&eacute;m sabe quem &eacute;</entry>
+</row>
+<row>
+<entry>(E se soubessem quem &eacute;, o que saberiam?),</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Dais para o mist&eacute;rio de uma rua cruzada constantemente por gente,</entry>
+</row>
+<row>
+<entry>Para uma rua inacess&iacute;vel a todos os pensamentos,</entry>
+</row>
+<row>
+<entry>Real, impossivelmente real, certa, desconhecidamente certa,</entry>
+</row>
+<row>
+<entry>Com o mist&eacute;rio das coisas por baixo das pedras e dos seres,</entry>
+</row>
+<row>
+<entry>Com a morte a p&ocirc;r humidade nas paredes e cabelos brancos nos homens,</entry>
+</row>
+<row>
+<entry>Com o Destino a conduzir a carro&ccedil;a de tudo pela estrada de nada. </entry>
+</row>
+<row>
+<entry>Estou hoje vencido, como se soubesse a verdade. </entry>
+</row>
+<row>
+<entry>Estou hoje l&uacute;cido, como se estivesse para morrer, </entry>
+</row>
+<row>
+<entry>E n&atilde;o tivesse mais irmandade com as coisas </entry>
+</row>
+<row>
+<entry>Sen&atilde;o uma despedida, tornando-se esta casa e este lado da rua</entry>
+</row>
+<row>
+<entry>A fileira de carruagens de um comboio, e uma partida apitada</entry>
+</row>
+<row>
+<entry>De dentro da minha cabe&ccedil;a, </entry>
+</row>
+<row>
+<entry>E uma sacudidela dos meus nervos e um ranger de ossos na ida.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Estou hoje perplexo como quem pensou e achou e esqueceu.</entry>
+</row>
+<row>
+<entry>Estou hoje dividido entre a lealdade que devo </entry>
+</row>
+<row>
+<entry>Estou hoje dividido entre a lealdade que devo </entry>
+</row>
+<row>
+<entry>E &agrave; sensa&ccedil;&atilde;o de que tudo &eacute; sonho, como coisa real por dentro.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Falhei em tudo.</entry>
+</row>
+<row>
+<entry>Como n&atilde;o fiz prop&oacute;sito nenhum, talvez tudo fosse nada. </entry>
+</row>
+<row>
+<entry>A aprendizagem que me deram,</entry>
+</row>
+<row>
+<entry>Desci dela pela janela das traseiras da casa, </entry>
+</row>
+<row>
+<entry>Fui at&eacute; ao campo com grandes prop&oacute;sitos. </entry>
+</row>
+<row>
+<entry>Mas l&aacute; encontrei s&oacute; ervas e &aacute;rvores, </entry>
+</row>
+<row>
+<entry>E quando havia gente era igual &agrave; outra. </entry>
+</row>
+<row>
+<entry>Saio da janela, sento-me numa cadeira. Em que hei-de pensar? </entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Que sei eu do que serei, eu que n&atilde;o sei o que sou? </entry>
+</row>
+<row>
+<entry>Ser o que penso? Mas penso ser tanta coisa!</entry>
+</row>
+<row>
+<entry>E h&aacute; tantos que pensam ser a mesma coisa que n&atilde;o pode haver tantos!</entry>
+</row>
+<row>
+<entry>G&ecirc;nio? Neste momento</entry>
+</row>
+<row>
+<entry>Cem mil c&eacute;rebros se concebem em sonho g&ecirc;nios como eu,</entry>
+</row>
+<row>
+<entry>E a hist&oacute;ria n&atilde;o marcar&aacute;, quem sabe?, nem um,</entry>
+</row>
+<row>
+<entry>Nem haver&aacute; sen&atilde;o estrume de tantas conquistas futuras.</entry>
+</row>
+<row>
+<entry>N&atilde;o, n&atilde;o creio em mim.</entry>
+</row>
+<row>
+<entry>Em todos os manic&ocirc;mios h&aacute; doidos malucos com tantas certezas!</entry>
+</row>
+<row>
+<entry>Eu, que n&atilde;o tenho nenhuma certeza, sou mais certo ou menos certo?</entry>
+</row>
+<row>
+<entry>N&atilde;o, nem em mim...</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Em quantas mansardas e n&atilde;o-mansardas do mundo</entry>
+</row>
+<row>
+<entry>N&atilde;o est&atilde;o nesta hora g&eacute;nios-para-si-mesmos sonhando?</entry>
+</row>
+<row>
+<entry>Quantas aspira&ccedil;&otilde;es altas e nobres e l&uacute;cidas -</entry>
+</row>
+<row>
+<entry>Sim, verdadeiramente altas e nobres e l&uacute;cidas -,</entry>
+</row>
+<row>
+<entry>E quem sabe se realiz&aacute;veis,</entry>
+</row>
+<row>
+<entry>Nunca ver&atilde;o a luz do sol real nem achar&atilde;o ouvidos de gente?</entry>
+</row>
+<row>
+<entry>O mundo &eacute; para quem nasce para o conquistar</entry>
+</row>
+<row>
+<entry>E n&atilde;o para quem sonha que pode conquist&aacute;-lo, ainda que tenha raz&atilde;o.
+</entry>
+</row>
+<row>
+<entry>Tenho sonhado mais que o que Napole&atilde;o fez.</entry>
+</row>
+<row>
+<entry>Tenho apertado ao peito hipot&eacute;tico mais humanidades do que Cristo,</entry>
+</row>
+<row>
+<entry>Tenho feito filosofias em segredo que nenhum Kant escreveu.</entry>
+</row>
+<row>
+<entry>Mas sou, e talvez serei sempre, o da mansarda,</entry>
+</row>
+<row>
+<entry>Ainda que n&atilde;o more nela;</entry>
+</row>
+<row>
+<entry>Serei sempre o que n&atilde;o nasceu para isso;</entry>
+</row>
+<row>
+<entry>Serei sempre s&oacute; o que tinha qualidades;</entry>
+</row>
+<row>
+<entry>Serei sempre o que esperou que lhe abrissem a porta ao p&eacute; de uma parede sem porta</entry>
+</row>
+<row>
+<entry>E cantou a cantiga do Infinito numa capoeira,</entry>
+</row>
+<row>
+<entry>E ouviu a voz de Deus num po&ccedil;o tapado.</entry>
+</row>
+<row>
+<entry>Crer em mim? N&atilde;o, nem em nada.</entry>
+</row>
+<row>
+<entry>Derrame-me a Natureza sobre a cabe&ccedil;a ardente</entry>
+</row>
+<row>
+<entry>O seu sol, a sua chuva, o vento que me acha o cabelo,</entry>
+</row>
+<row>
+<entry>E o resto que venha se vier, ou tiver que vir, ou n&atilde;o venha.</entry>
+</row>
+<row>
+<entry>Escravos card&iacute;acos das estrelas,</entry>
+</row>
+<row>
+<entry>Conquistamos todo o mundo antes de nos levantar da cama;</entry>
+</row>
+<row>
+<entry>Mas acordamos e ele &eacute; opaco,</entry>
+</row>
+<row>
+<entry>Levantamo-nos e ele &eacute; alheio,</entry>
+</row>
+<row>
+<entry>Sa&iacute;mos de casa e ele &eacute; a terra inteira,</entry>
+</row>
+<row>
+<entry>Mais o sistema solar e a Via L&aacute;ctea e o Indefinido.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>(Come chocolates, pequena;</entry>
+</row>
+<row>
+<entry>Come chocolates!</entry>
+</row>
+<row>
+<entry>Olha que n&atilde;o h&aacute; mais metaf&iacute;sica no mundo sen&atilde;o chocolates.</entry>
+</row>
+<row>
+<entry>Olha que as religi&otilde;es todas n&atilde;o ensinam mais que a confeitaria.</entry>
+</row>
+<row>
+<entry>Come, pequena suja, come!</entry>
+</row>
+<row>
+<entry>Pudesse eu comer chocolates com a mesma verdade com que comes!</entry>
+</row>
+<row>
+<entry>Mas eu penso e, ao tirar o papel de prata, que &eacute; de folhas de estanho,</entry>
+</row>
+<row>
+<entry>Deito tudo para o ch&atilde;o, como tenho deitado a vida.)</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Mas ao menos fica da amargura do que nunca serei</entry>
+</row>
+<row>
+<entry>A caligrafia r&aacute;pida destes versos,</entry>
+</row>
+<row>
+<entry>P&oacute;rtico partido para o Imposs&iacute;vel.</entry>
+</row>
+<row>
+<entry>Mas ao menos consagro a mim mesmo um desprezo sem l&aacute;grimas,</entry>
+</row>
+<row>
+<entry>Nobre ao menos no gesto largo com que atiro</entry>
+</row>
+<row>
+<entry>A roupa suja que sou, sem rol, pra o decurso das coisas,</entry>
+</row>
+<row>
+<entry>E fico em casa sem camisa.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>(Tu, que consolas, que n&atilde;o existes e por isso consolas,</entry>
+</row>
+<row>
+<entry>Ou deusa grega, concebida como est&aacute;tua que fosse viva,</entry>
+</row>
+<row>
+<entry>Ou patr&iacute;cia romana, impossivelmente nobre e nefasta,</entry>
+</row>
+<row>
+<entry>Ou princesa de trovadores, gentil&iacute;ssima e colorida,</entry>
+</row>
+<row>
+<entry>Ou marquesa do s&eacute;culo dezoito, decotada e long&iacute;nqua,</entry>
+</row>
+<row>
+<entry>Ou cocote c&eacute;lebre do tempo dos nossos pais,</entry>
+</row>
+<row>
+<entry>Ou n&atilde;o sei qu&ecirc; moderno - n&atilde;o concebo bem o qu&ecirc; -,</entry>
+</row>
+<row>
+<entry>Tudo isso, seja o que for, que sejas, se pode inspirar que inspire!</entry>
+</row>
+<row>
+<entry>Meu cora&ccedil;&atilde;o &eacute; um balde despejado.</entry>
+</row>
+<row>
+<entry>Como os que invocam esp&iacute;ritos invocam esp&iacute;ritos invoco</entry>
+</row>
+<row>
+<entry>A mim mesmo e n&atilde;o encontro nada.</entry>
+</row>
+<row>
+<entry>Chego &agrave; janela e vejo a rua com uma nitidez absoluta.</entry>
+</row>
+<row>
+<entry>Vejo as lojas, vejo os passeios, vejo os carros que passam,</entry>
+</row>
+<row>
+<entry>Vejo os entes vivos vestidos que se cruzam,</entry>
+</row>
+<row>
+<entry>Vejo os c&atilde;es que tamb&eacute;m existem,</entry>
+</row>
+<row>
+<entry>E tudo isto me pesa como uma condena&ccedil;&atilde;o ao degredo,</entry>
+</row>
+<row>
+<entry>E tudo isto &eacute; estrangeiro, como tudo.) </entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Vivi, estudei, amei, e at&eacute; cri,</entry>
+</row>
+<row>
+<entry>E hoje n&atilde;o h&aacute; mendigo que eu n&atilde;o inveje s&oacute; por n&atilde;o ser eu.</entry>
+</row>
+<row>
+<entry>Olho a cada um os andrajos e as chagas e a mentira,</entry>
+</row>
+<row>
+<entry>E penso: talvez nunca vivesses nem estudasses nem amasses nem cresses</entry>
+</row>
+<row>
+<entry>(Porque &eacute; poss&iacute;vel fazer a realidade de tudo isso sem fazer nada disso);</entry>
+</row>
+<row>
+<entry>Talvez tenhas existido apenas, como um lagarto a quem cortam o rabo</entry>
+</row>
+<row>
+<entry>E que &eacute; rabo para aqu&eacute;m do lagarto remexidamente.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Fiz de mim o que n&atilde;o soube,</entry>
+</row>
+<row>
+<entry>E o que podia fazer de mim n&atilde;o o fiz.</entry>
+</row>
+<row>
+<entry>O domin&oacute; que vesti era errado. Conheceram-me logo por quem n&atilde;o era e n&atilde;o desmenti, e perdi-me.</entry>
+</row>
+<row>
+<entry>Quando quis tirar a m&aacute;scara,</entry>
+</row>
+<row>
+<entry>Estava pegada &agrave; cara.</entry>
+</row>
+<row>
+<entry>Quando a tirei e me vi ao espelho,</entry>
+</row>
+<row>
+<entry>J&aacute; tinha envelhecido.</entry>
+</row>
+<row>
+<entry>Estava b&ecirc;bado, j&aacute; n&atilde;o sabia vestir o domin&oacute; que n&atilde;o tinha tirado.</entry>
+</row>
+<row>
+<entry>Deitei fora a m&aacute;scara e dormi no vesti&aacute;rio</entry>
+</row>
+<row>
+<entry>Como um c&atilde;o tolerado pela ger&ecirc;ncia</entry>
+</row>
+<row>
+<entry>Por ser inofensivo</entry>
+</row>
+<row>
+<entry>E vou escrever esta hist&oacute;ria para provar que sou sublime.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Ess&ecirc;ncia musical dos meus versos in&uacute;teis,</entry>
+</row>
+<row>
+<entry>Quem me dera encontrar-te como coisa que eu fizesse,</entry>
+</row>
+<row>
+<entry>E n&atilde;o ficasse sempre defronte da Tabacaria de defronte,</entry>
+</row>
+<row>
+<entry>Calcando aos p&eacute;s a consci&ecirc;ncia de estar existindo, Como um tapete em que um b&ecirc;bado trope&ccedil;a</entry>
+</row>
+<row>
+<entry>Ou um capacho que os ciganos roubaram e n&atilde;o valia nada.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Mas o dono da Tabacaria chegou &agrave; porta e ficou &agrave; porta.</entry>
+</row>
+<row>
+<entry>Olho-o com o desconforto da cabe&ccedil;a mal voltada</entry>
+</row>
+<row>
+<entry>E com o desconforto da alma mal-entendendo.</entry>
+</row>
+<row>
+<entry>Ele morrer&aacute; e eu morrerei.</entry>
+</row>
+<row>
+<entry>Ele deixar&aacute; a tabuleta, e eu deixarei versos.</entry>
+</row>
+<row>
+<entry>A certa altura morrer&aacute; a tabuleta tamb&eacute;m, e os versos tamb&eacute;m.</entry>
+</row>
+<row>
+<entry>Depois de certa altura morrer&aacute; a rua onde esteve a tabuleta,</entry>
+</row>
+<row>
+<entry>E a l&iacute;ngua em que foram escritos os versos.</entry>
+</row>
+<row>
+<entry>Morrer&aacute; depois o planeta girante em que tudo isto se deu.</entry>
+</row>
+<row>
+<entry>Em outros sat&eacute;lites de outros sistemas qualquer coisa como gente</entry>
+</row>
+<row>
+<entry>Continuar&aacute; fazendo coisas como versos e vivendo por baixo de coisas como tabuletas,</entry>
+</row>
+<row>
+<entry>Sempre uma coisa defronte da outra,</entry>
+</row>
+<row>
+<entry>Sempre uma coisa t&atilde;o in&uacute;til como a outra, </entry>
+</row>
+<row>
+<entry>Sempre o imposs&iacute;vel t&atilde;o est&uacute;pido como o real,</entry>
+</row>
+<row>
+<entry>Sempre o mist&eacute;rio do fundo t&atilde;o certo como o sono de mist&eacute;rio da superf&iacute;cie,</entry>
+</row>
+<row>
+<entry>Sempre isto ou sempre outra coisa ou nem uma coisa nem outra.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Mas um homem entrou na Tabacaria (para comprar tabaco?),</entry>
+</row>
+<row>
+<entry>E a realidade plaus&iacute;vel cai de repente em cima de mim.</entry>
+</row>
+<row>
+<entry>Semiergo-me en&eacute;rgico, convencido, humano,</entry>
+</row>
+<row>
+<entry>E vou tencionar escrever estes versos em que digo o contr&aacute;rio.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Acendo um cigarro ao pensar em escrev&ecirc;-los</entry>
+</row>
+<row>
+<entry>E saboreio no cigarro a liberta&ccedil;&atilde;o de todos os pensamentos.</entry>
+</row>
+<row>
+<entry>Sigo o fumo como uma rota pr&oacute;pria, </entry>
+</row>
+<row>
+<entry>E gozo, num momento sensitivo e competente,</entry>
+</row>
+<row>
+<entry>A liberta&ccedil;&atilde;o de todas as especula&ccedil;&otilde;es</entry>
+</row>
+<row>
+<entry>E a consci&ecirc;ncia de que a metaf&iacute;sica &eacute; uma consequ&ecirc;ncia de estar mal disposto.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>Depois deito-me para tr&aacute;s na cadeira</entry>
+</row>
+<row>
+<entry>E continuo fumando.</entry>
+</row>
+<row>
+<entry>Enquanto o Destino mo conceder, continuarei fumando.</entry>
+</row>
+<row>
+<entry>&nbsp;</entry>
+</row>
+<row>
+<entry>(Se eu casasse com a filha da minha lavadeira  </entry>
+</row>
+<row>
+<entry>Talvez fosse feliz.)</entry>
+</row>
+<row>
+<entry>Visto isto, levanto-me da cadeira. Vou &agrave; janela.</entry>
+</row>
+<row>
+<entry>O homem saiu da Tabacaria (metendo troco na algibeira das cal&ccedil;as?).</entry>
+</row>
+<row>
+<entry>Ah, conhe&ccedil;o-o: &eacute; o Esteves sem metaf&iacute;sica.</entry>
+</row>
+<row>
+<entry>(O dono da Tabacaria chegou &agrave; porta.)</entry>
+</row>
+<row>
+<entry>Como por um instinto divino o Esteves voltou-se e viu-me.</entry>
+</row>
+<row>
+<entry>Acenou-me adeus gritei-lhe Adeus &oacute; Esteves!, e o universo</entry>
+</row>
+<row>
+<entry>Reconstruiu-se-me sem ideal nem esperan&ccedil;a, e o dono da Tabacaria sorriu.</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</simplesect>
+</blockquote>
+</preface>

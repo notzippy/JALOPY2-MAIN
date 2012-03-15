@@ -1,0 +1,1568 @@
+<?xml version="1.0"?>
+
+<!-- $Id: history.xml,v 1.11 2002/11/15 19:21:36 marcohu Exp $ -->
+<!-- Contains the change history -->
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+  [ <!ENTITY keywords SYSTEM "_keywords.xml"> ] >
+
+<article role="docu">
+<articleinfo>
+<title>Jalopy - Change history</title>
+&keywords;
+</articleinfo>
+
+<simplesect>
+<title>1.0 Beta 10 (2002-11-14)</title>
+<orderedlist numeration="lowerroman">
+<listitem>
+New Features
+
+<itemizedlist mark="square">
+<listitem>
+Work started to provide a FAQ. There is currently only one topic: How one should submit a
+bug report
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Bug fixes
+
+<itemizedlist mark="square">
+<listitem>
+Newlines after case statements were not printed (as always: only with Sun brace style)
+Reported by Sebastian Eigner
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=638369&amp;group_id=45216">#638369</ulink>)
+</listitem>
+<listitem>
+In certain cases the indentation after printing assignments was not correct. Reported by
+Grzegorz Pilarczyk
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=638279&amp;group_id=45216">#638279</ulink>)
+</listitem>
+<listitem>
+Array types were not correctly printed when they contained more complicated expressions.
+Reported by Benni Mas
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=638355&amp;group_id=45216">#638355</ulink>)
+</listitem>
+<listitem>
+The settings format was not correctly updated from 1.0b7 to 1.0b8. Reported by
+Marc Gerstmair
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=637864&amp;group_id=45216">#637864</ulink>)
+</listitem>
+<listitem>
+Code conventions were exported with platform specific encodings which could easily cause
+harm. Additionally no XML declaration was printed. Now <literal>UTF-8</literal> is used
+and the declaration printed. Reported by Tim Moore
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=637262&amp;group_id=45216">#637262</ulink>)
+</listitem>
+<listitem>
+The wrapper scripts only worked when the full pathname to the script-files were used.
+Reported and fixed by Kees Kuip
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=637915&amp;group_id=45216">#637915</ulink>).
+Thanks
+</listitem>
+<listitem>
+Blank lines before blocks without associated block statements
+(I call them <emphasis>freestanding blocks</emphasis>) were not printed
+</listitem>
+<listitem>
+Additional semicolon(s) after the last import statement caused the blank lines logic to
+fail, no blank lines were printed for such a (rare) case
+</listitem>
+</itemizedlist>
+
+<para/>
+</listitem>
+
+
+<listitem>
+Changes
+
+<itemizedlist mark="square">
+<listitem>
+JBuilder Plug-in: the Plug-in now displays an error message if no compatible log4j version
+could be found in the classpath and shows a workaround for the problem
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+</orderedlist>
+</simplesect>
+
+<simplesect>
+<title>1.0 Beta 9 (2002-11-12)</title>
+<orderedlist numeration="lowerroman">
+<listitem>
+New Features
+
+<itemizedlist mark="square">
+
+<listitem>
+New indentation policy. See
+<ulink url="./indentation.html#indentation-policy-standard">Standard indent</ulink>
+</listitem>
+
+<listitem>
+New alignment options for the <literal>operators</literal> and ternary expression. See
+<ulink url="./indentation.html#indentation-align-method-chains">Align Method Call chains</ulink> and
+<ulink url="./indentation.html#indentation-align-ternary">Align Ternary expressions</ulink>
+</listitem>
+
+<listitem>
+The wrapping options has been extended. See
+<ulink url="./wrapping.html#wrap-left-parenthesis">Wrap after left parenthesis</ulink>,
+<ulink url="./wrapping.html#wrap-right-parenthesis">Wrap before right parenthesis</ulink>,
+<ulink url="./wrapping.html#wrap-after-assignment">Wrap after assignments </ulink>,
+<ulink url="./wrapping.html#wrap-grouping-paren">Wrap grouping parentheses</ulink>,
+<ulink url="./wrapping.html#wrap-always-extends">Wrap after extends types when exceed</ulink>,
+<ulink url="./wrapping.html#wrap-always-implements">Wrap after implements types when exceed</ulink>,
+<ulink url="./wrapping.html#wrap-always-throws">Wrap after throws types when exceed</ulink> and
+<ulink url="./wrapping.html#wrap-always-param">After parameters/expressions when exceed</ulink>
+</listitem>
+
+<listitem>
+New curly brace wrapping option. See
+<ulink url="./printer.html#braces-different-wrapped">Treat class/method block different if wrapped</ulink>
+</listitem>
+
+<listitem>
+The output style for field Javadoc comments is now configurable. See
+<ulink url="./javadoc.html#javadoc-misc">Field comments in single line</ulink>
+</listitem>
+</itemizedlist>
+
+<para>
+All aforementioned features were requested, sponsored and thoroughly tested by the German
+<ulink url="http://www.tk-online.de/">Techniker Krankenkasse</ulink>. Hurray!
+</para>
+
+<itemizedlist mark="square">
+<listitem>
+The sources have been internationalized. If you're willing to provide translations of the
+used message bundles, please <ulink url="./contact.html">contact</ulink> me
+</listitem>
+
+<listitem>
+Jalopy now contains a simple Code Inspector that is able to inspect your sources for
+naming convention violations and possible code weaknesses. See the
+<ulink url="./inspector.html">Code Inspector</ulink> chapter in the manual
+</listitem>
+
+<listitem>
+New history methods that uses checksums to better handle change detection for files.
+See <ulink url="./misc.html#misc-history">History section</ulink>. Very cool feature
+contributed by Michael Callum
+</listitem>
+
+<listitem>
+Javadoc tag checking for <literal>@throws</literal> tags can now be enabled
+separately. See <ulink url="./javadoc.html#javadoc-correct-throws">Correct @throws tags</ulink>
+</listitem>
+<listitem>
+Array type brackets may now be printed after the identifier.
+See <ulink url="./misc.html#misc-array-brackets">Misc section</ulink>.
+Requested by John Zukowski
+(<ulink url="http://sf.net/tracker/?func=detail&amp;aid=599239&amp;group_id=45216&amp;atid=442215">#599239</ulink>)
+</listitem>
+<listitem>
+You can now specify whether Jalopy should insert a trailing empty line at the
+end of files in order to avoid problems with certain text formatters and processors.
+See <ulink url="./misc.html#misc-trailing-newline">Misc section</ulink>. Note that
+Jalopy always inserts a trailing newline after EOF-comments (like footers).
+Requested by David Karr
+(<ulink url="http://sf.net/tracker/?func=detail&amp;aid=589696&amp;group_id=45216&amp;atid=442215">#589696</ulink>)
+</listitem>
+
+<listitem>
+The order of import statement groups is now user configurable. See <ulink url="./imports.html">Import section</ulink>.
+Requested by J&uuml;rgen Ebert
+(<ulink url="http://sf.net/tracker/?func=detail&amp;aid=591904&amp;group_id=45216&amp;atid=442215">#591904</ulink>)
+</listitem>
+
+<listitem>
+The <guilabel>Format</guilabel> menu item now appears in the context menu of the Content
+Pane too
+</listitem>
+
+<listitem>
+Auto-correction for Javadoc <literal>@throws</literal> tags can now be
+controlled separately. See <ulink url="./javadoc.html#javadoc-correct-throws">Correct <literal>@throws</literal> tags</ulink> for insight
+</listitem>
+
+<listitem>
+NetBeans Plug-in: the Format action is now available for Servlet nodes too
+</listitem>
+
+<listitem>
+JBuilder Plug-in: the Format item it now available in the context menu of content tab pane too
+</listitem>
+
+<listitem>
+JBuilder Plug-in: Breakpoints and Bookmarks are restored after formatting
+</listitem>
+
+<listitem>
+JDeveloper Plug-in: the Plug-in has been completely rewritten. Formatting works for
+workspaces too, the message output is displayed in a nice tree view. And the whole thing
+is now compatible with JDeveloper 9.0.3
+</listitem>
+
+<listitem>
+The core engine is now able to track positions. The IDE Plug-ins are therefore now able
+to restore the mouse pointer correctly (it will be positioned before the line with the
+node that was nearest to the last caret position)
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Bug fixes
+
+<itemizedlist mark="square">
+<listitem>
+The cleanup of the backup directory could lead to NPE. Reported by Mike Dubman
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=617942&amp;group_id=45216">#617942</ulink>)
+</listitem>
+<listitem>
+The output of array initializers has been improved. Reported by Kate Rhodes
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=617684&amp;group_id=45216">#617684</ulink>)
+</listitem>
+<listitem>
+Important statements collapsing failed because of incompatible parsetree changes between 1.0b7 and 1.0b8. Reported by Mark Ralph
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=617608&amp;group_id=45216">#617608</ulink>)
+</listitem>
+<listitem>
+Handling of Javadoc comments failed for methods/ctors returning an array type. Reported by Magnus Ihse
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=615039&amp;group_id=45216">#615039</ulink>)
+</listitem>
+<listitem>
+The problem with wrong indentation after assignments has gone. Reported by Timo Carl
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=612049&amp;group_id=45216">#612049</ulink>)
+</listitem>
+<listitem>
+<emphasis>Treat different</emphasis> option has been corrected to work with all styles. Reported by Eric Lamontagne
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=611182&amp;group_id=45216">#611182</ulink>)
+</listitem>
+<listitem>
+I've fixed some cases where Jalopy produced trailing whitespace on wrapping lines. There may still be others...
+Reported by Ralf Wiebicke
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=607697&amp;group_id=45216">#607697</ulink>)
+</listitem>
+<listitem>
+The Javadoc printer failed to output HTML definition lists correctly. Reportey by
+David Cooper
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=607416&amp;group_id=45216">#607416</ulink>)
+</listitem>
+<listitem>
+The Javadoc printer failed to output HTML defintion lists correcty. Reportey by
+David Cooper
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=607416&amp;group_id=45216">#607416</ulink>)
+</listitem>
+<listitem>
+Array initializers inside statements were not printed correctly. Reported by
+Dirk Hoffmann
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=607303&amp;group_id=45216">#607303</ulink>)
+</listitem>
+<listitem>
+Variable macros did (as documented) not work for names like <literal>user.name</literal>. Reported by
+Don Johnson
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=606173&amp;group_id=45216">#606173</ulink>)
+</listitem>
+<listitem>
+Empty lines in multi-line comments produced trailing whitespace.
+Reported by Ralf Wiebicke
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=605998&amp;group_id=45216">#605998</ulink>)
+</listitem>
+<listitem>
+Javadoc trailing comments were ignored. Jalopy will now (again) treat such cases as errors.
+Reported by Ralf Wiebicke
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=604072&amp;group_id=45216">#604072</ulink>)
+</listitem>
+<listitem>
+Jalopy duplicated comments in some rare cases. Reported by David Cooper
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=604065&amp;group_id=45216">#604065</ulink>)
+</listitem>
+<listitem>
+The console app failed to work on certain platforms due to classloading problems.
+Reported by Benjamin Geer
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=604038&amp;group_id=45216">#604038</ulink>
+</listitem>
+<listitem>
+No blank lines were kept for <literal>synchronized</literal> blocks. Reported by Kees Kuip
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=603455&amp;group_id=45216">#603455</ulink>
+</listitem>
+<listitem>
+Variable interpolation did not work in header or footers. Reported by Daniel Frey
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=601901&amp;group_id=45216">#601901</ulink>
+</listitem>
+<listitem>
+Jalopy lost trailing comments in certain cases. Reported by Shankar Unni, Steve Corwin, Ray Powell
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=601393&amp;group_id=45216">#601393</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=602169&amp;group_id=45216">#602169</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=603914&amp;group_id=45216">#603914</ulink>)
+</listitem>
+<listitem>
+Jalopy failed to handle empty Javadoc Standard tags. Reported by Henrik Kj&aelig;r and Don Johnson
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=601204&amp;group_id=45216">#601204</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=606163&amp;group_id=45216">#606163</ulink>)
+</listitem>
+<listitem>
+JBuilder Plug-in: the Plug-in is now compatible with JBuilder 7.0. Reported by Simeon Zverinski
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=596821&amp;group_id=45216">#596821</ulink>)
+</listitem>
+<listitem>
+The example Ant task in the manual contained a syntax error.
+Reported by Eric Larson
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=595777&amp;group_id=45216">#595777</ulink>)
+</listitem>
+<listitem>
+With generating Javadoc comments enabled, existing
+variable/method/class-level comments were dropped if not in Javadoc style.
+Reported by John Zukowski
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=595164&amp;group_id=45216">#595164</ulink>)
+</listitem>
+<listitem>
+Auto-insertion of braces for braceless if-else blocks did not work as expected
+(for Sun brace style). Reported by John Zukowski
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=595160&amp;group_id=45216">#595160</ulink>)
+</listitem>
+<listitem>
+@throws tags were wrongly inserted in some cases. Reported by Jarek Sacha
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=594738&amp;group_id=45216">#594738</ulink>)
+</listitem>
+<listitem>
+Printing of empty class/interface bodies failed, if cuddling of braces was
+enabled. Reported by Richard Tasker and Benjamin Geer
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=594076&amp;group_id=45216">#594076</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=597080&amp;group_id=45216">#597080</ulink>)
+</listitem>
+<listitem>
+@version tags were wrapped if max. line length exceeded, and therefore failed to
+be updated by CVS when checked in. Reported by Johnny Cass
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=592504&amp;group_id=45216">#592504</ulink>)
+</listitem>
+<listitem>
+Jalopy used to insert two many blank lines before certain statements. Reported by Kees Kuip
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=592496&amp;group_id=45216">#592496</ulink>)
+</listitem>
+<listitem>
+<filename>jalopy.sh</filename> and <filename>preferences.sh</filename> failed
+to work (under some unix flavors) because of wrong end-of-line characters.
+Actually a build/CVS problem. Reported and fixed by Kees Kuip
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=592487&amp;group_id=45216">#592487</ulink>)
+</listitem>
+<!--
+<listitem>
+Blank lines before comments were not always kept. Reported by Thomas B&ouml;rkel
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=591938&amp;group_id=45216">#591938</ulink>)
+</listitem>
+-->
+<listitem>
+Eclipse Plug-in: upon startup of the IDE <classname>org.eclipse.swt.SWTException: invalid thread access</classname>
+was thrown. Reportedy by Dirk Jacobs
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=567314&amp;group_id=45216">#567314</ulink>)
+</listitem>
+<listitem>
+Backup files were always kept if the output target was not a file
+</listitem>
+
+<listitem>
+jEdit Plug-in: the <guilabel>Format current Buffer</guilabel> menu item was grayed out
+upon start-up if the buffer contained a non-Java file
+</listitem>
+
+<listitem>
+Console Plug-in: specifying several regular expression patterns did not work.
+Reported by Sameer Singh
+</listitem>
+
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Changes
+
+<itemizedlist mark="square">
+<listitem>
+The <filename>.XML</filename> settings format has been revised. It should now be somewhat cleaner. These
+changes are transparent, the old settings format can be imported but only the new format
+will be exportet. Those who use the <filename>.XML</filename> format should re-export their settings to avoid
+the auto-transformation (and of course, there are many new switches)
+</listitem>
+
+<listitem>
+The <filename>/bin</filename> directory of the distributions have been renamed to
+<filename>/lib</filename>. For the Console and Ant Plug-ins the <filename>/bin</filename>
+now only contains the wrapper scripts and the libaries moved to <filename>/lib</filename>.
+</listitem>
+
+<listitem>
+Eclipse Plug-in: the <guilabel>Format</guilabel> label in the project view context menu
+no longer appears at the end. Suggested by Davor Cengija and Vincent Massol
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=578331&amp;group_id=45216">#578331</ulink>)
+</listitem>
+
+<listitem>
+JBuilder Plug-in: the <guilabel>Format</guilabel> item in the project view context menu
+is now more context sensitive. It won't pop up for non-Java files. Additionally, when
+formatting the whole Project a confirmation message box appears
+</listitem>
+
+<listitem>
+The <literal>@todo</literal> tag is now part of the build-in tag list
+</listitem>
+
+<listitem>
+The Tab support has been rewritten. If tabs are enabled, *all* whitespace will
+be realized with tabs (not only leading whitespace as with the former
+implementation)
+</listitem>
+
+<listitem>
+Denis N. Antonioli contributed several patches for the Javadoc parser:
+<itemizedlist mark="circle">
+<listitem>
+The parser is now able to handle left curly braces that are not part of
+an In-line tag
+</listitem>
+<listitem>
+Attributes must not be quoted and numeric attributes may also start with <literal>%</literal>
+</listitem>
+<listitem>
+The closing tags for &lt;dd&gt;, &lt;dl&gt;, &lt;dir&gt; are now optional
+</listitem>
+</itemizedlist>
+Thank you!
+</listitem>
+
+<listitem>
+Parameter alignment of method or constructor declarations now works regardless
+of the indentation settings (it did not work with custom indentation in
+earlier versions)
+</listitem>
+
+<listitem>
+The preview frame no longer uses the (unmaintained) jEdit Public Domain text area but
+rather a standard <classname>JEditorPane</classname> with a highlighter dereived from
+the <ulink url="http://www.bluej.org/">BlueJ</ulink> project (and that highlighter is
+again build upon the jEdit Public Domain syntax package). Users of prior betas may
+savely remove the file <filename>textarea-2.2.3.jar</filename> from their disks
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+</orderedlist>
+</simplesect>
+
+
+<simplesect>
+<title>1.0 Beta 8 (2002-08-06)</title>
+<orderedlist numeration="lowerroman">
+<listitem>
+New Features
+
+<itemizedlist mark="square">
+<listitem>
+Thanks to Frank Klomp from
+<ulink url="http://www.informatikatelier.com">www.informatikatelier.com</ulink>
+a Plug-in for Oracle JDeveloper 9i is now available.
+See <ulink url="./plugins.html">Plug-in section</ulink>
+</listitem>
+
+<listitem>
+Jalopy now comes with a simple project manager to make switching between
+several code conventions easier.
+See <ulink url="./project.html">Project section</ulink>
+</listitem>
+
+<listitem>
+ConsolePlugin: new option <literal>--force</literal>
+</listitem>
+
+<listitem>
+The line wrapping for chained method calls now works for nested calls too
+</listitem>
+
+<listitem>
+The settings dialog now comes with a live preview. Requested by Erik Dick
+(<ulink url="http://sf.net/tracker/?func=detail&amp;aid=563215&amp;group_id=45216&amp;atid=442215">#563215</ulink>)
+</listitem>
+
+<!--
+<listitem>
+The indentation for parameters is now user configurable.
+See <ulink url="./indentation.html#indentation-sizes-param">Indentation section</ulink>.
+Requested by Daniel Ritchey
+</listitem>
+-->
+
+<listitem>
+Similar to Jindent, Jalopy is now able to perform variable interpolation for
+the header or footer and Javadoc comment templates.
+See <ulink url="./environment.html">Environment variables</ulink> section.
+Requested by Erik Dick
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442215&amp;aid=563213&amp;group_id=45216">#563213</ulink>)
+</listitem>
+
+<listitem>
+Similar to Jindent, you can now define custom Javadoc templates for
+fields, classes/interfaces, constructor and method comments. See
+<ulink url="./javadoc.html#javadoc-templates">Javadoc Templates</ulink> section
+</listitem>
+
+<listitem>
+The sorting order for the Java modifiers is now configurable. See
+<ulink url="./sorting.html#sorting-modifier">Sorting</ulink> section
+</listitem>
+
+<listitem>
+The texts for separator comments are now user configurable. See
+<ulink url="./separation.html#separation-comment">Separation</ulink> section.
+Requested by Dirk Jacobs
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442215&amp;aid=567322&amp;group_id=45216">#567322</ulink>).
+</listitem>
+
+<listitem>
+The grouping of import statements can now be disabled. See
+<ulink url="./imports.html#imports-grouping-depth">Imports section</ulink>.
+Requested by Emil A. Lefkof
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442215&amp;aid=562475&amp;group_id=45216">#562475</ulink>).
+</listitem>
+
+<listitem>
+Lowercase &quot;<literal>l</literal>&quot; as trailing character for literal
+longs will be automatically capitalized during printing
+</listitem>
+
+<listitem>
+The <literal>abstract</literal> modifier will be automatically removed if found
+for interface or interface method declarations (as these are implicitly
+<emphasis>abstract</emphasis>).
+</listitem>
+
+<listitem>
+You can now specify whether Java sources should be parsed as JDK 1.4 compatible
+(the default) or if sources should be parsed without treating
+<literal>assert</literal> as a reserved keyword (i.e. JDK 1.3 compatible).
+See the <ulink url="./settings.html#general-compliance">General section</ulink>.
+This change addresses bugs
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=565512&amp;group_id=45216">#565512</ulink> and
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=576983&amp;group_id=45216">#576983</ulink>
+</listitem>
+
+<listitem>
+The header detection now provides a <emphasis>Smart Mode</emphasis> for users
+who want to use singe-line comments for headers. If enabled, Jalopy treats the
+first <literal>n</literal> number of singe-line comments before the first
+node as part of a header and removes them.
+See the <ulink url="./header.html#header-smart-mode">Header section</ulink>
+</listitem>
+
+<listitem>
+The element sorting changed: Added was a new category
+<guilabel>Static variables/initializers</guilabel>
+to avoid touching the class initialization as required by the Java language
+specification (&quot;static initializers and class variable initializers are
+executed in textual order&quot;). This partially addresses the feature request
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442215&amp;aid=545603&amp;group_id=45216">#545603</ulink> also.
+Reported by Kirk Wolf
+</listitem>
+
+<listitem>
+The import optimization feature is now available for the Ant Plug-in too. See
+the <ulink url="./plugin-ant-usage.html">Ant Plug-in</ulink> chapter
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Bugfixes
+
+<itemizedlist mark="square">
+<listitem>
+Setting for <guilabel>Space before Brackets</guilabel> didn't take effect
+</listitem>
+<listitem>
+Setting for <guilabel>Space Before Brackets in Types</guilabel> didn't take
+effect for something like <literal>new String[0]</literal>
+</listitem>
+<listitem>
+jEdit Plug-in: The integration with the Gobal Options dialog doesn't suffer
+from the resizing problems anymore
+</listitem>
+<listitem>
+jEdit Plug-in: Jalopy directed all formatting messages always to the first view
+</listitem>
+<listitem>
+Read-only files don't cause exceptions anymore. Jalopy will now display a
+warning message. Reported by Andrew Barkley
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=587068&amp;group_id=45216">#587068</ulink>)
+</listitem>
+<listitem>
+Enclosed creator constructs could lead to uncompilable code. Reported by
+Eddy Kivits
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=586450&amp;group_id=45216">#586450</ulink>)
+</listitem>
+<listitem>
+<literal>do-while</literal> blocks without enclosing braces where not treated correctly.
+Reported by Marcel Toele
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=581394&amp;group_id=45216">#581394</ulink>)
+</listitem>
+<listitem>
+The Javadoc printer missed a blank between the <literal>@link</literal> tag and
+following HTML links. Reportedy by Brian Harriger
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=581299&amp;group_id=45216">#581299</ulink>)
+</listitem>
+<listitem>
+EOL characters were not correctly translated for multi-line, special and
+Javadoc comments. Reportedy by Olivier Mengu&eacute;
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=572130&amp;group_id=45216">#572130</ulink>)
+</listitem>
+<listitem>
+Enabling the cuddling of empty braces lead to compilation errors if an
+trailing comment appeared before the opening brace. The cuddling is now disabled
+for such a (rare) case. Reported by Kees Kuip
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=568974&amp;group_id=45216">#568974</ulink>)
+</listitem>
+<listitem>
+NPE during import that only appeared with certain JDKs. Reportedy by Davor Cengija
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=566205&amp;group_id=45216">#566205</ulink>)
+</listitem>
+<listitem>
+The insertion of Javadoc comments did not work for classes/interfaces and
+fields (it was not implemented). Reported by Thomas B&ouml;rkel
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=564255&amp;group_id=45216">#564255</ulink>)
+</listitem>
+<listitem>
+After importing settings from a distributed location, Jalopy did not use
+these settings if the host was unavailable on successive invocations (but
+rather the build-in defaults); now the imported settings are used and a
+warning message issued. Reported by Thomas B&ouml;rkel
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=563976&amp;group_id=45216">#563976</ulink>)
+</listitem>
+<listitem>
+The Java Language Specification requires every single-line comment to be
+terminated by an end-of-line sequence, but Jalopy allowed a single-line-comment
+to be terminated by an end-of-file. Reported by Thomas B&ouml;rkel
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=563974&amp;group_id=45216">#563974</ulink>)
+</listitem>
+<listitem>
+Ant 1.4.1 (or earlier) caused problems because of an incompatibility with the
+bundled AElfred parser. Therefore the parser (and all other 3rd party libraries)
+are no longer bundled to enable you to selectively copy the needed libs into
+the Ant <filename>/lib</filename> folder. Documentation was updated to explain
+the issue. Reported by Larry Hamel et.al.
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=563385&amp;group_id=45216">#563385</ulink>)
+</listitem>
+<listitem>
+The Java parser failed for (strange) code like
+<literal>if (obj.getClass() == (byte.class))</literal>. Reported by Hui Lin
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=562681&amp;group_id=45216">#562681</ulink>)
+</listitem>
+<listitem>
+<literal>try</literal>/<literal>catch</literal> blocks were not correctly
+formatted (again only with Sun brace style). Reported by Emil A. Lefkof
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=562039&amp;group_id=45216">#562039</ulink>)
+</listitem>
+<listitem>
+Chained method calls were wrongly wrapped if part of an expression. Reported by Emil A. Lefkof
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=562037&amp;group_id=45216">#562037</ulink>)
+</listitem>
+<listitem>
+Fixed some bugs regarding (evil) Sun brace styling. Reported by
+Emil A. Lefkof, Thomas B&ouml;rkel, Larry Hamel and Christian Halstrick, Anders Johansson
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=562034&amp;group_id=45216">#562034</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=564247&amp;group_id=45216">#564247</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=569306&amp;group_id=45216">#569306</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=569031&amp;group_id=45216">#569031</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=580600&amp;group_id=45216">#580600</ulink>)
+</listitem>
+<listitem>
+The settings format was not correctly updated between 1.0b6 and 1.0b7
+causing an <classname>IllegalArgumentException</classname> if the history
+feature was disabled. Reported by Martin Spiller
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=561398&amp;group_id=45216">#561398</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=561675&amp;group_id=45216">#561675</ulink>)
+</listitem>
+<listitem>
+As the comment preserving/printing implementation has been rewritten, trailing
+comment support should now work in nearly all cases. At least all reported
+issues are now treated correctly. Reported by Stephane Houle, Emil A. Lefkof,
+Kees Kuip, John Wilson
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=559222&amp;group_id=45216">#559222</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=565820&amp;group_id=45216">#565820</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=562034&amp;group_id=45216">#562034</ulink>,
+<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=578664&amp;group_id=45216">#578664</ulink>)
+</listitem>
+<listitem>
+The user selected brace style did not take effect for anonymous inner classes.
+Reported by Ian Brown
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=545431&amp;group_id=45216">#545431</ulink>)
+</listitem>
+<listitem>
+Fixed a minor GUI bug in the Javadoc panel (column headers did not show up
+using Windows L&amp;F). Reported by Thomas Sauzedde
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=544404&amp;group_id=45216">#544404</ulink>)
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Changes
+
+<itemizedlist mark="square">
+<listitem>
+JBuilder Plug-in: it now checks whether the classpath is correctly set up
+(whether all defined libraries exist) and if something seems to be broken,
+the import optimization feature is enabled to avoid errors (a dialog appears to
+inform you about the misconfiguration)
+</listitem>
+<listitem>
+JBuilder Plug-in: the <guimenuitem>Jalopy Options...</guimenuitem> menu item now
+appears in the Options group of the
+<guimenu><accel>T</accel>ools</guimenu> menu.
+</listitem>
+<listitem>
+jEdit Plug-in: the Plug-in does not use ErrorList anymore, but rather relies
+on the MessageView Plug-in which is bundled with the distribution (as it is not
+yet available through the jEdit Plugin Central)
+</listitem>
+
+<listitem>
+The sorting logic for variable declarations now compares by access modifiers first,
+then (new!) type name and only if these two are equal by name (identifier)
+</listitem>
+<listitem>
+The Javadoc printer now inserts a newline after every found &lt;br&gt; tag
+(only happens if Javadoc parsing is enabled). This addresses the &quot;Bug&quot;
+reported by Tony Falabella (that was no bug but rather the behaviour I found
+sufficient)
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=562502&amp;group_id=45216">#562502</ulink>)
+</listitem>
+<listitem>
+The default setting for the backup level changed, it is now set to &quot;0&quot;
+(no backups are kept)
+</listitem>
+<listitem>
+The settings dialog is no longer a modal dialog (necessary for the live preview)
+</listitem>
+<listitem>
+Started from the command line, the settings dialog now appears in the task
+bar (under Win32). Suggested by Knut Wannheden
+</listitem>
+<listitem>
+The bundled ANTLR runtime has been repackaged to avoid versioning problems
+</listitem>
+<listitem>
+Apart from the ANTLR runtime, the binary distributions no longer bundle the
+needed 3rd party libraries. Thus the installation procedure for some Plug-ins
+requires more care: you have to manually remove outdated 3rd party libraries
+before you copy the <filename>.jars</filename> provided with Jalopy into the
+Plug-in/module folder of your application (Applies to Ant, Console, JBuilder
+ and jEdit, if done manually)
+</listitem>
+<listitem>
+Some shipped 3rd party jars we're updated: log4j to 1.2.6, Oro to 2.0.6,
+JAXP to 1.2.
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+</orderedlist>
+</simplesect>
+
+<simplesect>
+<title>1.0 Beta 7 (2002-05-26)</title>
+<orderedlist numeration="lowerroman">
+<listitem>
+New Features
+
+<itemizedlist mark="square">
+<listitem>
+The wrapping behaviour for throws clauses is now more configurable. See
+<ulink url="./wrapping.html#wrap-before-throws">Wrapping section</ulink>.
+Requested by Stephane Houle
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442215&amp;aid=559222&amp;group_id=45216">#559222</ulink>)
+</listitem>
+
+<listitem>
+Indentation for <classname>extends</classname>, <classname>implements</classname>
+and <classname>throws</classname> can now be specified explicitly. See
+<ulink url="./indentation.html#indentation-sizes">Indentation section</ulink>
+</listitem>
+
+<listitem>
+Chained method calls are now wrapped (if line wrapping is enabled, of course).
+You can either force wrapping after every call
+(Refer to the <ulink url="./wrapping.html#wrap-call-chained">Wrapping section</ulink>)
+or let wrapping happen automatically. Requested by Stephane Houle
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442215&amp;aid=559222&amp;group_id=45216">#559222</ulink>)
+</listitem>
+</itemizedlist>
+
+<para/>
+</listitem>
+
+<listitem>
+Bugfixes
+
+<itemizedlist mark="square">
+<listitem>
+Sometimes stdin was not formatted. Reported and fixed by Kees Kuip
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=559503&amp;group_id=45216">#559503</ulink>)
+</listitem>
+<listitem>
+1.0b6 failed to work with JDK 1.3.0 due to a bug in the handling of the index
+list <filename>.jar</filename> entry. Ant 1.5beta1 named it &quot;INDEX.LIST&quot; but this JDK expects &quot;Index.list&quot;
+which in turn lead to classloading problems.
+Reported by Steve Bromley
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=559704&amp;group_id=45216">#559704</ulink>)
+and Joel Alaux
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=559240&amp;group_id=45216">#559240</ulink>)
+</listitem>
+<listitem>
+Console Plug-in: Parsing a non-valid Java file with stdin always resulted in an
+exitcode &quot;0&quot;. It now returns &quot;1&quot; in such cases. Reported by Kees Kuip
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=560709&amp;group_id=45216">#560709</ulink>)
+</listitem>
+<listitem>
+The file history failed to work (because of an initialization error)
+</listitem>
+<listitem>
+The wrapper scripts for the Console Plug-in failed to work (I forgot to rename
+the startup class that has changed in 1.0b6). Reported by Ronen Rotstain
+</listitem>
+<listitem>
+The JBuilder Plug-in is now compatible with jVI. Reported by Rich Kadel
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=559761&amp;group_id=45216">#559761</ulink>)
+</listitem>
+<listitem>
+Javadoc tags were (intensionally) only printed if the Javadoc comment belonged to a class/interface or
+method/ctor declaration. Reported by Tony Falabella
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=559357&amp;group_id=45216">#559357</ulink>)
+</listitem>
+<listitem>
+Specifying a relative file as input source could lead to a file loss in case
+of RuntimeExceptions during the processing and a backup level of &quot;0&quot;.
+Reported by Kees Kuip
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=558353&amp;group_id=45216">#558353</ulink>)
+</listitem>
+<listitem>
+The NetBeans module failed to function properly due to a wrong Manifest <filename>.jar</filename> entry. Reported by Nico Max and Davide Baroncelli
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=558560&amp;group_id=45216">#558560</ulink>)
+</listitem>
+<listitem>
+If <guilabel>Space around Shift operators</guilabel> was disabled, Jalopy failed to
+add whitespace around the <classname>instanceof</classname> operator. Reported by Roger Kemp
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=558482&amp;group_id=45216">#558482</ulink>)
+</listitem>
+<listitem>
+Fixed a small but annoying bug regarding the alignment of assignments. Reported by GilloS
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=558638&amp;group_id=45216">#558638</ulink>)
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Changes
+
+<itemizedlist mark="square">
+<listitem>
+The detection logic for debug logging calls has been slightly improved. Calls like
+<literal>Configuration.debug()</literal> won't be treated as logging calls anymore
+</listitem>
+<listitem>
+The custom Javadoc tag definitions are not stored in distinct files anymore but
+rather go into the settings file (to make it portable across system bounderies)
+</listitem>
+<listitem>
+The Ant task attribute handling changed: if you omit any optional attribute now the
+corresponding settings settings will be used for *all* attributes
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+</orderedlist>
+</simplesect>
+
+<simplesect>
+<title>1.0 Beta 6 (2002-05-19)</title>
+<orderedlist numeration="lowerroman">
+<listitem>
+New Features
+
+<itemizedlist mark="square">
+<listitem>
+Thanks to Roman Sarychev, Jalopy now provides the ability to import/export
+settings in an <filename>.XML</filename> format
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442215&amp;aid=549177&amp;group_id=45216">#549177</ulink>)
+</listitem>
+<listitem>
+Jalopy is now able to keep original blank lines. See <ulink url="./separation.html#separation-misc-keep">Separation section</ulink> for details
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442215&amp;aid=555914&amp;group_id=45216">#555914</ulink>)
+</listitem>
+<listitem>
+Modifiers of declarations can now be sorted. See <ulink url="./sorting.html#sorting-general-modifiers">Sort section</ulink> for details
+</listitem>
+<listitem>
+You can now enable the auto-insertion of an enclosing conditional for logging calls. See <ulink url="./misc.html#misc-logging-conditional">Misc section</ulink> for details. Requested by Larry Hamel
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442215&amp;aid=550336&amp;group_id=45216">#550336</ulink>)
+</listitem>
+<listitem>
+Parameters of method definitions can now be aligned. See <ulink url="./indentation.html#indentation-align-params">Indentation section</ulink>. Requested by Gary Bentley
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442215&amp;aid=551205&amp;group_id=45216">#551205</ulink>)
+</listitem>
+<listitem>
+The default grouping depth is now user configurable. See <ulink url="./imports.html#imports-grouping">Imports section</ulink>. Requested by Larry Hamel
+</listitem>
+<listitem>
+Added new options (before and after curly braces, blocks...) to customize the blank lines behaviour. See <ulink url="./separation.html">Separation section</ulink>
+</listitem>
+<listitem>
+You can now print a blank between array type and initializer. Requested by David Weitzman
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442215&amp;aid=548888&amp;group_id=45216">#548888</ulink>)
+</listitem>
+<listitem>
+Jalopy is now able to load its settings from an Internet address. Refer to the
+<ulink url="./settings.html#general">General section</ulink> of the manual. Cool feature requested by Sven van't Veer
+</listitem>
+<listitem>
+You can now use stdin/stdout redirection from the command line. If no input
+file(s) are specified, Jalopy will start listening on stdin. Note that the
+command line interface is now only available via the Console Plug-in! See
+<ulink url="./plugin-console-usage.html#plugin-console-usage-example">Examples section</ulink>
+</listitem>
+<listitem>
+For array initializers you can now force a specfic number of elements to be
+printed on each line or whether all elements should be printed on one line.
+See <ulink url="./wrapping.html#wrap-misc-arrays">Wrapping section</ulink>
+</listitem>
+<listitem>
+Eclipse Plug-in: the Packages view context menu now contains a formatting menu item
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Bugfixes
+
+
+<itemizedlist mark="square">
+<listitem>
+Eclipse Plug-in: Fixed a bug in the shutdown hook. Only occurred if one had not
+formatted several files at once during a session. Reported by Eric Vickery
+</listitem>
+<listitem>
+Multi-line comments were not printed correctly if parsing of multi-line comments was
+disabled and the individual lines not starting with a leading asterix. Reported by Tony Falabella
+(<ulink url="http://sf.net/tracker/?func=detail&amp;atid=442212&amp;aid=554141&amp;group_id=45216">#554141</ulink>)
+</listitem>
+<listitem>
+Javadoc generation failed if <guilabel>Parse/Format tags</guilabel> was disabled. Reported by Gary Bentley
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=551194&amp;group_id=45216">#551194</ulink>)
+</listitem>
+<listitem>
+Serial version UID check box didn't save. Reported by Kevin Duffey
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=551604&amp;group_id=45216">#551604</ulink>)
+</listitem>
+<listitem>
+Formatting an opened file with one of the Plug-ins did not create a backup file. Reported by Warren Nicholls
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=545077&amp;group_id=45216">#545077</ulink>)
+</listitem>
+<listitem>
+Custom Javadoc tag definitions are now loaded correctly and thus working. Reported by Arnd Empting
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=547028&amp;group_id=45216">#547028</ulink>)
+</listitem>
+<listitem>
+Fixed an trailing comment bug for the Sun brace styling. Reported by Martin Spiller
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=545616&amp;group_id=45216">#545616</ulink>)
+</listitem>
+<listitem>
+Eclipse Plug-in: After formatting the active editor, the IBeam cursor was not
+restored but rather the default cursor showed up
+</listitem>
+<listitem>
+Line wrapping for while and do-while expression parts now working (I forgot the markers)
+</listitem>
+<listitem>
+Fixed a blank lines issue for singe-line comments (printed one extra behind
+left curly braces, this is now user configurable)
+</listitem>
+<listitem>
+Fixed another blank lines issue for the Sun brace style (missed one blank
+line between blocks. Reported by Bradley Smith
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=545941&amp;group_id=45216">#545941</ulink>,
+<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=544459&amp;group_id=45216">#544459</ulink>)
+</listitem>
+<listitem>
+EOF comments weren't always treated correctly (in case of singe-line comments). Reported by Ian Brown
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=544706&amp;group_id=45216">#544706</ulink>)
+</listitem>
+<listitem>
+jEdit Plug-in: Updated to work with 4.0 final. It now won't work with any prior release
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=544100&amp;group_id=45216">#544100</ulink>)
+</listitem>
+<listitem>
+NetBeans Plug-in: fixed a build problem causing the <filename>.nbm</filename>
+file to be missing in the distro archive. Reported by Brian Ewins
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=544162&amp;group_id=45216">#544162</ulink>)
+</listitem>
+<listitem>
+Fixed a minor bug in the JavadocPrinter regarding the printing of lists
+</listitem>
+<listitem>
+Footers were always removed no matter whether enabled or disabled
+</listitem>
+<listitem>
+Left curly brace for array initialization expression now regards the selected brace style
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Changes
+
+<itemizedlist mark="square">
+<listitem>
+The license terms have changed. The core runtime and most of the Plug-ins are now
+released under the <ulink url="license-bsd.html">BSD license</ulink>.
+Due to license restrictions of a 3rd party library,
+the command line interface has been removed from *<emphasis role="bold">ALL</emphasis>*
+distributions and a new Plug-in was created: the Console Plug-in.
+</listitem>
+<listitem>
+JBuilder Plug-in: switching project does not bring up a blocking progress dialog
+anymore. The class repository is loaded in a background thread
+</listitem>
+<listitem>
+All file dialogs are not opened directly anymore but are accessible via an
+intermediate component that provides a history
+</listitem>
+<listitem>
+Eclipse Plug-in: Updated the <filename>plugin.xml</filename> to work with the
+latest stable build (20020416). This change only regards the menu item to
+invoke the Jalopy settings dialog; this item now appears under the 'Window'
+menu as the 'Workbench' menu has been gone
+</listitem>
+<listitem>
+The Javadoc parser now recognizes &lt;br/&gt; as a valid HTML tag
+(<ulink url="http://sf.net/tracker/index.php?func=detail&amp;atid=442212&amp;aid=547028&amp;group_id=45216">#547028</ulink>)
+</listitem>
+<listitem>
+The Javadoc parser now checks whether any custom tag definition was added/removed
+since the last run and therefore needs reloading
+</listitem>
+<listitem>
+Specifying an empty string input via Jalopy#setInput(String, String) no longer
+throws <classname>IllegalArgumentException</classname>, instead the input is
+handled like an up-to-date file
+</listitem>
+<listitem>
+<guibutton>Load...</guibutton> and <guibutton>Save...</guibutton> buttons on the
+General settings page has been renamed
+to <guibutton>Import...</guibutton> and <guibutton>Export...</guibutton>
+</listitem>
+<listitem>
+Changed the comment handling of labeled statements: if the following loop had
+comments before, these were printed before the labeled statement, now they will
+be printed before the loop statement
+</listitem>
+<listitem>
+The build scripts has been updated to use Ant 1.5beta1 features. Prior Ant
+releases won't work anymore
+</listitem>
+<listitem>
+Updated the bundled log4j distribution to 1.2.1. Adopted the new naming scheme
+and renamed all <classname>Category</classname> and <classname>Priority</classname>
+instances. Note that 1.2 is *no* drop-in replacement (no matter what the log4j docu says)
+as they renamed a public (sic!) field I have to use
+</listitem>
+<listitem>
+jEdit Plug-in: The menu item to display the Jalopy settings dialog can now
+be added to the context menu
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+</orderedlist>
+</simplesect>
+
+<simplesect>
+<title>1.0 Beta 5 (2000-04-14)</title>
+
+<orderedlist numeration="lowerroman">
+<listitem>
+New Features
+
+<itemizedlist mark="square">
+<listitem>
+<classname>AbstractPlugin.java</classname> now comes with multi-processor
+support, so all IDE Plug-ins should operate faster on multi-processor machines.
+Refer to the <ulink url="misc.html#misc-threads">Misc</ulink> section of the
+manual
+</listitem>
+<listitem>
+Ant Plug-in: Added multi-processor support, new parameter <parameter>threads</parameter> to specify
+the number of threads to use
+</listitem>
+<listitem>
+Declaration and assignments aligning now available. Refer to the
+<ulink url="indentation.html#indentation-align-ident">Indentation</ulink> section of the
+manual
+</listitem>
+<listitem>
+Separation (blank lines) behaviour now configurable. Refer to the
+<ulink url="separation.html">Separation</ulink> section of the manual
+</listitem>
+<listitem>
+Added Eclipse Plug-in (needs Eclipse 2.0)
+</listitem>
+<listitem>
+Jalopy now supports the common convention of using a single @see tag
+instead of all the other tags and won't insert any missing Javadoc tags in such
+cases. Same applies if the inline tag {@inheritDoc} is found in the description
+</listitem>
+<listitem>
+Work started to provide an extended index for the user manual.
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Bugfixes
+
+<itemizedlist mark="square">
+<listitem>
+Javadoc add/remove didn't work for @return tag
+</listitem>
+<listitem>
+The editable combo boxes (<classname>NumberComboBoxEditor.java</classname>)
+caused exceptions on losing focus
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Changes
+<itemizedlist mark="square">
+<listitem>
+Javadoc now also generated for methods/ctors without params.
+</listitem>
+<listitem>
+Ant Plug-in: Changed the configuration of the message output. It is
+now controlled by a single parameter <parameter>loglevel</parameter>. This may
+force you to update your build scripts. Refer to the
+<ulink url="plugin-ant-usage.html#tab-ant-params">Ant section</ulink>
+of the manual to read about the list of valid parameters
+</listitem>
+<listitem>
+The source base has been split into different modules (to make CVS happy and
+life easier) and the build system has changed accordingly
+</listitem>
+<listitem>
+The website and all documentation is now auto-generated out of <filename>.XML</filename> files
+(using the Ant style task and DocBook XSL 1.50.0/Saxon 6.5.1)
+</listitem>
+<listitem>
+The entries of the history viewer are now sorted
+</listitem>
+<listitem>
+The web site has a new look
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+</orderedlist>
+</simplesect>
+
+<simplesect>
+<title>1.0 Beta 4 (2000-03-20)</title>
+
+<orderedlist numeration="lowerroman">
+<listitem>
+New Features
+
+<itemizedlist mark="square">
+<listitem>
+Jalopy now provides some decent user documentation. Many thanks to Larry
+Hamel for the proof-reading
+</listitem>
+<listitem>
+The line wrapping logic is now fully implemented
+</listitem>
+<listitem>
+New line wrapping option: You can now force the wrapping for parameter
+lists of method calls. Note that this switch only applies to those lists
+that contain another method call. Refer to the
+<ulink url="wrapping.html#wrap-always">Wrap always</ulink> section of the manual.
+Nice feature suggested by David Beutel
+</listitem>
+<listitem>
+Continuation indentation is now available for ternary if-else epressions
+too. Refer to the
+<ulink url="indentation.html#indentation-misc-ternary-if-else">Indentation</ulink> section of the manual
+</listitem>
+<listitem>
+New option: You can now specify whether you want indentation realized
+with tabs instead of spaces. Refer to the
+<ulink url="indentation.html#indentation-misc-tab">Indentation</ulink> section of the manual.
+This feature was kindly donated by David Beutel
+</listitem>
+<listitem>
+The history feature is now more user configurable. You can specifiy
+whether you want to have it enabled at all and what policy you want to
+use. Choose between the comment based history (which inserts a small
+header on top of every file) or a file-driven history. Refer to the
+<ulink url="misc.html#misc-history">Indentation</ulink> section of the manual.
+The history feature is now *disabled* by default
+</listitem>
+<listitem>
+Added two new wrapping options: <guilabel>Before extends keyword</guilabel> and
+<guilabel>Before implements keyword</guilabel>. Enabling any of them will force
+a newline before the given keyword. Refer to the
+<ulink url="wrapping.html#wrap-always">Wrap always</ulink> section of the manual.
+Requested by John Bishop
+</listitem>
+<listitem>
+New option to control the printing of labels. You can now specify whether
+a line break should be printed after labels or not. Refer to the
+<ulink url="wrapping.html#wrap-always-label">Wrap always</ulink> section of the manual
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Bugfixes
+
+<itemizedlist mark="square">
+<listitem>
+Small bugfix regarding trailing comments and array initialization
+</listitem>
+<listitem>
+Line wrapping for parameter lists was always performed, no matter what
+preference setting given
+</listitem>
+<listitem>
+For ternary if-else statements, parentheses was always inserted for the
+expression part if <guilabel>Insert parentheses around expressions</guilabel> was enabled.
+Now parentheses are only inserted if actually needed
+</listitem>
+<listitem>
+<guilabel>Indent labels</guilabel> option didn't show up on the indentation settings page
+</listitem>
+<listitem>
+The Javadoc auto-generation facility no longer inserts @throws tags for throws
+clauses that are catched in the method body
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Changes
+
+<itemizedlist mark="square">
+<listitem>
+Settings pages <guilabel>Braces</guilabel> and <guilabel>Block style</guilabel>
+now merged into one page <guilabel>Braces</guilabel> with two tabs
+<guilabel>Style</guilabel> and <guilabel>Misc</guilabel>
+</listitem>
+<listitem>
+<guibutton>Cancel</guibutton> button of the Progress monitor dialog renamed to
+<guibutton>Stop</guibutton> to reflect the fact that some files might have changed
+</listitem>
+<listitem>
+Settings page <guilabel>Javadoc</guilabel> cleaned up
+</listitem>
+<listitem>
+Specifying an identify key to delete existing headers/footers is now
+enforced
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+</orderedlist>
+</simplesect>
+
+
+<simplesect>
+<title>1.0 Beta 3 (2000-03-10)</title>
+
+<orderedlist numeration="lowerroman">
+<listitem>
+New Features
+
+<itemizedlist mark="square">
+<listitem>
+New option: You can now specify whether you want to retain first column
+comments vs. indenting them relative to their position in the code. Refer to the
+<ulink url="indentation.html#indentation-misc-first-column">Indentation</ulink> section of the manual
+</listitem>
+<listitem>
+New option: You can now use different brace styles for class/method
+blocks and other types of blocks (for Sun, GNU and Custom style)
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Bugfixes
+
+<itemizedlist mark="square">
+<listitem>
+The Javadoc parser rework lead to an error with the Javadoc @throws tags
+verification. This has been fixed now (Actually only a build problem)
+</listitem>
+<listitem>
+If <guilabel>Space before Case colon</guilabel> was enabled, no space was printed for
+the default keyword
+</listitem>
+<listitem>
+The comment creation only worked if the comment parsing and tag checking
+was enabled too
+</listitem>
+<listitem>
+Formatting a non-file input produced wrong updates of the history header
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Changes
+
+<itemizedlist mark="square">
+<listitem>
+The line-wrapping logic changed/improved somewhat
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+</orderedlist>
+</simplesect>
+
+<simplesect>
+<title>1.0 Beta 2 (2002-03-05)</title>
+
+<orderedlist numeration="lowerroman">
+<listitem>
+New Features
+
+<itemizedlist mark="square">
+<listitem>
+Custom Javadoc tag definitions now available
+</listitem>
+<listitem>
+New option: You can now choose whether you want an empty statement
+inserted into empty braces to make the intension obvious
+</listitem>
+<listitem>
+New option: You can now specify whether if-statements should generally use
+continuation indent. This option was added to address the fact that
+conventional indentation could make seeing the body difficult (as outlined
+in the Sun Java Conventions guide)
+</listitem>
+<listitem>
+New option: Line wrapping can now be performed before or after operators
+</listitem>
+<listitem>
+New option: You can now specify template texts for auto-inserted Javadoc tags.
+</listitem>
+<listitem>
+NetBeans Plug-in added (for NetBeans 3.3.1 and higher)
+</listitem>
+<listitem>
+jEdit Plug-in: updated to work with jEdit 4.0prev1 and higher
+</listitem>
+<listitem>
+JBuilder Plug-in: added the Format and Settings actions to the popup
+menu of the editor pane
+</listitem>
+<listitem>
+Ant Plug-in: new parameter <parameter>style</parameter> to set the settings file to use
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Bugfixes
+
+<itemizedlist mark="square">
+<listitem>
+Fixed a bug regarding the wrong printing of parenthesis for certain
+rare cases
+</listitem>
+<listitem>
+Correction of mispelled Javadoc standard tags failed if the correct
+amount of tags was given for the method/ctor
+</listitem>
+<listitem>
+No space was printed after array elements for arrays that fit in
+one line
+</listitem>
+<listitem>
+Printing of trailing comments now works much more reliable
+</listitem>
+<listitem>
+No message was reported in case the user specified an invalid input file
+on the command line
+</listitem>
+<listitem>
+Progress dialog didn't show progress for files with an opened editor view
+</listitem>
+<listitem>
+If no arguments were given on the command line, no warning was printed.
+Now the usage notes will appear
+</listitem>
+<listitem>
+Fixed a horrible bug in the JBuilder Plug-in which caused wrong class
+repository updates if one switched JDKs
+</listitem>
+<listitem>
+Fixed an error in the initialization process of the logging facility for
+Plug-ins using the AbstractPlugin skeleton which hindered the updating
+of the errors/warnings count in the progress dialog
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Changes
+
+<itemizedlist mark="square">
+<listitem>
+All Plug-ins now only available as bundles. This will certainly pertain
+until a branding mechanism is available to check whether a given Plug-in
+will work with a given Jalopy runtime (a la NetBeans?)
+</listitem>
+<listitem>
+Changed/refactored some method signatures in the client API for consistency
+and ease of use
+</listitem>
+<listitem>
+The Javadoc parser has been reworked to allow both custom standard and
+inline tags
+</listitem>
+<listitem>
+Some API documentation enhancements, updated the build script to only generate
+the documentation for the public client API, removed the documentation for the
+Plug-ins from the distribution Javadoc
+</listitem>
+<listitem>
+Moved the logic to set the settings file to use, from the command line
+interface into <classname>Jalopy.java</classname> to let Plug-ins easily set the settings file
+to use
+</listitem>
+<listitem>
+Updated the used ANTLR version to 2.7.2a2. Compiled with optimizations and
+without debugging info results in smaller archive sizes
+</listitem>
+<listitem>
+Many build-script improvements. It should now be possible to build a
+Jalopy runtime version without the need of Plug-in related 3rd-party
+libraries
+</listitem>
+<listitem>
+The Jalopy runtime classes and all needed library classes are now bundled
+into one .jar
+</listitem>
+<listitem>
+The customizer mini editor is no longer part of the runtime .jar
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+</orderedlist>
+</simplesect>
+
+<simplesect>
+<title>1.0 Beta 1 (2002-02-13)</title>
+
+<orderedlist numeration="lowerroman">
+<listitem>
+New Features
+
+<itemizedlist mark="square">
+<listitem>
+jEdit Plug-in added (for jEdit 3.2.2)
+</listitem>
+<listitem>
+The progress dialog now includes a cancel button
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Bugfixes
+
+<itemizedlist mark="square">
+<listitem>
+Settings dialog did not close when invoked on the command line
+with <command>java Preferences</command>
+</listitem>
+<listitem>
+Error in build script fixed (JavadocTokenTypes.txt now included in
+the .jars) to make the Javadoc auto-correction work
+</listitem>
+<listitem>
+Braces indentation not printed for left curly braces
+</listitem>
+<listitem>
+JBuilder Plug-in: Registered directories need to be reparsed on
+every startup for the import expansion/collapsing to work reliably
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+
+<listitem>
+Changes
+
+<itemizedlist mark="square">
+<listitem>
+Changed default package depth for packages java, javax, gnu in the
+settings (former was 3, now uses 2)
+</listitem>
+<listitem>
+Changed the SwingWorker implementation to the one found in Doug Lea's
+<classname>util.concurrent</classname> package, refactored <classname>AbstractPlugin.java</classname>
+to use an inner class dereived from <classname>SwingWorker.java</classname>
+instead of extending <classname>SwingWorker.java</classname> itself
+</listitem>
+<listitem>
+Formatting a single file doesn't bring up the progress dialog anymore, but
+rather shows the system wait cursor and blocks all input
+</listitem>
+<listitem>
+Removed the Javadoc documentation from the Plug-in distributions
+</listitem>
+</itemizedlist>
+<para/>
+</listitem>
+</orderedlist>
+</simplesect>
+
+<simplesect>
+<title>Initial beta version (2002-02-10)</title>
+</simplesect>
+</article>

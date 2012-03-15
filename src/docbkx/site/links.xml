@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+
+<!-- $Id: links.xml,v 1.3 2002/11/12 23:34:16 marcohu Exp $ -->
+<!-- This file contains links to several other projects or related information  -->
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+  [ <!ENTITY keywords SYSTEM "_keywords.xml"> ] >
+
+<article>
+<articleinfo>
+<title>Jalopy - Links</title>
+&keywords;
+</articleinfo>
+
+<simplesect id="integrator">
+<title>Integrators</title>
+<blockquote>
+
+<informaltable frame="none" colsep="0" rowsep="0" pgwide="1">
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="35*"/>
+<colspec colwidth="65*"/>
+<tbody>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://koalagml.sf.net/">koalaGML</ulink></entry>
+<entry>Java/Swing Code Generator</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://openuss.sourceforge.net/">OpenUSS</ulink></entry>
+<entry>J2EE-based E-Learning platform</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://www.informatikatelier.com/">FormsWizard, PLSQLWizard</ulink></entry>
+<entry>Translators for Oracle applications to Java (commercial)</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</blockquote>
+</simplesect>
+
+<simplesect id="open-source">
+<title>Related Open Source projects</title>
+<blockquote>
+
+<informaltable frame="none" colsep="0" rowsep="0" pgwide="1">
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="35*"/>
+<colspec colwidth="65*"/>
+<tbody>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://astyle.sf.net/">Artistic Style</ulink></entry>
+<entry>Java Source Code Indentation Filter</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://sf.net/projects/barat/">Barat</ulink></entry>
+<entry>Code Parser/Analyser</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://checkstyle.sf.net/">CheckStyle</ulink></entry>
+<entry>Java Coding Convention Checker</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://importscrubber.sf.net/">ImportScrubber</ulink></entry>
+<entry>Java Import Optimizer</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://www.tiobe.com/jacobe.htm">Jacobe</ulink></entry>
+<entry>Java Source Code Formatter (not Open Source, but free)</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://jcsc.sf.net/">JCSC</ulink></entry>
+<entry>Java Coding Style Checker</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://jrefactory.sf.net/">JRefactory</ulink></entry>
+<entry>Java Refactoring Tool</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://mozart-dev.sf.net/">Mozart Development Environment</ulink></entry>
+<entry>Framework for user extensible compilers and development tools</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://pmd.sf.net/">PMD</ulink></entry>
+<entry>Java source code analyser/checker</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://qdox.sf.net/">QDox</ulink></entry>
+<entry>Framework for extracting class/interface/method definitions</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://recoder.sf.net/">Recoder</ulink></entry>
+<entry>Source Code Metaprogramming Framework</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://www.serc.nl/people/florijn/work/designchecking/RevJava.htm">RevJava</ulink></entry>
+<entry>Review assistant for Java programs</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://transmogrify.sf.net/">Transmogrify</ulink></entry>
+<entry>Java Refactoring Tool</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</blockquote>
+</simplesect>
+
+<simplesect id="commercial">
+<title>Related commercial projects</title>
+<blockquote>
+
+<informaltable frame="none" colsep="0" rowsep="0" pgwide="1">
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="35*"/>
+<colspec colwidth="65*"/>
+<tbody>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://www.jenssoft.com/">CodeCompanion</ulink></entry>
+<entry>Java Coding Convention Checker</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://www.jindent.com/">Jindent</ulink></entry>
+<entry>Java Source Code Formatter</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</blockquote>
+</simplesect>
+
+<simplesect id="convention">
+<title>Code Conventions and Style Guides</title>
+<blockquote>
+<simplelist>
+<member>
+<ulink url="http://www.ambysoft.com/javaCodingStandards.html">AmbySoft Coding Standards for Java</ulink>
+</member>
+<member>
+<ulink url="http://geosoft.no/javastyle.html">Geosoft Java Programming Style Guidelines</ulink>
+</member>
+<member>
+<ulink url="http://www.javaranch.com/style.jsp">JavaRanch Java Programming Style Guide</ulink>
+</member>
+<member>
+<ulink url="http://www.infospheres.caltech.edu/resources/code_standards/java_standard.html">Infospheres Java Coding Standard</ulink>
+</member>
+<member>
+<ulink url="http://developer.netscape.com/docs/technote/java/codestyle.html">Netscape's Software Coding Standards for Java</ulink>
+</member>
+<member>
+<ulink url="http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html">Sun Java Code Convention</ulink>
+</member>
+</simplelist>
+</blockquote>
+</simplesect>
+</article>

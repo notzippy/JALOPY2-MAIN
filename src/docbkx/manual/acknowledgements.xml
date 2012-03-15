@@ -1,0 +1,50 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: acknowledgements.xml,v 1.3 2002/11/11 20:13:40 marcohu Exp $ -->
+
+<preface id="acknowledge">
+<title>Acknowledgements</title>
+
+<para>
+First and foremost I wish to thank the creators of the free software libraries
+I use. Jalopy includes software developed by the
+<ulink url="http://www.apache.org/">Apache Software Foundation</ulink>,
+the <ulink url="http://www.bluej.org/">BlueJ Group</ulink>,
+<ulink url="http://www.saxproject.org/">David Brownell</ulink>,
+<ulink url="http://sf.net/projects/saxon/">Michael H. Kay</ulink>,
+the <ulink url="http://www.jdom.org">JDOM group</ulink>,
+<ulink url="http://www.saxproject.org/">David Megginson</ulink>,
+<ulink url="http://www.antlr.org/">Terence Parr</ulink>,
+<ulink url="http://www.jedit.org/">Slava Pestov</ulink>,
+<ulink url="http://www.urbanophile.com/~arenn/hacking/download.html">Aaron M. Renn</ulink> and
+<ulink url="http://java.sun.com/xml/">Sun Microsystems, Inc.</ulink>.
+Please refer to <xref linkend="dependencies" /> for a more detailed list
+and the individual licensing terms.
+</para>
+
+<para>
+I would like to say a big thanks to Michael Callum, Frank Klomp, Roman Sarychev,
+David Beutel, Denis N. Antonioli and Kees Kuip who contributed code.
+</para>
+
+<para>
+Thanks also to all users who provided feedback, submitted bug reports and requested new
+features.
+</para>
+
+<para>
+A special thanks to Larry Hamel for the initial proof-reading of this manual.
+</para>
+
+<para>
+Last but not least, I wish to thank the <ulink url="http://sf.net/">SourceForge</ulink>
+crew for not only hosting the Jalopy web site and providing the collaborative development
+infrastructure but also for their help and support in getting things up and running.
+</para>
+
+<para>
+And finally, my special thanks to the bright light in the big city, whose love has been
+a home and a foreign country, the best of both worlds.
+</para>
+</preface>

@@ -1,0 +1,245 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: plugin-ant.xml,v 1.4 2002/11/11 20:13:40 marcohu Exp $ -->
+<!-- Contains the documentation for the Ant Plug-in -->
+
+<title>Ant Plug-in task</title>
+<indexterm><primary>Plug-in</primary><secondary>Ant</secondary></indexterm>
+<indexterm><primary>Ant</primary></indexterm>
+<para>
+Describes the installation and usage of the Jalopy Ant Plug-in task.
+</para>
+
+<sect1 id="plugin-ant-installation">
+<title>Installation</title>
+<para>
+Explains the steps involved in getting the Ant task up and running.
+</para>
+
+<sect2 id="plugin-ant-installation-requirements">
+<title>System requirements</title>
+<para>
+The Plug-in requires Ant 1.3 or higher. It has been tested with 1.3 and 1.5 versions of Ant.
+Please feel free to notify of other success stories.
+See <xref linkend="installation-requirements" /> for the basic requirements to
+run Jalopy.
+</para>
+
+<para>
+To obtain more information about this wonderful build tool, visit the official
+Ant home page at the Apache Jakarta site:
+<ulink url="http://jakarta.apache.org/ant/">http://jakarta.apache.org/ant/</ulink>
+</para>
+</sect2>
+
+<sect2 id="plugin-ant-installation-installation">
+<title>Installation</title>
+<indexterm zone="plugin-ant-installation-installation"><primary>Installation</primary><secondary>Ant</secondary></indexterm>
+<para>
+The Plug-in comes either as a single <filename>.zip</filename> or compressed
+<filename>.tar</filename> archive. Unzipping either one of these files into a directory
+of your choice (referred to as <replaceable>&lt;INST_DIR&gt;</replaceable>)
+will produce three subdirectories <filename>/bin</filename>, <filename>/docs</filename>
+and <filename>/lib</filename>.
+</para>
+
+<para>
+<screen>
+..
+  bin/       contains wrapper scripts for different platforms
+  docs/      contains the documentation
+  lib/       contains all necessary libraries
+</screen>
+</para>
+
+<indexterm zone="plugin-ant-installation-installation"><primary>taskdef</primary></indexterm>
+<indexterm zone="plugin-ant-installation-installation"><primary>Ant</primary><secondary>taskdef</secondary></indexterm>
+
+<para>
+Before you can use the Jalopy Ant task in your build scripts, you have to add
+it to your system. Maybe the simplest way is to utilize the
+<command>&lt;taskdef&gt;</command> element in your build script as follows:
+</para>
+
+<programlisting>
+&lt;taskdef name=&quot;jalopy&quot;
+         classname=&quot;de.hunsicker.jalopy.plugin.ant.AntPlugin&quot;&gt;
+  &lt;classpath&gt;
+    &lt;fileset dir="<replaceable>&lt;INST_DIR&gt;</replaceable>/lib"&gt;
+      &lt;include name="*.jar" /&gt;
+    &lt;/fileset&gt;
+  &lt;/classpath&gt;
+&lt;/taskdef&gt;
+</programlisting>
+
+<para>
+If you rather want to add the provided libraries to your classpath (either by
+copying the libraries into the <filename>/lib</filename> folder of your Ant
+installation or setting up the classpath as usual), please be aware that the
+provided parser (<filename>aelfred-<replaceable>xxx</replaceable>.jar</filename>)
+is incompatible with Ant 1.4.1 or prior releases. If you happen to use one of
+these outdated versions, the parser library must not be copied into the
+<filename>/lib</filename> folder (or added to the classpath) otherwise Ant will fail to work!
+</para>
+</sect2>
+</sect1>
+
+<sect1 id="plugin-ant-config">
+<title>Configuration</title>
+<para>
+To display the settings dialog you should use the provided wrapper script for
+your platform (available in the <filename>/bin</filename> folder of the distribution).
+</para>
+
+<para>
+Of course, you can setup the classpath yourself by adding all
+<filename>.jar</filename> files as usual to the classpath and then type
+</para>
+
+<synopsis>
+java Preferences
+</synopsis>
+<para/>
+</sect1>
+
+<sect1 id="plugin-ant-usage">
+<title>Usage</title>
+
+<para>
+The Jalopy task can take a few parameters to control the runtime behavior of
+Jalopy. If omitted, your current preferences settings will be used.
+</para>
+
+<para>
+Nested <ulink url="http://jakarta.apache.org/ant/manual/CoreTypes/fileset.html">FileSets</ulink>
+can and should be used to specify the source files and/or directories.
+</para>
+
+&plugin-ant-params;
+<para/>
+
+<sect3 id="plugin-ant-usage-example">
+<title>Example</title>
+<para>
+The following example demonstrates how you can make use of the Jalopy Ant task.
+</para>
+<para>
+Note that the &quot;format&quot; target depends on the &quot;compile&quot; target.
+This way we can be sure that the given classpathref does cover all types used
+in your sources (and this is an absolute necessity for the import optimization feature
+to work reliable).
+</para>
+
+<example id="ex-ant-build-file">
+<title>Example Ant build file</title>
+<programlisting>
+&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;project name=&quot;myProject&quot; default=&quot;format&quot; basedir=&quot;.&quot; &gt;
+
+  &lt;property name=&quot;dir.jalopy&quot; value=&quot;/mystuff/jalopy/bin&quot; /&gt;
+  &lt;property name=&quot;dir.lib&quot; value=&quot;${basedir}/ext/lib&quot; /&gt;
+  &lt;property name=&quot;dir.compile&quot; value=&quot;${basedir}/tmp~/build/classes&quot; /&gt;
+  &lt;property name=&quot;dir.src.java&quot; value=&quot;${basedir}/src/java&quot; /&gt;
+
+  &lt;!-- ==================================================================== --&gt;
+  &lt;!-- Defines the Jalopy task                                              --&gt;
+  &lt;!-- ==================================================================== --&gt;
+  &lt;taskdef name=&quot;jalopy&quot;
+           classname=&quot;de.hunsicker.jalopy.plugin.ant.AntPlugin&quot;&gt;
+    &lt;!--
+
+      we did not copy the needed .jars into the /lib directory of Ant in order
+      to avoid possible classpath issues, so we have to specify a lookup
+      classpath here
+
+      --&gt;
+    &lt;classpath&gt;
+      &lt;fileset dir="${dir.jalopy}"&gt;
+        &lt;include name="*.jar" /&gt;
+      &lt;/fileset&gt;
+    &lt;/classpath&gt;
+  &lt;/taskdef&gt;
+
+
+  &lt;!-- ==================================================================== --&gt;
+  &lt;!-- Defines the project classpath                                        --&gt;
+  &lt;!-- ==================================================================== --&gt;
+  &lt;path id="project.classpath" &gt;
+
+    &lt;!-- our compilation directory --&gt;
+    &lt;pathelement location="${dir.compile}" /&gt;
+
+    &lt;!-- needed 3rd party libraries --&gt;
+    &lt;fileset dir="${dir.lib}" &gt;
+      &lt;include name="**/*.jar" /&gt;
+    &lt;/fileset&gt;
+  &lt;/path&gt;
+
+
+  &lt;!-- ==================================================================== --&gt;
+  &lt;!-- Compiles the project sources                                         --&gt;
+  &lt;!-- ==================================================================== --&gt;
+  &lt;target name="compile"
+          depends="init"&gt;
+    &lt;javac destdir="${dir.compile}"
+           fork="true"&gt;
+      &lt;classpath refid="project.classpath" /&gt;
+      &lt;src path="${dir.src.java}" /&gt;
+    &lt;/javac&gt;
+  &lt;/target&gt;
+
+
+  &lt;!-- ==================================================================== --&gt;
+  &lt;!-- Formats all source files                                             --&gt;
+  &lt;!-- ==================================================================== --&gt;
+  &lt;target name=&quot;format&quot; depends="compile"&gt;
+
+    &lt;!--
+
+      Invokes Jalopy as follows:
+
+      - All formatted files will have unix fileformat (\n)
+      - Load your code convention from the given url
+      - Override the convention to use the file history feature
+      - Override the convention to use alder32 checksums of files for history testing
+      - Override the convention to use loglevel &quot;info&quot;
+      - Override the convention to use 2 threads
+      - The import optimization feature will work (if enabled in the active
+        convention), because a classpath reference is specified
+
+        Don't forget to setup an include pattern as Jalopy truly expects
+        valid Java source files as input!
+
+      --&gt;
+    &lt;jalopy fileformat=&quot;unix&quot;
+            convention="http://www.foo.com/myConvention.xml"
+            history=&quot;file&quot;
+            historymethod=&quot;adler32&quot;
+            loglevel=&quot;info&quot;
+            threads=&quot;2&quot;
+            classpathref=&quot;project.classpath&quot;&gt;
+      &lt;fileset dir=&quot;${dir.src.java}&quot;&gt;
+        &lt;include name="**/*.java" /&gt;
+      &lt;/fileset&gt;
+    &lt;/jalopy&gt;
+  &lt;/target&gt;
+&lt;/project&gt;
+</programlisting>
+</example>
+<para />
+</sect3>
+</sect1>
+
+<sect1 id="plugin-ant-license">
+<title>License</title>
+<para>
+The Ant Plug-in is &quot;<emphasis role="bold"><ulink url="http://opensource.org/docs/certification_mark.php">OSI Certified Open Source Software</ulink></emphasis>&quot;,
+released under a BSD license.
+</para>
+
+<para>
+See <xref linkend="license-bsd" /> for the license
+and refer to <xref linkend="dependencies" /> for the license terms of the accompanying 3rd party libraries.
+</para>
+</sect1>

@@ -1,0 +1,113 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: plugin-ant-params.xml,v 1.2 2002/10/24 16:59:21 marcohu Exp $ -->
+<!-- This file describes the parameters of the Jalopy Ant Plug-in task -->
+
+<table id="tab-ant-params" frame="all" colsep="1" rowsep="1" pgwide="0">
+<title>Jalopy Ant task parameters</title>
+<tgroup cols="3" colsep="1" rowsep="1">
+<?dbhtml table-cellpadding="3" table-cellspacing="0"?>
+<colspec colwidth="10*"/>
+<colspec colwidth="75*"/>
+<colspec colwidth="15*"/>
+<thead>
+<row rowsep="1">
+  <entry>Attribute</entry>
+  <entry>Description</entry>
+  <entry>Required</entry>
+</row>
+</thead>
+
+<tbody>
+<row rowsep="1">
+  <entry>backup</entry>
+  <entry>Indicates whether backup copies for all file sources should be kept.</entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>classpathrev</entry>
+  <entry>The classpath to setup the class repository with, given as a <ulink url="http://jakarta.apache.org/ant/manual/using.html#references">reference</ulink> to a path defined elsewhere. If you want the <link linkend="import-optimization">import optimization feature</link> to work, you have to specify the classpath reference you use to compile your sources here.</entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>convention</entry>
+  <entry>Sets the location to the convention file to use - given either relative to the project's basedir or as an absolute local path or internet address. If omitted, the current settings are used, if available. Otherwise the Jalopy build-in defaults will be used.</entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>destdir</entry>
+  <entry>Sets the destination directory to create/copy all formatting output into. If the given directory does not exist, it will be created. If this attribute is ommitted, all input files will simply be overriden.</entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>encoding</entry>
+  <entry>Sets the encoding that controls how Jalopy interprets text files containing characters beyond the ASCII character set. Defaults to the platform default encoding.</entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>failonerror</entry>
+  <entry>Indicates whether a run should be held if errors occured. Defaults to &quot;true&quot;.</entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>file</entry>
+  <entry>Specifies a single source file to format.</entry>
+  <entry>Yes, if no fileset is specified.</entry>
+</row>
+
+<row rowsep="1">
+  <entry>fileformat</entry>
+  <entry>Sets the file format of the output files. The file format controls what end of line character is used. Either one of &quot;UNIX&quot;, &quot;DOS&quot;, MAC&quot;, &quot;DEFAULT&quot; or &quot;AUTO&quot; can be used. Defaults to &quot;AUTO&quot; (case insensitive).</entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>force</entry>
+  <entry>Indicates whether the formatting of files should be forced, even if the file is up-to-date.</entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>history</entry>
+  <entry>Specifies the history policy to use. Either one of
+  &quot;COMMENT&quot;, &quot;FILE&quot; or
+  &quot;NONE&quot; can be used.
+  </entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>javadoc</entry>
+  <entry>Indicates whether Javadoc related messages should be printed.</entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>loglevel</entry>
+  <entry>Specifies the logging level for message output. Either one of
+  &quot;ERROR&quot;, &quot;WARN&quot;, &quot;INFO&quot; or &quot;DEBUG&quot; can be used.</entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>style</entry>
+  <entry>DEPRECATED. See <emphasis>convention</emphasis></entry>
+  <entry>No</entry>
+</row>
+
+<row rowsep="1">
+  <entry>threads</entry>
+  <entry>Specifies the number of processing threads to use. Integer between <literal>1</literal> - <literal>8</literal>.
+  </entry>
+  <entry>No</entry>
+</row>
+</tbody>
+</tgroup>
+</table>

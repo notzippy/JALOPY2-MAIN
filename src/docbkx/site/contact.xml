@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<!-- $Id: contact.xml,v 1.3 2003/12/11 00:05:58 rcleveng Exp $ -->
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+  [ <!ENTITY keywords SYSTEM "_keywords.xml"> ] >
+
+<article>
+<articleinfo>
+<title>Jalopy - Contact</title>
+&keywords;
+</articleinfo>
+
+<simplesect id="trackers">
+<title>Trackers</title>
+<para>
+Please use the following SourceForge trackers to submit bug reports or post
+feature requests:
+</para>
+
+<blockquote>
+<simplelist type="vert" columns="1">
+<member><ulink url="http://sf.net/tracker/?func=add&amp;group_id=45216&amp;atid=442212">Submit a bug report</ulink></member>
+<member><ulink url="http://sf.net/tracker/?func=add&amp;group_id=45216&amp;atid=442215">Request a new feature</ulink></member>
+<member><ulink url="http://sf.net/tracker/?func=add&amp;group_id=45216&amp;atid=442214">Send a patch</ulink></member>
+<member><ulink url="http://sf.net/tracker/?func=add&amp;group_id=45216&amp;atid=442213">Ask for support</ulink></member>
+<para/>
+</simplelist>
+</blockquote>
+
+</simplesect>
+
+<simplesect id="mailing-lists">
+<title>Mailing Lists</title>
+
+<para>
+If you want to provide feedback on this software or stay current with the
+latest development, you may want to join one of the Jalopy mailing lists.
+</para>
+
+<informaltable frame="all" colsep="1" rowsep="1">
+<tgroup cols="3" colsep="1" rowsep="1">
+<colspec colwidth="50*" colsep="1" rowsep="1"/>
+<colspec colwidth="25*" colsep="1" rowsep="1"/>
+<colspec colwidth="25*" colsep="1" rowsep="1"/>
+<thead>
+<row rowsep="1">
+  <entry colsep="1" rowsep="1">List</entry>
+  <entry colsep="1" rowsep="1">Subscribe/Unsubcribe</entry>
+  <entry colsep="1" rowsep="1">Browse Archives</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry colsep="1" rowsep="1"><emphasis role="bold">jalopy-announce</emphasis>
+
+<para>A high-level
+announcements list, for things like major release notifications
+or important bug-fixes. This is not a discussion list, and is not open to
+public posting. Traffic is expected to be very low.
+</para>
+<para>
+If you're interested in
+Jalopy, it is recommended you subscribe at a minimum to this list.
+</para>
+</entry>
+<entry colsep="1" rowsep="1"><ulink url="http://lists.sf.net/mailman/listinfo/jalopy-announce">Subscribe/Unsubscribe</ulink></entry>
+<entry colsep="1" rowsep="1"><ulink url="http://sourceforge.net/mailarchive/forum.php?forum=jalopy-announce">Browse archives</ulink></entry>
+</row>
+<row>
+<entry><emphasis role="bold">jalopy-user</emphasis>
+<para>
+Intended for
+users to ask questions, share knowledge, and discuss general Jalopy related issues.
+</para>
+</entry>
+<entry><ulink url="http://lists.sf.net/mailman/listinfo/jalopy-user">Subscribe/Unsubscribe</ulink></entry>
+<entry colwidth="100"><ulink url="http://sourceforge.net/mailarchive/forum.php?forum=jalopy-user">Browse archives</ulink></entry>
+</row>
+<row>
+<entry><emphasis role="bold">jalopy-development</emphasis>
+<para>
+Hosts development related discussions.
+</para>
+</entry>
+<entry><ulink url="http://lists.sf.net/mailman/listinfo/jalopy-development">Subscribe/Unsubscribe</ulink></entry>
+<entry><ulink url="http://sourceforge.net/mailarchive/forum.php?forum=jalopy-development">Browse archives</ulink></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</simplesect>
+</article>

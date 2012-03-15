@@ -1,0 +1,308 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-javadoc.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect2 id="javadoc">
+<title>Javadoc</title>
+<para>
+Let's you control all Javadoc-related options. Refer to the
+<ulink url="http://java.sun.com/j2se/javadoc/index.html">Javadoc home page</ulink>
+for more information about Sun's Javadoc tool.
+</para>
+
+<caution>
+<title>Incompatibility with Sun JDK 1.4</title>
+<para>
+Note that the Javadoc parsing for Jalopy may not work properly under Sun
+JDK 1.4 with the Client JVM. This seems to be a problem with the garbage
+collection. You may want to enable the Server JVM as a workaround.
+</para>
+</caution>
+
+<sect3 id="javadoc-general">
+<title>General</title>
+<para>
+Controls the general handling of Javadoc comments.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="javadoc-format">
+Parse/Format comments
+</para>
+<indexterm zone="javadoc-format"><primary>Comments</primary><secondary>Javadoc comments</secondary></indexterm>
+<indexterm zone="javadoc-format"><primary>Javadoc comments</primary></indexterm>
+<para>
+Enables the parsing of existing Javadoc comments which in turn leads to a
+reformatting of the original comment style during the printing.
+</para>
+
+<para>
+The used parser mostly supports HTML 3.2 and is not loose in a sense most browsers
+are these days: tags not contained in the standard will produce errors. And you
+should always strive to produce well-formed HTML
+(it works for the <literal>&lt;p&gt;</literal>, <literal>&lt;li&gt;</literal>,
+<literal>&lt;dd&gt;</literal>, <literal>&lt;dt&gt;</literal> and <literal>&lt;dir&gt;</literal>
+tags, but anyway).
+</para>
+
+<para>
+Don't forget that the standard HTML metacharacters, such as less and greater signs
+(<literal>&lt;</literal>, <literal>&gt;</literal>) or the ambersand (<literal>&amp;</literal>), ...
+and the commercial &quot;at&quot; sign (<literal>@</literal>) needs to be
+escaped if not used as part of another HTML or Javadoc tag.
+</para>
+
+<table id="tab-character-entities" frame="all" colsep="1" rowsep="1">
+<title>Character entities</title>
+<tgroup cols="4" colsep="1" rowsep="1">
+<thead>
+<row rowsep="1">
+  <entry>Symbol</entry>
+  <entry>Numeric Entity</entry>
+  <entry>Named Entity</entry>
+  <entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep="1" valign="top">
+  <entry align="center">&amp;</entry>
+  <entry align="center">&amp;038;</entry>
+  <entry align="center">&amp;amp</entry>
+  <entry>Ambersand</entry>
+</row>
+<row rowsep="1" valign="top">
+  <entry align="center">&lt;</entry>
+  <entry align="center">&amp;060;</entry>
+  <entry align="center">&amp;lt;</entry>
+  <entry>Less than</entry>
+</row>
+<row rowsep="1" valign="top">
+  <entry align="center">&gt;</entry>
+  <entry align="center">&amp;062;</entry>
+  <entry align="center">&amp;gt;</entry>
+  <entry>Greater than</entry>
+</row>
+<row rowsep="1" valign="top">
+  <entry align="center">@</entry>
+  <entry align="center">&amp;064;</entry>
+  <entry>&nbsp;</entry>
+  <entry>Commercial &quot;at&quot; sign</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para/>
+
+<example id="ex-escape-html">
+<title>Escaping characters in Javadoc comments</title>
+<para>Don't use</para>
+<screen>
+/**
+ * @author &lt;a href="mailto:first.last@company.com"&gt;first.last<emphasis role="bold">@</emphasis>company.com&lt;/a&gt;
+ */
+</screen>
+<para>But rather use</para>
+<screen>
+/**
+ * @author &lt;a href="mailto:first.last@company.com"&gt;first.last<emphasis role="bold">&amp;064;</emphasis>company.com&lt;/a&gt;
+ */
+</screen>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="javadoc-correct">
+Correct tags
+</para>
+<indexterm zone="javadoc-correct"><primary>Comments</primary><secondary>Javadoc</secondary></indexterm>
+<indexterm zone="javadoc-correct"><primary>Javadoc comments</primary></indexterm>
+<indexterm zone="javadoc-correct"><primary>Auto-correction</primary></indexterm>
+<para>
+Enables the auto-insertion or -removal of missing and obsolete Javadoc tags (all but the <literal>@throws</literal> tag, see below) and
+the correction of misspelled Javadoc tag names.
+</para>
+</listitem>
+<listitem>
+<para id="javadoc-correct-throws">
+Correct @throws tags
+</para>
+<para>
+Controls the auto-correction for <literal>@throws</literal> tags. If enabled,
+Jalopy enforces a distinct <literal>@throws</literal> tag for every exception
+thrown by a method/constructor. Thus, if a method only declares to throw an
+<classname>IOException</classname> but throws a <classname>FileNotFoundException</classname>
+(which is a subclass of the former) too, Jalopy will add a declaration for the latter.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3 id="javadoc-generation">
+<title>Generation</title>
+<para>
+Controls the auto-generation of missing Javadoc comments.
+</para>
+
+<sect4 id="javadoc-generation-selection">
+<title>Element/Level</title>
+<itemizedlist>
+<listitem>
+<para>
+Element/Level
+</para>
+<para>
+Lets you selectively enable the auto-generation of missing Javadoc comments for
+specific class elements and access levels.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Include inner classes
+</para>
+<para>
+Enables the auto-generation feature for inner classes, too. The
+auto-generation does not apply to anonymous inner classes.
+</para>
+</listitem>
+</itemizedlist>
+</sect4>
+
+<sect4 id="javadoc-misc">
+<title>Misc</title>
+<para>
+Let's you control miscellaneous Javadoc settings.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Field comments in single line
+</para>
+
+<para>
+Let's you specify how Javadoc comments of fields, that fit into one line, should be printed.
+</para>
+
+<example id="ex-javadoc-field">
+<title>Field Javadoc comment</title>
+<programlisting>
+/**
+ * What history policy should be used?
+ */
+private History.Policy _historyPolicy = History.Policy.DISABLED;
+</programlisting>
+</example>
+
+<para>
+If enabled, Javadoc comments for fields will be printed in a single line,
+if possible.
+</para>
+
+<example id="ex-javadoc-field-short">
+<title>Field Javadoc comment (shortened)</title>
+<programlisting>
+/** What history policy should be used? */
+private History.Policy _historyPolicy = History.Policy.DISABLED;
+</programlisting>
+</example>
+
+<para>
+Note that this switch does not take affect for field template comments,
+as template are not parsed but inserted as-is.
+</para>
+
+<para>
+Note further that the <link linkend="javadoc-format">Javadoc parsing</link>
+must be enabled for this feature to work.
+</para>
+</listitem>
+</itemizedlist>
+</sect4>
+
+</sect3>
+
+<sect3 id="javadoc-templates">
+<title>Templates</title>
+<para>
+Let's you define templates to be inserted for the different declaration elements.
+Each element (Class, Interface, Constructor, Method and Field) has its
+own template.
+</para>
+
+<para>
+Depending on the element type, a template consists of up to five parts that
+together form a valid Javadoc comment. Note that the resulting comment will
+be inserted as-is, and it is your responsibility to define the templates
+in a consistent style.
+</para>
+
+<para>
+You can use variable expressions throughout your templates. Read
+<xref linkend="environment" /> for more information about this feature.
+</para>
+</sect3>
+
+<sect3 id="javadoc-tags">
+<title>Custom Tags</title>
+<para>
+Allows the definition of custom Javadoc tags to aid the syntax checking of
+Javadoc comments, and enable the auto-correction of misspelled custom tag names.
+</para>
+
+<sect4 id="javadoc-tags-standard">
+<title>Standard Tags</title>
+<para>
+Allows the definition of custom Javadoc standard tag names. The current build-in Standard
+tags are:
+<literal>@author</literal>,
+<literal>@deprecated</literal>,
+<literal>@exception</literal>,
+<literal>@param</literal>,
+<literal>@return</literal>,
+<literal>@see</literal>,
+<literal>@serial</literal>,
+<literal>@serialData</literal>,
+<literal>@serialField</literal>,
+<literal>@since</literal>,
+<literal>@throws</literal>,
+<literal>@todo</literal>,
+<literal>@version</literal>
+</para>
+
+<para>
+Use the <guibutton>Add...</guibutton> and <guibutton>Remove</guibutton> buttons
+to add or remove items from the list.
+</para>
+<para>
+Valid standard tag names have the form
+<literal>@[a-zA-Z]+</literal>, e.g. <literal>@exclude</literal>.
+</para>
+</sect4>
+
+<sect4 id="javadoc-tags-inline">
+<title>In-line Tags</title>
+<para>
+Allows the definition of custom Javadoc in-line tag names.
+The current build-in In-line tags are:
+<literal>@docRoot</literal>,
+<literal>@inheritDoc</literal>,
+<literal>@link</literal>,
+<literal>@linkPlain</literal>,
+<literal>@value</literal>
+</para>
+
+<para>
+Use the <guibutton>Add...</guibutton> and <guibutton>Remove</guibutton> buttons
+to add or remove items from the list.
+</para>
+<para>
+Valid in-line tag names have the form
+<literal>@[a-zA-Z]+</literal>, e.g. <literal>@mylink</literal>.
+</para>
+</sect4>
+</sect3>
+</sect2>

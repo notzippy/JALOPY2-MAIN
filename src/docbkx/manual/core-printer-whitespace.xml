@@ -1,0 +1,456 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-whitespace.xml,v 1.2 2002/11/14 19:26:18 marcohu Exp $ -->
+
+<sect2 id="whitespace">
+<title>White Space</title>
+
+<indexterm zone="whitespace"><primary>White Space</primary></indexterm>
+
+<para>
+Controls the white space handling for the individual components of Java statements.
+</para>
+<sect3 id="whitespace-before">
+<title>Space before</title>
+
+<indexterm zone="whitespace-before"><primary>Whitespace</primary><secondary>before</secondary></indexterm>
+
+<para>
+Lets you choose the components that should get one leading space inserted before them.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Method declaration parentheses
+</para>
+<example id="ex-space-before-method-paren">
+<title>Method declaration parentheses</title>
+<programlisting>
+public void someMethod<emphasis role="bold">(</emphasis>)) {
+  ...
+}
+
+public void someMethod <emphasis role="bold">(</emphasis>)) {
+  ...
+}
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="whitespace-before-parentheses">
+Method call parentheses
+</para>
+<indexterm zone="whitespace-before-parentheses"><primary>Whitespace</primary><secondary>before</secondary><tertiary>parentheses</tertiary></indexterm>
+<indexterm zone="whitespace-before-parentheses"><primary>Parentheses</primary></indexterm>
+
+<example id="ex-space-before-method-call-paren">
+<title>Method call parentheses</title>
+<programlisting>
+for (Iterator i = pointList.iterator<emphasis role="bold">(</emphasis>); i.hasNext<emphasis role="bold">(</emphasis>);) {
+    ...
+}
+
+for (Iterator i = pointList.iterator <emphasis role="bold">(</emphasis>); i.hasNext <emphasis role="bold">(</emphasis>);) {
+    ...
+}
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para>
+Statement parentheses
+</para>
+<example id="ex-space-before-statement-paren">
+<title>Statement parentheses</title>
+<programlisting>
+while<emphasis role="bold">(</emphasis>!isDone)
+    doSomething();
+
+while <emphasis role="bold">(</emphasis>!isDone)
+    doSomething();
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="whitespace-before-braces">
+Braces
+</para>
+<indexterm zone="whitespace-before-braces"><primary>Whitespace</primary><secondary>before</secondary><tertiary>braces</tertiary></indexterm>
+
+<example id="ex-space-before-braces">
+<title>Braces</title>
+<programlisting>
+    String[] values = new String[]<emphasis role="bold">{</emphasis>
+        "One", "Two", "Three", "Four", "Five", "Six", "Seven"
+    };
+
+    String[] values = new String[] <emphasis role="bold">{</emphasis>
+        "One", "Two", "Three", "Four", "Five", "Six", "Seven"
+    };
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="whitespace-before-brackets">
+Brackets
+</para>
+<indexterm zone="whitespace-before-brackets"><primary>Whitespace</primary><secondary>before</secondary><tertiary>brackets</tertiary></indexterm>
+
+<example id="ex-space-before-brackets">
+<title>Brackets</title>
+<programlisting>
+for (i = 0; i &lt; 100; i++)
+    sum += value<emphasis role="bold">[</emphasis>i];
+
+for (i = 0; i &lt; 100; i++)
+    sum += value <emphasis role="bold">[</emphasis>i];
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para>
+Brackets in types
+</para>
+<example id="ex-space-before-brackets-types">
+<title>Brackets in types</title>
+<programlisting>
+String<emphasis role="bold">[</emphasis>] names = (String<emphasis role="bold">[</emphasis>])data.toArray(new String<emphasis role="bold">[</emphasis>]);
+
+String <emphasis role="bold">[</emphasis>] names = (String <emphasis role="bold">[</emphasis>])data.toArray(new String <emphasis role="bold">[</emphasis>]);
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="whitespace-before-colon">
+Case colon
+</para>
+<indexterm zone="whitespace-before-colon"><primary>Whitespace</primary><secondary>before</secondary><tertiary>colon</tertiary></indexterm>
+
+<example id="ex-space-before-case-colon">
+<title>Case colon</title>
+<programlisting>
+switch (character) {
+    case 'A'<emphasis role="bold">:</emphasis>
+        break;
+}
+
+switch (character) {
+    case 'A' <emphasis role="bold">:</emphasis>
+        break;
+}
+</programlisting>
+</example>
+<para />
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3 id="space-after">
+<title>Space after</title>
+
+<indexterm zone="space-after"><primary>Whitespace</primary><secondary>after</secondary></indexterm>
+
+<para>
+Lets you choose what components should have one trailing space inserted after the component.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="whitespace-after-comma">
+Comma
+</para>
+
+<indexterm zone="whitespace-after-comma"><primary>Whitespace</primary><secondary>after</secondary><tertiary>comma</tertiary></indexterm>
+<indexterm zone="whitespace-after-comma"><primary>Comma</primary></indexterm>
+
+<example id="ex-space-after-comma">
+<title>Comma</title>
+<programlisting>
+doSomething (a<emphasis role="bold">,</emphasis>b<emphasis role="bold">,</emphasis>c<emphasis role="bold">,</emphasis>d);
+
+doSomething (a<emphasis role="bold">,</emphasis> b<emphasis role="bold">,</emphasis> c<emphasis role="bold">,</emphasis> d);
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="whitespace-after-semi">
+Semicolon
+</para>
+
+<indexterm zone="whitespace-after-semi"><primary>Whitespace</primary><secondary>after</secondary><tertiary>semicolon</tertiary></indexterm>
+<indexterm zone="whitespace-after-semi"><primary>Semicolon</primary></indexterm>
+
+<example id="ex-space-after-semi">
+<title>Semicolon</title>
+<programlisting>
+for (i=0<emphasis role="bold">;</emphasis>i&lt;<emphasis role="bold"></emphasis>10<emphasis role="bold">;</emphasis>i++) ...
+
+for (i=0<emphasis role="bold">;</emphasis> i&lt;<emphasis role="bold"></emphasis>10<emphasis role="bold">;</emphasis> i++) ...
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="whitespace-after-cast">
+Type Cast
+</para>
+
+<indexterm zone="whitespace-after-cast"><primary>Whitespace</primary><secondary>after</secondary><tertiary>type cast</tertiary></indexterm>
+<indexterm zone="whitespace-after-cast"><primary>Type cast</primary></indexterm>
+
+<example id="ex-space-after-cast">
+<title>Type Cast</title>
+<programlisting>
+int line = ((JavaAST<emphasis role="bold">)</emphasis>node).getStartLine();
+
+int line = ((JavaAST<emphasis role="bold">)</emphasis> node).getStartLine();
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para>
+Negation
+</para>
+<para>
+Prints a space after the unary operators Logical NOT (!) and Bitwise NOT (~).
+</para>
+<example id="ex-space-after-negation">
+<title>Logical NOT</title>
+<programlisting>
+while(!isDone) {
+    doSomething();
+}
+
+while(! isDone) {
+    doSomething();
+}
+</programlisting>
+</example>
+<para />
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3 id="padding">
+<title>Spaces around</title>
+<para>
+Controls what components should have both a leading and trailing space inserted. This is sometimes called &quot;padding&quot;.
+<indexterm zone="padding"><primary>Whitespace</primary><secondary>padding</secondary></indexterm>
+<indexterm zone="padding"><primary>Padding</primary></indexterm>
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="padding-assign">
+Assignment Operators
+<indexterm zone="padding-assign"><primary>Assignment operators</primary></indexterm>
+<indexterm zone="padding-assign"><primary>Operators</primary><secondary>Assignment</secondary></indexterm>
+<indexterm zone="padding-assign"><primary>Whitespace</primary><secondary>padding</secondary><tertiary>Assignment operators</tertiary></indexterm>
+
+</para>
+<example id="ex-padding-op-assign">
+<title>Assignment Operators (=, +=, -=, *=, \=, %=, &amp;=, |=, ^=, &lt;&lt;=, &gt;&gt;=, &gt;&gt;&gt;=)</title>
+<programlisting>
+a<emphasis role="bold">=</emphasis>(b+c)*d;
+a <emphasis role="bold">=</emphasis> (b+c)*d;
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="padding-logical">
+Logical Operators
+<indexterm zone="padding-logical"><primary>Logical operators</primary></indexterm>
+<indexterm zone="padding-logical"><primary>Operators</primary><secondary>Logical</secondary></indexterm>
+<indexterm zone="padding-logical"><primary>Whitespace</primary><secondary>padding</secondary><tertiary>Logical operators</tertiary></indexterm>
+</para>
+<example id="ex-padding-op-logical">
+<title>Logical Operators (&amp;&amp;, ||)</title>
+<programlisting>
+if((LA(1)=='/')<emphasis role="bold">&amp;&amp;</emphasis>(LA(2)!='*'<emphasis role="bold">||</emphasis>(LA(2)=='*'<emphasis role="bold">&amp;&amp;</emphasis>LA(3)!='*'))) ...
+
+if((LA(1)=='/') <emphasis role="bold">&amp;&amp;</emphasis> (LA(2)!='*' <emphasis role="bold">||</emphasis> (LA(2)=='*' <emphasis role="bold">&amp;&amp;</emphasis> LA(3)!='*'))) ...
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="padding-relational">
+Relational Operators
+<indexterm zone="padding-relational"><primary>Operators</primary><secondary>Relational</secondary></indexterm>
+<indexterm zone="padding-relational"><primary>Relational operators</primary></indexterm>
+<indexterm zone="padding-relational"><primary>Whitespace</primary><secondary>padding</secondary><tertiary>Relational operators</tertiary></indexterm>
+
+</para>
+<example id="ex-padding-op-relational">
+<title>Relational Operators (==, !=, &lt;, &gt;, &lt;=, &gt;=)</title>
+<programlisting>
+if((LA(1)<emphasis role="bold">==</emphasis>'\n'||LA(1)<emphasis role="bold">==</emphasis>'\r')) ...
+
+if((LA(1) <emphasis role="bold">==</emphasis> '\n'||LA(1) <emphasis role="bold">==</emphasis> '\r')) ...
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="padding-bitwise">
+Bitwise Operators
+<indexterm zone="padding-bitwise"><primary>Bitwise operators</primary></indexterm>
+<indexterm zone="padding-bitwise"><primary>Operators</primary><secondary>Bitwise</secondary></indexterm>
+<indexterm zone="padding-bitwise"><primary>Whitespace</primary><secondary>padding</secondary><tertiary>Bitwise operators</tertiary></indexterm>
+</para>
+<example id="ex-padding-op-bitwise">
+<title>Bitwise Operators (&amp;, |, ^)</title>
+<programlisting>
+public static final boolean isUnix()
+{
+    return (getOperatingSystem()<emphasis role="bold">&amp;</emphasis>PLAT_UNIX) != 0;
+}
+
+public static final boolean isUnix()
+{
+    return (getOperatingSystem()<emphasis role="bold"> &amp; </emphasis>PLAT_UNIX) != 0;
+}
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="padding-mathematical">
+Mathematical Operators
+<indexterm zone="padding-mathematical"><primary>Mathematical operators</primary></indexterm>
+<indexterm zone="padding-mathematical"><primary>Operators</primary><secondary>Mathematical</secondary></indexterm>
+<indexterm zone="padding-mathematical"><primary>Whitespace</primary><secondary>padding</secondary><tertiary>Mathematical operators</tertiary></indexterm>
+
+</para>
+<example id="ex-padding-op-math">
+<title>Mathematical Operators (+, -, /, *, %)</title>
+<programlisting>
+a=(b<emphasis role="bold">+</emphasis>c)<emphasis role="bold">*</emphasis>d;
+
+a=(b <emphasis role="bold">+</emphasis> c) <emphasis role="bold">*</emphasis> d;
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="padding-shift">
+Shift Operators
+<indexterm zone="padding-shift"><primary>Shift operators</primary></indexterm>
+<indexterm zone="padding-shift"><primary>Operators</primary><secondary>Shift</secondary></indexterm>
+<indexterm zone="padding-shift"><primary>Whitespace</primary><secondary>padding</secondary><tertiary>Shift operators</tertiary></indexterm>
+</para>
+
+<example id="ex-padding-op-shift">
+<title>Shift Operators (&lt;&lt;, &gt;&gt;, &gt;&gt;&gt;)</title>
+<programlisting>
+if(((1L<emphasis role="bold">&lt;&lt;</emphasis>i)&amp;l)!=0)
+    System.out.print("1");
+
+if(((1L <emphasis role="bold">&lt;&lt;</emphasis> i)&amp;l)!=0)
+    System.out.print("1");
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="padding-braces">
+Braces
+<indexterm zone="padding-braces"><primary>Braces</primary></indexterm>
+<indexterm zone="padding-braces"><primary>Braces</primary><secondary>padding</secondary></indexterm>
+<indexterm zone="padding-braces"><primary>Whitespace</primary><secondary>padding</secondary><tertiary>Braces</tertiary></indexterm>
+
+</para>
+<example id="ex-padding-braces">
+<title>Braces</title>
+<programlisting>
+Object[] items = <emphasis role="bold">{</emphasis>"2", "3", "4"<emphasis role="bold">}</emphasis>;
+
+Object[] items = <emphasis role="bold">{</emphasis> "2", "3", "4" <emphasis role="bold">}</emphasis>;
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="padding-brackets">
+Brackets
+<indexterm zone="padding-brackets"><primary>Brackets</primary></indexterm>
+<indexterm zone="padding-brackets"><primary>Brackets</primary><secondary>padding</secondary></indexterm>
+<indexterm zone="padding-brackets"><primary>Whitespace</primary><secondary>padding</secondary><tertiary>Brackets</tertiary></indexterm>
+</para>
+<example id="ex-padding-brackets">
+<title>Brackets</title>
+<programlisting>
+for (i = 0; i &lt; 100; i++)
+    sum += value<emphasis role="bold">[</emphasis>i<emphasis role="bold">]</emphasis>;
+
+for(i = 0; i &lt; 100; i++)
+    sum += value<emphasis role="bold">[</emphasis> i <emphasis role="bold">]</emphasis>;
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="padding-parentheses">
+Parentheses
+<indexterm zone="padding-parentheses"><primary>Parentheses</primary></indexterm>
+<indexterm zone="padding-parentheses"><primary>Parentheses</primary><secondary>padding</secondary></indexterm>
+<indexterm zone="padding-parentheses"><primary>Whitespace</primary><secondary>padding</secondary><tertiary>Parentheses</tertiary></indexterm>
+</para>
+<example id="ex-padding-paren">
+<title>Parentheses</title>
+<programlisting>
+GridBagLayout layout = new GridBagLayout();
+setLayout<emphasis role="bold">(</emphasis>layout<emphasis role="bold">)</emphasis>;
+
+GridBagLayout layout = new GridBagLayout();
+setLayout<emphasis role="bold">(</emphasis> layout <emphasis role="bold">)</emphasis>;
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para>
+Type Cast Parentheses
+</para>
+<example id="ex-padding-cast">
+<title>Type Cast Parentheses</title>
+<programlisting>
+int line = (<emphasis role="bold">(</emphasis>JavaAST<emphasis role="bold">)</emphasis>node).getStartLine();
+
+int line = (<emphasis role="bold">(</emphasis> JavaAST <emphasis role="bold">)</emphasis>node).getStartLine();
+</programlisting>
+</example>
+<para />
+</listitem>
+</itemizedlist>
+</sect3>
+</sect2>

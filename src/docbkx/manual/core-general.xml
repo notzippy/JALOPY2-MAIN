@@ -1,0 +1,100 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-general.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect1 id="general">
+<title>General</title>
+
+<para id="code-convention">
+Jalopy stores its settings in a binary file
+<filename>$HOME/.jalopy/<replaceable>PROJECT_DIR</replaceable>/preferences.dat</filename>.
+However you can import/export your settings in both the binary, and a textual
+XML format. A group of settings forms a <firstterm>code convention</firstterm>.
+</para>
+
+<indexterm zone="code-convention"><primary>Code Convention</primary></indexterm>
+
+<sect2 id="general-convention">
+<title>Convention</title>
+<para>
+Lets you name a group of settings, a code convention.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Name
+</para>
+<para>
+The name of the code convention. The name must be no longer than 10 characters.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Description
+</para>
+<para>
+Stores a short description for the code convention.
+</para>
+</listitem>
+</itemizedlist>
+</sect2>
+
+<sect2 id="general-compliance">
+<title>Compliance</title>
+<para>
+Lets you specify whether Java sources should be treated as JDK 1.3 or
+as JDK 1.4 compatible. The latter means <literal>assert</literal> will be
+recognized as a reserved keyword.
+</para>
+
+<indexterm ><primary>Compliance</primary></indexterm>
+<indexterm ><primary>Source compatibility</primary></indexterm>
+<indexterm ><primary>Compatibility</primary><secondary>source</secondary></indexterm>
+
+<itemizedlist>
+<listitem>
+<para>
+Source compatibility
+</para>
+<para>
+Lets you choose the JDK version to use for source compatibility.
+</para>
+</listitem>
+</itemizedlist>
+</sect2>
+
+<sect2 id="import-export">
+<title>Import/Export</title>
+<para>
+Use the <guibutton>Import...</guibutton> and <guibutton>Export...</guibutton>
+buttons to import an already-saved code convention, or export your current settings as
+a new code convention. You can choose between the binary <filename>.jal</filename> format
+or an XML representation.
+</para>
+
+<para>
+Jalopy is able to import settings from both local and distributed locations.
+Just specify a valid Internet address (either starting with <firstterm>http://</firstterm> or
+<firstterm>www.</firstterm>) for the latter. Jalopy will then attempt to synchronize
+its settings with the given url on every invocation. That way it is easy to
+share a single code convention across a group of developers.
+</para>
+
+<para>
+Please note that versions prior to 1.0b8 stored the backup directory always as
+an absolute file. Therefore after importing a code convention, you should
+check whether this directory points to your preferred backup directory. This
+advice holds true even for later versions in case you've changed the default
+backup directory.
+</para>
+
+<para>
+However if the backup directory setting is left untouched, the directory is
+stored relative to the Jalopy settings directory. This way you can savely
+share your code convention across different systems and platforms.
+</para>
+</sect2>
+</sect1>

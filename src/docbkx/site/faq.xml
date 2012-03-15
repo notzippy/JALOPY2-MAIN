@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+
+<!-- $Id: faq.xml,v 1.2 2002/11/15 19:21:36 marcohu Exp $ -->
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+  [ <!ENTITY keywords SYSTEM "_keywords.xml"> ] >
+
+<article role="docu">
+<articleinfo>
+<title>Jalopy - FAQ</title>
+&keywords;
+</articleinfo>
+
+<simplesect>
+
+<qandaset defaultlabel="qanda">
+<qandaentry>
+<question id="report-bugs">
+<para>
+How do I report a bug I have found in Jalopy?
+</para>
+</question>
+<answer>
+<para>
+To be as helpful as possible to the Jalopy developer team and other users, you should use
+the <ulink url="http://sf.net/tracker/?group_id=45216&amp;atid=442212">
+bug tracker database</ulink> that the Jalopy project maintains on the
+<ulink url="http://sf.net/">SourceForge web site</ulink>. You do need to be a SourceForge
+member to post a bug report.
+</para>
+<para>
+Before posting a bug report, spend a few moments searching the bug database to see if a
+similar report has already been made. The bug tracker has a search facility that will let
+you search for bug reports using a variety of criteria. If you find a similar bug report,
+and you have additional information to contribute, post a comment to the report. Only if
+you do not find a similar bug report, submit a new one.
+</para></answer>
+</qandaentry>
+
+<qandaentry>
+<question id="bug-report"><para>
+What information should I include in a bug report?
+</para></question>
+<answer><para>
+The web form in the bug tracker report provides several fields for
+submitting information. If you are unsure about a particular
+item, leave it at the default setting provided in the form.
+</para>
+<para>
+The more important fields are <quote>Category</quote>,
+<quote>Summary</quote> and the <quote>Initial comment</quote>.
+</para>
+
+<para>
+When you write your initial comment describing the bug, you
+should specify the versions of Jalopy, the Plug-in environment, the Java platform and
+operating system you are using.
+</para>
+
+<para>
+Be as specific as possible. If you encounter stack traces, attach them. If you have
+problems formatting a specific file, locate the cause of the error and attach
+the code section as a text file. Also attach your code convention as many errors only
+occur with a certain settings combination.
+</para>
+
+<para>
+A more typical example should look like:
+</para>
+
+<informalexample id="ex-bug-report">
+<programlisting>
+I newly installed jalopy-1.0b9 on Windows NT with German locales, Sun JDK 1.3.1_05.
+I upgraded property file from jalopy-1.0b7 via Import/Export.
+
+When starting the jalopy settings dialog, I always have problems
+when I am on the "Sorting" panel. No entries are shown. Maybe
+this is a similar problem.
+
+I tried with different files. Always the same result.
+
+Using the Ant task (0.3.3 with Ant 1.4.1), I get a stack trace as attached. I attached
+my code convention also.
+</programlisting>
+</informalexample>
+
+<para>
+The attached stack trace could read as follows:
+</para>
+
+<informalexample>
+<programlisting>
+[jalopy] Jalopy Java Source Code Formatter 1.0b9
+[jalopy] Format 1 source file
+[jalopy] X:\beans\booking\BookingService.java:0:0:
+Parse
+[jalopy] X:\beans\booking\BookingService.java:0:0:parsing took 170
+[jalopy] X:\beans\booking\BookingService.java:0:0:transform
+[jalopy] X:\beans\booking\BookingService.java:0:0:
+java.lang.NullPointerException
+[jalopy] java.lang.NullPointerException
+at de.hunsicker.jalopy.lang.Transformation.addSiblings(Transformation.java:167)
+at de.hunsicker.jalopy.lang.Transformation.sortDeclarations(Transformation.java:534)
+at de.hunsicker.jalopy.lang.Transformation.sort(Transformation.java:104)
+at de.hunsicker.jalopy.lang.Transformation.apply(Transformation.java:64)
+at de.hunsicker.jalopy.lang.JavaRecognizer.transform(JavaRecognizer.java:451)
+at de.hunsicker.jalopy.lang.JavaRecognizer.getParseTree(Java Recognizer.java:173)
+</programlisting>
+</informalexample>
+
+<para>
+The given information made it quite obvious that the auto-conversion of the code
+convention format from 1.0b7 to 1.0b9 failed for some reason.
+</para>
+
+<para>
+Looking further at the supplied code convention revealed that the value of the sorting
+key was invalid and the actual cause was easy to spot.
+</para>
+</answer>
+</qandaentry>
+</qandaset>
+</simplesect>
+</article>

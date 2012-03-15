@@ -1,0 +1,168 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: plugin-jdev.xml,v 1.5 2004/04/16 21:18:25 rcleveng Exp $ -->
+<!-- Contains the documentaion for the JDeveloper Plug-in -->
+
+<title>JDeveloper Extension</title>
+
+<indexterm><primary>JDeveloper</primary></indexterm>
+<indexterm><primary>Extension</primary></indexterm>
+<indexterm><primary>Plug-in</primary><secondary>JDeveloper</secondary></indexterm>
+
+<para>
+Describes the installation and usage of the Jalopy JDeveloper Plug-in Extension.
+</para>
+
+<sect1 id="plugin-jdev-installation">
+<title>Installation</title>
+
+<para>
+Explains the steps involved to install the JDeveloper Plug-in.
+</para>
+
+<sect3 id="plugin-jdev-installation-requirements">
+<title>System requirements</title>
+<para>
+The JDeveloper Plug-in requires Oracle9i JDeveloper or later. 1.1.3 is the
+latest version and has only been tested with JDeveloper 10g Production.  Older
+releases may work on JDeveloper 9.0.2 and 9.0.3. See <xref linkend="installation-requirements" /> for the basic
+requirements to run Jalopy.
+</para>
+<para>
+To obtain more information about this powerful IDE, visit the official JDeveloper homepage
+at the Oracle site:
+<ulink url="http://otn.oracle.com/products/jdev/">http://otn.oracle.com/products/jdev/</ulink>
+</para>
+</sect3>
+
+<sect3 id="plugin-jdev-installation-installation">
+<title>Installation</title>
+<indexterm zone="plugin-jdev-installation-installation"><primary>Installation</primary><secondary>JDeveloper Plug-in</secondary></indexterm>
+
+<para>
+The Plug-in comes either as a single <filename>.zip</filename> or
+compressed <filename>.tar</filename> file. Unzipping either one of these files
+into a directory of your choice (referred to as <replaceable>&lt;INST_DIR&gt;</replaceable>)
+will produce two subdirectories <filename>/docs</filename> and <filename>/lib</filename>.
+</para>
+
+<para>
+<screen>
+..
+  docs/      contains the documentation
+  lib/       contains all necessary libraries
+</screen>
+</para>
+
+<para>
+Further installation is simple: just copy all files from the
+<filename><replaceable>&lt;INST_DIR&gt;</replaceable>/lib</filename> folder
+into the <filename>/jdev/lib/ext</filename> directory of your JDeveloper
+distribution. JDeveloper will then need to be restarted before Jalopy begins
+working.
+</para>
+</sect3>
+</sect1>
+
+<sect1 id="plugin-jdev-integration">
+<title>Integration</title>
+
+<para>
+Shows how the Plug-in is integrated into the JDeveloper IDE.
+</para>
+
+<sect3>
+<title>Navigator context menu</title>
+<para>
+The software adds a new menu item into the context popup menu of the Navigator:
+</para>
+<itemizedlist>
+
+<listitem>
+<para>
+<menuchoice>
+  <guimenuitem>Format [Workspace|Project]</guimenuitem>
+</menuchoice>
+</para>
+<para>
+By selecting the &quot;Format&quot; menu item, all Java sources of the
+selected node are formatted according to the current Jalopy preferences.
+</para>
+<para>
+The item appears in the popup menu if the user clicks the right mouse button on
+a Java source node or any other parent node that may contain Java sources
+(such as Workspace, Project, Directory, EJB or BC4J nodes).
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3>
+<title>Java editor context menu</title>
+<para>
+The software adds a new menu item into the context popup menu of Java code editors:
+</para>
+<itemizedlist>
+
+<listitem>
+<para>
+<menuchoice>
+  <guimenuitem>Format</guimenuitem>
+</menuchoice>
+</para>
+<para>
+By selecting the &quot;Format&quot; menu item, the contents of the active code editor view
+are formatted according to the current Jalopy preferences.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3>
+<title>Preferences dialog</title>
+<para>
+The Jalopy preferences are integrated into the preferences dialog of
+JDeveloper 9i which is reachable through the
+<menuchoice>
+  <guimenu><accel>T</accel>ools</guimenu>
+  <guimenuitem><accel>P</accel>references...</guimenuitem>
+</menuchoice>
+menu.
+Each Jalopy preferences page is added as a subentry to the main Jalopy
+preferences entry.
+</para>
+
+<para>
+Jalopy preferences are stored in the <filename>$HOME/.jalopy</filename> directory.
+This is in contrast to other JDeveloper preferences which are stored within the
+IDE configuration files. It is intentional in order to allow reuse of Jalopy
+preferences between different IDEs. Note that in this release, Jalopy
+preferences are stored whenever the user leaves a page. If the user moves to
+another settings page, all settings are stored to disk even if the user
+chooses to cancel the preferences dialog later on.
+</para>
+</sect3>
+</sect1>
+
+<sect1 id="plugin-jdev-license">
+<title>License</title>
+<para>
+The JDeveloper Plug-in is &quot;<emphasis role="bold"><ulink url="http://opensource.org/docs/certification_mark.php">OSI Certified Open Source Software</ulink></emphasis>&quot;,
+released under a BSD license.
+</para>
+
+<para>
+See <xref linkend="license-bsd" /> for the license
+and refer to <xref linkend="dependencies" /> for the license terms of the accompanying 3rd party libraries.
+</para>
+</sect1>
+
+
+
+
+
+
+
+
+

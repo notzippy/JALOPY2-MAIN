@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+
+
+<!-- $Id: download.src.xml,v 1.5 2002/11/12 20:24:18 marcohu Exp $ -->
+<!-- This file contains the download links -->
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+  [ <!ENTITY keywords SYSTEM "_keywords.xml"> ] >
+
+<article>
+<articleinfo>
+<title>Jalopy - Downloads</title>
+&keywords;
+</articleinfo>
+
+<simplesect id="downloads">
+<title>Downloads</title>
+<para>
+Download your copy of Jalopy today!
+</para>
+
+<para>
+Jalopy comes in several flavors. End users most notably want to choose
+between one of the available Plug-in bundles. Each bundle provides the integration
+with exactly one application. Note that starting with 1.0b6 only the Console Plug-in
+provides command line capabilities!
+</para>
+
+<para>
+Read the <ulink url="./history.html">change history</ulink> for up-to-date
+information about the changes in the latest release.
+</para>
+
+<simplesect id="plugins">
+<title>Plug-ins</title>
+
+<informaltable frame="none" colsep="0" rowsep="0" pgwide="1">
+<tgroup cols="4" colsep="0" rowsep="0">
+<colspec colwidth="25*"/>
+<colspec colwidth="10*"/>
+<colspec colwidth="15*"/>
+<colspec colnum="4" colwidth="50*"/>
+<thead>
+<row rowsep="0">
+<entry>Packages</entry>
+<entry>Size</entry>
+<entry>Date</entry>
+<entry>Description</entry>
+</row>
+</thead>
+    <tbody>
+    <row rowsep="0" valign="top">
+    <entry><ulink url="http://prdownloads.sourceforge.net/jalopy/jalopy-ant-@BUILD.VERSION.ANT@.zip">Ant &gt;= 1.4 (.zip)</ulink></entry>
+    <entry align="center">@SIZE.ANT@ KB</entry>
+    <entry align="center">@TODAY@</entry>
+    <entry><ulink url="http://jakarta.apache.org/ant/">Ant</ulink> task, contains Jalopy @BUILD.VERSION@</entry>
+    </row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://prdownloads.sourceforge.net/jalopy/jalopy-console-@BUILD.VERSION.CONSOLE@.zip">Console (.zip)</ulink></entry>
+<entry align="center">@SIZE.CONSOLE@ KB</entry>
+<entry align="center">@TODAY@</entry>
+<entry>Command line interface, contains Jalopy @BUILD.VERSION@</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://prdownloads.sourceforge.net/jalopy/jalopy-eclipse-@BUILD.VERSION.ECLIPSE@.zip">Eclipse &gt;= 2.0 (.zip)</ulink></entry>
+<entry align="center">@SIZE.ECLIPSE@ KB</entry>
+<entry align="center">@TODAY@</entry>
+<entry><ulink url="http://www.eclipse.org/">Eclipse</ulink> integration, contains Jalopy @BUILD.VERSION@</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://prdownloads.sourceforge.net/jalopy/jalopy-jbuilder-@BUILD.VERSION.JBUILDER@.zip">JBuilder &gt;= 5.0 (.zip)</ulink></entry>
+<entry align="center">@SIZE.JBUILDER@ KB</entry>
+<entry align="center">@TODAY@</entry>
+<entry><ulink url="http://www.borland.com/jbuilder/">JBuilder</ulink> integration, contains Jalopy @BUILD.VERSION@</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://prdownloads.sourceforge.net/jalopy/jalopy-jdeveloper-@BUILD.VERSION.JDEVELOPER@.zip">JDeveloper 9i (.zip)</ulink></entry>
+<entry align="center">@SIZE.JDEVELOPER@ KB</entry>
+<entry align="center">@TODAY@</entry>
+<entry><ulink url="http://otn.oracle.com/products/jdev/">JDeveloper</ulink> integration, contains Jalopy @BUILD.VERSION@</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://prdownloads.sourceforge.net/jalopy/jalopy-jedit-@BUILD.VERSION.JEDIT@.zip">jEdit &gt;= 4.1pre1 (.zip)</ulink></entry>
+<entry align="center">@SIZE.JEDIT@ KB</entry>
+<entry align="center">@TODAY@</entry>
+<entry><ulink url="http://www.jedit.org/">jEdit</ulink> integration, contains Jalopy @BUILD.VERSION@</entry>
+</row>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://prdownloads.sourceforge.net/jalopy/jalopy-netbeans-@BUILD.VERSION.NETBEANS@.zip">NetBeans &gt;= 3.3 (.zip), Sun ONE Studio 4
+</ulink></entry>
+<entry align="center">@SIZE.NETBEANS@ KB</entry>
+<entry align="center">@TODAY@</entry>
+<entry><ulink url="http://www.netbeans.org/">NetBeans</ulink>/<ulink url="http://wwws.sun.com/software/sundev/jde/index.html">Sun ONE Studio</ulink> integration, contains Jalopy @BUILD.VERSION@</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</simplesect>
+
+<simplesect id="source">
+<title>Sources</title>
+
+<informaltable frame="none" colsep="0" rowsep="0">
+<tgroup cols="4" colsep="0" rowsep="0">
+<colspec colwidth="25*"/>
+<colspec colwidth="10*"/>
+<colspec colwidth="15*"/>
+<colspec colnum="4" colwidth="50*"/>
+<thead>
+<row rowsep="0">
+<entry>Packages</entry>
+<entry>Size</entry>
+<entry>Date</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://prdownloads.sourceforge.net/jalopy/jalopy-@BUILD.VERSION@.src.tar.gz">Jalopy @BUILD.VERSION@ (.src.tar.gz)</ulink></entry>
+<entry align="center">@SIZE.SOURCE@ KB</entry>
+<entry align="center">@TODAY@</entry>
+<entry>Contains the complete Jalopy @BUILD.VERSION@ sources (core runtime + all Plug-ins)</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</simplesect>
+
+<simplesect id="core">
+<title>
+Jalopy 1.0
+</title>
+
+<informaltable frame="none" colsep="0" rowsep="0" pgwide="1">
+<tgroup cols="4" colsep="0" rowsep="0">
+<colspec colwidth="25*"/>
+<colspec colwidth="10*"/>
+<colspec colwidth="15*"/>
+<colspec colnum="4" colwidth="50*"/>
+<thead>
+<row rowsep="0">
+<entry>Packages</entry>
+<entry>Size</entry>
+<entry>Date</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep="0" valign="top">
+<entry><ulink url="http://prdownloads.sourceforge.net/jalopy/jalopy-@BUILD.VERSION@.zip">Jalopy @BUILD.VERSION@ (.zip)</ulink></entry>
+<entry align="center">@SIZE.MAIN@ KB</entry>
+<entry align="center">@TODAY@</entry>
+<entry>Jalopy core runtime, for users who want to integrate Jalopy into their own applications</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</simplesect>
+
+
+<para>
+Prior versions can be obtained through the SourceForge file release area:
+<ulink url="http://sourceforge.net/project/showfiles.php?group_id=45216">http://sourceforge.net/project/showfiles.php?group_id=45216</ulink>
+</para>
+</simplesect>
+</article>

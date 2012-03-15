@@ -1,0 +1,182 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-environment.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect2 id="environment">
+<title>Environment</title>
+<indexterm><primary>Variables</primary><secondary>Environment</secondary></indexterm>
+<indexterm><primary>Variables</primary><secondary>Interpolation</secondary></indexterm>
+<indexterm><primary>Environment</primary></indexterm>
+<indexterm><primary>Environment variables</primary></indexterm>
+<indexterm><primary>Interpolation</primary></indexterm>
+
+<para>
+Lets you specify/view environment variables. Environment variables can be used
+in headers, footers and Javadoc templates to form variable expressions that will
+be resolved during printing. I call this process <emphasis>variable interpolation</emphasis>.
+</para>
+
+<para>
+Environment variables are simple key/value pairs. Valid keys take the form
+<literal>([a-zA-Z_][a-zA-Z0-9_.])+</literal> and are case-sensitive. Values can be
+freely choosen.
+</para>
+
+<example id="environment-variable-ex">
+<title>Sample environment variables</title>
+
+<variablelist>
+<varlistentry>
+<listitem>
+author = &lt;a href="http://jalopy.sf.net/contact.html"&gt;Marco Hunsicker&lt;/a&gt;
+</listitem>
+</varlistentry>
+<varlistentry>
+<listitem>
+project = Jalopy Java Source Code Formatter
+</listitem>
+</varlistentry>
+</variablelist>
+</example>
+
+<para/>
+
+<sect3 id="environment-user">
+<title>User environment variables</title>
+<para>
+Lets you specify you're user specific environment variables. Use the
+<guibutton>Add...</guibutton> and <guibutton>Remove</guibutton> buttons to
+add or remove items to and from the list.
+</para>
+</sect3>
+
+<sect3 id="environment-system">
+<title>System environment variables</title>
+<para>
+All system environment variables are automatically available as well but
+cannot be changed from within Jalopy.
+</para>
+</sect3>
+
+<sect3 id="environment-local">
+<title>Local environment variables</title>
+<para>Additionaly, Jalopy provides some local variables that are automatically set
+depending on the execution context.</para>
+
+<para>
+The current list of valid local variables reads as follows:
+</para>
+
+
+<table id="tab-environment-local" frame="none" colsep="0" rowsep="0" pgwide="0">
+<title>Local environment variables</title>
+<tgroup cols="2" colsep="0" rowsep="0">
+<?dbhtml table-cellpadding="3" table-cellspacing="0"?>
+
+<colspec colwidth="15*" colsep="0" rowsep="0"/>
+<colspec colwidth="85*" colsep="0" rowsep="0"/>
+<tbody>
+<row>
+<entry>file</entry>
+<entry>The absolute path of the currently processed Java file (e.g. <filename>/usr/projects/test/MyFile.java</filename>)</entry>
+</row>
+
+<row>
+<entry>fileName</entry>
+<entry>The name of the currently processed Java file (e.g. <filename>MyFile.java</filename>)</entry>
+</row>
+
+<row>
+<entry>fileFormat</entry>
+<entry>A string represention of the file format that will be used to write a file (e.g. UNIX or DOS)</entry>
+</row>
+
+<row>
+<entry>package</entry>
+<entry>The package name of the currently processed Java file (e.g. com.foo.mypackage)</entry>
+</row>
+
+<row>
+<entry>convention</entry>
+<entry>The name of the currently active code convention (as specified in the settings)</entry>
+</row>
+
+<row>
+<entry>tabSize</entry>
+<entry>The current indentation setting (as specified in the settings)</entry>
+</row>
+
+<row>
+<entry>objectType</entry>
+<entry>Only applies to Javadoc templates: Holds the type name of the class for a constructor.</entry>
+</row>
+
+<row>
+<entry>paramType</entry>
+<entry>Only applies to Javadoc templates: Holds the type name of a parameter.</entry>
+</row>
+
+<row>
+<entry>exceptionType</entry>
+<entry>Only applies to Javadoc templates: Holds the type name of a throws clause.</entry>
+</row>
+
+</tbody>
+</tgroup>
+</table>
+</sect3>
+
+<sect3 id="environment-usage">
+<title>Usage</title>
+<para>
+Once defined, variables can then be enclosed with the dollar sign to form variable expressions.
+Variable expressions thus take the form <literal>$([a-zA-Z_][a-zA-Z0-9_.]+)$</literal>.
+</para>
+
+<para>
+During printing these expressions will be interpolated and
+the value of the variable inserted into the output file.
+</para>
+
+<example id="ex-environment-header-before">
+<title>Header template with environment variable expressions</title>
+<programlisting>
+//==============================================================================
+// file :       &#036;fileName&#036;
+// project:     &#036;project&#036;
+//
+// last change: date:       &#036;Date&#036;
+//              by:         &#036;Author&#036;
+//              revision:   &#036;Revision&#036;
+//------------------------------------------------------------------------------
+// copyright:   BSJT Software License (see class documentation)
+//==============================================================================
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-environment-header-after">
+<title>Header after interpolation</title>
+<programlisting>
+//==============================================================================
+// file :       Byte.java
+// project:     bsjt-rt
+//
+// last change: date:       &#036;Date&#036;
+//              by:         &#036;Author&#036;
+//              revision:   &#036;Revision&#036;
+//------------------------------------------------------------------------------
+// copyright:   BSJT Software License (see class documentation)
+//==============================================================================
+</programlisting>
+</example>
+
+<para>
+As you see with the above example, if a variable is not defined, Jalopy won't
+touch the expression and simply preserve the original content. This way Jalopy
+works nicely with other source code tools and SCM products.
+</para>
+</sect3>
+</sect2>

@@ -1,0 +1,80 @@
+<html>
+<body>
+Jalopy is a powerful source code formatting tool for the Sun Java programming language.
+
+<p>It layouts any valid Java source code according to some widely configurable rules; to meet a
+certain coding style without putting a formatting burden on individual developers.
+With Jalopy you will be able to transform any foreign coding style to your own liking, without any
+browbeating or bloodletting.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Intended Audience</strong></p>
+
+<p>This API documentation will interest anyone who wants to incorporate Jalopy
+in his/her product or 3rd party application. As Jalopy is written in Java, this
+likely means Java developers dealing with Java applications.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Typical Uses</strong></p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+
+<tbody>
+<tr>
+<td valign="top" nowrap="nowrap">
+Integrated Application Environments
+</td>
+<td rowspan="5" width="5"></td>
+<td>If the application supports custom extensions written in Java, the Jalopy
+Plug-in API ({@link de.hunsicker.jalopy.plugin}) and support classes
+({@link de.hunsicker.jalopy.swing}) are what you're looking for.
+
+<p>
+But you can always invoke and configure Jalopy from the command-line
+via the Console Plug-in ({@link de.hunsicker.jalopy.plugin.console.ConsolePlugin#main}) and the
+Swing-based, graphical configuration dialog ({@link de.hunsicker.jalopy.swing.SettingsDialog#main}).
+</p>
+</td>
+</tr>
+
+<tr>
+<td colspan="3" height="5"></td>
+</tr>
+
+<tr>
+<td valign="top">
+Code generators, Build tools
+</td>
+<td>
+Depending on your application scenario, it is best and quite easy to use the
+Jalopy Bean interface ({@link de.hunsicker.jalopy.Jalopy}), but the Console Plug-in
+({@link de.hunsicker.jalopy.plugin.console.ConsolePlugin#main})
+might be a powerful alternative with easy access and some nice implementation
+features (like multi-threading support).
+</td>
+</tr>
+
+<tr>
+<td colspan="3" height="5"></td>
+</tr>
+
+<tr>
+<td>
+Shell scripts
+</td>
+<td>
+Either use the Console Plug-in ({@link de.hunsicker.jalopy.plugin.console.ConsolePlugin#main})
+directly or via the wrapper scripts that comes with the Console distribution.
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<br>
+
+
+</body></html>

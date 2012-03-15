@@ -1,0 +1,1132 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-wrapping.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect2 id="wrapping">
+<title>Wrapping</title>
+<titleabbrev id="abrwrapping">Line Wrapping</titleabbrev>
+
+<indexterm><primary>Wrapping</primary></indexterm>
+<indexterm><primary>Line wrapping</primary></indexterm>
+
+<para>
+Controls when and how lines gets wrapped.
+</para>
+
+<sect3 id="wrap-general">
+<title>General</title>
+<para>
+Lets you control the general line wrapping options.
+</para>
+
+<sect4 id="wrap-general-general">
+<title>General</title>
+<para>
+Lets you control the general line wrapping options.
+</para>
+<itemizedlist>
+<listitem>
+<para id="wrap-use">
+Wrap lines
+</para>
+<para>
+Enables or disables the automatic line wrapping.
+</para>
+</listitem>
+
+<listitem>
+<para id="wrap-sizes-line">
+Line length
+</para>
+<para>
+Lets you specify the maximum line length. Jalopy tries (more or less) to limit
+each line within the given length.
+</para>
+
+<indexterm zone="wrap-sizes-line"><primary>Wrapping</primary><secondary>Line length</secondary></indexterm>
+<indexterm zone="wrap-sizes-line"><primary>Line length</primary></indexterm>
+
+</listitem>
+
+<listitem>
+<para id="wrap-sizes-deep">
+Deep indent
+</para>
+
+<indexterm zone="wrap-sizes-deep"><primary>Wrapping</primary><secondary>Deep indent</secondary></indexterm>
+<indexterm zone="wrap-sizes-deep"><primary>Deep indent</primary></indexterm>
+
+<para>
+Specifies the length after which a gap will be identified as &quot;deep indented&quot;.
+Jalopy tries to avoid these kind of gaps and will force a line break or apply
+another indentation scheme, if this size is exceeded.
+</para>
+
+<example id="ex-wrap-sizes-deep">
+<title>Deep indent size (60) not exceeded</title>
+<programlisting>
+                                                            |                  |
+    protected static synchronized File getANewDestinationFile(File dest,       |
+                                                            | String packageName,
+                                                            | String filename) |
+|----------------- the gap ---------------------------|throws IOException      |
+    {                                                       |                  |
+    }                                                       |                  |
+                                                            |                  |
+                                                            60                 79
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-sizes-deep-exceed">
+<title>Deep indent size (50) exeeded</title>
+<programlisting>
+                                                  |                            |
+    protected static synchronized File getANewDestinationFile(File dest,       |
+                                                  |           String packageName,
+                                                  |           String filename) |
+|----------------- the gap ---------------------------|throws IOException      |
+    {                                             |                            |
+    }                                             |                            |
+                                                  |                            |
+                                                  50                           79
+</programlisting>
+</example>
+</listitem>
+
+</itemizedlist>
+</sect4>
+
+<sect4 id="wrap-policy">
+<title>Policy</title>
+
+<indexterm zone="wrap-policy"><primary>Wrapping</primary><secondary>Policy</secondary></indexterm>
+<indexterm zone="wrap-policy"><primary>Policy</primary><secondary>Wrapping</secondary></indexterm>
+
+<para>
+Lets you fine-control the wrapping behaviour.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="wrap-left-parenthesis">
+Wrap after left parenthesis
+</para>
+<para>
+Lets you control the wrapping behaviour for statement and expression lists.
+</para>
+
+<para>
+If left disabled, the first line break will be preferably inserted
+behind the first parameter or expression and only occurs after the left
+parenthesis if the maximum line length would be exceeded.</para>
+
+<example id="ex-wrap-left-parenthesis-disabled">
+<title>Wrap after left parenthesis (disabled)</title>
+<programlisting>
+                                                                               |
+appServerReferencesVector.add<emphasis role="bold">(</emphasis>new AppServerReference<emphasis role="bold">(</emphasis>
+        "RemoteApplicationManager",                                            |
+        poa.create_reference_with_id<emphasis role="bold">(</emphasis>         |
+            "RemoteApplicationManager".getBytes(),                             |
+            RemoteApplicationManagerHelper.id())));                            |
+                                                                               |
+</programlisting>
+</example>
+
+<para>
+Otherwise the line break will always occur behind the left parenthesis.
+</para>
+
+<example id="ex-wrap-left-parenthesis-enabled">
+<title>Wrap after left parenthesis (enabled)</title>
+<programlisting>
+appServerReferencesVector.add<emphasis role="bold">(</emphasis>
+    new AppServerReference<emphasis role="bold">(</emphasis>
+        "RemoteApplicationManager",
+        poa.create_reference_with_id<emphasis role="bold">(</emphasis>
+            "RemoteApplicationManager".getBytes(),
+            RemoteApplicationManagerHelper.id())));
+</programlisting>
+</example>
+
+<para>
+This switch affects the output style of method/constructor declarations and
+calls, creator statements and <literal>if-else</literal>, <literal>for</literal>,
+<literal>while</literal> and <literal>do-while</literal> blocks.
+</para>
+
+<para>
+As per default, the wrapped lines will be indended using
+<link linkend="indentation-policy-standard">Standard indentation</link>, but you
+may want to apply another indentation scheme. See
+<xref linkend="indentation-policy" /> for more information.
+</para>
+<para />
+</listitem>
+
+<listitem>
+<para id="wrap-right-parenthesis">
+Wrap before right parenthesis
+</para>
+<para>
+Forces a line break before the right parenthesis of parameter or expression lists.
+The parenthesis will be intended according to the current indentation level.
+Only takes action if at least one parameter/expression was indeed wrapped.
+</para>
+
+<para>
+This switch affects the output style of method/constructor declarations and
+calls, creator statements and <literal>if-else</literal>, <literal>for</literal>,
+<literal>while</literal> and <literal>do-while</literal> blocks.
+</para>
+
+<example id="ex-wrap-right-parenthesis">
+<title>Right parenthesis (disabled)</title>
+<programlisting>
+public void severalParameters(String one,
+                              int two,
+                              String three,
+                              StringObject four,
+                              AnotherObject five<emphasis role="bold">)</emphasis> {
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-right-parenthesis-enabled">
+<title>Right parenthesis (enabled)</title>
+<programlisting>
+public void severalParameters(String one,
+                              int two,
+                              String three,
+                              StringObject four,
+                              AnotherObject five
+<emphasis role="bold">)</emphasis> {
+}
+</programlisting>
+</example>
+
+<para>
+Both switches combined, looks like the following example:
+</para>
+
+<example id="ex-wrap-left-right-parenthesis">
+<title>Left and right parenthesis</title>
+<programlisting>
+appServerReferencesVector.add<emphasis role="bold">(</emphasis>
+    new AppServerReference<emphasis role="bold">(</emphasis>
+        "RemoteApplicationManager",
+        poa.create_reference_with_id<emphasis role="bold">(</emphasis>
+            "RemoteApplicationManager".getBytes(),
+            RemoteApplicationManagerHelper.id()
+        <emphasis role="bold">)</emphasis>
+    <emphasis role="bold">)</emphasis>
+<emphasis role="bold">)</emphasis>;
+</programlisting>
+</example>
+
+<para>
+For blocks the output may go like this:
+</para>
+
+<example id="ex-wrap-left-right-parenthesis-wrapped-continue">
+<title>Left and right parenthesis (wrapped)</title>
+<programlisting>
+if <emphasis role="bold">(</emphasis>
+    "pick".equals(m.getName()) &amp;&amp; m.isStatic() &amp;&amp; m.isPublic()
+<emphasis role="bold">)</emphasis> {
+    pickFound = true;
+}
+else if <emphasis role="bold">(</emphasis>
+    "pick".equals(m.getName()) &amp;&amp; m.isStatic() &amp;&amp; m.isPublic()
+<emphasis role="bold">)</emphasis> {
+    pickFound = true;
+}
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="wrap-grouping-paren">
+Wrap grouping parentheses
+</para>
+<para>
+Lets you control the wrapping behaviour for grouping parentheses. If enabled,
+linebreaks are inserted after left and before right parentheses of grouped
+expressions to let the expression(s) stand out.
+</para>
+
+<example id="ex-wrap-grouping-no">
+<title>Grouping parentheses (standard indented)</title>
+<programlisting>
+if (
+    !<emphasis role="bold">(</emphasis>(bankverbindung instanceof ObjectValue)
+    || (bankverbindung instanceof PrimitiveValue<emphasis role="bold">)</emphasis>)
+) {
+    throw new RuntimeException();
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-grouping">
+<title>Wrapped grouping parentheses (standard indented)</title>
+<programlisting>
+if (
+    !<emphasis role="bold">(</emphasis>
+        (bankverbindung instanceof ObjectValue)
+        || (bankverbindung instanceof TkPrimitiveValue)
+    <emphasis role="bold">)</emphasis>
+) {
+    throw new RuntimeException();
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="wrap-after-assignment">
+Wrap after assignments
+</para>
+
+<para>
+Lets you control the way wrapping takes action for assignments. If left disabled,
+line wrapping preferably occurs as part of the expression printing. Otherwise
+wrapping will be performed right after the assignment.
+</para>
+
+<example id="ex-wrap-assignment-no">
+<title>Don't wrap after assignment</title>
+<programlisting>
+this.interessentenNr = new InteressentenNr(
+        Fachschluesselerzeugung.createService()
+        .getNeuerFachschluessel(
+            FachschluesselerzeugungService.FACHSCHLUESSEL_KZ_INTERESSENT
+        )
+    );
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-assignment">
+<title>Wrap after assignment</title>
+<programlisting>
+this.interessentenNr =
+    new InteressentenNr(
+        Fachschluesselerzeugung.createService()
+        .getNeuerFachschluessel(
+            FachschluesselerzeugungService.FACHSCHLUESSEL_KZ_INTERESSENT
+        )
+    );
+</programlisting>
+</example>
+<para />
+
+</listitem>
+</itemizedlist>
+
+<para>
+Line wrapping will often occur with statements that consist of several (possibly long)
+expressions. Here you specify whether line wrapping should occur
+before or after the expression operator.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="wrap-before">
+Wrap before operators
+</para>
+
+<indexterm zone="wrap-before"><primary>Operators</primary><secondary>wrap before</secondary></indexterm>
+
+<para>
+If enabled, lines will be wrapped before the operator. The operator will be
+printed with the continuation line.
+</para>
+
+<example id="ex-wrap-before">
+<title>Wrap before operators</title>
+<programlisting>
+if ((condition1 &amp;&amp; condition2)
+    || (condition3 &amp;&amp; condition4)
+    || !(condition5 &amp;&amp; condition6))
+{
+    doSomethingAboutIt();
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="wrap-after">
+Wrap after operators
+</para>
+
+<indexterm zone="wrap-after"><primary>Operators</primary><secondary>wrap after</secondary></indexterm>
+
+<para>
+If enabled, lines will be wrapped after the operator.
+</para>
+
+<example id="ex-wrap-after">
+<title>Wrap after operators</title>
+<programlisting>
+if ((condition1 &amp;&amp; condition2) ||
+    (condition3 &amp;&amp; condition4) ||
+    !(condition5 &amp;&amp; condition6))
+{
+    doSomethingAboutIt();
+}
+</programlisting>
+</example>
+<para>
+If you happen to use Sun Brace styling, you might want to enable
+<link linkend="indentation-misc-continuation-if">continuation indentation</link>
+to let the statement body stand out.
+</para>
+<para />
+
+</listitem>
+
+</itemizedlist>
+</sect4>
+</sect3>
+
+<sect3 id="wrap-always">
+<title>Always</title>
+
+<para>
+Lets you choose the statements/expressions that are to be wrapped always.
+</para>
+
+<sect4 id="wrap-always-pane">
+<title>Wrap always</title>
+<para>
+For certain cases, the need may arise to force line wrapping to achieve a
+consistent, uniform look. If you enable any of the following switches, line wrapping
+will occur for the specified cases no matter whether you have enabled general
+line wrapping or not.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="wrap-before-extends">
+Before extends keyword
+</para>
+<para>
+Forces a line break before the extends keyword of a class/interface declaration.
+</para>
+
+<example id="ex-wrap-before-extends">
+<title>Class/Interface extends keyword</title>
+<programlisting>
+public interface Channel extends Puttable, Takable
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-before-extends-wrapped">
+<title>Class/Interface extends keyword (wrapped)</title>
+<programlisting>
+public interface Channel
+    extends Puttable, Takable
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para>
+You can control the space printed before the keyword with the
+<link linkend="indentation-sizes-extends">Extends Indent</link> setting.
+If you leave the switch disabled, the clause will be printed with
+<link linkend="indentation-sizes-general">standard indentation</link>.
+</para>
+</listitem>
+
+<listitem>
+<para>
+After extends types
+</para>
+<para>
+Forces a line wrap after each type name of the extended classes.
+</para>
+
+<example id="ex-wrap-after-extends">
+<title>Class/Interface extends types</title>
+<programlisting>
+public interface Channel extends Puttable, Takable
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-after-extends-wrapped">
+<title>Class/Interface extends types (wrapped)</title>
+<programlisting>
+public interface Channel extends Puttable,
+                                 Takable
+{
+    ...
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="wrap-before-implements">
+Before implements keyword
+</para>
+<para>
+Forces a line break before the implements keyword of a class declaration.
+</para>
+
+<example id="ex-wrap-before-implements">
+<title>implements keyword</title>
+<programlisting>
+public class SynchronizedBoolean implements Comparable, Cloneable
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-before-implements-wrapped">
+<title>implements keyword (wrapped)</title>
+<programlisting>
+public class SynchronizedBoolean
+    implements Comparable, Cloneable
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para>
+You can control the space printed before the keyword with the
+<link linkend="indentation-sizes-implements">Implements Indent</link> setting.
+If you leave the switch disabled, the clause will be printed with
+<link linkend="indentation-sizes-general">standard indentation</link>.
+</para>
+</listitem>
+
+<listitem>
+<para id="wrap-after-implements">
+After implements types
+</para>
+<para>
+Forces a line wrap after each type name of the implemented classes.
+</para>
+
+<example id="ex-wrap-implements-types">
+<title>Class implements types</title>
+<programlisting>
+public class SynchronizedBoolean implements Comparable, Cloneable
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-implements-types-wrapped">
+<title>Class implements types (wrapped)</title>
+<programlisting>
+public class SynchronizedBoolean implements Comparable,
+                                            Cloneable
+{
+    ...
+}
+</programlisting>
+</example>
+<para />
+</listitem>
+
+
+<listitem>
+<para id="wrap-before-throws">
+Before throws keyword
+</para>
+<para>
+Forces a line break before the throws keyword of a method/constructor declaration.
+</para>
+
+<example id="ex-wrap-before-throws">
+<title>throws keyword</title>
+<programlisting>
+private File getDestinationFile(File dest, String packageName,
+                                String filename) throws IOException
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-before-throws-wrapped">
+<title>throws keyword (wrapped)</title>
+<programlisting>
+private File getDestinationFile(File dest, String packageName,
+                                String filename)
+                         throws IOException
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para>
+You can control the space printed before the keyword with the
+<link linkend="indentation-sizes-throws">Throws Indent</link> setting. If you
+leave the switch disabled, Jalopy tries to align the throws clause with the
+method/constructor parameters as with the above example. If no alignment is
+possible, the clause will be printed with
+<link linkend="indentation-sizes-general">standard indentation</link>.
+</para>
+</listitem>
+
+<listitem>
+<para id="wrap-after-throws">
+After throws types
+</para>
+<para>
+Forces a line wrap after each type name of the throws clause of a method/constructor declaration.
+</para>
+
+<example id="ex-wrap-after-throws-types">
+<title>throws types</title>
+<programlisting>
+private File getDestinationFile(File dest, String packageName,
+                                String filename)
+                         throws IOException, FooException
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-after-throws-types-wrapped">
+<title>throws types (wrapped)</title>
+<programlisting>
+private File getDestinationFile(File dest, String packageName,
+                                String filename)
+                         throws IOException,
+                                FooException
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-after-throws-types-wrapped-standard">
+<title>throws types (standard indented)</title>
+<programlisting>
+private static final File getDestinationFile(File dest, String packageName,
+                                             String filename)
+    throws IOException,
+          FooException
+{
+    ...
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="wrap-method-params">
+Method Def parameters
+</para>
+<indexterm zone="wrap-method-params"><primary>Method Def parameters</primary></indexterm>
+<indexterm zone="wrap-method-params"><primary>Wrapping</primary><secondary>Method Def parameters</secondary></indexterm>
+
+<para>
+Forces a line wrap after each parameter of a method or constructor declaration.
+</para>
+
+<example id="ex-wrap-method-params">
+<title>Method declaration parameters</title>
+<programlisting>
+public static File create(File file, File directory, int backupLevel)
+                   throws IOException
+{
+    ...
+}
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-method-params-wrapped">
+<title>Method declaration parameters (wrapped)</title>
+<programlisting>
+public static File create(File file,
+                          File directory,
+                          int backupLevel)
+                   throws IOException
+{
+    ...
+}
+</programlisting>
+</example>
+<!--
+<para>
+You can control the space printed before each parameter with the
+<link linkend="indentation-sizes-param">Parameters Indent</link> setting.
+</para>
+-->
+</listitem>
+
+<listitem>
+<para id="wrap-call-chained">
+Method Call chains
+</para>
+<para>
+Forces a line wrap after each chained method call.
+</para>
+
+<example id="ex-wrap-call-chained">
+<title>Chained Method Call</title>
+<programlisting>
+message.format(ERROR_SOURCE_ADDRESS).param (m_session.getAimName()).send();
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-call-chained-wrapped">
+<title>Chained Method Call (wrapped)</title>
+<programlisting>
+message.format(ERROR_SOURCE_ADDRESS)
+       .param (m_session.getAimName())
+       .send();
+</programlisting>
+</example>
+<para />
+</listitem>
+
+
+<listitem>
+<para id="wrap-method-call-params">
+Method Call parameters
+</para>
+<para>
+Forces a line wrap after each parameter of a method call.
+</para>
+
+<example id="ex-wrap-method-call">
+<title>Method call</title>
+<programlisting>
+doSomething();
+_userDatabase.addUser("Name", encryptPassword("password", _secretKey),
+                      "123 fake address");
+doSomethingElse();
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-method-call-wrapped">
+<title>Method call (wrapped)</title>
+<programlisting>
+doSomething();
+_userDatabase.addUser("Name",
+                      encryptPassword("password",
+                                      _secretKey),
+                      "123 fake address");
+doSomethingElse();
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para>
+Method Call parameters if nested
+</para>
+<para>
+Forces a line wrap after each parameter of a method call if at least one
+parameter is a method call itself. This option can prove especially useful if
+one prefers to nest method calls as parameters rather than adding local
+variables just to hold those parameters.
+</para>
+
+<example id="ex-wrap-method-call-nested-wrapped">
+<title>Method call if nested (wrapped)</title>
+<programlisting>
+doSomething();
+_userDatabase.addUser("Name",
+                      encryptPassword("password", _secretKey),
+                      "123 fake address");
+doSomethingElse();
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para>
+Ternary expression question mark (<literal>?</literal>)
+</para>
+<para>
+Forces a line wrap after the first operand.
+</para>
+<example id="ex-wrap-ternary-expr">
+<title>Ternary expression question mark (deep indented)</title>
+<programlisting>
+String comma = spaceAfterComma
+               ? COMMA_SPACE : COMMA;
+</programlisting>
+</example>
+<para>
+Indentation for consecutive lines depends on the used <link linkend="indentation-policy">indenatation policy</link>.
+You may further want to use <link linkend="indentation-misc-ternary-if-else">continuation indentation</link>.
+</para>
+</listitem>
+
+<listitem>
+<para id="wrap-ternary-colon">
+Ternary expression colon (<literal>:</literal>)
+</para>
+<para>
+Forces a line wrap after the second operand.
+</para>
+<example id="ex-wrap-ternary-values">
+<title>Ternary expression colon</title>
+<programlisting>
+String comma = spaceAfterComma ? COMMA_SPACE
+                               : COMMA;
+</programlisting>
+</example>
+<para>
+If both switches are disabled, ternary expressions are printed in one line (if everything fits in one line, that is).
+</para>
+<example id="ex-wrap-ternary">
+<title>Ternary expressions</title>
+<programlisting>
+String comma = spaceAfterComma ? COMMA_SPACE : COMMA;
+</programlisting>
+</example>
+
+<para>
+If both switches are enabled, you can force a style like the following:
+</para>
+<example id="ex-wrap-ternary-continued">
+<title>Ternary expressions (continued)</title>
+<programlisting>
+String comma = spaceAfterComma
+    ? COMMA_SPACE
+    : COMMA;
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="wrap-always-label">
+Labels
+</para>
+
+<indexterm><primary>Label</primary></indexterm>
+<indexterm><primary>Label</primary><secondary>wrap</secondary></indexterm>
+
+<para>
+Forces a line wrap after labels.
+</para>
+
+<example id="ex-wrap-always-label">
+<title>Label</title>
+<programlisting>
+// advance to the first CLASS_DEF or INTERFACE_DEF
+LOOP:   for (AST child = tree.getFirstChild();
+             child != null;
+             child = child.getNextSibling())
+        {
+            switch (child.getType())
+            {
+                case JavaTokenTypes.CLASS_DEF :
+                case JavaTokenTypes.INTERFACE_DEF :
+                    next = child;
+                    break LOOP;
+
+                default :
+                    break;
+            }
+        }
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wraping-always-label-wrapped">
+<title>Label (wrapped)</title>
+<programlisting>
+// advance to the first CLASS_DEF or INTERFACE_DEF
+LOOP:
+        for (AST child = tree.getFirstChild();
+             child != null;
+             child = child.getNextSibling())
+        {
+            switch (child.getType())
+            {
+                case JavaTokenTypes.CLASS_DEF :
+                case JavaTokenTypes.INTERFACE_DEF :
+                    next = child;
+                    break LOOP;
+
+                default :
+                    break;
+            }
+        }
+</programlisting>
+</example>
+<para/>
+</listitem>
+</itemizedlist>
+</sect4>
+
+<sect4 id="wrap-always-exceed">
+<title>Wrap always when exceed</title>
+
+<para>
+Lets you force wrapping for <emphasis>all</emphasis> parameter or expressions if
+the parameter or expression list would otherwise exceed the maximal line length.
+If you enable any of the following switches, line wrapping
+may occur for the specified cases no matter whether you have enabled general
+line wrapping or not.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="wrap-always-extends">
+After extends types
+</para>
+<para>
+Forces a line wrap after each type name of the <literal>extends</literal> clause of a
+class/interface declaration if the whole clause does not fit in one line.
+</para>
+
+<example id="ex-wrap-always-extends">
+<title>Extends types wrapped as needed (standard indented)</title>
+<programlisting>
+public interface VeryImportantInterface                        |
+    extends LeastImportantInterface, LessImportantInterface,   |
+        ImportantInterface                                     |
+}                                                              |
+    ...                                                        |
+}                                                              |
+</programlisting>
+</example>
+<para/>
+<example id="wrap-always-extends-enabled">
+<title>Extends types wrapping forced (standard indented)</title>
+<programlisting>
+public interface VeryImportantInterface                        |
+    extends LeastImportantInterface,                           |
+        LessImportantInterface,                                |
+        ImportantInterface                                     |
+}                                                              |
+    ...                                                        |
+}                                                              |
+</programlisting>
+</example>
+</listitem>
+
+<listitem>
+<para id="wrap-always-implements">
+After implements types
+</para>
+<para>
+Forces a line wrap after each type name of the <literal>implements</literal> clause of a
+class/interface declaration if the whole clause does not fit in one line.
+</para>
+
+<example id="ex-wrap-always-implements">
+<title>Implements types wrapped as needed (standard indented)</title>
+<programlisting>
+public class ImportantClass                                    |
+    implements ImportantInterface, Serializable, Comparable,   |
+        Cloneable                                              |
+}                                                              |
+    ...                                                        |
+}                                                              |
+</programlisting>
+</example>
+<para/>
+<example id="wrap-always-implements-enabled">
+<title>Implements types wrapping forced (standard indented)</title>
+<programlisting>
+public class ImportantClass                                    |
+    implements ImportantInterface,                             |
+        Serializable,                                          |
+        Comparable,                                            |
+        Cloneable                                              |
+}                                                              |
+    ...                                                        |
+}                                                              |
+</programlisting>
+</example>
+</listitem>
+
+<listitem>
+<para id="wrap-always-throws">
+After throws types
+</para>
+
+<para>
+Forces a line wrap after each type name of the <literal>throws</literal> clause of a
+method/constructor declaration if the whole clause does not fit in one line.
+</para>
+
+<example id="ex-wrap-always-throws">
+<title>Throws types wrapped as needed (deep indented)</title>
+<programlisting>
+private File getDestinationFile(File dest, String packageName, |
+                                String filename)               |
+                         throws IOException, FooException,     |
+                                FooBarException                |
+{                                                              |
+    ...                                                        |
+}                                                              |
+</programlisting>
+</example>
+<para/>
+<example id="wrap-always-throws-enabled">
+<title>Throws types wrapping forced (deep indented)</title>
+<programlisting>
+private File getDestinationFile(File dest, String packageName, |
+                                String filename)               |
+                         throws IOException,                   |
+                                FooException,                  |
+                                FooBarException                |
+{                                                              |
+    ...                                                        |
+}                                                              |
+</programlisting>
+</example>
+</listitem>
+
+<listitem>
+<para id="wrap-always-param">
+After parameters/expressions
+</para>
+<para>
+If enabled, this switch will cause all parameters/expressions to be
+wrapped, if and only if the first parameter/expression of the list has been
+wrapped.
+</para>
+<example id="ex-wrap-all">
+<title>Expression list (all wrapped)</title>
+<programlisting>
+if (
+    "pick".equals(m.getName()) &amp;&amp;
+    m.isStatic() &amp;&amp;
+    m.isPublic()
+) {
+    pickFound = true;
+}
+else if (
+    "pick".equals(m.getName()) &amp;&amp;
+    m.isStatic() &amp;&amp;
+    m.isPublic()
+) {
+    pickFound = true;
+}
+</programlisting>
+</example>
+<para />
+</listitem>
+</itemizedlist>
+</sect4>
+</sect3>
+
+<sect3 id="wrap-misc">
+<title>Misc</title>
+<para>Lets you control miscellaneous wrapping settings.</para>
+
+<sect4 id="wrap-misc-arrays">
+<title>Arrays</title>
+<para>Contains options to control the wrapping for arrays.</para>
+<itemizedlist>
+<listitem>
+<para>Wrap as needed</para>
+<para>Enabling this options means array elements will be wrapped so that they
+will be limited within the current <link linkend="wrap-sizes-line">line length</link> setting.</para>
+
+<example id="ex-wrap-arrays-as-needed">
+<title>Wrap as needed</title>
+<programlisting>
+String[] constraints = {                                               |
+    "patternPanel.top=form.top", "patternPanel.hcenter=form.hcenter",  |
+    "okButton.top=patternPanel.bottom+20",                             |
+    "okButton.right=form.hcenter-10", "cancelButton.vcenter=10",       |
+    "cancelButton.left=10"                                             |
+};                                                                     |
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para>Wrap after element</para>
+<para>Forces a newline after every  n-th element.</para>
+<example id="ex-wrap-arrays-after-one">
+<title>Wrap after element 1</title>
+<programlisting>
+String[] constraints = {                                               |
+    "patternPanel.top=form.top",                                       |
+    "patternPanel.hcenter=form.hcenter",                               |
+    "okButton.top=patternPanel.bottom+20",                             |
+    "okButton.right=form.hcenter-10",                                  |
+    "cancelButton.vcenter=10",                                         |
+    "cancelButton.left=10"                                             |
+};                                                                     |
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-wrap-arrays-after-two">
+<title>Wrap after element 2</title>
+<programlisting>
+String[] constraints = {                                               |
+    "patternPanel.top=form.top", "patternPanel.hcenter=form.hcenter",
+    "okButton.top=patternPanel.bottom+20", "okButton.right=form.hcenter-10",
+    "cancelButton.vcenter=10", "cancelButton.left=10"                  |
+};                                                                     |
+</programlisting>
+</example>
+<para>
+If both options are left disabled, the array elements will be printed in one
+line, right after the left curly brace.
+</para>
+</listitem>
+</itemizedlist>
+</sect4>
+</sect3>
+</sect2>

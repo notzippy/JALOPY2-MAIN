@@ -1,0 +1,107 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-sorting.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect2 id="sorting">
+<title>Sorting</title>
+<para>Lets you tweak the sorting settings.</para>
+
+<sect3 id="sorting-general">
+<title>Declarations</title>
+
+<para>
+At first glance, sorting of class declaration elements may seem somewhat
+obscure, but good sorting can lead to a reduction of complexity if the
+location of each element is predictable.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="sorting-general-elements">
+Sort class elements
+</para>
+<para>
+Enables or disables the sorting of class elements.
+</para>
+
+<example id="ex-sort-file">
+<title>Sorted Java source file </title>
+<para>Sorted Java source file (with <link linkend="separation-comment">Separator comments</link>)</para>
+<programlisting>
+class TypePrinter
+    extends AbstractPrinter
+{
+    //~ Instance/static variables ----------------------------------------------
+
+    /** Singleton. */
+    private final static Printer INSTANCE = new TypePrinter();
+
+    //~ Constructors -----------------------------------------------------------
+
+    /**
+     * Creates a new TypePrinter object.
+     */
+    protected TypePrinter()
+    {
+    }
+
+    //~ Methods ----------------------------------------------------------------
+
+    public static Printer getInstance()
+    {
+        return INSTANCE;
+    }
+
+    public void print(AST node, ASTWriter out)
+               throws IOException
+    {
+        AST child = node.getFirstChild();
+        PrinterFactory.create(child).print(child, out);
+    }
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para>Ordering</para>
+<para>
+You can specify the order in which static variable/initializer, instance variable,
+instance initializer, constructor, method, inner class and interface elements
+should appear in source files by selecting the element type and moving it up or
+down the list.
+</para>
+
+<para>
+If you enable any of the check boxes, all elements of the selected type
+(within a section) will be sorted too. First by access modifier
+(public, protected, package protected, private) and - for two elements with the
+same accessibility - lexicographically. For methods those which follow the Java
+Bean pattern (getXXX, setXXX, isXXX) will be sorted first.
+</para>
+</listitem>
+
+</itemizedlist>
+</sect3>
+
+<sect3>
+<title>Modifiers</title>
+<para id="sorting-modifier">
+Enables or disables the sorting of declaration modifiers.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>Ordering</para>
+<para>
+Lets you specify the order in which the individual modifiers should appear.
+Select an entry and use the <guibutton>Up</guibutton> and <guibutton>Down</guibutton>
+buttons to move it to the desired location.
+</para>
+</listitem>
+</itemizedlist>
+<para/>
+</sect3>
+</sect2>

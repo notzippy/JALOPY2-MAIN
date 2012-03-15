@@ -1,0 +1,231 @@
+<article>
+
+<simplesect>
+<title condition="ant">README Ant Task</title>
+<title condition="console">README Console Application</title>
+<title condition="eclipse">README Eclipse Plug-in</title>
+<title condition="jbuilder">README JBuilder OpenTool</title>
+<title condition="jdeveloper">README JDeveloper Extension</title>
+<title condition="jedit">README jEdit Plugin</title>
+<title condition="main">README Jalopy Java Source Code Formatter</title>
+<title condition="netbeans">README NetBeans/Sun ONE Studio module</title>
+</simplesect>
+
+<para condition="ant">
+This is the README for the Ant Task distribution of the Jalopy Java
+Source Code Formatter. This Plug-in provides the integration with the
+wonderful Jakarta build tool.
+</para>
+
+<para condition="console">
+This is the README for the Console application distribution of the Jalopy Java
+Source Code Formatter. This Plug-in provides a powerful command line interface for Jalopy.
+</para>
+
+<para condition="eclipse">
+This is the README for the Eclipse Plug-in distribution of the Jalopy
+Java Source Code Formatter.
+</para>
+
+<para condition="jbuilder">
+This is the README for the JBuilder OpenTool distribution of the Jalopy
+Java Source Code Formatter.
+</para>
+
+<para condition="jdeveloper">
+This is the README for the JDeveloper Extension distribution of the Jalopy
+Java Source Code Formatter.
+</para>
+
+<para condition="jedit">
+This is the README for the jEdit Plug-in distribution of the Jalopy
+Java Source Code Formatter.
+</para>
+
+<para condition="main">
+This is the README for the core runtime distribution of the Jalopy Java Source
+Code Formatter. This distribution only contains the Jalopy core classes and is
+therefore only suited for those who want to integrate Jalopy with their custom
+applications or develop a new Plug-in.
+</para>
+
+<para condition="netbeans">
+This is the README for the NetBeans/Sun ONE Studio module distribution of the Jalopy
+Java Source Code Formatter.
+</para>
+<sect1>
+
+<title>Distribution libraries</title>
+
+<para>
+This distribution contains the following libraries:
+</para>
+
+<itemizedlist mark="square">
+<listitem condition="ant;console">
+  AElfred XML Parser (<filename>aelfred-@LIB.VERSION.AELFRED@.jar</filename>)
+</listitem>
+<listitem>
+  A modified and re-packaged <ulink url="http://www.antlr.org">ANTLR</ulink> Parser Generator runtime @LIB.VERSION.ANTLR@ (bundled with the Jalopy runtime)
+</listitem>
+<listitem condition="console">
+  GNU <ulink url="http://http://www.urbanophile.com/~arenn/hacking/download.html">getopt</ulink> Java port (<filename>getopt-@LIB.VERSION.GETOPT@.jar</filename>)
+</listitem>
+<listitem>
+  Jalopy Java Source Code Formatter runtime (<filename>jalopy-@BUILD.VERSION@.jar</filename>)
+</listitem>
+<listitem condition="ant">
+  Jalopy Ant Task (<filename>jalopy-ant-@BUILD.VERSION.ANT@.jar</filename>)
+</listitem>
+<listitem condition="console">
+  Jalopy Console Application (<filename>jalopy-console-@BUILD.VERSION.CONSOLE@.jar</filename>)
+</listitem>
+<listitem condition="eclipse">
+  Jalopy Eclipse Plug-in (<filename>jalopy-eclipse-@BUILD.VERSION.ECLIPSE@.jar</filename>)
+</listitem>
+<listitem condition="jbuilder">
+  Jalopy JBuilder OpenTool (<filename>jalopy-jbuilder-@BUILD.VERSION.JBUILDER@.jar</filename>)
+</listitem>
+<listitem condition="jdeveloper">
+  Jalopy JDeveloper Extension (<filename>jalopy-jdev-@BUILD.VERSION.JDEVELOPER@.jar</filename>)
+</listitem>
+<listitem condition="jedit">
+  Jalopy jEdit Plug-in (<filename>jalopy-jedit-@BUILD.VERSION.JEDIT@.jar</filename>)
+</listitem>
+<listitem condition="jedit">
+  MessageView Plug-in (<filename>messageview-@LIB.VERSION.MESSAGEVIEWN@.jar</filename>)
+</listitem>
+<listitem condition="netbeans">
+  Jalopy NetBeans module (<filename>jalopy-jedit-@BUILD.VERSION.NETBEANS@.jar</filename>)
+</listitem>
+<listitem condition="ant;console">
+  <ulink url="http://java.sun.com/xml/">JAXP</ulink> Java API for XML Processing (<filename>jaxp-@LIB.VERSION.JAXP@.jar</filename>)
+</listitem>
+<listitem condition="ant;console;eclipse;jbuilder;jdeveloper;jedit;netbeans">
+  <ulink url="http://www.jdom.org/">JDOM</ulink> XML API (<filename>jdom-@LIB.VERSION.JDOM@.jar</filename>)
+</listitem>
+<listitem condition="ant;console;eclipse;jbuilder;jdeveloper;jedit;netbeans">
+  <ulink url="http://jakarta.apache.org/log4j/">log4j</ulink> logging toolkit (<filename>log4j-@LIB.VERSION.LOG4J@.jar</filename>)
+</listitem>
+<listitem condition="ant;console;eclipse;jbuilder;jdeveloper;jedit;netbeans">
+  <ulink url="http://jakarta.apache.org/oro/">Oro</ulink> Regular expressions (<filename>oro-@LIB.VERSION.ORO@.jar</filename>)
+</listitem>
+<listitem condition="ant;console">
+  <ulink url="http://www.saxproject.org/">SAX</ulink> Simple API for XML (<filename>sax-@LIB.VERSION.SAX@.jar</filename>)
+</listitem>
+
+</itemizedlist>
+<para/>
+</sect1>
+
+<sect1 condition="main">
+<title>Needed 3rd-party libraries</title>
+<para>
+In order to be able to use Jalopy you need to obtain the following 3rd-party libraries:
+</para>
+<itemizedlist mark="square">
+<listitem>
+  <ulink url="http://www.jdom.org/">JDOM XML API 1.0 beta7 (or above)</ulink>
+</listitem>
+<listitem>
+  <ulink url="http://jakarta.apache.org/log4j/">log4j logging toolkit 1.2.6 (or above)</ulink>
+</listitem>
+<listitem>
+  <ulink url="http://jakarta.apache.org/oro/">Oro Regular expression package 2.0 (or above)</ulink>
+</listitem>
+<listitem>
+  An XML parser, e.g. <ulink url="http://xml.apache.org/xerces-j/">Xerces</ulink>
+</listitem>
+</itemizedlist>
+<para/>
+</sect1>
+
+<sect1>
+<title>Latest version</title>
+<para>
+Details of the latest version can be found on the Jalopy project
+web site at SourceForge, see
+<ulink url="http://jalopy.sf.net/">http://jalopy.sf.net</ulink>.
+</para>
+</sect1>
+
+
+<sect1>
+<title>Installation</title>
+<para>
+For installation instructions, see
+<ulink condition="ant" url="./docs/plugin-ant.html#plugin-ant-installation">/docs/plugin-ant.html</ulink><ulink condition="main" url="./docs/installation.html">/docs/installation.html</ulink><ulink condition="eclipse" url="./docs/plugin-eclipse.html#plugin-eclipse-installation">/docs/plugin-eclipse.html</ulink><ulink condition="jbuilder" url="./docs/plugin-jbuilder.html#plugin-jbuilder-installation">/docs/plugin-jbuilder.html</ulink><ulink condition="jdeveloper" url="./docs/plugin-jdev.html#plugin-jdev-installation">/docs/plugin-jdev.html</ulink><ulink condition="jedit" url="./docs/plugin-jedit.html#plugin-jedit-installation">/docs/plugin-jedit.html</ulink><ulink condition="netbeans" url="./docs/plugin-netbeans.html#plugin-netbeans-installation">/docs/plugin-netbeans.html</ulink>.
+</para>
+</sect1>
+
+<sect1>
+<title>Custom build</title>
+<para>
+For build instructions, see
+<ulink url="./docs/build.html">/docs/build.html</ulink>.
+</para>
+</sect1>
+
+<sect1>
+<title>Change history</title>
+<para>
+To learn about implementation changes, fixed bugs and new features of this
+version, see <ulink url="./docs/history.html">/docs/history.html</ulink>.
+</para>
+</sect1>
+
+<sect1>
+<title>Licensing</title>
+
+<para condition="ant;jbuilder;jdeveloper;jedit">
+This Plug-in is licensed under a
+<ulink url="./docs/license-bsd.html">BSD License</ulink>. For
+additional license terms of the used 3rd-party libraries, please refer to
+<ulink url="./docs/dependencies.html">Appendix A</ulink>.
+</para>
+
+<para condition="console">
+This Plug-in is licensed under the
+<ulink url="./docs/license-gnu.html">GNU General Public License</ulink>. For
+additional license terms of the used 3rd-party libraries, please refer to
+<ulink url="./docs/dependencies.html">Appendix A</ulink>.
+</para>
+
+<para condition="eclipse">
+This Plug-in is licensed under the
+<ulink url="./docs/license-common-public.html">Common Public License</ulink>. For
+additional license terms of the used 3rd-party libraries, please refer to
+<ulink url="./docs/dependencies.html">Appendix A</ulink>.
+</para>
+
+<para condition="main">
+This library is licensed under a
+<ulink url="./docs/license-bsd.html">BSD License</ulink>. For
+additional license terms of the used 3rd-party libraries, please refer to
+<ulink url="./docs/dependencies.html">Appendix A</ulink>.
+</para>
+
+<para condition="netbeans">
+This Plug-in is licensed under the
+<ulink url="./docs/license-sun-public.html">Sun Public License</ulink>. For
+additional license terms of the used 3rd-party libraries, please refer to
+<ulink url="./docs/dependencies.html">Appendix A</ulink>.
+</para>
+</sect1>
+
+<sect1>
+<title>Contact</title>
+<para>
+For ways to contact the author or submit bug, feature or support requests, see
+<ulink url="./docs/contact.html">/docs/contact.html</ulink>.
+</para>
+</sect1>
+
+<sect1>
+<title>Contributors</title>
+<para>
+For a list of project contributors, see
+<ulink url="./docs/contributors.html">/docs/contributors.html</ulink>.
+</para>
+</sect1>
+</article>

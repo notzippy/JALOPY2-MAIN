@@ -1,0 +1,324 @@
+# SettingsDialog.java
+TLE_JALOPY_SETTINGS = Jalopy Einstellungen
+MSG_NOT_FIND_LAF = Konnte Look&Feel nicht finden -- {0}
+BTN_APPLY = Übernehmen
+
+
+# SettingsContainer.java
+LBL_PROJECTS = Projekte
+LBL_TIPS = Tips
+LBL_NAMING = Namensregeln
+LBL_INSPECTOR = Code Inspektor
+LBL_ENVIRONMENT = Variablen
+LBL_SORTING = Sortierung
+LBL_COMMENTS = Kommentare
+LBL_MISC = Verschiedenes
+LBL_WRAPPING = Zeilenumbruch
+LBL_WHITESPACE = Leerzeichen
+LBL_MESSAGES = Meldungen
+LBL_JAVADOC = Javadoc
+LBL_SEPARATION = Separierung
+LBL_INDENTATION = Einrückung
+LBL_IMPORTS = Imports
+LBL_FOOTER = Fußnote
+LBL_HEADER = Kopfnote
+LBL_BRACES = Klammern
+LBL_PRINTER = Printer
+LBL_GENERAL = Generell
+BTN_ADD = Hinzufügen...
+BTN_REMOVE = Entfernen
+
+
+# LocationDialog.java
+BTN_BROWSE = Durchsuchen...
+LBL_OPEN = Öffnen:
+
+
+# GeneralSettingsPage.java
+BDR_CONVENTION = Bezeichnung
+LBL_NAME = Name:
+LBL_DESCRIPTION = Beschreibung:
+BDR_COMPLIANCE = Quelltext
+LBL_COMPATIBILITY = Kompatibilität:
+BTN_IMPORT = Importieren...
+BTN_EXPORT = Exportieren...
+BTN_OK = OK
+BTN_CANCEL = Abbrechen
+TLE_IMPORT_CODE_CONVENTION = Importiere Code Convention
+TLE_EXPORT_CODE_CONVENTION = Exportiere Code Convention
+
+
+# Projects settings page
+
+TLE_ADD_PROJECT = Neues Projekt hinzufügen
+BTN_ACTIVATE = Aktivieren
+MSG_PROJECT_EXISTS = Ein Projekt mit diesem Namen besteht bereits!
+TLE_PROJECT_EXISTS = "Fehler: Project besteht bereits"
+MSG_PROJECT_INVALID_NAME = Ungültiger Name:
+TLE_PROJECT_INVALID_NAME = Fehler: Ungültiger Projektname
+MSG_PROJECT_INVALID_DESC = Die Projektbeschreibung darf nicht länger als 256 Zeichen sein!
+TLE_PROJECT_INVALID_DESC = Fehler: Projectbeschreibung zu lang
+
+
+# Braces settings page
+
+TAB_GENERAL = Generell
+TAB_MISC = Verschiedenes
+BDR_WHITESPACE = Leerzeichen
+BDR_STYLES = Stil
+CHK_C_STYLE = C Stil
+CHK_SUN_STYLE = Sun Java Stil
+CHK_GNU_STYLE = GNU Stil
+CHK_CUSTOM_STYLE = Eigener Stil
+BDR_WRAPPING = Umbruch
+CHK_NEWLINE_BEFORE_LEFT = Umbruch vor linker Klammer
+CHK_NEWLINE_BEFORE_LEFT_WRAPPED = Umbruch vor linker Klammer wenn umbrochen
+CHK_NEWLINE_BEFORE_RIGHT = Umbruch vor rechter Klammer
+CHK_NEWLINE_AFTER_RIGHT = Umbruch nach rechter Klammer
+CHK_TREAT_DIFFERENT = Für Klassen- und Methodenblöcke immer C Stil
+LBL_BEFORE_LEFT_BRACE = Vor linker Klammer:
+LBL_BEFORE_RIGHT_BRACE = Vor rechter Klammer:
+LBL_AFTER_RIGHT_BRACE = Nach rechter Klammer:
+BDR_INSERT_BRACES = Klammern einfügen
+CHK_IF_ELSE = if...else
+CHK_FOR = for
+CHK_WHILE = while
+CHK_DO_WHILE = do...while
+CHK_BLOCKS = Blöcke
+BDR_REMOVE_BRACES = Klammern entfernen
+CHK_CUDDLE = Klammern zusammenfassen
+LBL_SPACE_BEFORE = Leerzeichen vor:
+BDR_EMPTY_BRACES = Leere Klammern
+CHK_INSERT_EMPTY = Leere Anweisung einfügen
+
+
+# Whitespace settings page
+
+BDR_SPACE_BEFORE = Leerzeichen vor
+CHK_METHOD_PARENTHESES = Klammern nach Deklarationen
+CHK_IGNORE_HEADER_IF_EXISTS = Ignore Header if it already exists
+CHK_IGNORE_FOOTER_IF_EXISTS = Ignore Footer if it already exists
+CHK_BRACES = Geschweiften Klammern
+CHK_METHOD_CALL_PARENTHESES = Klammern nach Aufrufen
+CHK_BRACKETS = Eckigen Klammern
+CHK_BRACKETS_TYPES = Eckigen Klammern von Typen
+CHK_STATEMENT_PARENTHESES = Klammern nach Anweisungen
+CHK_CASE_COLON = Case Doppelpunkt
+BDR_SPACE_AFTER = Leerzeichen nach
+CHK_COMMA = Komma
+CHK_SEMI = Strichpunkt
+CHK_CAST = Type-Cast
+CHK_NEGATION = NICHT Operator
+BDR_SPACE_AROUND = Leerzeichen um
+CHK_OPERATOR_ASSIGN = Zuweisungsoperatoren
+CHK_OPERATOR_BITWISE = Bitweise Operatoren
+CHK_OPERATOR_LOGICAL = Logische Operatoren
+CHK_OPERATOR_MATHEMATICAL = Arithmetische Operatoren
+CHK_OPERATOR_RELATIONAL = Relationale Operatoren
+CHK_OPERATOR_SHIFT = Shift Operatoren
+CHK_PARENTHESES = Klammern
+CHK_PARENTHESES_CAST = Type-Cast Klammern
+
+
+# Indentation settings page
+
+BDR_INDENTATION_POLICY = Strategie
+CHK_STANDARD_INDENT = Standard Einrückung
+CHK_DEEP_INDENT = Tiefe Einrückung
+BDR_SIZES = Größen
+LBL_GENERAL_INDENT = Generelle Einrückung:
+LBL_LEADING_INDENT = Vorangestellte Einrückung:
+LBL_CONTINUATION_INDENT = Fortgesetzte Einrückung:
+LBL_TRAILING_INDENT = Nachfolgende Kommentare Einrückung:
+LBL_ORIGINAL_TAB = Ursprünglicher Tabulator:
+CHK_EXTENDS_INDENT = Extends Einrückung:
+CHK_IMPLEMENTS_INDENT = Implements Einrückung:
+CHK_TRHOWS_INDENT = Throws Einrückung:
+BDR_MISC = Verschiedenes
+CHK_USE_TABS = Benutze Tabulatoren
+CHK_USE_LEADING_TABS = Tabulatoren nur am Anfang
+CHK_INDENT_CASE_SWITCH = Rücke \"case\" Anweisungen ein
+CHK_INDENT_LABELS = Rücke Label Anweisungen ein
+CHK_INDENT_FIRST_COLUMN = Rücke Kommentare immer ein
+CHK_CONTINUATION_INDENT_BLOCKS = Für Blöcke
+CHK_CONTINUATION_INDENT_OPERATORS = Für Operatoren
+BDR_ALIGN = Ausrichten
+CHK_VAR_IDENT = Variablenbezeichner
+CHK_VAR_ASSIGN = Variablenzuweisungen
+CHK_METHOD_PARAM = Methodenparameter
+CHK_METHOD_CALL_CHAINED = Gekettete Methoden
+CHK_TERNARY_EXPR = Ternary Ausdrücke
+
+
+# Wrapping settings page
+
+BDR_GENERAL = Generell
+BDR_WRAP_POLICY = Umbruchstrategie
+CHK_WRAP_LINES = Einschalten
+CMB_LINE_LENGTH = Zeilenlänge:
+CMB_DEEP_INDENT = Grenzlänge:
+CHK_WRAP_GROUPING = Gruppierungsklammern
+CHK_WRAP_AFTER_LEFT_PAREN = Nach linker Klammer
+CHK_WRAP_BEFORE_RIGHT_PAREN = Vor rechter Klammer
+CHK_WRAP_AFTER_ASSIGN = Nach Zuweisungen
+CHK_WRAP_BEFORE_OPERATOR = Vor Operatoren
+CHK_WRAP_AFTER_OPERATOR = Nach Operatoren
+CHK_WRAP_ALL_IF_FIRST = Alles, wenn erster Parameter
+BDR_WRAP_ALWAYS = Immer umbrechen
+BDR_ARRAYS = Arrays
+CHK_BEFORE_EXTENDS_KEYWORD = Vor extends Schlüsselwort
+CHK_AFTER_EXTENDS_TYPES = Nach extends Typen
+CHK_BEFORE_IMPLEMENTS_KEYWORD = Vor implements  Schlüsselwort
+CHK_AFTER_IMPLEMENTS_TYPES = Nach implements Typen
+CHK_BEFORE_THROWS_KEYWORD = Vor throws  Schlüsselwort
+CHK_AFTER_THROWS_TYPES = Nach throws Typen
+CHK_METHOD_PARAM = Methodendeklarationen
+CHK_METHOD_CALL_CHAINED = Verkettete Aufrufe
+CHK_METHOD_CALL_PARAM = Aufrufe
+CHK_METHOD_CALL_PARAM_NESTED = Nur Aufrufe mit Aufrufen
+CHK_LABELS = Labels
+CHK_WRAP_AS_NEEDED = Sofern notwendig
+CHK_WRAP_AFTER_ELEMENT = Immer nach Element
+CMB_NUMBER = Nummer:
+CHK_TERNARY_EXPRESSION_QUESTIONMARK = Fragezeichenoperator ?
+CHK_TERNARY_EXPRESSION_COLON = Fragezeichenoperator :
+
+
+# Comments settings page
+
+BDR_REMOVE = Entfernen
+CHK_SINGLE_LINE = Einzeilige Kommentare
+CHK_MULTI_LINE = Mehrzeilige Kommentare
+CHK_JAVADOC = Javadoc Kommentare
+BDR_FORMAT = Formatieren
+
+
+# Imports settings page
+
+CHK_SORT_IMPORTS = Einschalten
+LBL_DEFAULT_GROUPING_DEPTH = Standard Gruppierungstiefe:
+HDR_PACKAGE = Package
+HDR_DEPTH = Tiefe
+BDR_OPTIMIZE = Optimieren
+CHK_EXPAND = On-demand imports erweitern
+CHK_COLLAPSE = Single-type imports zusammenfassen
+
+
+# Imports settings page
+
+CHK_ENABLE = Enable
+BDR_GROUP = Grouping
+LBL_DEFAULT_GROUPING_DEPTH = Default grouping depth:
+HDR_PACKAGE = Package
+HDR_DEPTH = Depth
+BDR_OPTIMIZE = Optimize
+CHK_EXPAND = Expand on-demand imports
+CHK_COLLAPSE = Collapse single-type imports
+
+
+# Environment settings page
+
+TAB_USER = Benutzer
+TAB_SYSTEM = System
+TLE_ADD_NEW_VARIABLE = Neue Variable hinzufügen
+LBL_VARIABLE = Variable:
+LBL_VALUE = Wert:
+MSG_INVALID_VARIABLE = \"{0}\" ist kein gültiger Variablenname.\nGültige Namen haben die Form \"{1}\"\n
+TLE_INVALID_VARIABLE = Fehler: Ungültiger Name
+
+
+# Javadoc settings page
+
+TAB_TEMPLATES = Vorlagen
+TAB_CUSTOM_TAGS = Benutzerdefinierte Tags
+CHK_PARSE_COMMENTS = Parse/Formatiere Kommentare
+CHK_CORRECT_TAGS = Korrigiere Tags
+BDR_GENERATION = Erstellung
+LBL_CLASSES_INTERFACES = Klassen/Interfaces
+LBL_CONSTRUCTORS = Konstruktoren
+LBL_METHODS = Methoden
+LBL_VARIABLES = Variablen
+CHK_INCLUDE_INNER = Inner classes einschließen
+CHK_FIELD_COMMENTS_IN_SINGLE_LINE = Kurzform für Kommentare von Feldern
+LBL_SHOW_TEMPLATE_FOR = Zeige Vorlage für:
+LBL_TOP = Oben:
+LBL_PARAMETER = Parameter:
+LBL_EXCEPTION = Exception:
+LBL_RETURN = Return:
+LBL_BOTTOM = Unten:
+BDR_STANDARD_TAGS = Standard Tags
+BDR_INLINE_TAGS = In-line Tags
+TLE_ADD_NEW_STANDARD = Neues Standard Tag hinzufügen
+TLE_ADD_NEW_INLINE = Neues In-line Tag hinzufügen
+LBL_ENTER_NAME = Tagnamen eingeben:
+MSG_INVALID_TOP_FRAGMENT = Ungültiges \"Oben\" Fragment angegeben.\nGültige Fragmente haben die Form \"{0}\"\n
+TLE_INVALID_TOP_FRAGMENT = Fehler: Ungültiges Oben Fragment
+MSG_INVALID_PARAMETER_FRAGMENT = Ungültiges \"Parameter\" Fragment angegeben.\nGültige Fragmente haben die Form \"{0}\"\n
+TLE_INVALID_PARAMETER_FRAGMENT = Fehler: Ungültiges Parameter Fragment
+MSG_INVALID_EXCEPTION_FRAGMENT = Ungültiges \"Exception\" Fragment angegeben.\nGültige Fragmente haben die Form \"{0}\"\n
+TLE_INVALID_EXCEPTION_FRAGMENT = Fehler: Ungültiges Exception Fragment
+MSG_INVALID_BOTTOM_FRAGMENT = Ungültiges \"Unten\" Fragment angegeben.\nGültige Fragmente haben die Form \"{0}\"\n
+TLE_INVALID_BOTTOM_FRAGMENT = Fehler: Ungültiges Unten Fragment
+MSG_INVALID_RETURN_FRAGMENT = Ungültiges \"Return\" Fragment angegeben.\nGültige Fragmente haben die Form \"{0}\"\n
+TLE_INVALID_RETURN_FRAGMENT = Fehler: Ungültiges Return Fragment
+MSG_INVALID_TEMPLATE = Ungültige Vorlage angegeben.\nGültige Vorlagen haben die Form \"{0}\"\n
+TLE_INVALID_TEMPLATE = Fehler: Ungültige Vorlagen
+MSG_INVALID_TAG_NAME = \"{0}\" ist kein gültiger Tagname.\nGültigen Namen haben die Form \"{1}\"\n
+TLE_INVALID_TAG_NAME = Fehler: Ungültiger Tag Name
+
+
+# Header settings page
+TAB_OPTIONS = Einstellungen
+TAB_TEXT = Text
+CHK_USE_HEADER = Kopfnote benutzen
+LBL_SMART_MODE = Smart Mode:
+BDR_BLANK_LINES = Leerzeilen
+LBL_BLANK_LINES_BEFORE = Leerzeilen vor:
+LBL_BLANK_LINES_AFTER = Leerzeilen nach:
+BDR_DELETE_HEADERS = Muster
+
+
+# Footer settings page
+
+CHK_USE_FOOTER = Use Footer
+BDR_DELETE_FOOTERS = Delete Footers
+
+
+# Sorting settings page
+TAB_DECLARATIONS = Declarations
+TAB_MODIFIERS = Modifiers
+CHK_SORT_CLASS_ELEMENTS = Sort class elements
+BDR_ORDERING = Ordering
+HDR_TYPE = Type
+HDR_SORT = Sort
+CHK_SORT_MODIFIERS = Sort modifiers
+
+
+# Misc Settings Page
+CHK_INSERT_PARENTHESES = Füge Klammern ein
+CHK_INSERT_SERIAL_UID = Füge Serial Version UID ein
+CHK_INSERT_LOGGING_CONDITIONAL = Füge Logging Conditional ein
+CHK_INSERT_TRAILING_NEWLINE = Füge Leerzeile ein
+CHK_BRACKETS_AFTER_IDENTIFIER = Nachgestellte Array Klammerung
+CHK_FORCE_FORMATTING = Erzwinge Formatierung
+CHK_INSERT_FINAL_MODIFIER = Add final modifier to parameters
+BDR_HISTORY = Historie
+CHK_USE_HISTORY_COMMENT = Benutze Kommentarhistorie
+CHK_USE_HISTORY_FILE = Benutze Dateienhistorie
+BTN_VIEW = Ansehen...
+BDR_BACKUP = Sicherung
+LBL_BACKUP_LEVEL = Anzahl:
+LBL_BACKUP_SINGULAR = Sicherung
+LBL_BACKUP_PLURAL = Sicherungen
+LBL_BACKUP_DIRECTORY = Verzeichnis:
+TLE_SELECT_BACKUP_DIRECTORY = Auswahl des Sicherungsverzeichnisses
+BTN_CHOOSE = Auswählen...
+BDR_THREADS = Threads
+LBL_THREADS_NUMBER = Anzahl:
+LBL_THREADS_SINGULAR = Thread
+LBL_THREADS_PLURAL = Threads
+
+
+# Messages settings page
+BDR_CATEGORIES = Kategorien
+CHK_SHOW_STACKTRACE = Zeige Stacktrace an

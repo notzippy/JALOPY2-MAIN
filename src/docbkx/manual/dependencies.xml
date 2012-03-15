@@ -1,0 +1,240 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: dependencies.xml,v 1.4 2002/11/11 20:13:40 marcohu Exp $ -->
+
+<title>Library Dependencies</title>
+<para>
+Depending on the distribution, Jalopy depends on some or all of the following
+freely available libraries:
+</para>
+
+<table id="tab-library-dependencies" frame="none" colsep="0" rowsep="0" pgwide="0">
+<title>Library dependencies</title>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="10*" colsep="0" rowsep="0"/>
+<colspec colwidth="90*" colsep="0" rowsep="0"/>
+<tbody>
+<row>
+<entry>Name:</entry>
+<entry>AElfred XML Parser 1.2</entry>
+</row>
+<row>
+<entry>Author:</entry>
+<entry>David Brownell, Michael H. Kay, Microstar Software Ltd.</entry>
+</row>
+<row>
+<entry>License:</entry>
+<entry><link linkend="license-gnu">GNU General Public License</link></entry>
+</row>
+<row>
+<entry>Info:</entry>
+<entry>The parser is taken from the Saxon 6.5.2 release.</entry>
+</row>
+<row>
+<entry>URL:</entry>
+<entry><ulink url="http://sf.net/projects/saxon/">http://sf.net/projects/saxon/</ulink></entry>
+</row>
+
+<row>
+<entry></entry>
+<entry>&nbsp;</entry>
+</row>
+
+<row>
+<entry>Name:</entry>
+<entry>ANTLR Parser Generator 2.7.2a2</entry>
+</row>
+<row>
+<entry>Author:</entry>
+<entry>jGuru.com (MageLang Institute), project lead by Terence Parr</entry>
+</row>
+<row>
+<entry>License:</entry>
+<entry><link linkend="license-antlr">Custom, Public Domain</link></entry>
+</row>
+<row>
+<entry valign="top">Info:</entry>
+<entry>Contains some changes and fixes to make it work with Jalopy, re-packaged
+to avoid classpath clashes.
+</entry>
+</row>
+<row>
+<entry>URL:</entry>
+<entry><ulink url="http://www.antlr.org/">http://www.antlr.org/</ulink></entry>
+</row>
+
+<row>
+<entry></entry>
+<entry>&nbsp;</entry>
+</row>
+
+<row>
+<entry>Name:</entry>
+<entry>GNU getopt Java port 1.0.9</entry>
+</row>
+<row>
+<entry>Author:</entry>
+<entry>Aaron M. Renn</entry>
+</row>
+<row>
+<entry>License:</entry>
+<entry><link linkend="license-gnu">GNU General Public License</link></entry>
+</row>
+<row>
+<entry>URL:</entry>
+<entry><ulink url="http://www.urbanophile.com/~arenn/hacking/download.html">http://www.urbanophile.com/~arenn/hacking/download.html</ulink></entry>
+</row>
+
+<row>
+<entry></entry>
+<entry>&nbsp;</entry>
+</row>
+
+<row>
+<entry>Name:</entry>
+<entry>JAXP Java API for XML Processing 1.2</entry>
+</row>
+<row>
+<entry>Author:</entry>
+<entry>Sun Microsystems, Inc.</entry>
+</row>
+<row>
+<entry>License:</entry>
+<entry><link linkend="license-apache">Apache Software License</link></entry>
+</row>
+<row>
+<entry>URL:</entry>
+<entry><ulink url="http://java.sun.com/xml/">http://java.sun.com/xml/</ulink></entry>
+</row>
+
+<row>
+<entry></entry>
+<entry>&nbsp;</entry>
+</row>
+
+<row>
+<entry>Name:</entry>
+<entry>JDOM XML API 1.0 Beta 8</entry>
+</row>
+<row>
+<entry>Author:</entry>
+<entry>JDOM Group, lead by Jason Hunter and Brett McLaughlin</entry>
+</row>
+<row>
+<entry>License:</entry>
+<entry>BSD/Apache style</entry>
+</row>
+<row>
+<entry>URL:</entry>
+<entry><ulink url="http://www.jdom.org/">http://www.jdom.org/</ulink></entry>
+</row>
+
+<row>
+<entry></entry>
+<entry>&nbsp;</entry>
+</row>
+
+<row>
+<entry>Name:</entry>
+<entry>log4j logging toolkit 1.2.6</entry>
+</row>
+<row>
+<entry>Author:</entry>
+<entry>Apache Software Foundation</entry>
+</row>
+<row>
+<entry>License:</entry>
+<entry><link linkend="license-apache">Apache Software License</link></entry>
+</row>
+<row>
+<entry valign="top">Info:</entry>
+<entry>Jalopy specifically needs 1.2.6 or above as I use an accessor that was
+only introduced with 1.2.6</entry>
+</row>
+<row>
+<entry>URL:</entry>
+<entry><ulink url="http://jakarta.apache.org/log4j/">http://jakarta.apache.org/log4j/</ulink></entry>
+</row>
+
+<row>
+<entry></entry>
+<entry>&nbsp;</entry>
+</row>
+
+<row>
+<entry>Name:</entry>
+<entry>Moe Editor 1.2.0</entry>
+</row>
+<row>
+<entry>Author:</entry>
+<entry>BlueJ Group at Monash University, Slava Pestov</entry>
+</row>
+<row>
+<entry>License:</entry>
+<entry>Public Domain</entry>
+</row>
+<row>
+<entry valign="top">Info:</entry>
+<entry>Jalopy incorporates a stripped down version of the syntax package included in the
+Moe sources
+</entry>
+</row>
+<row>
+<entry>URL:</entry>
+<entry><ulink url="http://www.bluej.org/">http://www.bluej.org/</ulink></entry>
+</row>
+
+<row>
+<entry></entry>
+<entry>&nbs;</entry>
+</row>
+
+<row>
+<entry>Name:</entry>
+<entry>Oro Regular Expressions 2.0.6</entry>
+</row>
+<row>
+<entry>Author:</entry>
+<entry>Apache Software Foundation</entry>
+</row>
+<row>
+<entry>License:</entry>
+<entry><link linkend="license-apache">Apache Software License</link></entry>
+</row>
+<row>
+<entry>URL:</entry>
+<entry><ulink url="http://jakarta.apache.org/oro/">http://jakarta.apache.org/oro/</ulink></entry>
+</row>
+
+<row>
+<entry></entry>
+<entry>&nbsp;</entry>
+</row>
+
+<row>
+<entry>Name:</entry>
+<entry>SAX Simple API for XML 2.0.1 </entry>
+</row>
+<row>
+<entry>Author:</entry>
+<entry>David Megginson, David Brownell</entry>
+</row>
+<row>
+<entry>License:</entry>
+<entry>Public Domain</entry>
+</row>
+<row>
+<entry>URL:</entry>
+<entry><ulink url="http://www.saxproject.org/">http://www.saxproject.org/</ulink></entry>
+</row>
+
+<row>
+<entry></entry>
+<entry>&nbsp;</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para />

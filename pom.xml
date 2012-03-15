@@ -1,102 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>jalopy2</groupId>
-  <artifactId>jalopy2</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<groupId>notzippy.com</groupId>
+	<artifactId>jalopy2</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <name>jalopy2</name>
-  <url>http://maven.apache.org</url>
+	<distributionManagement>
+		<repository>
+			<id>nexus-site</id>
+			<url>http://central_nexus/server</url>
+		</repository>
+		<site>
+			<id>jalopy.website</id>
+			<name>Jalopy Website</name>
+			<url>file://${basedir}/../JALOPY2-SITE</url>
+		</site>
+	</distributionManagement>
+	<name>jalopy2</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <scm>
+        <connection>scm:git:git://github.com/notzippy/JALOPY2-MAIN.git</connection>
+        <developerConnection>scm:git:git@github.com:notzippy/JALOPY2-MAIN.git</developerConnection>
+        <url>http://github.com/notzippy/JALOPY2-MAIN/tree/master</url>
+    </scm>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-    	<groupId>org.codehaus.mojo</groupId>
-    	<artifactId>antlr-maven-plugin</artifactId>
-	<version>2.2</version>
-    </dependency>
-	<dependency>
-		<groupId>antlr</groupId>
-		<artifactId>antlr</artifactId>
-		<version>2.7.5</version>
-	</dependency>
-	<dependency>
-	<groupId>org.slf4j</groupId>
-	<artifactId>slf4j-log4j12</artifactId>
-	<version>1.6.4</version>
-</dependency>
-                
-  </dependencies>
-  <build>
-   <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>antlr-maven-plugin</artifactId>
-        <version>2.2</version>
-        <configuration>
-          <!--
-            By default, grammar files are in ${basedir}/src/main/antlr
-          -->
-         <grammarDefs>
-            <grammar>
-              <name>java.doc.g</name>
-            </grammar>
-            <grammar>
-              <name>java15.g</name>
-            </grammar>
-          </grammarDefs>
-        </configuration>
-		<executions>
-          <execution>
-            <goals>
-            <!-- generate is the correct goal -->
-              <goal>generate</goal>
-            </goals>
-          </execution>
-        </executions>      
-      </plugin>  
-      </plugins>
-   <pluginManagement>
-   	<plugins>
-   		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-   		<plugin>
-   			<groupId>org.eclipse.m2e</groupId>
-   			<artifactId>lifecycle-mapping</artifactId>
-   			<version>1.0.0</version>
-   			<configuration>
-   				<lifecycleMappingMetadata>
-   					<pluginExecutions>
-   						<pluginExecution>
-   							<pluginExecutionFilter>
-   								<groupId>org.codehaus.mojo</groupId>
-   								<artifactId>
-   									antlr-maven-plugin
-   								</artifactId>
-   								<versionRange>[2.2,)</versionRange>
-   								<goals>
-   									<goal>generate</goal>
-   								</goals>
-   							</pluginExecutionFilter>
-   							<action>
-   								<ignore></ignore>
-   							</action>
-   						</pluginExecution>
-   					</pluginExecutions>
-   				</lifecycleMappingMetadata>
-   			</configuration>
-   		</plugin>
-   	</plugins>
-   </pluginManagement>
-  </build>
+	<properties>
+		<maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>antlr-maven-plugin</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>antlr</groupId>
+			<artifactId>antlr</artifactId>
+			<version>2.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.agilejava.docbkx</groupId>
+				<artifactId>docbkx-maven-plugin</artifactId>
+				<version>2.0.14-SNAPSHOT</version>
+				<executions>
+					<!-- -->
+					<execution>
+						<id>documentation identifier</id>
+						<phase>pre-site</phase>
+						<goals>
+							<goal>generate-xhtml</goal>
+							<!-- <goal>generate-pdf</goal> <goal>generate-...</goal> <goal>generate-pdf</goal> -->
+						</goals>
+						<configuration>
+							<!-- per execution configuration -->
+							<includes>**/*-docbkx.xml</includes>
+							<draftMode>false</draftMode>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>net.sf.docbook</groupId>
+						<artifactId>docbook-xml</artifactId>
+						<version>5.0-all</version>
+						<classifier>resources</classifier>
+						<type>zip</type>
+						<scope>runtime</scope>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<!-- shared configuration -->
+					<targetDirectory>target/site/</targetDirectory>
+					<xincludeSupported>true</xincludeSupported>
+					<paperType>A4</paperType>
+					<fop1Extensions>1</fop1Extensions>
+					<chunkedOutput>true</chunkedOutput>
+					<xhtmlCustomization>src/docbkx/manual/manual.src.xsl</xhtmlCustomization>
+					<customizationParameters>
+						<!-- additional XSLT parameters -->
+						<parameter>
+							<name>build.time</name>
+							<value>${maven.build.timestamp}</value>
+						</parameter>
+						<parameter>
+							<name>version</name>
+							<value>${project.version}</value>
+						</parameter>
+					</customizationParameters>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>antlr-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<!-- By default, grammar files are in ${basedir}/src/main/antlr -->
+					<grammarDefs>
+						<grammar>
+							<name>common.g</name>
+						</grammar>
+						<grammar>
+							<name>java15.g</name>
+						</grammar>
+						<grammar>
+							<name>java.doc.g</name>
+						</grammar>
+					</grammarDefs>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<!-- generate is the correct goal -->
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.0</version>
+					<configuration>
+						<reportPlugins>
+							<plugin>
+								<groupId>org.apache.maven.plugins</groupId>
+								<artifactId>maven-project-info-reports-plugin</artifactId>
+								<version>2.4</version>
+								<configuration>
+									<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+									<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+								</configuration>
+								<!-- simpler configuration without reportSets available for usual 
+									cases -->
+								<reports>
+                  <report>index</report> 
+									<report>dependencies</report>
+                  <report>summary</report> 
+									<report>scm</report>
+								</reports>
+							</plugin>
+							<plugin>
+								<groupId>org.apache.maven.plugins</groupId>
+								<artifactId>maven-javadoc-plugin</artifactId>
+								<version>2.8</version>
+							</plugin>
+						</reportPlugins>
+					</configuration>
+				</plugin>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.codehaus.mojo</groupId>
+										<artifactId>
+											antlr-maven-plugin
+										</artifactId>
+										<versionRange>[2.2,)</versionRange>
+										<goals>
+											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+	<description>This project is based on the original project at jalopy.sourceforge.com</description>
 </project>

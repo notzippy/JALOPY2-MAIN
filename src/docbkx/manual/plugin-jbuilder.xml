@@ -1,0 +1,158 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: plugin-jbuilder.xml,v 1.4 2002/11/11 20:13:40 marcohu Exp $ -->
+<!-- Contains the documentaion for the JBuilder Plug-in -->
+
+<title>JBuilder OpenTool</title>
+
+<indexterm><primary>JBuilder</primary></indexterm>
+<indexterm><primary>OpenTool</primary></indexterm>
+<indexterm><primary>Plug-in</primary><secondary>JBuilder</secondary></indexterm>
+
+<para>
+Describes the installation and usage of the Jalopy JBuilder Plug-in OpenTool.
+</para>
+
+<sect1 id="plugin-jbuilder-installation">
+<title>Installation</title>
+
+<para>
+Explains the steps involved to install the JBuilder Plug-in.
+</para>
+
+<sect3 id="plugin-jbuilder-installation-requirements">
+<title>System requirements</title>
+<para>
+The JBuilder Plug-in requires JBuilder 5.0 or higher. It has only been tested with JBuilder
+Personal 6.0 and 7.0. See <xref linkend="installation-requirements" />
+for the basic requirements to run Jalopy.
+</para>
+
+<para>
+To obtain more information about this
+powerful IDE, visit the official JBuilder homepage at the Borland site:
+<ulink url="http://www.borland.com/jbuilder/">http://www.borland.com/jbuilder/</ulink>
+</para>
+</sect3>
+
+<sect3 id="plugin-jbuilder-installation-installation">
+<title>Installation</title>
+<indexterm zone="plugin-jbuilder-installation-installation"><primary>Installation</primary><secondary>JBuilder OpenTool</secondary></indexterm>
+
+<para>
+The Plug-in comes either as a single <filename>.zip</filename> or compressed <filename>.tar</filename> file.
+Unzipping either one of these files into a directory of your choice (referred
+to as <replaceable>&lt;INST_DIR&gt;</replaceable>) will produce two
+subdirectories <filename>/docs</filename> and <filename>/lib</filename>.
+</para>
+
+<para>
+<screen>
+..
+  docs/      contains documentation
+  lib/       contains all necessary libraries
+</screen>
+</para>
+
+<para>
+Remove all files from any prior Jalopy version from
+your JBuilder extension directory (<filename>/lib/ext</filename>).
+</para>
+
+<para>
+Further installation is simple: just copy all files from your
+<filename><replaceable>&lt;INST_DIR&gt;</replaceable>/lib</filename> folder
+into the <filename>/lib/ext</filename> directory of your JBuilder distribution.
+JBuilder will then need to be restarted before Jalopy begins working.
+</para>
+</sect3>
+</sect1>
+
+<sect1 id="plugin-jbuilder-integration">
+<title>Integration</title>
+
+<para>
+Shows how the Plug-in is integrated into the JBuilder IDE.
+</para>
+
+<sect3>
+<title>AppBrowser main menu</title>
+<para>
+The software adds two new menu items into the main menu of the AppBrowser to
+seamlessly integrate with JBuilder:
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+<menuchoice>
+  <shortcut>
+    <keycombo><keysym>Ctrl</keysym><keysym>Shift</keysym><keysym>F10</keysym></keycombo>
+  </shortcut>
+  <guimenu><accel>P</accel>roject</guimenu>
+  <guimenuitem>Forma<accel>t</accel> &lt;file&gt;</guimenuitem>
+</menuchoice>
+</para>
+<para>
+Formats the current editor view. Use this item if you need to format the
+current opened file.
+</para>
+<para>
+Only available if there is an open view that contains a Java source file.
+</para>
+</listitem>
+
+<listitem>
+<para>
+<menuchoice>
+  <guimenu><accel>T</accel>ools</guimenu>
+  <guimenuitem><accel>J</accel>alopy Options...</guimenuitem>
+</menuchoice>.
+</para>
+<para>
+Displays the Jalopy settings dialog.
+</para>
+<para>
+Use this item if you want to configure your settings to control the
+layout of any formatted code.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3>
+<title>Project pane popup-menu </title>
+<para>
+There will also be a new menu item available at the end of the popup-menu of
+the Project pane: <guimenuitem>Format</guimenuitem>. Use this item if you want
+to format several files at once. All currently selected files are formatted.
+</para>
+<para>
+If it happens that a file has an open editor view, this view will be updated,
+not the actual file. You have to save the view first to see the physical file
+updated.
+</para>
+</sect3>
+
+<sect3>
+<title>Editor view popup menu
+</title>
+<para>
+Both the <guimenuitem>Format &lt;file&gt;</guimenuitem> and <guimenuitem>Jalopy Options...</guimenuitem> items can be also reached via the popup menu of the active editor view.
+</para>
+</sect3>
+</sect1>
+
+<sect1 id="plugin-jbuilder-license">
+<title>License</title>
+<para>
+The JBuilder Plug-in is &quot;<emphasis role="bold"><ulink url="http://opensource.org/docs/certification_mark.php">OSI Certified Open Source Software</ulink></emphasis>&quot;,
+released under a BSD license.
+</para>
+
+<para>
+See <xref linkend="license-bsd" /> for the license
+and refer to <xref linkend="dependencies" /> for the license terms of the accompanying 3rd party libraries.
+</para>
+</sect1>

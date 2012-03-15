@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<!-- $Id: plugins.xml,v 1.2 2004/06/08 01:57:09 rcleveng Exp $ -->
+<!-- This file contains the Plug-ins section -->
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+  [ <!ENTITY keywords SYSTEM "_keywords.xml"> ] >
+
+<article>
+<articleinfo>
+<title>Jalopy - Plug-ins</title>
+&keywords;
+</articleinfo>
+
+<simplesect id="plugins">
+<title>Plug-ins</title>
+
+<para>
+There are several Plug-ins available for Jalopy to add its extended formatting 
+capabilities to your favourite Java IDE or build tool.
+</para>
+
+<para>
+Below you find a list with the current Plug-ins. Click on the entries 
+to get more information.
+</para>
+
+<itemizedlist mark="square">
+<listitem>
+<ulink url="./plugin-ant.html">Ant 1.4 or above</ulink>
+</listitem>
+
+<listitem>
+<ulink url="./plugin-console.html">Console (Command line tool)</ulink>
+</listitem>
+
+<listitem>
+<ulink url="./plugin-eclipse.html">Eclipse 3.0 or above</ulink> 
+</listitem>
+
+<listitem>
+<ulink url="./plugin-jbuilder.html">JBuilder 5.0 or above</ulink> 
+</listitem>
+
+<listitem>
+<ulink url="./plugin-jdev.html">JDeveloper 10g</ulink> 
+</listitem>
+
+<listitem>
+<ulink url="./plugin-jedit.html">jEdit 4.1pre1 or above</ulink>
+</listitem>
+
+<listitem>
+<ulink url="./plugin-netbeans.html">NetBeans 3.3 or above</ulink>
+</listitem>
+</itemizedlist>
+
+<para>
+More to come!
+</para>
+
+</simplesect>
+</article>

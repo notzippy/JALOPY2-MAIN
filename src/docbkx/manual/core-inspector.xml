@@ -1,0 +1,375 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-inspector.xml,v 1.2 2002/11/12 23:41:08 marcohu Exp $ -->
+
+<sect1 id="inspector">
+<title>Code Inspector</title>
+<indexterm><primary>Code Inspector</primary></indexterm>
+
+<para>
+Provides the configuration facility for the Jalopy Code Inspector. The Code Inspector is
+able to inspect Java source files for naming convention violations and possible code
+weaknesses.
+</para>
+
+<sect2>
+<title>General</title>
+
+<para>
+Lets you control the general Code Inspector settings.
+</para>
+
+<sect3>
+<title>General</title>
+
+<itemizedlist>
+<listitem>
+<para>
+Enable
+</para>
+<para>
+Lets you enable or disable the Code Inspector as a whole.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3>
+<title>Tips</title>
+
+<para>
+Lets you selectively choose what actions should be performed during inspection. Moving the
+mouse pointer onto a checkbox displays a minimalistic tooltip after a short delay.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Tip 1 - Don't substitute another type for <classname>Object</classname> in the equals declaration
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 35.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 2 - Object the general contract when overriding <literal>equals</literal>
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 25.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 3 - Always override <literal>hashCode</literal> when you override <literal>equals</literal>
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 36.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 4 - Always override <literal>equals</literal> when you override <literal>hashCode</literal>
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 5 - Always override <literal>toString</literal>
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 42.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 6 - Use interfaces only to define types
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 89.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 7 - Replace structures with classes
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 97.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 8 - Return zero-length arrays, not <literal>nulls</literal>
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 134.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 9 - Adhere to generally accepted naming conventions
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 165.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 10 - Refer to objects by their interfaces
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 156.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 11 - Never declare that a method &quot;throws Exception&quot;
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 181.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 12 - Never declare that a method &quot;throws Throwable&quot;
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 181.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 13 - Don't ignore exceptions
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 187.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 14 - Never invoke <literal>wait</literal> outside a loop
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 201.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 15 - Avoid thread groups
+</para>
+<para>
+For a detailed discussion see <emphasis>Effective Java</emphasis> [<xref linkend="bloch01"/>], pp. 211.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 16 - Document collection types
+</para>
+<para>
+As long as there are no strong-typed collections (a.k.a. Java Generics support) available,
+it is best to document the object type of the items hold by a collection.
+</para>
+
+<example id="inspector-tip16">
+<title>Collection comment</title>
+<programlisting>
+private static final List _favorableTypes = new ArrayList(20); // List of &lt;String&gt;
+</programlisting>
+</example>
+<para/>
+</listitem>
+<listitem>
+<para>
+Tip 17 - Adhere to naming convention for collection types
+</para>
+<para>
+If you use comments to document the object type of collection items, you should conform to
+a generally accepted naming convention.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 18 - Avoid empty <literal>finally</literal> blocks
+</para>
+<para>
+Empty <literal>finally</literal> blocks are of no use and may indicate programmer errors.
+</para>
+<example id="inspector-tip18">
+<title>Empty <literal>finally</literal> block</title>
+<programlisting>
+Writer writer = null;
+
+try
+{
+    writer = new BufferedWriter(new FileWriter(file));
+    write.write(data);
+}
+catch (IOException ex)
+{
+    System.err.println("file could not be written -- " + file);
+}
+finally
+{
+}
+</programlisting>
+</example>
+<para>
+The programmer certainly wanted to close the <classname>Writer</classname> in the
+<literal>finally</literal> block to ensure that allocated system resources will be freed.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 19 - Avoid variable shadowing
+</para>
+<para>
+Variable shadowing should be avoided on general principle, as it tends to be confusing.
+</para>
+<para>
+For more information about shadowing, see the
+Java Developer Connection (JDC) Tech Tips, October 10, 2000
+(<ulink url="http://developer.java.sun.com/developer/TechTips/2000/tt1010.html#tip2">
+http://developer.java.sun.com/developer/TechTips/2000/tt1010.html#tip2</ulink>, subscription needed) or
+section 6.3.2, &quot;Obscured Declarations,&quot; section 7.5.2,
+&quot;Type-Import-on-Demand Declaration,&quot; section 8.4.6, &quot;Inheritance, Overriding, and Hiding,&quot;
+section 8.4.8.5, &quot;Example: Invocation of Hidden Class Methods,&quot; and section 14.4.3,
+&quot;Shadowing of Names by Local variables&quot; in &quot;The Java Language Specification Second
+Edition&quot; by Gosling, Joy, Steele, and Bracha
+(<ulink url="http://java.sun.com/docs/books/jls/">http://java.sun.com/docs/books/jls/)</ulink>.
+</para>
+</listitem>
+<listitem>
+<para>
+Tip 20 - Add <emphasis>NOI18N</emphasis> comment for String literals
+</para>
+<para>
+Enabling this tip will cause warnings for all String literals without associated
+<literal>/* NOI18N */</literal> comment.
+</para>
+<para>
+Internationalizing Java applications is often done with nifty tools that use marker
+comments to indicate that a given String literal should not be considered for localization.
+Most tools (at least the ones I know of) use trailing single-line comments which may not
+be very robust for processing with a formatting tool such as Jalopy. In contrast the author
+uses a multi-line comment of the form <literal>/* NOI18N */</literal> that gets directly
+placed after a String literal and will therefore always stuck with it.
+</para>
+
+<example id="inspector-tip20">
+<title>$NON-NLS-1$ comment</title>
+<programlisting>
+FileDialog dialog = new FileDialog(this,
+    ResourceBundle.getBundle(BUNDLE_NAME)
+    .getString("BTN_SAVE_AS", FileDialog.SAVE); //$NON-NLS-1$
+</programlisting>
+</example>
+
+<para>
+This trailing comment could be easily moved away from its String literal during formatting
+which would result in an unwanted notice on successive internationalization runs.
+</para>
+
+<example id="inspector-tip20a">
+<title>$NON-NLS-1$ comment</title>
+<programlisting>
+FileDialog dialog =
+    new FileDialog(this,
+                   ResourceBundle.getBundle(BUNDLE_NAME).
+                                  getString("BTN_SAVE_AS",
+                   FileDialog.SAVE); //$NON-NLS-1$
+</programlisting>
+</example>
+
+<para/>
+
+<example id="inspector-tip20b">
+<title>NOI18N comment</title>
+<programlisting>
+FileDialog dialog =
+    new FileDialog(this,
+                   ResourceBundle.getBundle(BUNDLE_NAME).
+                                  getString("BTN_SAVE_AS" /* NOI18N */),
+                   FileDialog.SAVE);
+</programlisting>
+</example>
+<para/>
+</listitem>
+</itemizedlist>
+</sect3>
+</sect2>
+
+<sect2 id="inspector-naming">
+<title>Naming</title>
+<indexterm><primary>Naming</primary></indexterm>
+<indexterm><primary>Code Inspector</primary><secondary>Naming</secondary></indexterm>
+
+<para>
+Lets you specify the naming constraints for different Java source file elements. These
+constraints are naturally expressed with regular expressions (Perl 5.003 syntax).
+</para>
+
+<para>
+The list component displays all covered elements along with their current regular
+expression.
+</para>
+
+<para>
+Selecting an item in the list and either pressing the <guibutton>Change...</guibutton>
+button or double-clicking on the item will open a little regular expression testing tool
+that can be used to interactively craft a valid regular expression.
+</para>
+
+<sect3 id="inspector-naming-tester">
+<title>Regular expression tester</title>
+<indexterm><primary>Regular expression tester</primary></indexterm>
+<indexterm><primary>Regular expression</primary><secondary>Tester</secondary></indexterm>
+
+<para>
+The regular expression tester lets you interactively specifiy a valid regular expression
+that matches a certain String pattern.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Regexp
+</para>
+<para>
+The <guilabel>Regexp</guilabel> text field is where you have to insert the regular
+expression. This text field initially contains the current regular expression for the
+list item that is under construction.
+</para>
+
+<para>
+The used regular expression syntax is that of Perl 5.003. See <emphasis>Mastering Regular
+Expressions</emphasis> [<xref linkend="friedl97"/>] for an in-depth look at this
+regular expression flavor.
+</para>
+</listitem>
+
+<listitem>
+<para>
+String
+</para>
+<para>
+The <guilabel>String</guilabel> text field is where you have to type a String that should
+be matched by the specified regular expression. This text field is initially empty; you
+have to enter a String in order to be able to test the regular expression.
+</para>
+</listitem>
+</itemizedlist>
+
+<para>
+Once you have setup up the text fields you can either use the <guibutton>Test</guibutton>
+button to soley perform the pattern matching test or the <guibutton>Apply</guibutton> button
+which both performs testing and - on success - closes the dialog and updates the list.
+</para>
+
+<para>
+You can always use the <guibutton>Cancel</guibutton> button to cancel editing. The dialog
+will be closed nd no changes made to the list.
+</para>
+
+</sect3>
+</sect2>
+</sect1>

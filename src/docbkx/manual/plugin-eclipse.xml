@@ -1,0 +1,166 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: plugin-eclipse.xml,v 1.4 2002/11/11 20:13:40 marcohu Exp $ -->
+<!-- Contains the documentaion for the Eclipse Plug-in -->
+
+<title>Eclipse Plug-in</title>
+<indexterm><primary>Eclipse</primary></indexterm>
+<indexterm><primary>Plug-in</primary><secondary>Eclipse</secondary></indexterm>
+
+<para>
+Describes the installation and usage of the Jalopy Eclipse Plug-in.
+</para>
+
+<sect1 id="plugin-eclipse-installation">
+<title>Installation</title>
+<para>
+Explains the steps involved to install the Eclipse Plug-in.
+</para>
+
+<sect3 id="plugin-eclipse-installation-requirements">
+<title>System requirements</title>
+<para>
+This Plug-in requires Eclipse 2.0 or higher. It has only been tested with Eclipse 2.0.
+See <xref linkend="installation-requirements" /> for the basic requirements
+to run Jalopy.
+</para>
+
+<para>
+To obtain more information about this powerful IDE, visit the official
+Eclipse homepage:
+<ulink url="http://www.eclipse.org/">http://www.eclipse.org/</ulink>
+</para>
+</sect3>
+
+<sect3 id="plugin-eclipse-installation-installation">
+<title>Installation</title>
+<indexterm zone="plugin-eclipse-installation-installation"><primary>Installation</primary><secondary>Eclipse Plug-in</secondary></indexterm>
+<para>
+The Plug-in comes either as a single <filename>.zip</filename> or
+compressed <filename>.tar</filename> archive. Unzipping either one of these
+files into a directory of your choice (referred to as
+<replaceable>&lt;INST_DIR&gt;</replaceable>) will produce two
+subdirectories <filename>/de.hunsicker.jalopy.plugin.eclipse_<replaceable>version</replaceable></filename>
+and <filename>/docs</filename>.
+</para>
+
+<para>
+<screen>
+..
+  de.hunsicker.jalopy.plugin.eclipse_<replaceable>version</replaceable>/    contains the Plug-in files
+  docs/                                          contains the documentation
+</screen>
+</para>
+
+<para>
+Copy the <filename>de.hunsicker.jalopy.plugin.eclipse_<replaceable>version</replaceable></filename>
+folder into your Eclipse plugin directory and
+restart Eclipse. That's all there is to it, you are now ready to run Jalopy
+from within Eclipse.
+</para>
+</sect3>
+</sect1>
+
+<sect1 id="plugin-eclipse-integration">
+<title>Integration</title>
+
+<para>
+Shows how the Plug-in is integrated into the Eclipse IDE.
+</para>
+
+<sect3>
+<title>Main menu bar</title>
+
+<para>
+Currently, the software adds a new item into the main menu bar of Eclipse
+to launch the Jalopy settings dialog. Note that the this configuration
+dialog is actually a Java Swing dialog launched in-process so the
+appearance and behaviour may slightly differ compared to native applications.
+A future version will bring tightly integration with the Eclipse workbench
+preferences dialog.
+</para>
+
+<itemizedlist mark="square">
+<listitem>
+<para>
+<menuchoice>
+  <guimenu><accel>W</accel>indow</guimenu>
+  <guimenuitem><accel>J</accel>alopy Settings...</guimenuitem>
+</menuchoice>
+</para>
+<para>
+Displays the Jalopy settings dialog. Use this item if you want to change the
+settings that control the layout of any formatted code.
+</para>
+</listitem>
+</itemizedlist>
+
+<para>
+The menu item appears only for certain views/editors. If you want to
+enable it permanently, mark
+<menuchoice>
+  <guimenu><accel>W</accel>indow</guimenu>
+  <guimenuitem>Customi<accel>z</accel>e Perspective...</guimenuitem>
+  <guimenuitem>Action Sets</guimenuitem>
+  <guimenuitem>Jalopy</guimenuitem>
+</menuchoice>
+
+</para>
+</sect3>
+
+<sect3>
+<title>Java Editor context menu</title>
+<para>
+The software adds a new menu item to the context menu of Java editors.
+</para>
+<itemizedlist mark="square">
+<listitem>
+<para>
+<menuchoice>
+  <guimenuitem>Format with Jalopy</guimenuitem>
+</menuchoice>
+</para>
+<para>
+Formats the contents of the editor.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3>
+<title>Project, Folder, File context menus</title>
+<para>
+The software adds a new menu item to the context menu of projects, folders and
+Java source files in the navigation view of the Java perspective.
+</para>
+<itemizedlist mark="square">
+<listitem>
+<para>
+<menuchoice>
+  <guimenuitem>Format</guimenuitem>
+</menuchoice>
+</para>
+<para>
+Formats the selected files. Depending on the object type (project, folder, file) formats
+either all Java source files of the project, the contents of the selected folder(s)
+(including subfolders) or the currently selected Java source file(s).
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+</sect1>
+
+<sect1 id="plugin-eclipse-license">
+<title>License</title>
+<para>
+The Eclipse Plug-in is &quot;<emphasis role="bold"><ulink url="http://opensource.org/docs/certification_mark.php">OSI Certified Open Source Software</ulink></emphasis>&quot;,
+released under the Common Public License. See <xref linkend="license-common-public" />
+for more information.
+</para>
+
+<para>
+See <xref linkend="license-bsd" /> for the Jalopy license
+and refer to <xref linkend="dependencies" /> for the license terms of the accompanying 3rd party libraries.
+</para>
+</sect1>

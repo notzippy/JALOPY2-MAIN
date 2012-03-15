@@ -1,0 +1,384 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-braces.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect2 id="braces">
+<title>Braces</title>
+
+<indexterm><primary>Braces</primary></indexterm>
+
+<para>
+Controls the handling of curly braces (the Java block delimeters).
+</para>
+
+<sect3 id="braces-style">
+<title>General</title>
+
+<indexterm zone="braces-style"><primary>Braces</primary><secondary>style</secondary></indexterm>
+
+<para>
+Controls how the enclosing block delimeters - left and right curly
+brace - are printed. You can either choose from a predefined set of common
+styles or build one on your own.
+</para>
+
+<sect4 id="braces-style-styles">
+<title>Styles</title>
+<para>
+Controls which brace style will be used to lay out blocks.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="braces-style-c">
+C style
+</para>
+
+<indexterm zone="braces-style-c"><primary>Braces</primary><secondary>style</secondary><tertiary>C</tertiary></indexterm>
+
+<para>
+Selects the C brace style. This style is sometimes called &quot;Allman style&quot; or &quot;BSD style&quot;.
+</para>
+<example id="ex-brace-style-c">
+<title>C style</title>
+<programlisting>
+if (!isDone)
+<emphasis role="bold">{</emphasis>
+    doSomething();
+<emphasis role="bold">}</emphasis>
+else
+<emphasis role="bold">{</emphasis>
+    System.err.println("Finished");
+<emphasis role="bold">}</emphasis>
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="braces-style-sun">
+Sun style
+</para>
+
+<indexterm zone="braces-style-sun"><primary>Braces</primary><secondary>style</secondary><tertiary>Sun</tertiary></indexterm>
+
+<para>
+Selects the Sun brace style. Sometimes called &quot;K&amp;R style&quot;.
+</para>
+
+<example id="ex-brace-style-sun">
+<title>Sun style</title>
+<programlisting>
+if (!isDone) <emphasis role="bold">{</emphasis>
+    doSomething();
+<emphasis role="bold">}</emphasis> else <emphasis role="bold">{</emphasis>
+    System.err.println("Finished");
+<emphasis role="bold">}</emphasis>
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="braces-style-gnu">
+GNU style
+</para>
+
+<indexterm zone="braces-style-c"><primary>Braces</primary><secondary>style</secondary><tertiary>GNU</tertiary></indexterm>
+
+<para>
+Selects the GNU brace style.
+</para>
+<example id="ex-brace-style-gnu">
+<title>GNU style</title>
+<programlisting>
+if (!isDone)
+  <emphasis role="bold">{</emphasis>
+    doSomething();
+  <emphasis role="bold">}</emphasis>
+else
+  <emphasis role="bold">{</emphasis>
+    System.err.println("Finished");
+  <emphasis role="bold">}</emphasis>
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="braces-style-custom">
+Custom style
+</para>
+
+<indexterm zone="braces-style-custom"><primary>Braces</primary><secondary>style</secondary><tertiary>custom</tertiary></indexterm>
+
+<para>
+Selecting this option will enable you to freely choose between the different brace
+style options discussed below.
+</para>
+</listitem>
+</itemizedlist>
+</sect4>
+
+<sect4 id="braces-wrapping">
+<title>Wrapping</title>
+<indexterm zone="braces-wrapping"><primary>Braces</primary><secondary>wrapping</secondary></indexterm>
+<para>
+Controls the brace wrapping options.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Newline before left brace
+</para>
+<para>
+If enabled, always prints a newline before the left curly brace.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Newline after right brace
+</para>
+<para>
+If enabled, prints a newline after the left curly brace (when possible).
+</para>
+</listitem>
+
+<listitem>
+<para>
+Treat class/method blocks different
+</para>
+<para>
+It is common in the Java developer community to have the opening brace
+at the end of the line of the keyword for all types of blocks (Sun brace style).
+One may find the C++ convention of treating class/interface and method/constructor
+blocks different from other blocks useful. With this switch you can achieve
+exactly that: if enabled, class/interface and method/constructor blocks are
+then always printed in C brace style (newline before left brace).
+</para>
+</listitem>
+
+<listitem>
+<para id="braces-different-wrapped">
+Treat class/method blocks different if wrapped
+</para>
+<para>
+With this switch enabled, the opening brace for class/interface or
+method/constructor blocks will always be printed on a new line (C style), if
+either the parameter list spawns several lines and a <literal>throws</literal>
+clause follows, or one of the possible clauses (<literal>extends</literal>,
+<literal>implements</literal>, <literal>throws</literal>) was wrapped.
+</para>
+</listitem>
+</itemizedlist>
+</sect4>
+
+<sect4 id="braces-whitespace">
+<title>Whitespace</title>
+
+<indexterm zone="braces-whitespace"><primary>Braces</primary><secondary>whitespace</secondary></indexterm>
+
+<para>
+Controls the indentation whitespace for the left and right curly brace.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Before left brace
+</para>
+<para>
+Number of spaces to print before the left curly brace.
+</para>
+</listitem>
+
+<listitem>
+<para>
+After left brace
+</para>
+<para>
+Number of spaces to print after the left curly brace.
+</para>
+</listitem>
+
+<listitem>
+<para>
+After right brace
+</para>
+<para>
+Number of spaces to print after the right curly brace.
+</para>
+</listitem>
+</itemizedlist>
+</sect4>
+</sect3>
+
+<sect3 id="braces-misc">
+<title>Misc</title>
+<para>
+Controls miscellaneous brace options.
+</para>
+
+<sect4 id="braces-insert">
+<title>Insert braces</title>
+
+<indexterm zone="braces-insert"><primary>Braces</primary><secondary>insert</secondary></indexterm>
+
+<para>
+Per definition braces are superfluous on single statements, but it is
+a common recommendation that braces should be always used in such cases.
+With this option, you can specify whether missing braces for single
+statements should be inserted for the control statements <function>if</function>,
+<function>for</function>, <function>while</function> and <function>do-while</function>.
+</para>
+<para>
+Enabling this option for <function>while</function> statements would render
+</para>
+
+<example id="ex-brace-insertion">
+<title>Brace insertion</title>
+<programlisting>
+while (!isDone)
+    doSomething();
+</programlisting>
+<para>
+into
+</para>
+<programlisting>
+while (!isDone)
+{
+    doSomething();
+}
+</programlisting>
+</example>
+<para/>
+</sect4>
+
+<sect4 id="braces-remove">
+<title>Remove braces</title>
+<indexterm zone="braces-remove"><primary>Braces</primary><secondary>remove</secondary></indexterm>
+
+<para>
+It is permittable to remove braces in case they are superfluous. This not only
+applies to the control statements <function>if</function>, <function>for</function>,
+<function>while</function> and <function>do-while</function>, but also to every
+block in general (remember a block is just a sequence of statements,
+local class declarations and local variable declaration statements within
+braces).
+</para>
+
+<example id="ex-brace-removal">
+<title>Brace removal</title>
+<programlisting>
+for (int i = 0; i &lt; 100; i++)
+{
+    sum += value[i];
+}
+</programlisting>
+<para>
+would become
+</para>
+<programlisting>
+for (int i = 0; i &lt; 100; i++)
+    sum += value[i];
+</programlisting>
+</example>
+<para/>
+</sect4>
+
+<sect4 id="braces-empty">
+<title>Empty braces</title>
+
+<indexterm zone="braces-empty"><primary>Empty braces</primary></indexterm>
+<indexterm zone="braces-empty"><primary>Braces</primary><secondary>Empty</secondary></indexterm>
+
+<para>
+Controls how empty braces should be handled. If no option is selected,
+they are left untouched.
+</para>
+
+<example id="ex-brace-empty">
+<title>Empty braces</title>
+<programlisting>
+if (in != null)
+{
+    try
+    {
+        in.close();
+    }
+    catch (IOException ignored)
+    {
+    }
+}
+</programlisting>
+</example>
+
+<para>
+All options don't apply to class/interface and method/constructor bodies but
+are only used for control statements and blocks.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="braces-empty-statement">
+Insert empty statement
+<indexterm zone="braces-empty-statement"><primary>Braces</primary><secondary>empty</secondary></indexterm>
+<indexterm zone="braces-empty-statement"><primary>Empty statement</primary></indexterm>
+
+</para>
+<para>
+Inserts an empty statement to make it obvious for the reader that the empty braces
+are intentional.
+</para>
+<example id="ex-braces-empty-statement">
+<title>Empty braces with empty statement</title>
+<programlisting>
+if (in != null)
+{
+    try
+    {
+        in.close();
+    }
+    catch (IOException ignored)
+    {
+        <emphasis role="bold">;</emphasis>
+    }
+}
+</programlisting>
+</example>
+</listitem>
+</itemizedlist>
+
+
+<itemizedlist>
+<listitem>
+<para>
+Cuddle braces
+</para>
+<para id="braces-empty-cuddle">
+Cuddles the braces. They will be printed right after the control statement.
+<indexterm zone="braces-empty-cuddle"><primary>Braces</primary><secondary>cuddle</secondary></indexterm>
+<indexterm zone="braces-empty-cuddle"><primary>Cuddled braces</primary></indexterm>
+</para>
+<example id="ex-braces-empty-cuddle">
+<title>Cuddled empty braces</title>
+<programlisting>
+if (in != null)
+{
+    try
+    {
+        in.close();
+    }
+    catch (IOException ignored) <emphasis role="bold">{}</emphasis>
+}
+</programlisting>
+</example>
+<para/>
+</listitem>
+</itemizedlist>
+</sect4>
+</sect3>
+</sect2>

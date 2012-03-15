@@ -1,0 +1,164 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-header.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect2 id="header">
+<title>Header</title>
+<para>
+Controls the printing of headers. It is always a good idea (and often a
+recommendation) to include a copyright notice at the top of every source file
+for a given project.
+</para>
+<indexterm><primary>Header</primary></indexterm>
+<indexterm><primary>Comment</primary><secondary>Header</secondary></indexterm>
+
+<example id="ex-header-template">
+<title>Typical header template</title>
+<screen>
+/*
+ *                 Sun Public License Notice
+ *
+ * The contents of this file are subject to the Sun Public License
+ * Version 1.0 (the "License"). You may not use this file except in
+ * compliance with the License. A copy of the License is available at
+ * http://www.sun.com/
+ *
+ * The Original Code is NetBeans. The Initial Developer of the Original
+ * Code is Sun Microsystems, Inc. Portions Copyright 1997-2000 Sun
+ * Microsystems, Inc. All Rights Reserved.
+ */
+</screen>
+</example>
+
+<caution>
+<title>Headers and Javadoc comments</title>
+<para>
+Be aware that Jalopy currently does not treat the header comments any special.
+If you're going to use a Javadoc comment (see <xref linkend="javadoc" />) for
+your header and have the Javadoc parsing enabled, you will see your header
+reformatted. Therefore, you should only use multi-line comments
+(like in the example above).
+</para>
+</caution>
+
+<para/>
+<sect3 id="header-options">
+<title>
+Options
+</title>
+
+<para>
+Lets you control the different header options.
+</para>
+
+<sect4 id="header-general">
+<title>General</title>
+<itemizedlist>
+<listitem>
+<para>
+Use Header
+</para>
+<para>
+Enables or disables the insertion of a header template at the top of every
+processed source file.
+</para>
+</listitem>
+
+<listitem>
+<para id="header-smart-mode">
+Smart Mode
+</para>
+
+<indexterm zone="header-smart-mode"><primary>Header</primary><secondary>Smart Mode</secondary></indexterm>
+
+<para>
+Lets you specify the number of single-line comments before the first node
+(either a package/import statement or a class/interface declaration) that
+should be recognized as part of a header and therefore removed. A size
+equal to zero, means <emphasis>Smart Mode</emphasis> will be disabled.
+</para>
+</listitem>
+
+</itemizedlist>
+</sect4>
+
+<sect4 id="header-delete">
+<title>Delete Headers</title>
+<para>
+To avoid header duplication, you have to specify at least one identify key
+that can be used to uniquely recognize your header template. That way an
+existing header can be removed before a new one is inserted.
+</para>
+<para>
+A good key for the template mentioned above would be
+<firstterm>Sun Public License Notice</firstterm>.
+Most typically this will be your company's name.
+</para>
+<para>
+You can specify several keys to make it easy to switch between headers. Specify
+both a key for the old header that is to be removed and for your new header that
+should be inserted. This way, you are sure that even new additions that happens
+to contain the old header (maybe checked out from some SCM) are
+treated correctly.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Add...
+</para>
+<para>
+Adds a new identify key to the list of keys.
+</para>
+</listitem>
+<listitem>
+<para>
+Remove
+</para>
+<para>
+Removes the currently selected key from the list.
+</para>
+</listitem>
+</itemizedlist>
+</sect4>
+
+<sect4 id="header-blank-lines">
+<title>Blank lines</title>
+<para>
+To separate the header from the rest of the source code, you may want to
+specify the blank lines before and after the header.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Before
+</para>
+<para>
+Number of blank lines to insert before the header template.
+</para>
+</listitem>
+<listitem>
+<para>
+After
+</para>
+<para>
+Number of blank lines to insert after the header template.
+</para>
+</listitem>
+</itemizedlist>
+</sect4>
+</sect3>
+<sect3>
+<title>
+Text
+</title>
+<para>
+Insert your header template here.
+</para>
+
+<para>
+You can use variable expressions throughout the header text. Read
+<xref linkend="environment" /> for more information about this feature.
+</para>
+</sect3>
+</sect2>

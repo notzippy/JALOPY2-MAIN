@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+
+<!-- $Id: features.xml,v 1.3 2002/10/27 21:02:41 marcohu Exp $ -->
+<!-- This file contains the Jalopy feature list -->
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+  [ <!ENTITY keywords SYSTEM "_keywords.xml"> ] >
+
+<article role="docu">
+<articleinfo>
+<title>Jalopy - Feature list</title>
+&keywords;
+</articleinfo>
+
+<sect1 id="featurelist">
+<title>Feature list</title>
+<itemizedlist mark="square">
+<listitem>
+distributed settings support - share one code convention across multiple machines/platforms
+</listitem>
+
+<listitem>
+easy switching between several code conventions
+</listitem>
+
+<listitem>
+several pre-configured brace styles (C, Sun, GNU), but fully user-configurable
+</listitem>
+
+<listitem>
+auto-insertion/removal of obsolete braces
+</listitem>
+
+<listitem>
+special empty braces handling
+</listitem>
+
+<listitem>
+wide range of whitespace options for method declarations/calls, brackets, parentheses, operators, delimeters...
+</listitem>
+
+<listitem>
+prepending of leading whitespace before every line
+</listitem>
+
+<listitem>
+powerful indentation/alignment capabilities
+</listitem>
+
+<listitem>
+configurable line wrapping
+</listitem>
+
+<listitem>
+controlable amount of blank lines between certain sections, blocks, statements...
+</listitem>
+
+<listitem>
+comment removal for all sorts of comments
+</listitem>
+
+<listitem>
+special comments to prohibit formatting for certain pieces of code
+(uses the Jindent syntax to retain backward compatibility)
+</listitem>
+
+<listitem>
+auto-insertion of missing Javadoc comments (selectively configurable for the
+different access levels) with variable interpolation
+</listitem>
+
+<listitem>
+auto-removal/insertion/correction of obsolete/missing/wrong Javadoc standard tags
+</listitem>
+
+<listitem>
+auto-insertion of parentheses around expressions to make operator precedence obvious
+</listitem>
+
+<listitem>
+auto-insertion of a serial version UID for serializable classes
+</listitem>
+
+<listitem>
+sorting of class/interface/variable/constructor/method declarations
+</listitem>
+
+<listitem>
+sorting of access modifiers
+</listitem>
+
+<listitem>
+insertion of separation comments between class/interface/variable/constructor/method declarations
+</listitem>
+
+<listitem>
+insertion of custom header/footer templates at the begin/end of every file (with variable interpolation)
+</listitem>
+
+<listitem>
+sorting/grouping of import declarations
+</listitem>
+
+<listitem>
+import optimization: expansion of on-demand import declarations to several
+single-type declarations (and vice versa). As of today only implemented for
+the Ant and JBuilder Plug-in
+</listitem>
+
+<listitem>
+configurable message output
+</listitem>
+
+<listitem>
+numbered backups (1-30)
+</listitem>
+
+<listitem>
+multi-processor support
+</listitem>
+
+<listitem>
+client <ulink url="./api/index.html">API</ulink> to make integration with other tools easy
+</listitem>
+
+<listitem>
+graphical application to customize the settings (with live-preview)
+</listitem>
+
+<listitem>
+powerful command line interface with regular expression filtering (<ulink url="./plugins.html">Console Plug-in</ulink>)
+</listitem>
+
+<listitem>
+several <ulink url="./plugins.html">Plug-ins</ulink> to integrate with common Java applications (current set includes
+<ulink url="./plugin-ant.html">Ant</ulink>,
+<ulink url="./plugin-eclipse.html">Eclipse</ulink>,
+<ulink url="./plugin-jbuilder.html">JBuilder</ulink>,
+<ulink url="./plugin-jdev.html">JDeveloper</ulink>,
+<ulink url="./plugin-jedit.html">jEdit</ulink> and
+<ulink url="./plugin-netbeans.html">NetBeans</ulink>/Sun ONE Studio)
+</listitem>
+
+<listitem>
+&quot;<emphasis role="bold"><ulink url="http://opensource.org/docs/certification_mark.php">OSI Certified Open Source Software</ulink></emphasis>&quot;
+ software, released under a <ulink url="./license-bsd.html">BSD License</ulink>
+</listitem>
+
+</itemizedlist>
+</sect1>
+</article>

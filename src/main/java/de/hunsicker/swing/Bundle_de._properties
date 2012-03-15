@@ -1,0 +1,11 @@
+# StringButtonPanel.java
+BTN_CHANGE = Ändern...
+
+
+# ErrorDialog.java
+TLE_ERROR = Fehler
+MSG_UNEXPECTED_EXCEPTION = Ein unerwartete Ausnahme {0} ist aufgetreten:
+MSG_NO_FURTHER_INFO = <keine weiteren Informationen verfügbar>
+BTN_OK = OK
+BTN_SHOW_DETAILS = Details anzeigen
+BTN_HIDE_DETAILS = Details verbergen

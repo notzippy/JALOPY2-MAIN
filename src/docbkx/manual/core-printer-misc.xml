@@ -1,0 +1,299 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-misc.xml,v 1.2 2002/11/12 19:57:49 marcohu Exp $ -->
+
+<sect2 id="misc">
+<title>Misc</title>
+
+<para>
+Lets you control miscellaneous settings that doesn't fit elsewhere.
+</para>
+
+<sect3 id="misc-misc">
+<title>Misc</title>
+<itemizedlist>
+<listitem>
+<para id="paren-add">
+Insert expression parentheses
+</para>
+
+<indexterm zone="paren-add"><primary>Parentheses</primary><secondary>insert around expressions</secondary></indexterm>
+<indexterm zone="paren-add"><primary>Parentheses</primary></indexterm>
+
+<para>
+It is always good advise to use more parentheses than you think you need. They
+may not be needed, but they add clarity and don't cost anything.
+</para>
+
+<example id="ex-misc-expr">
+<title>How is this expression evaluated?</title>
+<programlisting>
+int result = 12 + 4 % 3 * 7 / 8;
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-misc-expr-continued">
+<title>How is this expression evaluated? (continued)</title>
+<programlisting>
+int result = 12 + ((4 % 3 * 7) / 8);
+</programlisting>
+</example>
+<para/>
+</listitem>
+
+<listitem>
+<para id="misc-insert-uid">
+Insert serial version UID
+</para>
+<indexterm zone="misc-insert-uid"><primary>Serial version UID</primary></indexterm>
+
+<para>
+Common sense dictates to declare an explicit serial version UID in every
+serializable class to eliminate the serial version UID as a potential source
+of incompatibility (with the additional benefit of a small performance gain).
+If this switch is enabled and the class directly dereives from either
+<filename>java.io.Serializable</filename> or <filename>java.io.Externalizable</filename>,
+Jalopy computes and inserts a serial version UID for the class.
+</para>
+<para>
+For this feature to work, the class that has its serial version UID computed
+needs to be available on the classpath.
+</para>
+</listitem>
+
+<listitem>
+<para id="misc-logging-conditional">
+Insert logging conditional
+</para>
+
+<para>
+Typically, logging systems have a method that submits a logging message like
+
+<screen>
+logger.debug("some message: " + someVar);
+</screen>
+</para>
+
+<para>
+This is fine, but if the debug level is set such that this message will
+<emphasis>NOT</emphasis> display, then time is wasted doing the string marshalling.
+</para>
+
+<para>
+Thus, the preferred way to do this is
+
+<screen>
+if (logger.isDebugEnabled()) {
+    logger.debug("some message: " + someVar);
+}
+</screen>
+
+which will only use CPU time if the log message is needed. Enabling this switch
+will ensure that every logging call with the debug level set will be enclosed with
+the conditional expression.
+</para>
+
+<para>
+Use this feature with care! The current implementation only supports the Jakarta
+Log4J toolkit and is somewhat weak in that every method call called
+<firstterm>debug</firstterm> is treated as a logging call which could be incorrect
+in your application. However, it works fine for the <firstterm>l7dlog</firstterm> calls.
+</para>
+</listitem>
+
+<listitem>
+<para id="misc-trailing-newline">
+Insert trailing newline
+</para>
+<para>
+If enabled, Jalopy inserts an empty line at the end of every file. This may
+help to avoid problems with certain text formatters and processors.
+</para>
+<para>
+Note that Jalopy always inserts at least one empty line after footers, so there
+is no real need (but it doesn't hurt) to check the mark in case footer insertion
+will be performed (see <xref linkend="footer" />)
+</para>
+</listitem>
+
+<listitem>
+<para id="misc-array-brackets">
+Array brackets after identifiers
+</para>
+<para>
+Lets you choose where the brackets of array types should be placed.
+</para>
+
+<para>
+By default, Jalopy prints the square brackets right after the array type.
+</para>
+
+<example id="ex-misc-array-brackets">
+<title>Array brackets after type</title>
+<programlisting>
+int[] a;
+</programlisting>
+</example>
+
+<para>
+But C/C++ programmers may expect them to appear after the identifier.
+</para>
+
+<example id="ex-misc-array-brackets-identifier">
+<title>Array brackets after identifier</title>
+<programlisting>
+int a[];
+</programlisting>
+</example>
+
+<para/>
+</listitem>
+
+<listitem>
+<para>
+Force formatting
+</para>
+<para>
+Jalopy can keep track of which files have been formatted previously.
+See <xref linkend="misc-history" /> below. If History is enabled, Jalopy will
+exclude files that have a modification date coincident with the last formatting.
+However, you can override this history check to force a format. For example,
+you might need to update the copyright notice for the whole code base. Enabling
+this switch ensures that all source files are always be formatted. Note that
+this switch is only meaningful if the history feature is enabled.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3 id="misc-history">
+<title>History</title>
+
+<indexterm><primary>History</primary></indexterm>
+
+<para>
+The history feature offers a way to optimize the speed at which Jalopy processes
+of a group of files repeatedly. Using history, Jalopy is able to track file
+modifications between successive invocations, and only format those source
+files which have actually changed, or which weren't processed previously.
+This can save a huge amount of execution time for a project that is formatted
+repeatedly over time. There are two methods for keeping history.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="history-file">
+Use history file
+</para>
+
+<indexterm zone="history-file"><primary>History</primary><secondary>file</secondary></indexterm>
+<indexterm zone="history-file"><primary>File-based history</primary></indexterm>
+<para>
+If you can't get along with a history header comment at the top of each source
+file, but would like historical optimization, the file-based approach may work
+for you. The history information of previous formatting will be saved in a file
+<filename>history.dat</filename> under the Jalopy settings directory.
+</para>
+
+<para>
+Note that this file will grow over time, especially if one manages several big
+projects. So the history file could become quite huge. As all history entries
+are read into memory at startup, it could eat up quite a bit of memory space.
+Therefore a little history viewer is provided which enables you to selectively
+remove obsolete entries.
+</para>
+
+<para>
+In order to effectively use formatting of a project with several developers it is
+nice to be able to only format files which have changed. There are three methods of
+working out if a file has changed provided in a drop down. Timestamp will use the
+modification time of the file, this does not work very well with source control
+and multiple developers. There are two standard checksums available. These
+work by taking a checksum of the file and comparing it to the one in the history file.
+If this checksum is different, the file is parsed and formatted in memory and a new
+checksum calculated. If the new checksum is different than the checksum for the
+unformatted file, it is written to disk. This stops files that have just been updated
+from source control from having being formatted (and timestamps updated).
+</para>
+
+<para>
+Use the <guibutton>View...</guibutton> button to display the history viewer. You
+can selectively remove entries via the popup menu.
+</para>
+</listitem>
+
+<listitem>
+<para id="history-comment">
+Use history comments
+</para>
+
+<indexterm zone="history-comment"><primary>History</primary><secondary>comment</secondary></indexterm>
+<indexterm zone="history-comment"><primary>Comments</primary><secondary>for history</secondary></indexterm>
+<indexterm zone="history-comment"><primary>Comment-based history</primary></indexterm>
+
+<para>
+Jalopy will insert a small comment in the first line of every source file.
+The comment encodes the time a file was last formatted along with the package
+name of the file. This method is precise and relatively foolproof but does not work well
+with SCM tools.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3 id="misc-backup">
+<title>Backup</title>
+<para>
+For security reasons Jalopy creates a backup copy of the currently
+processed file so it can be restored in case a severe error occured during the
+formatting process. The original file is stored in the backup directory and normally
+deleted after the newly formatted file has been successfully written.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Level
+</para>
+<para>
+The backup level defines how many numbered backups should be retained (up to 30).
+The default is to never hold any backups.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Directory
+</para>
+<para>
+Specifies where file backups are stored. You should leave this setting untouched
+in order to make your code convention portable across different systems and platforms.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3 id="misc-threads">
+<title>Threads</title>
+<para>
+Jalopy, more precisely the provided Plug-ins, are multi-threaded. On
+multi-processor systems the work can be divided onto several processors to
+speed up processing.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Number
+</para>
+<para>
+Specifies the number of processing threads to be used. This setting should be
+equal to the number of processors your system has.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+</sect2>

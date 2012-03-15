@@ -1,0 +1,100 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-messages.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect1 id="messages">
+<title>Messages</title>
+<para>
+Controls the Jalopy message output.
+</para>
+<para>
+Given the sensitive nature of automatic source code processing, it is quite
+important to keep informed about what is going on during the formatting process.
+The default configuration should be sufficient for most users, so there should
+seldom arise the need to change anything here.
+</para>
+
+<sect3 id="messages-categories">
+<title>Categories</title>
+
+<para>
+Jalopy provides different message categories for setting verbosity level.
+Changing the threshold from <userinput>ERROR</userinput> to <userinput>DEBUG</userinput>
+successively displays more (albeit not necessarily more useful) messages.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+General
+</para>
+<para>
+General purpose chain for I/O activity and all sorts of stuff that doesn't fit
+elsewhere.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Parsing
+</para>
+<para>
+Message chain for messages related to the Java language parser.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Javadoc parsing
+</para>
+<para>
+Message chain for messages related to the parsing of Javadoc comments.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Transforming
+</para>
+<para>
+Message chain for messages related to the post-processing of the generated AST.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Printing
+</para>
+<para>
+Message chain for the main printing engine.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Javadoc Printing
+</para>
+<para>
+Message chain for Javadoc printing related messages.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+
+<sect3 id="messsages-misc">
+<title>Misc</title>
+<itemizedlist>
+<listitem>
+<para>
+Show stacktrace
+</para>
+<para>
+Enables or disables the inclusion of the current execution stack trace with
+error messages. This proves useful in case you need to file a bug report as it
+reveals the source of the error.
+</para>
+</listitem>
+</itemizedlist>
+</sect3>
+</sect1>

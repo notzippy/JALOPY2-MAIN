@@ -1,0 +1,40 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect1 id="printer">
+<title>Printer</title>
+<indexterm><primary>Printer</primary></indexterm>
+
+<para>
+Lets you control all printer related settings.
+</para>
+
+&settings-printer-braces;
+
+&settings-printer-whitespace;
+
+&settings-printer-indentation;
+
+&settings-printer-wrapping;
+
+&settings-printer-separation;
+
+&settings-printer-comments;
+
+&settings-printer-imports;
+
+&settings-printer-environment;
+
+&settings-printer-javadoc;
+
+&settings-printer-header;
+
+&settings-printer-footer;
+
+&settings-printer-sorting;
+
+&settings-printer-misc;
+
+</sect1>

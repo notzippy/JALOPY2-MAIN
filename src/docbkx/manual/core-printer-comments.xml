@@ -1,0 +1,249 @@
+<?xml version="1.0"
+      encoding="iso-8859-1" ?>
+
+<!-- $Id: core-printer-comments.xml,v 1.1 2002/11/11 20:11:53 marcohu Exp $ -->
+
+<sect2 id="comments">
+<title>Comments</title>
+<para>
+Controls how Jalopy handles certain types of comments.
+</para>
+
+<para>
+As far as Jalopy is concerned, there are five types of comments:
+
+<orderedlist>
+<listitem>
+<para id="comments-single">
+Single-line comments <literal>// text</literal>
+</para>
+
+<indexterm zone="comments-single"><primary>Comments</primary><secondary>Single-line</secondary></indexterm>
+<indexterm zone="comments-single"><primary>Single-line comments</primary></indexterm>
+
+<para>
+An <emphasis>end-of-line comment</emphasis>: all text from the ASCII characters
+<literal>//</literal> to the end of the line
+</para>
+
+<example id="ex-comments-single">
+<title>Single-line comment</title>
+<programlisting>
+<emphasis role="bold">// [PENDING] this should be part of the ErrorManager</emphasis>
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="comments-multi">
+Multi-line comments <literal>/* text */</literal>
+</para>
+
+<indexterm zone="comments-multi"><primary>Comments</primary><secondary>Multi-line</secondary></indexterm>
+<indexterm zone="comments-multi"><primary>Multi-line comments</primary></indexterm>
+
+<para>
+A <emphasis>traditional comment</emphasis>: all text from the ASCII characters <literal>/*</literal>
+to the ASCII characters <literal>*/</literal>
+</para>
+
+<example id="ex-comments-multi">
+<title>Multi-line comment</title>
+<programlisting>
+<emphasis role="bold">/* public int getSubregionStartOffset(int line, int subregion)
+{
+	ChunkCache.LineInfo[] lineInfos = chunkCache.getLineInfosForPhysicalLine(line);
+	return buffer.getLineStartOffset(lineInfos[subregion].physicalLine)
+		+ lineInfos[subregion].offset;
+} */</emphasis>
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="comments-javadoc">
+Javadoc comments <literal>/** text */</literal>
+</para>
+
+<indexterm zone="comments-javadoc"><primary>Comments</primary><secondary>Javadoc</secondary></indexterm>
+<indexterm zone="comments-javadoc"><primary>Javadoc comments</primary></indexterm>
+
+<para>
+A <emphasis>documentation comment</emphasis>: actually a special kind of
+multi-line comment as defined by the Sun Javadoc specification;
+all text from the ASCII characters <literal>/**</literal>
+to the ASCII characters <literal>*/</literal>
+</para>
+
+<example id="ex-comments-javadoc">
+<title>Javadoc comment</title>
+<programlisting>
+<emphasis role="bold">/**
+ * A scroll listener will be notified when the text area is scrolled, either
+ * horizontally or vertically.
+ *
+ * @author Slava Pestov
+ * @since jEdit 3.2pre2
+ */</emphasis>
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="comments-separator">
+Separator comments <literal>//~ text</literal>
+</para>
+
+<indexterm zone="comments-separator"><primary>Comments</primary><secondary>Separator</secondary></indexterm>
+<indexterm zone="comments-separator"><primary>Separator comments</primary></indexterm>
+
+<para>
+A Jalopy-specific <emphasis>separator comment</emphasis>: actually a special kind of single-line comment;
+all text from the ASCII characters
+<literal>//~</literal> to the end of the line
+</para>
+
+<example id="ex-comments-separator">
+<title>Separator comment</title>
+<programlisting>
+<emphasis role="bold">//~ Inner classes .......................................</emphasis>
+</programlisting>
+</example>
+<para />
+</listitem>
+
+<listitem>
+<para id="comments-pragma">
+Pragma comments <literal>//J[directive]</literal>
+</para>
+
+<indexterm zone="comments-pragma"><primary>Comments</primary><secondary>Pragma</secondary></indexterm>
+<indexterm zone="comments-pragma"><primary>Pragma comments</primary></indexterm>
+
+<para>
+A Jalopy-specific <emphasis>control comment</emphasis>: actually a special kind of single-line comment;
+all text from the ASCII characters
+<literal>//J[-|+]</literal> to the end of the line
+</para>
+
+<example id="ex-comments-control">
+<title>Control comments</title>
+<programlisting>
+<emphasis role="bold">//J-</emphasis>
+    if {condition()) return value;
+<emphasis role="bold">//J+</emphasis>
+</programlisting>
+</example>
+
+<para>
+Currently, Jalopy recognizes two pragma comments: <literal>//J-</literal> and <literal>//J+</literal>
+</para>
+
+<para>
+With these comments you can disable formatting for certain code sections.
+<literal>//J-</literal> tells Jalopy to disable formatting until <literal>//J+</literal>
+will enable it again. Note that these comments can only be used in conjunction! Omitting the <literal>//J+</literal> will certainly produce errors.
+</para>
+
+</listitem>
+</orderedlist>
+</para>
+
+<sect3 id="coments-remove">
+<title>Remove</title>
+<para>
+Controls whether and what types of comments should be removed during the
+formatting process.
+</para>
+<itemizedlist>
+<listitem>
+<para id="comments-remove-single">
+Single-line comments
+</para>
+<indexterm zone="comments-remove-single"><primary>Comments</primary><secondary>Single-line comments</secondary></indexterm>
+<indexterm zone="comments-remove-single"><primary>Single-line comments</primary></indexterm>
+
+<para>
+If enabled, removes all single-line comments found in a source file.
+</para>
+</listitem>
+
+<listitem>
+<para id="comments-remove-multi">
+Multi-line comments
+</para>
+<indexterm zone="comments-remove-multi"><primary>Comments</primary><secondary>Multi-line comments</secondary></indexterm>
+<indexterm zone="comments-remove-multi"><primary>Multi-line comments</primary></indexterm>
+
+<para>
+If enabled, removes all multi-line comments (sometimes called block comments) found in a source file.
+</para>
+</listitem>
+
+<listitem>
+<para id="comments-remove-javadoc">
+Javadoc comments
+</para>
+
+<indexterm zone="comments-remove-javadoc"><primary>Comments</primary><secondary>Javadoc comments</secondary></indexterm>
+<indexterm zone="comments-remove-javadoc"><primary>Javadoc comments</primary></indexterm>
+
+<para>
+If enabled, removes all Javadoc comments found in a source file. This may prove
+useful in conjunction with the <link linkend="javadoc-generation">Javadoc auto-generation capabilities</link>
+to build Javadoc from scratch.
+</para>
+</listitem>
+
+</itemizedlist>
+</sect3>
+
+<sect3 id="coments-format">
+<title>Format</title>
+<para>
+Controls the reformatting of comments.
+</para>
+
+<itemizedlist>
+<listitem>
+<para id="comments-format-multi">
+Multi-line comments
+</para>
+
+<indexterm zone="comments-format-multi"><primary>Comments</primary><secondary>Multi-line comments</secondary></indexterm>
+<indexterm zone="comments-format-multi"><primary>Multi-line comments</primary></indexterm>
+
+<para>
+Enables the reformatting of multi-line comments. Only affects the leading
+asterixes of consecutive comment lines as shown in the examples below.
+</para>
+
+<example id="ex-comments-multi-line">
+<title>Multi-line comment</title>
+<programlisting>
+/* Multi-line
+* comment.
+* end.
+*/
+</programlisting>
+</example>
+
+<para/>
+
+<example id="ex-comments-multi-line-formatted">
+<title>Multi-line comment (reformatted)</title>
+<programlisting>
+/* Multi-line
+ * comment.
+ * end.
+ */
+</programlisting>
+</example>
+<para />
+</listitem>
+</itemizedlist>
+</sect3>
+</sect2>

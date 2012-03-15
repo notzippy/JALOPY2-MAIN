@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<!-- $Id: index.xml,v 1.3 2002/11/11 20:13:39 marcohu Exp $ -->
+<!-- This file serves as the main entry for the website -->
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+  [ <!ENTITY keywords SYSTEM "_keywords.xml"> ] >
+
+<article role="main">
+<articleinfo>
+<title>Jalopy Java Source Code Formatter Beautifier Pretty Printer</title>
+&keywords;
+</articleinfo>
+
+<simplesect id="overview">
+<title>Overview</title>
+<para>
+Jalopy is a source code formatter for the Sun Java programming language. It
+layouts any valid Java source code according to some widely configurable rules;
+to meet a certain coding style without putting a formatting burden on individual
+developers.
+</para>
+
+<para>
+With Jalopy you will be able to transform any foreign coding style to your
+own liking, without any browbeating or bloodletting.
+</para>
+
+<para>
+Jalopy's functionality covers:
+</para>
+
+<blockquote>
+<simplelist>
+<member>
+- <ulink url="./braces.html">Brace style transformation</ulink>
+</member>
+<member>
+- <ulink url="./whitespace.html">Fine-grained whitespace settings</ulink>
+</member>
+<member>
+- <ulink url="./indentation.html">Indentation</ulink>
+</member>
+<member>
+- <ulink url="./wrapping.html">Intelligent line wrapping</ulink>
+</member>
+<member>
+- <ulink url="./separation.html">Code separation</ulink>
+</member>
+<member>
+- <ulink url="./javadoc.html#javadoc-generation">Javadoc auto-generation</ulink>
+</member>
+<member>
+- <ulink url="./header.html">Header/Footer templates</ulink>
+</member>
+<member>
+- <ulink url="./plugin-console.html">Powerful command-line interface</ulink>
+</member>
+<member>
+- <ulink url="./api/index.html">Client API</ulink>
+</member>
+<member>
+- <ulink url="./plugins.html">Several Plug-ins</ulink>
+</member>
+</simplelist>
+</blockquote>
+
+<para>
+Jalopy is
+&quot;<emphasis role="bold"><ulink url="http://opensource.org/docs/certification_mark.php">OSI Certified Open Source Software</ulink></emphasis>&quot;,
+released under a <ulink url="./license-bsd.html">BSD License</ulink>. Please
+refer to <ulink url="./dependencies.html">Appendix A</ulink> for the license terms of the
+accompanying 3rd party libraries and the different <ulink url="./part-plugins.html">Plug-in chapters</ulink>
+for the license terms of the provided Plug-ins.
+</para>
+</simplesect>
+</article>

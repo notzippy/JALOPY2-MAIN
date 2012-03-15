@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<!-- $Id: docs.xml,v 1.1.1.1 2002/09/15 21:11:05 marcohu Exp $ -->
+<!-- This file serves as the entry point for the documentation -->
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+  [ <!ENTITY keywords SYSTEM "_keywords.xml"> ] >
+
+<article role="docu">
+<articleinfo>
+<title>Jalopy - Documentation</title>
+&keywords;
+</articleinfo>
+
+<simplesect id="documentation">
+<title>Documentation</title>
+
+<para>
+Jalopy comes with a complete and (hopefully) useful manual. It is mostly driven by
+example as I find this the simplest approach to explain the myriad of switches.
+</para>
+
+<para>
+Note that the documentation is a work-in-progress. It could definitely benefit 
+from your feedback. I'm no native speaker and providing good documentation is 
+the hardest part for me regarding this project. All remarks, corrections, additions... are
+highly welcome.
+</para>
+
+<para>
+Either use the navigation bar at the top of this page or follow this link to
+access the user manual: <ulink url="./manual.html">http://jalopy.sf.net/manual.html</ulink>
+</para>
+
+</simplesect>
+</article>

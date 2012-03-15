@@ -1,0 +1,6 @@
+# PopupSupport.java
+MNU_CUT = Ausschneiden
+MNU_COPY = Kopieren
+MNU_PASTE = Einfügen
+MNU_DELETE = Entfernen
+MNU_SELECT_ALL = Alles markieren
