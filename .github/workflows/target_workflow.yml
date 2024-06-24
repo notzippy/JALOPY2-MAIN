@@ -16,8 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       USER: me
-      TASK: say hellop
+      TASK: say hello
     needs: hello
     steps:
       - name: goodbye
         run: echo goodbye  $USER $TASK
+      - name: env there
+        run: env
