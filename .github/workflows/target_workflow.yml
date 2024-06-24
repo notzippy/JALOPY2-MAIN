@@ -1,0 +1,23 @@
+name: manually deploy to stage
+
+on: [workflow_dispatch]
+
+permissions: write-all
+
+jobs:
+  hello:
+    runs-on: ubunutu-latest
+    steps:
+      - name: hi there
+        uses: echo hi there $USER $TASK
+      - name: env there
+        uses: env
+  deploy:
+    runs-on: ubunutu-latest
+    env:
+      USER: me
+      TASK: say hellop
+    needs: hello
+    steps:
+      - name: goodbye
+        uses: echo goodbye
