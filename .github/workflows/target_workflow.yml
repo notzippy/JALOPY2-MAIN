@@ -1,6 +1,24 @@
 name: manually deploy to stage
 
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Define env name'     
+        required: true
+        type: choice
+        options: 
+          - prod
+          - my test
+        default: 'prod'
+      branch:
+        description: 'Define branch name'     
+        required: true
+        default: 'main'
+
+
+env:
+  TASK: ${{ github.event.inputs.environment }}
 
 permissions: write-all
 
