@@ -9,9 +9,9 @@ jobs:
     runs-on: ubunutu-latest
     steps:
       - name: hi there
-        uses: echo hi there $USER $TASK
+        run: echo hi there $USER $TASK
       - name: env there
-        uses: env
+        run: env
   deploy:
     runs-on: ubunutu-latest
     env:
@@ -20,4 +20,4 @@ jobs:
     needs: hello
     steps:
       - name: goodbye
-        uses: echo goodbye
+        run: echo goodbye  $USER $TASK
