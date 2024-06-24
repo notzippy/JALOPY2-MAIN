@@ -6,14 +6,14 @@ permissions: write-all
 
 jobs:
   hello:
-    runs-on: ubunutu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: hi there
         run: echo hi there $USER $TASK
       - name: env there
         run: env
   deploy:
-    runs-on: ubunutu-latest
+    runs-on: ubuntu-latest
     env:
       USER: me
       TASK: say hellop
