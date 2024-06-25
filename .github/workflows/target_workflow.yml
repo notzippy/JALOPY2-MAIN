@@ -32,12 +32,21 @@ jobs:
         run: env
   deploy:
     runs-on: ubuntu-latest
+
     env:
       USER: me
       TASK: say hello
     needs: hello
+
+    strategy:
+      matrix:
+        versions:
+          - a
+          - b
+          - c
+
     steps:
       - name: goodbye
-        run: echo goodbye  $USER $TASK
+        run: echo goodbye  $USER $TASK ${{ matrix.versions }}
       - name: env there
         run: env
